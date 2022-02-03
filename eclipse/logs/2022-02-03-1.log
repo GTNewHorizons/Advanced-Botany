@@ -1,0 +1,18 @@
+[09:42:44] [main/INFO]: Setting user: Player811
+[09:42:48] [Client thread/INFO]: LWJGL Version: 2.9.1
+[09:43:03] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[09:43:13] [Sound Library Loader/INFO]: Sound engine started
+[09:43:14] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[09:43:14] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[09:43:17] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[09:43:18] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[09:43:19] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[09:43:20] [Sound Library Loader/INFO]: Sound engine started
+[09:43:26] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[09:43:26] [Server thread/INFO]: Generating keypair
+[09:43:27] [Server thread/INFO]: Preparing start region for level 0
+[09:43:27] [Server thread/INFO]: Changing view distance to 2, from 10
+[09:43:28] [Server thread/INFO]: Player811[local:E:ce0f7410] logged in with entity id 261 at (-174.5, 4.0, 104.5)
+[09:43:28] [Server thread/INFO]: Player811 joined the game
+[09:43:53] [Server thread/INFO]: Player811 has just earned the achievement [Taking Inventory]
+[09:43:53] [Client thread/INFO]: [CHAT] Player811 has just earned the achievement [Taking Inventory]

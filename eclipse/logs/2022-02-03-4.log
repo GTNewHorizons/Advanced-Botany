@@ -1,0 +1,53 @@
+[10:24:48] [main/INFO]: Setting user: Player285
+[10:24:51] [Client thread/INFO]: LWJGL Version: 2.9.1
+[10:25:06] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[10:25:16] [Sound Library Loader/INFO]: Sound engine started
+[10:25:19] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[10:25:19] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[10:25:21] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[10:25:23] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[10:25:24] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[10:25:25] [Sound Library Loader/INFO]: Sound engine started
+[10:25:41] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[10:25:41] [Server thread/INFO]: Generating keypair
+[10:25:41] [Server thread/INFO]: Preparing start region for level 0
+[10:25:42] [Server thread/INFO]: Changing view distance to 2, from 10
+[10:25:43] [Server thread/INFO]: Player285[local:E:53248b2e] logged in with entity id 268 at (-174.5, 4.0, 104.5)
+[10:25:43] [Server thread/INFO]: Player285 joined the game
+[10:26:11] [Server thread/INFO]: Player285 has just earned the achievement [Taking Inventory]
+[10:26:11] [Client thread/INFO]: [CHAT] Player285 has just earned the achievement [Taking Inventory]
+[10:27:25] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[10:27:27] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[10:27:28] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[10:27:29] [Sound Library Loader/INFO]: Sound engine started
+[10:27:32] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[10:27:34] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[10:27:35] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[10:27:36] [Sound Library Loader/INFO]: Sound engine started
+[10:27:39] [Server thread/INFO]: Saving and pausing game...
+[10:27:39] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[10:27:39] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[10:27:39] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[10:27:39] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
+[10:28:00] [Server thread/INFO]: Saving and pausing game...
+[10:28:00] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[10:28:00] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[10:28:00] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[10:28:00] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
+[10:28:01] [Server thread/INFO]: Stopping server
+[10:28:01] [Server thread/INFO]: Saving players
+[10:28:01] [Server thread/INFO]: Saving worlds
+[10:28:01] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[10:28:01] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[10:28:01] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[10:28:01] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
+[10:28:11] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[10:28:13] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[10:28:14] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[10:28:15] [Sound Library Loader/INFO]: Sound engine started
+[10:28:21] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[10:28:21] [Server thread/INFO]: Generating keypair
+[10:28:21] [Server thread/INFO]: Preparing start region for level 0
+[10:28:21] [Server thread/INFO]: Changing view distance to 2, from 10
+[10:28:21] [Server thread/INFO]: Player285[local:E:6f798a8e] logged in with entity id 649739 at (-174.17400794742125, 4.0, 104.69782076334523)
+[10:28:21] [Server thread/INFO]: Player285 присоединился к игре
