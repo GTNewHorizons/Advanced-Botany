@@ -1,0 +1,117 @@
+package ab.common.block.tile;
+
+import java.util.List;
+
+import org.lwjgl.opengl.GL11;
+
+import ab.client.core.ClientHelper;
+import ab.common.lib.register.BlockListAB;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.StatCollector;
+import vazkii.botania.api.internal.VanillaPacketDispatcher;
+import vazkii.botania.api.mana.IManaPool;
+import vazkii.botania.api.mana.IManaReceiver;
+import vazkii.botania.api.mana.IThrottledPacket;
+import vazkii.botania.api.mana.spark.ISparkAttachable;
+import vazkii.botania.api.mana.spark.ISparkEntity;
+import vazkii.botania.client.core.handler.HUDHandler;
+import vazkii.botania.common.block.tile.TileMod;
+
+public class TileManaContainer extends TileMod implements IManaPool, ISparkAttachable {
+
+	private static final int MAX_MANA = 64000000;
+	
+	protected int mana = 0;
+	int knownMana = -1;
+	
+    public boolean canUpdate() {
+        return false;
+    }
+	
+	public void updateEntity() {}
+	
+	public void onWanded(EntityPlayer player, ItemStack wand) {
+		if (player == null)
+			return; 
+		if (!this.worldObj.isRemote) {
+			NBTTagCompound nbttagcompound = new NBTTagCompound();
+			writeCustomNBT(nbttagcompound);
+			nbttagcompound.setInteger("knownMana", getCurrentMana());
+			if (player instanceof EntityPlayerMP)
+				((EntityPlayerMP)player).playerNetServerHandler.sendPacket((Packet)new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, -999, nbttagcompound)); 
+		} 
+		this.worldObj.playSoundAtEntity((Entity)player, "botania:ding", 0.11F, 1.0F);
+	}
+	
+	public void renderHUD(Minecraft mc, ScaledResolution res) {
+		String name = StatCollector.translateToLocal("ab.manaContainer.hud");
+		int color = 0x30ead1;
+		ClientHelper.drawPoolManaHUD(res, name, this.knownMana, MAX_MANA, color);
+	}
+	
+	public int getCurrentMana() {
+		return this.mana;
+	}
+	
+	public boolean canRecieveManaFromBursts() {
+		return true;
+	}
+
+	public boolean isFull() {
+		return this.mana == MAX_MANA;
+	}
+
+	public void recieveMana(int mana) {
+		this.mana = Math.max(0, Math.min(getCurrentMana() + mana, MAX_MANA));
+	}
+	
+	public void writeCustomNBT(NBTTagCompound nbtt) {
+		nbtt.setInteger("mana", this.mana);
+	}
+	
+	public void readCustomNBT(NBTTagCompound nbtt) {
+		this.mana = nbtt.getInteger("mana");
+		if (nbtt.hasKey("knownMana"))
+			this.knownMana = nbtt.getInteger("knownMana"); 
+	}
+
+	public boolean areIncomingTranfersDone() {
+		return false;
+	}
+
+	public void attachSpark(ISparkEntity entity) {}
+
+	public boolean canAttachSpark(ItemStack arg0) {
+		return true;
+	}
+
+	public ISparkEntity getAttachedSpark() {
+		List<ISparkEntity> sparks = this.worldObj.getEntitiesWithinAABB(ISparkEntity.class, AxisAlignedBB.getBoundingBox(this.xCoord, (this.yCoord + 1), this.zCoord, (this.xCoord + 1), (this.yCoord + 2), (this.zCoord + 1)));
+		if (sparks.size() == 1) {
+			Entity e = (Entity)sparks.get(0);
+			return (ISparkEntity)e;
+		} 
+		return null;
+	}
+
+	public int getAvailableSpaceForMana() {
+		return Math.max(0, MAX_MANA - getCurrentMana());
+	}
+	
+	public boolean isOutputtingPower() {
+		return false;
+	}
+}
