@@ -37,11 +37,11 @@ import vazkii.botania.common.block.ModBlocks;
 import vazkii.botania.common.block.tile.TileSimpleInventory;
 import vazkii.botania.common.core.helper.Vector3;
 
-public class TileManaCharger extends TileSimpleInventory implements ISidedInventory, IRenderHud, IWandBindable {
+public class TileManaCharger extends TileInventory implements ISidedInventory, IRenderHud, IWandBindable {
 
 	private static final int MANA_SPEED = 11240;
 	
-	public boolean requestsClientUpdate = false;
+	public boolean requestUpdate;
 	int clientMana = -1;
 	int receiverPosX = -1;
 	int receiverPosY = -1;
@@ -49,10 +49,9 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 	public int clientTick[] = new int[] {0, 0, 3, 12, 6};
 	
 	public void updateEntity() {
-		if(requestsClientUpdate && !this.worldObj.isRemote && this.worldObj.getTotalWorldTime() % 15 == 0) {
+		boolean hasUpdate = false;
+		if(!this.worldObj.isRemote && requestUpdate)
 			VanillaPacketDispatcher.dispatchTEToNearbyPlayers(this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-			requestsClientUpdate = false;
-		}
 		ISparkAttachable receiver = this.getReceiver();
 		if(receiver == null)
 			return;
@@ -68,19 +67,20 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 						int manaVal = Math.min(Math.min(mana.getMaxMana(stack) / 256, MANA_SPEED) * 3, Math.min(availableMana, mana.getMana(stack)));
 						if(!this.worldObj.isRemote) {
 							mana.addMana(stack, -manaVal);
-							requestsClientUpdate = true;
+							if(this.worldObj.getTotalWorldTime() % 15 == 0)
+								hasUpdate = true;
 						} else {
 							clientTick[i]++;
 						}
 						receiver.recieveMana(manaVal);
 					}
 					continue;
-				}
-				else if(receiver.getCurrentMana() > 0 && mana.getMana(stack) < mana.getMaxMana(stack) && mana.canReceiveManaFromPool(stack, (TileEntity)receiver)) {
+				} else if(receiver.getCurrentMana() > 0 && mana.getMana(stack) < mana.getMaxMana(stack) && mana.canReceiveManaFromPool(stack, (TileEntity)receiver)) {
 					int manaVal = Math.min(Math.min(mana.getMaxMana(stack) / 256, MANA_SPEED), Math.min(receiver.getCurrentMana(), mana.getMaxMana(stack) - mana.getMana(stack)));
 					if(!this.worldObj.isRemote) {
 						mana.addMana(stack, manaVal);
-						requestsClientUpdate = true;
+						if(this.worldObj.getTotalWorldTime() % 15 == 0)
+							hasUpdate = true;
 					} else {
 						clientTick[i]++;
 					}
@@ -88,16 +88,23 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 				}
 			}
 		}
+		requestUpdate = hasUpdate;
 	}
 	
 	public ISparkAttachable getReceiver() {
+		ISparkAttachable receiver = null;
 		if(this.worldObj != null && this.receiverPosY != -1) {
 			TileEntity tile = this.worldObj.getTileEntity(receiverPosX, receiverPosY, receiverPosZ);
 			if(tile != null && tile instanceof ISparkAttachable) {
-				return (ISparkAttachable)tile;
+				receiver = (ISparkAttachable)tile;
 			}
 		}
-		return null;
+		if(receiver == null) {
+			receiverPosX = -1;
+			receiverPosY = -1;
+			receiverPosZ = -1;
+		}
+		return receiver;
 	}
 	
 	public boolean canSelect(EntityPlayer player, ItemStack wand, int x, int y, int z, int side) {
@@ -106,10 +113,10 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 	
 	public boolean bindTo(EntityPlayer player, ItemStack wand, int x, int y, int z, int side) {
 		TileEntity tile = this.worldObj.getTileEntity(x, y, z);
-		boolean isFar = Math.abs(this.xCoord - x) >= 16 || Math.abs(this.yCoord - y) >= 16 || Math.abs(this.zCoord - z) >= 16;
+		boolean isFar = Math.abs(this.xCoord - x) >= 10 || Math.abs(this.yCoord - y) >= 10 || Math.abs(this.zCoord - z) >= 10;
 		if(isFar)
 			return false;
-		else if(tile instanceof ISparkAttachable) {
+		else if(tile instanceof ISparkAttachable && ((ISparkAttachable)tile).canRecieveManaFromBursts()) {
 			if(!this.worldObj.isRemote) {
 				this.receiverPosX = tile.xCoord;
 				this.receiverPosY = tile.yCoord;
@@ -123,7 +130,7 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 	
 	public ChunkCoordinates getBinding() {
 		IManaReceiver receiver = this.getReceiver();
-		if (receiver == null)
+		if(receiver == null)
 			return null; 
 		TileEntity tile = (TileEntity)receiver;
 		return new ChunkCoordinates(tile.xCoord, tile.yCoord, tile.zCoord);
@@ -186,13 +193,13 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 	
 	public void renderHUD(Minecraft mc, ScaledResolution res) {
 		ISparkAttachable reciever = getReceiver();
-		if (reciever != null) {
+		if(reciever != null) {
 			String name = StatCollector.translateToLocal("ab.manaCharger.wandHud");
 			TileEntity receiverTile = (TileEntity)reciever;
 			ItemStack recieverStack = new ItemStack(this.worldObj.getBlock(receiverTile.xCoord, receiverTile.yCoord, receiverTile.zCoord), 1, receiverTile.getBlockMetadata());
 			GL11.glEnable(3042);
 			GL11.glBlendFunc(770, 771);
-			if (recieverStack != null && recieverStack.getItem() != null) {
+			if(recieverStack != null && recieverStack.getItem() != null) {
 				String stackName = recieverStack.getDisplayName();
 				int width = 16 + mc.fontRenderer.getStringWidth(stackName) / 2;
 				int x = res.getScaledWidth() / 2 - width;
@@ -225,13 +232,12 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 		nbtt.setInteger("bindingX", this.receiverPosX);
 		nbtt.setInteger("bindingY", this.receiverPosY);
 		nbtt.setInteger("bindingZ", this.receiverPosZ);
-		nbtt.setBoolean("requestUpdate", this.requestsClientUpdate);
-		this.requestsClientUpdate = false;
+		nbtt.setBoolean("requestUpdate", this.requestUpdate);
 	}
 	
 	public void readFromNBT(NBTTagCompound nbtt) {
 		super.readFromNBT(nbtt);
-		this.requestsClientUpdate = nbtt.getBoolean("requestUpdate");
+		this.requestUpdate = nbtt.getBoolean("requestUpdate");
 	}
 	
 	public void readCustomNBT(NBTTagCompound nbtt) {
@@ -242,14 +248,30 @@ public class TileManaCharger extends TileSimpleInventory implements ISidedInvent
 	}
 
 	public int[] getAccessibleSlotsFromSide(int side) {
-		return new int[0];
+		return new int[] {1, 2, 3, 4};
 	}
 
 	public boolean canInsertItem(int slot, ItemStack stack, int side) {
-		return false;
+		boolean isManaItem = false;
+		if(stack != null && stack.getItem() instanceof IManaItem) {
+			IManaItem mana = (IManaItem)stack.getItem();
+			ISparkAttachable receiver = this.getReceiver();
+			if(receiver == null)
+				return false;
+			isManaItem = mana.getMana(stack) < mana.getMaxMana(stack) && mana.canReceiveManaFromPool(stack, (TileEntity)receiver);
+		}
+		return side == 1 && slot != 0 && isManaItem;
 	}
 
 	public boolean canExtractItem(int slot, ItemStack stack, int side) {
-		return false;
+		boolean isManaItem = false;
+		if(stack != null && stack.getItem() instanceof IManaItem) {
+			IManaItem mana = (IManaItem)stack.getItem();
+			ISparkAttachable receiver = this.getReceiver();
+			if(receiver == null)
+				return false;
+			isManaItem = mana.getMana(stack) == mana.getMaxMana(stack);
+		}
+		return side == 0 && slot != 0 && isManaItem;
 	}
 }

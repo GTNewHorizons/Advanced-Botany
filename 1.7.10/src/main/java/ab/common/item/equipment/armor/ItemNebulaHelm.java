@@ -13,15 +13,34 @@ import net.minecraft.world.World;
 import vazkii.botania.api.mana.IManaDiscountArmor;
 import vazkii.botania.api.mana.IManaGivingItem;
 import vazkii.botania.api.mana.ManaItemHandler;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
 
 public class ItemNebulaHelm extends ItemNebulaArmor implements IManaDiscountArmor, IManaGivingItem {
 
+	private static final String TAG_COSMIC_FACE = "enableCosmicFace";
+	
 	public ItemNebulaHelm() {
 		this("nebulaHelm");
 	}
 	
 	public ItemNebulaHelm(String str) {
 		super(0, str);
+	}
+	
+	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
+		if(player.isSneaking())
+			setCosmicFace(stack, !enableCosmicFace(stack));
+		else 
+			super.onItemRightClick(stack, world, player);
+		return stack;
+	}
+	
+	public boolean enableCosmicFace(ItemStack stack) {
+		return ItemNBTHelper.getBoolean(stack, TAG_COSMIC_FACE, true);
+	}
+	
+	public void setCosmicFace(ItemStack stack, boolean enable) {
+		ItemNBTHelper.setBoolean(stack, TAG_COSMIC_FACE, enable);
 	}
 	
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {

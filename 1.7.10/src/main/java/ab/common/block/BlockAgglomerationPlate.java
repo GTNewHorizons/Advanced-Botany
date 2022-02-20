@@ -2,6 +2,7 @@ package ab.common.block;
 
 import ab.AdvancedBotany;
 import ab.common.block.tile.TileAgglomerationPlate;
+import ab.common.block.tile.TileInventory;
 import ab.common.lib.register.RecipeListAB;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -14,12 +15,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.ILexiconable;
 import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.common.block.tile.TileSimpleInventory;
 
 public class BlockAgglomerationPlate extends BlockContainer implements ILexiconable {
 
@@ -37,11 +38,15 @@ public class BlockAgglomerationPlate extends BlockContainer implements ILexicona
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
 		TileAgglomerationPlate tile = (TileAgglomerationPlate)world.getTileEntity(x, y, z);	
-		if (player.isSneaking()) {
+		if(player.isSneaking()) {
 			if(tile.getStackInSlot(0) != null) {
 				ItemStack copy = tile.getStackInSlot(0).copy();
-				if(!player.inventory.addItemStackToInventory(copy))
-					player.dropPlayerItemWithRandomChoice(copy, false); 
+				if(!world.isRemote) {
+					Vec3 vec3 = player.getLook(1.0F).normalize();
+					EntityItem entityitem = new EntityItem(world, player.posX + vec3.xCoord, player.posY + 1.2f, player.posZ + vec3.zCoord, copy);
+					world.spawnEntityInWorld(entityitem);
+					tile.requestUpdate = true;
+				}
 				tile.setInventorySlotContents(0, null);
 				world.func_147453_f(x, y, z, (Block)this);
 				return true;
@@ -50,9 +55,12 @@ public class BlockAgglomerationPlate extends BlockContainer implements ILexicona
 				ItemStack stack = tile.getStackInSlot(i);
 				if(stack != null) {
 					ItemStack copy = stack.copy();
-					System.out.println(i + " " + copy);
-					if(!player.inventory.addItemStackToInventory(copy))
-						player.dropPlayerItemWithRandomChoice(copy, false); 
+					if(!world.isRemote) {
+						Vec3 vec3 = player.getLook(1.0F).normalize();
+						EntityItem entityitem = new EntityItem(world, player.posX + vec3.xCoord, player.posY + 1.2f, player.posZ + vec3.zCoord, copy);
+						world.spawnEntityInWorld(entityitem);
+						tile.requestUpdate = true;
+					}
 					tile.setInventorySlotContents(i, null);
 					world.func_147453_f(x, y, z, (Block)this);
 					return true;
@@ -64,7 +72,7 @@ public class BlockAgglomerationPlate extends BlockContainer implements ILexicona
 	
 	public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
 		if(!world.isRemote) {
-			TileSimpleInventory inv = (TileSimpleInventory)world.getTileEntity(x, y, z);
+			TileInventory inv = (TileInventory)world.getTileEntity(x, y, z);
 			if (inv != null) {
 				for (int i = 0; i < inv.getSizeInventory(); i++) {
 					ItemStack stack = inv.getStackInSlot(i);

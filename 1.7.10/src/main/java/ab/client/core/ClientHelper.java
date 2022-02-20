@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.RenderItem;
@@ -106,10 +107,15 @@ public class ClientHelper {
 		return field_147528_b;
 	}
 	
-	public static void drawChanceBar(int x, int y, int chance) {
-		Minecraft mc = Minecraft.getMinecraft();
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0f);
+	public static void drawArrow(int x, int y, boolean side) {
 		mc.renderEngine.bindTexture(miscHuds);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0f);
+		vazkii.botania.client.core.helper.RenderHelper.drawTexturedModalRect(x, y, 0.0F, 0, 10, side ? 0 : 22, 38);
+	}
+	
+	public static void drawChanceBar(int x, int y, int chance) {
+		mc.renderEngine.bindTexture(miscHuds);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0f);
 		vazkii.botania.client.core.helper.RenderHelper.drawTexturedModalRect(x, y, 0.0F, 0, 0, 57, 6);
 		int chancePercentage = Math.max(0, (int)((chance / 100.f) * 55.0D));
 		vazkii.botania.client.core.helper.RenderHelper.drawTexturedModalRect(x + 1, y + 1, 0.0F, 0, 6, 55, 4);
@@ -163,5 +169,37 @@ public class ClientHelper {
     	if((poolCount * 1000000) == mana)
     		onePoolMana = poolCount * 1000000;
 		HUDHandler.drawSimpleManaHUD(color, onePoolMana, 1000000, name, res);
+	}
+	
+	public static void setLightmapTextureCoords() {
+		int light = 15728880;
+		int lightmapX = light % 65536;
+		int lightmapY = light / 65536;
+		OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, lightmapX, lightmapY);
+	}
+	
+	public static Color getCorporeaRuneColor(int posX, int posY, int posZ, int meta) {
+		double time = ClientTickHandler.ticksInGame + ClientTickHandler.partialTicks;
+		time += (new Random((posX ^ posY ^ posZ))).nextInt(360); 
+		float sin = (float)(Math.sin(time / 20.0f) * 0.15f) - 0.15f;
+		int color = 0;
+		switch(meta) {
+		case 0:
+			color = Color.HSBtoRGB(0.0f, 0.0f, 0.54f + (sin / 1.2f));
+			break;
+		case 1:
+			color = Color.HSBtoRGB(0.688f, 0.93f, 0.96f + sin - 0.15f);
+			break;
+		case 2:
+			color = Color.HSBtoRGB(0.983f, 0.99f, 1.0f + sin - 0.15f);
+			break;
+		case 3:
+			color = Color.HSBtoRGB(0.319f, 0.92f, 0.95f + sin - 0.15f);
+			break;
+		case 4:
+			color = Color.HSBtoRGB(0.536f, 0.53f, 0.92f + sin - 0.15f);
+			break;
+		}
+		return new Color(color);
 	}
 }

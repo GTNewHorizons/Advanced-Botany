@@ -1,6 +1,7 @@
 package ab;
 
 import ab.common.core.proxy.CommonProxy;
+import ab.common.integration.corporea.EventCorporeaHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -13,7 +14,7 @@ import net.minecraftforge.common.MinecraftForge;
 public class AdvancedBotany {
 	
 	public static final String modid = "AdvancedBotany";
-	public static final String version = "1.0.1.0";
+	public static final String version = "1.0.1.1";
 
 	@Mod.Instance("AdvancedBotany")
     public static AdvancedBotany instance;
@@ -29,6 +30,7 @@ public class AdvancedBotany {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {		
 		proxy.init(event);
+		MinecraftForge.EVENT_BUS.register(new EventCorporeaHandler());
 	}
 
 	@Mod.EventHandler

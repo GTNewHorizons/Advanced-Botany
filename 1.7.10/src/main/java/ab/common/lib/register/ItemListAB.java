@@ -28,9 +28,9 @@ public class ItemListAB {
 	public static Item itemNebulaHelmReveal;
 	public static Item itemNebulaChest;
 	public static Item itemNebulaLegs;
-	public static Item itemNebulaBoots;
-	
-	public static Item itemFreyrSlingshot;
+	public static Item itemNebulaBoots;	
+//	public static Item itemFreyrSlingshot;
+//	public static Item itemNebulaRod;
 	
 	public static void init() {
 		ItemListAB.itemABResource = new ItemABResource();
@@ -55,7 +55,10 @@ public class ItemListAB {
 		GameRegistry.registerItem(itemNebulaBlaze, "itemNebulaBlaze");
 		ItemListAB.itemAntigravityCharm = new ItemAntigravityCharm();
 		GameRegistry.registerItem(itemAntigravityCharm, "itemAntigravityCharm");
-		
+//		ItemListAB.itemFreyrSlingshot = new ItemFreyrSlingshot();
+//		GameRegistry.registerItem(itemFreyrSlingshot, "itemFreyrSlingshot");
+//		ItemListAB.itemNebulaRod = new ItemNebulaRod();
+//		GameRegistry.registerItem(itemNebulaRod, "itemNebulaRod");
 		ItemListAB.itemNebulaHelm = new ItemNebulaHelm();
 		ItemListAB.itemNebulaChest = new ItemNebulaChest();
 		ItemListAB.itemNebulaLegs = new ItemNebulaLegs();
@@ -63,8 +66,6 @@ public class ItemListAB {
 		
 		if(Botania.thaumcraftLoaded)
 			thaumcraft();
-		//ItemListAB.itemFreyrSlingshot = new ItemFreyrSlingshot();
-		//GameRegistry.registerItem(itemFreyrSlingshot, "itemFreyrSlingshot");
 		
 	}
 	

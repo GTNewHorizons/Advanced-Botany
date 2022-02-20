@@ -23,7 +23,8 @@ tile.ABManaCharger.name=Зарядник маны
 tile.botania:flower.ancientAlphirine.name=Древний Альфирин
 tile.botania:flower.aspecolus.name=Аспекулос
 tile.botania:flower.dictarius.name=Диктариус
-tile.terraFarmland.name=Природная почва
+tile.terraFarmland.name=Плодородная почва
+tile.corporeaCatalyst.name=Катализатор хранилища
 
 //Item
 
@@ -49,6 +50,7 @@ item.botania:nebulaHelmRevealing.name=Туманный шлем откровен
 item.botania:nebulaChest.name=Туманная кираса
 item.botania:nebulaLegs.name=Туманные поножи
 item.botania:nebulaBoots.name=Туманные ботинки
+item.freyrSlingshot.name=Рогатка Фрейи
 
 //MISC
 

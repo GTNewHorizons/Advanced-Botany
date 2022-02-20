@@ -38,6 +38,7 @@ public class RecipeListAB {
 	public static RecipeAncientAlphirine forgottenLandRecipe;
 	public static RecipeAncientAlphirine advancedSparkRecipe;
 	public static RecipeAncientAlphirine manaFlowerRecipe;
+//	public static RecipeAncientAlphirine slingshotRecipe;
 	
 	public static RecipeAdvancedPlate manaStarRecipe;
 	public static RecipeAdvancedPlate terrasteelRecipe;
@@ -67,6 +68,7 @@ public class RecipeListAB {
 	public static LexiconEntry dictarius;
 	public static LexiconEntry manaCharger;
 	public static LexiconEntry nebulaArmor;
+//	public static LexiconEntry freyrSlingshot;
 	
 	public static KnowledgeType forgotten;
 	
@@ -79,11 +81,12 @@ public class RecipeListAB {
 		forgottenLandRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemABResource, 1, 3), new ItemStack(ModItems.manaResource, 1, 15), 75);
 		advancedSparkRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemAdvancedSpark), new ItemStack(ModItems.spark), 11);
 		manaFlowerRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemABResource, 1, 4), new ItemStack(ModBlocks.flower, 1, 32767), 32);
+//		slingshotRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemFreyrSlingshot), new ItemStack(ModItems.slingshot), 82);
 		
-		mithrillRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModBlocks.storage, 1, 0), new ItemStack(ModItems.manaResource, 1, 18), 7500000);
-		terrasteelRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ModItems.manaResource, 1, 4), new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 1), 500000);
-		manaStarRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(Items.nether_star), 250000);
-		nebulaRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 8), new ItemStack(ModBlocks.storage, 1, 4), new ItemStack(ItemListAB.itemABResource, 1, 1), 50000000);
+		mithrillRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModBlocks.storage, 1, 0), new ItemStack(ModItems.manaResource, 1, 18), 7500000, 0x25d6b7);
+		terrasteelRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ModItems.manaResource, 1, 4), new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 1), 500000, 0x29de20);
+		manaStarRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(Items.nether_star), 250000, 0x6bc9ec);
+		nebulaRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 8), new ItemStack(ModBlocks.storage, 1, 4), new ItemStack(ItemListAB.itemABResource, 1, 1), 50000000, 0x8d16e0);
 		
 		ancientAlphirine = new BLexiconEntry("ancientAlphirine", categoryForgotten);
 		alphirineRecipe = BotaniaAPI.registerPetalRecipe(ItemBlockSpecialFlower.ofType("ancientAlphirine"), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.rune, 1, 8), new ItemStack(ModItems.rune, 1, 4), new ItemStack(ModItems.rune, 1, 5), new ItemStack(ModItems.rune, 1, 6), new ItemStack(ModItems.rune, 1, 7), new ItemStack(ModItems.petal, 1, 1), new ItemStack(ModItems.petal, 1, 4));
@@ -171,10 +174,12 @@ public class RecipeListAB {
 		IRecipe nLegs = getLastRecipe();
 		GameRegistry.addShapedRecipe(new ItemStack(ItemListAB.itemNebulaBoots), new Object[] { "RBR", "NHN", " E ", Character.valueOf('N'), new ItemStack(ItemListAB.itemABResource, 1, 5), Character.valueOf('R'), new ItemStack(ModItems.manaResource, 1, 7), Character.valueOf('H'), new ItemStack(ModItems.terrasteelBoots), Character.valueOf('E'), new ItemStack(ModItems.manaResource, 1, 8), Character.valueOf('B'), new ItemStack(ModItems.speedUpBelt)});
 		IRecipe nBoots = getLastRecipe();
-		
 		nebulaArmor = new BLexiconEntry("nebulaArmor", categoryForgotten);
 		nebulaArmor.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1"), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nHelm), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nChest), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nLegs), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nBoots)});
 
+//		freyrSlingshot = new BLexiconEntry("freyrSlingshot", categoryForgotten);
+//		freyrSlingshot.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new AlphirineCraftPage(slingshotRecipe)});
+		
 		if(Botania.thaumcraftLoaded)
 			thaumcraft();
 		

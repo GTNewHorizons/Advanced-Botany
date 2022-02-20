@@ -1,6 +1,7 @@
 package ab.common.block;
 
 import ab.AdvancedBotany;
+import ab.common.block.tile.TileInventory;
 import ab.common.block.tile.TileManaCharger;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.RecipeListAB;
@@ -15,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.api.lexicon.ILexiconable;
@@ -23,7 +25,6 @@ import vazkii.botania.api.mana.IManaItem;
 import vazkii.botania.api.wand.IWandHUD;
 import vazkii.botania.api.wand.IWandable;
 import vazkii.botania.common.block.ModBlocks;
-import vazkii.botania.common.block.tile.TileSimpleInventory;
 
 public class BlockManaCharger extends BlockContainer implements IWandHUD, IWandable, ILexiconable {
 
@@ -51,11 +52,12 @@ public class BlockManaCharger extends BlockContainer implements IWandHUD, IWanda
 			if(player.isSneaking()) {
 				if(stackInSlot != null) {
 					ItemStack copy = stackInSlot.copy();
-					if(!player.inventory.addItemStackToInventory(copy))
-						player.dropPlayerItemWithRandomChoice(copy, false); 
+					tile.setInventorySlotContents(slotSide, null);
 					if(!world.isRemote) {
-						tile.setInventorySlotContents(slotSide, null);
-						VanillaPacketDispatcher.dispatchTEToNearbyPlayers(world, x, y, z);
+						Vec3 vec3 = player.getLook(1.0F).normalize();
+						EntityItem entityitem = new EntityItem(world, player.posX + vec3.xCoord, player.posY + 1.2f, player.posZ + vec3.zCoord, copy);
+						world.spawnEntityInWorld(entityitem);
+						tile.requestUpdate = true;
 					}
 					world.func_147453_f(x, y, z, (Block)this);
 					return true;
@@ -69,7 +71,7 @@ public class BlockManaCharger extends BlockContainer implements IWandHUD, IWanda
 						player.inventory.setInventorySlotContents(player.inventory.currentItem, null); 	
 					if(!world.isRemote) {
 						tile.setInventorySlotContents(slotSide, copy);
-						VanillaPacketDispatcher.dispatchTEToNearbyPlayers(world, x, y, z);
+						tile.requestUpdate = true;
 					}
 					return true;	
 				}
@@ -80,7 +82,7 @@ public class BlockManaCharger extends BlockContainer implements IWandHUD, IWanda
 	
 	public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
 		if(!world.isRemote) {
-			TileSimpleInventory inv = (TileSimpleInventory)world.getTileEntity(x, y, z);
+			TileInventory inv = (TileInventory)world.getTileEntity(x, y, z);
 			if (inv != null) {
 				for (int i = 0; i < inv.getSizeInventory(); i++) {
 					ItemStack stack = inv.getStackInSlot(i);

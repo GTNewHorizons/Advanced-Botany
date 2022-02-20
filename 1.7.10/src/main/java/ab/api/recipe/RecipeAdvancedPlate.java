@@ -9,12 +9,14 @@ import net.minecraft.item.ItemStack;
 public class RecipeAdvancedPlate {
 
 	private ItemStack output;
+	private int color;
 	private List<ItemStack> inputs;	
 	private int mana;	
 	
-	public RecipeAdvancedPlate(ItemStack output, int mana, ItemStack... inputs) {
+	public RecipeAdvancedPlate(ItemStack output, int mana, int color, ItemStack... inputs) {
 		this.output = output;
 		this.mana = mana;
+		this.color = color;
 		List<ItemStack> inputsToSet = new ArrayList();
 		for (ItemStack obj : inputs) 
 			inputsToSet.add(obj);	
@@ -31,6 +33,10 @@ public class RecipeAdvancedPlate {
 	
 	public int getManaUsage() {
 		return this.mana;
+	}
+	
+	public int getColor() {
+		return this.color;
 	}
 	
 	public boolean matches(IInventory inv) {
