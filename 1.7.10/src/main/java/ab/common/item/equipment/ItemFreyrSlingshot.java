@@ -53,9 +53,8 @@ public class ItemFreyrSlingshot extends ItemMod implements IManaItem, IManaToolt
 			world.spawnEntityInWorld(ball);
 		}
 		int manaVal = Math.min(10000, this.getMana(stack));
-		if(!ManaItemHandler.requestManaExactForTool(stack, player, manaVal, true)) {
+		if(!ManaItemHandler.requestManaExactForTool(stack, player, manaVal, true))
 			this.addMana(stack, -manaVal);
-		}
 	}
 	
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) {

@@ -1,11 +1,23 @@
-[16:21:52] [main/INFO]: Setting user: Player766
-[16:21:54] [Client thread/INFO]: LWJGL Version: 2.9.1
-[16:22:03] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
-[16:22:10] [Sound Library Loader/INFO]: Sound engine started
-[16:22:11] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[16:22:11] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[16:22:13] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
-[16:22:14] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[16:22:15] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
-[16:22:16] [Sound Library Loader/INFO]: Sound engine started
-[16:22:48] [Client thread/INFO]: Stopping!
+[00:25:27] [main/INFO]: Setting user: Player546
+[00:25:29] [Client thread/INFO]: LWJGL Version: 2.9.1
+[00:25:37] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[00:25:42] [Sound Library Loader/INFO]: Sound engine started
+[00:25:43] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[00:25:43] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[00:25:44] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft
+[00:25:45] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[00:25:46] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[00:25:47] [Sound Library Loader/INFO]: Sound engine started
+[00:26:11] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[00:26:11] [Server thread/INFO]: Generating keypair
+[00:26:11] [Server thread/INFO]: Preparing start region for level 0
+[00:26:12] [Server thread/INFO]: Changing view distance to 3, from 10
+[00:26:12] [Server thread/INFO]: Player546[local:E:55135687] logged in with entity id 135 at (-427.75603383684927, 4.0, 13.725708205893955)
+[00:26:12] [Server thread/INFO]: Player546 joined the game
+[00:26:16] [Server thread/INFO]: Saving and pausing game...
+[00:26:16] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[00:26:16] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[00:26:16] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
+[00:26:16] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The Outer Lands
+[00:26:38] [Server thread/INFO]: Player546 has just earned the achievement [Taking Inventory]
+[00:26:38] [Client thread/INFO]: [CHAT] Player546 has just earned the achievement [Taking Inventory]

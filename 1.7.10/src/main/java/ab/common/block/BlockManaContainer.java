@@ -1,5 +1,6 @@
 package ab.common.block;
 
+import java.util.List;
 import java.util.Random;
 
 import ab.AdvancedBotany;
@@ -11,11 +12,13 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import vazkii.botania.api.lexicon.ILexiconable;
 import vazkii.botania.api.lexicon.LexiconEntry;
@@ -29,9 +32,20 @@ public class BlockManaContainer extends BlockContainer implements IWandHUD, IWan
 	public BlockManaContainer() {
 		super(Material.iron);
 		this.setCreativeTab(AdvancedBotany.tabAB);
-	    this.setBlockBounds(0.0625F, 0.0F, 0.0625F, 0.9375F, 1.1875F, 0.9375F);
 	    this.setHardness(9.0F);
 	    this.setBlockName("ABManaContainer");
+	    float offset = 0.08F;
+		this.setBlockBounds(offset, offset / 2.0f, offset, 1.0F - offset, 1.0F - (offset / 2.0f), 1.0F - offset);
+	}
+	
+	public void getSubBlocks(Item par1, CreativeTabs par2, List par3) {
+		par3.add(new ItemStack(par1, 1, 0));
+		par3.add(new ItemStack(par1, 1, 1));
+		par3.add(new ItemStack(par1, 1, 2));
+	}
+	
+	public int damageDropped(int meta) {
+		return meta;
 	}
 	
 	public TileEntity createNewTileEntity(World world, int meta) {

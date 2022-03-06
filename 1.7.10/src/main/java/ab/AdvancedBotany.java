@@ -1,7 +1,6 @@
 package ab;
 
 import ab.common.core.proxy.CommonProxy;
-import ab.common.integration.corporea.EventCorporeaHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -10,11 +9,11 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod (modid = AdvancedBotany.modid, name="Advanced Botany", version = AdvancedBotany.version, dependencies = "required-after:Botania")
+@Mod (modid = AdvancedBotany.modid, name="Advanced Botany", version = AdvancedBotany.version, dependencies = "required-after:Botania", guiFactory = "ab.client.core.GuiABFactory")
 public class AdvancedBotany {
 	
 	public static final String modid = "AdvancedBotany";
-	public static final String version = "1.0.1.1";
+	public static final String version = "1.2.0.1";
 
 	@Mod.Instance("AdvancedBotany")
     public static AdvancedBotany instance;
@@ -30,7 +29,6 @@ public class AdvancedBotany {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {		
 		proxy.init(event);
-		MinecraftForge.EVENT_BUS.register(new EventCorporeaHandler());
 	}
 
 	@Mod.EventHandler

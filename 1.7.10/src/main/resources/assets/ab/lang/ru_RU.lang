@@ -9,6 +9,7 @@ itemGroup.tabAB=Advanced Botany
 ab.flower.ancientAlphirine.name=Древний Альфирин
 ab.flower.dictarius.name=Диктариус
 ab.flower.aspecolus.name=Аспеколус
+ab.flower.pureGladiolus.name=Чистый Гладиулос
 tile.advancedSpreader.name=Природный распространитель маны
 tile.ABPlate.name=Улучшенная агломерационная плита
 tile.lebethronWood.0.name=Древесина Лебертона
@@ -17,14 +18,20 @@ tile.lebethronWood.2.name=Замшелые доски из древесины Л
 tile.lebethronWood.3.name=Светящаяся древесина Лебертона
 tile.lebethronWood.4.name=Природное ядро
 tile.ABManaCrystalCube.name=Кристаллический куб маны
-tile.ABManaContainer.name=Контейнер маны
+tile.ABManaContainer.0.name=Контейнер маны
+tile.ABManaContainer.1.name=Контейнер разбавленной маны
+tile.ABManaContainer.2.name=Мифический контейнер маны
 tile.abStorage.0.name=Блок мифрилла
 tile.ABManaCharger.name=Зарядник маны
 tile.botania:flower.ancientAlphirine.name=Древний Альфирин
 tile.botania:flower.aspecolus.name=Аспекулос
 tile.botania:flower.dictarius.name=Диктариус
+tile.botania:flower.pureGladiolus.name=Чистый Гладиулос
 tile.terraFarmland.name=Плодородная почва
-tile.corporeaCatalyst.name=Катализатор хранилища
+tile.engineerHopper.name=Воронка инженера
+tile.BlockFreyrLiana.name=Лиана Фрейи
+tile.BlockLuminousFreyrLiana.name=Светящаяся Лиана Фрейи
+tile.botania:magicThaumCrafter.name=Таум - Сборочный ящик
 
 //Item
 
@@ -51,15 +58,29 @@ item.botania:nebulaChest.name=Туманная кираса
 item.botania:nebulaLegs.name=Туманные поножи
 item.botania:nebulaBoots.name=Туманные ботинки
 item.freyrSlingshot.name=Рогатка Фрейи
+item.nebulaRod.name=Жезл туманности
+item.ab.pattern0.name=Таум - Заполнитель сборщика
+item.ab.pattern1.name=Таум - Сетка крафта #1 
+item.ab.pattern2.name=Таум - Сетка крафта #2
+item.ab.pattern3.name=Таум - Сетка крафта #3
+item.ab.pattern4.name=Таум - Сетка крафта #4
+item.ab.pattern5.name=Таум - Сетка крафта #5
+item.ab.pattern6.name=Таум - Сетка крафта #6
+item.ab.pattern7.name=Таум - Сетка крафта #7
+item.ab.pattern8.name=Таум - Сетка крафта #8
+item.ab.pattern9.name=Таум - Сетка крафта #9
 
 //MISC
 
+ab.nebulaHelm.mask=Естественный облик включен
 botania.category.forgotten=Связь с прошлым
 ab.nei.alphirine=Древний альфирин
 ab.nei.advancedPlate=Улучшенная аглом. плита
 ab.manaCrystalCube.hud=Количество маны в сети
 ab.manaCharger.wandHud=Зарядник маны
-ab.manaContainer.hud=Мана контейнер
+ab.manaContainer.0.hud=Контейнер маны
+ab.manaContainer.1.hud=Контейнер разбавленной маны
+ab.manaContainer.2.hud=Мифический контейнер маны
 abmisc.swordInfo.1=Мана-луч при атаке
 abmisc.swordInfo.2=Пространственный скачок
 abmisc.swordInfo.3=Удар по площади 3х3
@@ -112,10 +133,12 @@ botania.page.mithrill.abCraft=А где вся моя мана!??
 botania.page.mithrill1=Материальный Разрушитель - суровый инструмент, способный ломать любые блоки за краткий промежуток времени. Его скорость настолька высока, что было необходимо создать в нем *Предохранитель* - то есть выключать/включать его.
 botania.page.mithrill.craft=Могучий и не сокрушимый металл!
 
-botania.entry.manaContainer=Мана контейнер
+botania.entry.manaContainer=Мана контейнеры
 botania.tagline.manaContainer=Хранилище маны для безумцев
-botania.page.manaContainer0=Мана контейнер - левитирующий кусок жизнекамня с мифриллом по углам, которое способно вмещать в себя маны как 64 стандартных бассейнов. ДА ДА, именно столько, ни каплей меньше!
-botania.page.manaContainer.craft=мана.. Мана... МАНА!!
+botania.page.manaContainer0=Мана контейнер - это левитирующие сосуды для маны, чем-то напоминающие обычные бассейны маны, но точно не вместимостью, она превышается в несколько раз!<br>Единственное в чем контейнеры маны хуже бассейнов - так это отсутствием зарядки Инструментов Маны и созданием Мана предметов.
+botania.page.manaContainer.craft0=64 бассейна маны!
+botania.page.manaContainer.craft1=8 бассейнов маны!
+botania.page.manaContainer.craft2=64 радужных бассейна маны!
 botania.page.manaContainer1=Сверхпроводимая искра - известна как самая быстрая искра на диком западе! Если без шуток, такими пользовались Эльфы, перегоняя ману из разных точек. <br>Рецепт создания давно утерян, поэтому единственный способ получить - Древний Альфирин.
 botania.page.manaContainer.alphirineCraft=Скорость звука - это ты?
 
@@ -187,5 +210,29 @@ botania.page.nebulaArmor0=Броня туманности - это мощное 
 botania.page.nebulaArmor1=Характеристика каждого элемента брони: <br>Туманный шлем - повышает здоровье <br>Туманная кираса - позволяет владельцу летать, а также имеет сопротивление к отбрасыванию <br>Туманные поножи - увеличивают высоту прыжка <br>Туманные ботинки - ускоряют носителя
 botania.page.nebulaArmor.craft=Полетаем?
 
+botania.entry.freyrSlingshot=Рогатка Фрейи
+botania.tagline.freyrSlingshot=&mПохоть&0 Любовь и цветочки
+botania.page.freyrSlingshot0=Рогатка Фрейи - магическое приспособление, способное: ускорять рост культур, выращивать цветы и траву, создавать Лиану Фрейи и организовывать романтическую обстановку животным. <br>Лиана Фрейи - растение, под которым снизу любые культуры начинают рости в несколько раз быстрее!
+botania.page.freyrSlingshot.alphirineCraft=Отобрать у Аса рогатку - запросто!
 
+botania.entry.engineerHopper=Воронка инженера
+botania.tagline.engineerHopper=Срячь не красивые механизмы глубоко подземлю! Наведи красоту!
+botania.page.engineerHopper0=Воронка инженера - настоящая находка дизайнеров-инженеров! Используйте посох леса, чтобы настроить передачу предметов из точки A в точку B.<br>По предварительной информации от Альфирина - такие воронки использовались во многих продвинутых мирах, таких как Асгард и Нидавеллир.
+botania.page.engineerHopper.alphirineCraft=Воронка &mбудущего&0 прошлого
 
+botania.entry.nebulaRod=Жезл туманности
+botania.tagline.nebulaRod=Вы же не боитесь порталов? Некоторые их терпеть не могут, и скачут на коне...
+botania.page.nebulaRod0=Жезл туманности - магический инструмент личного применения, раскрывающий основную суть Фрагментов туманности - перемещение! <br>Используйте этот жезл, когда вам необходимо срочно покинуть неприятное для вас место, или просто для путешествий.
+botania.page.nebulaRod.craft=Кто куда, а я...
+
+botania.entry.thaumAutoCraft=Таум - сборочный ящик
+botania.tagline.thaumAutoCraft=Магическая техно - революция
+botania.page.thaumAutoCraft0=Таум - Сборочный ящик - это аналог обычному Сборочному ящику, который создает вещи из Магического верстака. <br>Для его работы, требуется Таумономикон и жезл с Вис, также отличаются сетки создания для данного ящика!
+botania.page.thaumAutoCraft.craft=Авто-магия!?
+botania.page.thaumAutoCraft.craft0=Создание заполнителя
+botania.page.thaumAutoCraft.craft1=Сделано майнкрафтерами!
+
+botania.entry.gladious=Чистый гладиоус
+botania.tagline.gladious=Кто-то умер? Откуда кусочки вис?
+botania.page.gladious0=Чистый гладиоус - цветок предназначенный для генерации кусочков - вис за ману. Создает он их случайным образом, из-за высокой чувтсвительности к первородным аспектам.
+botania.page.gladious.petalCraft=Альтернативная зарядка - вис?

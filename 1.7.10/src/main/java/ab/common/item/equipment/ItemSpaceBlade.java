@@ -9,6 +9,7 @@ import com.google.common.collect.Multimap;
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.IRankItem;
+import ab.common.core.ConfigABHandler;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -308,7 +309,7 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, ILensEffect,
 	
 	private float getSwordDamage(ItemStack stack) {
 		int level = this.getLevel(stack);
-		return (float)Math.round(AdvancedBotanyAPI.mithrilToolMaterial.getDamageVsEntity() + (level * level / 1.5f));
+		return (float)Math.round((AdvancedBotanyAPI.mithrilToolMaterial.getDamageVsEntity() + (level * level / 1.5f)) * ConfigABHandler.damageFactorSpaceSword);
 	}
 	
 	public Multimap getAttributeModifiers(ItemStack stack) {

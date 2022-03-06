@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import vazkii.botania.client.core.handler.ClientTickHandler;
@@ -201,5 +202,23 @@ public class ClientHelper {
 			break;
 		}
 		return new Color(color);
+	}
+	
+	public static void renderIcon(IIcon icon, int light) {
+		Tessellator tessellator = Tessellator.instance;
+		float f = icon.getMinU();
+		float f1 = icon.getMaxU();
+	    float f2 = icon.getMinV();
+	    float f3 = icon.getMaxV();
+	    float f4 = 1.0F;
+	    float f5 = 0.5F;
+	    float f6 = 0.25F;
+	    tessellator.startDrawingQuads();
+	    tessellator.setNormal(0.0F, 1.0F, 0.0F);
+	    tessellator.addVertexWithUV((0.0F - f5), (0.0F - f6), 0.0D, f, f3);
+	    tessellator.addVertexWithUV((f4 - f5), (0.0F - f6), 0.0D, f1, f3);
+	    tessellator.addVertexWithUV((f4 - f5), (f4 - f6), 0.0D, f1, f2);
+	    tessellator.addVertexWithUV((0.0F - f5), (f4 - f6), 0.0D, f, f2);
+	    tessellator.draw();
 	}
 }

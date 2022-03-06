@@ -3,22 +3,31 @@ package ab.common.block;
 import java.util.Random;
 
 import ab.common.lib.register.BlockListAB;
+import ab.common.lib.register.RecipeListAB;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
 
-public class BlockFreyrLiana extends BlockBush {
+public class BlockFreyrLiana extends BlockBush implements ILexiconable {
 
 	public BlockFreyrLiana() {
 		super(Material.plants);
 		this.setBlockName("BlockFreyrLiana");
 		this.setStepSound(soundTypeGrass);
 		this.setBlockTextureName("ab:freyrLiana");
+	}
+	
+	public LexiconEntry getEntry(World world, int x, int y, int z, EntityPlayer player, ItemStack lexicon) {
+		return RecipeListAB.freyrSlingshot;
 	}
 
 	public boolean canPlaceBlockAt(World world, int x, int y, int z) {

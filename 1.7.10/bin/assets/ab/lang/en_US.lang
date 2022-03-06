@@ -9,6 +9,7 @@ itemGroup.tabAB=Advanced Botany
 ab.flower.ancientAlphirine.name=Ancient Alphirine
 ab.flower.dictarius.name=Dictarius
 ab.flower.aspecolus.name=Aspecolus
+ab.flower.pureGladiolus.name=Pure Gladiolus
 tile.advancedSpreader.name=Natural Mana Spreader
 tile.ABPlate.name=Advanced Agglomeration Plate
 tile.lebethronWood.0.name=Lebethron Wood
@@ -17,13 +18,20 @@ tile.lebethronWood.2.name=Mossy Lebethron Wood Planks
 tile.lebethronWood.3.name=Glimmering Lebethron Wood
 tile.lebethronWood.4.name=Natural Core
 tile.ABManaCrystalCube.name=Mana Crystal Cube
-tile.ABManaContainer.name=Mana Container
+tile.ABManaContainer.0.name=Mana Container
+tile.ABManaContainer.1.name=Diluted Mana Container
+tile.ABManaContainer.2.name=Fabulous Mana Container
 tile.abStorage.0.name=Block of Mithrill
 tile.ABManaCharger.name=Mana Charger
 tile.botania:flower.ancientAlphirine.name=Ancient Alphirine
 tile.botania:flower.aspecolus.name=Aspecolus
 tile.botania:flower.dictarius.name=Dictarius
+tile.botania:flower.pureGladiolus.name=Pure Gladiolus
 tile.terraFarmland.name=Fertile soil
+tile.engineerHopper.name=Engineer Hopper
+tile.BlockFreyrLiana.name=Freyr Liana
+tile.BlockLuminousFreyrLiana.name=Luminous Freyr Liana
+tile.botania:magicThaumCrafter.name=Thaumim Crafty Crate
 
 //Item
 
@@ -49,15 +57,30 @@ item.botania:nebulaHelmRevealing.name=Nebula Helmet of Revealing
 item.botania:nebulaChest.name=Nebula Chestplate
 item.botania:nebulaLegs.name=Nebula Leggings
 item.botania:nebulaBoots.name=Nebula Boots
+item.freyrSlingshot.name=Freyr Slingshot
+item.nebulaRod.name=Rod of Nebula
+item.ab.pattern0.name=Thaumim - Crafting Placeholder
+item.ab.pattern1.name=Thaumim - Crafting Pattern #1 
+item.ab.pattern2.name=Thaumim - Crafting Pattern #2
+item.ab.pattern3.name=Thaumim - Crafting Pattern #3
+item.ab.pattern4.name=Thaumim - Crafting Pattern #4
+item.ab.pattern5.name=Thaumim - Crafting Pattern #5
+item.ab.pattern6.name=Thaumim - Crafting Pattern #6
+item.ab.pattern7.name=Thaumim - Crafting Pattern #7
+item.ab.pattern8.name=Thaumim - Crafting Pattern #8
+item.ab.pattern9.name=Thaumim - Crafting Pattern #9
 
 //MISC
 
+ab.nebulaHelm.mask=A natural look is included
 botania.category.forgotten=Connecting with the past
 ab.nei.alphirine=Ancient Alphirine
 ab.nei.advancedPlate=Advanced aggl. plate
 ab.manaCrystalCube.hud=Amount of mana in the network
 ab.manaCharger.wandHud=Mana Charger
-ab.manaContainer.hud=ManaContainer
+ab.manaContainer.0.hud=Mana Container
+ab.manaContainer.1.hud=Diluted Mana Container
+ab.manaContainer.2.hud=Fabulous Mana Container
 abmisc.swordInfo.1=Mana Beam on Attack
 abmisc.swordInfo.2=Spatial leap
 abmisc.swordInfo.3=Square Impact 3х3
@@ -110,10 +133,12 @@ botania.page.mithrill.abCraft=Where's all my mana!?
 botania.page.mithrill1=The Material Destroyer is a harsh tool, capable of breaking any block in a short period of time. Its speed is so high that it was necessary to create a *Fuse* in it - that is, to turn it off/on.
 botania.page.mithrill.craft=Break this world
 
-botania.entry.manaContainer=Mana Container
-botania.tagline.manaContainer=Mana Vault for Mad Men
-botania.page.manaContainer0=A mana container is a levitating piece of lifestone with mithril on the corners that can hold as much mana as 64 standard pools. YES YES, that's exactly how much, not a drop less!
-botania.page.manaContainer.craft=mana... Mana... MANA!!!
+botania.entry.manaContainer=Mana Container's
+botania.tagline.manaContainer=A mana depot for madmen
+botania.page.manaContainer0=Mana Container - are levitating mana vessels, somewhat reminiscent of normal mana pools, but definitely not the capacity, which is exceeded several times over!<br>The only thing mana containers are worse than pools is the lack of charging Mana Tools and creating Mana items.
+botania.page.manaContainer.craft0=64 mana pools!
+botania.page.manaContainer.craft1=8 mana pools!
+botania.page.manaContainer.craft2=64 rainbow mana pools!
 botania.page.manaContainer1=Superconductive Spark - known as the fastest spark in the wild west! No kidding, the Elves used to use it, distilling mana from different points. <br>The recipe for creation is long lost, so the only way to get it is Ancient Alphyrin.
 botania.page.manaContainer.alphirineCraft=The speed of sound is you?
 
@@ -184,3 +209,30 @@ botania.tagline.nebulaArmor=Unbreakable Nerd outfit
 botania.page.nebulaArmor0=Nebula Armor is a powerful nerf gear created with Nebula Fragments and Terrastal armor. <br>Each piece of equipment has its own unique properties, which depend on the amount of mana, the less mana, the weaker the protective properties of the armor.
 botania.page.nebulaArmor1=Characteristics of each armor item: <br>Nebula Helmet - boosts health <br>Nebula Chestplate - allows the wearer to fly, and also has a throwback resistance <br>Nebula Leggings - increase jump height <br>Nebula Boots - accelerate the host
 botania.page.nebulaArmor.craft=Shall we fly?
+
+botania.entry.freyrSlingshot=Freyr Slingshot
+botania.tagline.freyrSlingshot=&mLust&0 Love and flowers
+botania.page.freyrSlingshot0=Freyr Slingshot - a magical device capable of: speeding up the growth of crops, growing flowers and grass, creating a Liana Freya and organising a romantic environment for animals. <br>Freyr Liana - a plant under which any crop from below starts to grow several times faster!
+botania.page.freyrSlingshot.alphirineCraft=Take the slingshot away from Asa, no problem!
+
+botania.entry.engineerHopper=Engineer Hopper
+botania.tagline.engineerHopper=Hide not pretty mechanisms deep underground! Make it beautiful!
+botania.page.engineerHopper0=Engineer Hopper is a real boon to designer engineers! Use the forest staff to set up the transfer of items from point A to point B.<br>According to preliminary information from Alphirine - such funnels were used in many advanced worlds, such as Asgard and Nidavellir.
+botania.page.engineerHopper.alphirineCraft=Hopper &mthe future&0 the past
+
+botania.entry.nebulaRod=Rod of Nebula
+botania.tagline.nebulaRod=You're not afraid of portals, are you? Some people can't stand them, and ride the horse...
+botania.page.nebulaRod0=The Nebula Staff is a magical tool of personal use, revealing the core essence of Nebula Fragments - moving! <br>Use this rod when you need to leave an unpleasant place urgently, or simply for travelling.
+botania.page.nebulaRod.craft=Who's where, but me...
+
+botania.entry.thaumAutoCraft=Thaumim Crafty Crate
+botania.tagline.thaumAutoCraft=The magical techno-revolution
+botania.page.thaumAutoCraft0=Thaumim Crafty Crate - is the counterpart to the normal Assembly Box, which creates things from the Magic Workbench. <br>To make it work, it requires a Taumonomicon and a wand with Vis, also different creation grids for this box!
+botania.page.thaumAutoCraft.craft=Auto-magic!?
+botania.page.thaumAutoCraft.craft0=Created Placeholder
+botania.page.thaumAutoCraft.craft1=Made by minecrafters!
+
+botania.entry.gladious=Pure Gladiolus
+botania.tagline.gladious=Did someone die? Where did the pieces of the whiskers come from?
+botania.page.gladious0=Pure Gladiolus - The flower is designed to generate pieces - a vis for mana. It generates them randomly, due to its high sensitivity to primal aspects.
+botania.page.gladious.petalCraft=Alternative charging - vis?

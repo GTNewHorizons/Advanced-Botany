@@ -32,11 +32,6 @@ public class EntityAlphirinePortal extends Entity {
 			}
 		}
 	}
-	
-//	public void setDead() {
-//		super.setDead();
-//		
-//	}
 
 	protected void readEntityFromNBT(NBTTagCompound nbtt) {
 		this.ticksExisted = nbtt.getInteger("portalTick");
@@ -49,7 +44,7 @@ public class EntityAlphirinePortal extends Entity {
 		nbtt.setInteger("portalTick", this.ticksExisted);
 		ItemStack stack = getStack();
 	    NBTTagCompound stackNbt = new NBTTagCompound();
-	    if (stack != null)
+	    if(stack != null)
 	    	stack.writeToNBT(stackNbt); 
 	    nbtt.setTag("dropStack", stackNbt);
 	}

@@ -4,34 +4,27 @@ import ab.common.block.BlockABSpreader;
 import ab.common.block.BlockABStorage;
 import ab.common.block.BlockAgglomerationPlate;
 import ab.common.block.BlockAntigravitation;
-import ab.common.block.BlockCorporeaCatalyst;
-import ab.common.block.BlockCorporeaInterrupter;
 import ab.common.block.BlockEngineerHopper;
 import ab.common.block.BlockFreyrLiana;
 import ab.common.block.BlockLebethronWood;
 import ab.common.block.BlockLuminousFreyrLiana;
+import ab.common.block.BlockMagicCraftCrate;
 import ab.common.block.BlockManaCharger;
 import ab.common.block.BlockManaContainer;
 import ab.common.block.BlockManaCrystalCube;
-import ab.common.block.BlockModifiedFunnel;
-import ab.common.block.BlockModifiedInterceptor;
-import ab.common.block.BlockModifiedRetainer;
 import ab.common.block.BlockTerraFarmland;
 import ab.common.block.tile.TileABSpreader;
 import ab.common.block.tile.TileAgglomerationPlate;
-import ab.common.block.tile.TileCorporeaCatalyst;
-import ab.common.block.tile.TileCorporeaInterrupter;
 import ab.common.block.tile.TileEngineerHopper;
 import ab.common.block.tile.TileLebethronCore;
+import ab.common.block.tile.TileMagicCraftCrate;
 import ab.common.block.tile.TileManaCharger;
 import ab.common.block.tile.TileManaContainer;
 import ab.common.block.tile.TileManaCrystalCube;
-import ab.common.block.tile.TileModifiedCorporeaFunnel;
-import ab.common.block.tile.TileModifiedInterceptor;
-import ab.common.block.tile.TileModifiedRetainer;
 import ab.common.item.block.ItemBlockBase;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import vazkii.botania.common.Botania;
 
 public class BlockListAB {
 	
@@ -47,20 +40,13 @@ public class BlockListAB {
 	public static Block blockEngineerHopper;
 	public static Block blockFreyrLiana;
 	public static Block blockLuminousFreyrLiana;
-	public static BlockModifiedRetainer blockModifiedRetainer;
-	public static BlockModifiedInterceptor blockModifiedInterceptor;
-	public static BlockCorporeaCatalyst blockCorporeaCatalyst;
-	public static BlockModifiedFunnel blockModifiedCorporeaFunnel;
-	public static BlockCorporeaInterrupter blockCorporeaInterrupter;
+	public static Block blockMagicCraftCrate;
 	
 	public static int blockABSpreaderRI;
 	public static int blockManaContainerRI;
 	public static int blockManaCrystalCubeRI;
 	public static int blockManaChargerRI;
 	public static int blockEngineerHopperRI;
-	public static int blockModifiedCorporeaFunnelRI;
-	public static int blockModifiedCorporeaInterrupterRI;
-	public static int blockModifiedCorporeaInterceptorRI;
 	
 	public static void init() {
 		initializeBlocks();
@@ -78,30 +64,26 @@ public class BlockListAB {
 		BlockListAB.blockTerraFarmland = new BlockTerraFarmland();
 		BlockListAB.blockAntigravitation = new BlockAntigravitation();
 		BlockListAB.blockManaCharger = new BlockManaCharger();
-//		BlockListAB.blockEngineerHopper = new BlockEngineerHopper();
-//		BlockListAB.blockLuminousFreyrLiana = new BlockLuminousFreyrLiana();
-//		BlockListAB.blockFreyrLiana = new BlockFreyrLiana();
-//		BlockListAB.blockModifiedCorporeaFunnel = new BlockModifiedFunnel();
-//		BlockListAB.blockCorporeaCatalyst = new BlockCorporeaCatalyst();
-//		BlockListAB.blockCorporeaInterrupter = new BlockCorporeaInterrupter();
-//		BlockListAB.blockModifiedInterceptor = new BlockModifiedInterceptor();
-//		BlockListAB.blockModifiedRetainer = new BlockModifiedRetainer();
+		BlockListAB.blockEngineerHopper = new BlockEngineerHopper();
+		BlockListAB.blockLuminousFreyrLiana = new BlockLuminousFreyrLiana();
+		BlockListAB.blockFreyrLiana = new BlockFreyrLiana();
+		if(Botania.thaumcraftLoaded)
+			BlockListAB.blockMagicCraftCrate = new BlockMagicCraftCrate();
 	}
 	
 	private static void registerBlocks() {
 		GameRegistry.registerBlock(BlockListAB.blockABSpreader, "blockABSpreader");
 		GameRegistry.registerBlock(BlockListAB.blockABPlate, "blockABPlate");
-		GameRegistry.registerBlock(BlockListAB.blockManaContainer, "blockManaContainer");
+		GameRegistry.registerBlock(BlockListAB.blockManaContainer, ItemBlockBase.class, "blockManaContainer");
 		GameRegistry.registerBlock(BlockListAB.blockLebethron, ItemBlockBase.class, "blockLebethron");
 		GameRegistry.registerBlock(BlockListAB.blockABStorage, ItemBlockBase.class, "blockABStorage");
 		GameRegistry.registerBlock(BlockListAB.blockManaCrystalCube, "blockManaCrystalCube");
 		GameRegistry.registerBlock(BlockListAB.blockTerraFarmland, "blockTerraFarmland");
 		GameRegistry.registerBlock(BlockListAB.blockAntigravitation, "blockAntigravitation");
 		GameRegistry.registerBlock(BlockListAB.blockManaCharger, "blockManaCharger");
-//		GameRegistry.registerBlock(BlockListAB.blockEngineerHopper, "blockEngineerHopper");
-//		GameRegistry.registerBlock(BlockListAB.blockFreyrLiana, "blockFreyrLiana");
-//		GameRegistry.registerBlock(BlockListAB.blockLuminousFreyrLiana, "blockLuminousFreyrLiana");
-//		GameRegistry.registerBlock(BlockListAB.blockCorporeaCatalyst, "blockCorporeaCatalyst");
+		GameRegistry.registerBlock(BlockListAB.blockEngineerHopper, "blockEngineerHopper");
+		GameRegistry.registerBlock(BlockListAB.blockFreyrLiana, "blockFreyrLiana");
+		GameRegistry.registerBlock(BlockListAB.blockLuminousFreyrLiana, "blockLuminousFreyrLiana");
 	}
 	
 	private static void registerTileEntities() {
@@ -111,12 +93,9 @@ public class BlockListAB {
 		GameRegistry.registerTileEntity(TileManaContainer.class, "tileManaContainer");
 		GameRegistry.registerTileEntity(TileManaCrystalCube.class, "tileManaCrystalCube");
 		GameRegistry.registerTileEntity(TileManaCharger.class, "tileManaCharger");
-//		GameRegistry.registerTileEntity(TileEngineerHopper.class, "tileEngineerHopper");
-//		GameRegistry.registerTileEntity(TileCorporeaCatalyst.class, "tileCorporeaCatalyst");
-//		GameRegistry.registerTileEntity(TileModifiedCorporeaFunnel.class, "tileModifiedCorporeaFunnel");
-//		GameRegistry.registerTileEntity(TileCorporeaInterrupter.class, "tileCorporeaInterrupter");
-//		GameRegistry.registerTileEntity(TileModifiedInterceptor.class, "tileModifiedInterceptor");
-//		GameRegistry.registerTileEntity(TileModifiedRetainer.class, "tileModifiedRetainer");
+		GameRegistry.registerTileEntity(TileEngineerHopper.class, "tileEngineerHopper");
+		if(Botania.thaumcraftLoaded)
+			GameRegistry.registerTileEntity(TileMagicCraftCrate.class, "tileMagicCraftCrate");
 	}
 	
 	static {
@@ -125,7 +104,5 @@ public class BlockListAB {
 		BlockListAB.blockManaCrystalCubeRI = -1;
 		BlockListAB.blockManaChargerRI = -1;
 		BlockListAB.blockEngineerHopperRI = -1;
-		BlockListAB.blockModifiedCorporeaFunnelRI = -1;
-		BlockListAB.blockModifiedCorporeaInterceptorRI = -1;
 	}
 }

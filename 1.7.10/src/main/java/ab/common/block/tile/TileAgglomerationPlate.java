@@ -167,7 +167,7 @@ public class TileAgglomerationPlate extends TileInventory implements ISparkAttac
 		}
 	}
 	
-	private boolean isItemEqual(ItemStack stack, ItemStack stack1) {
+	public static boolean isItemEqual(ItemStack stack, ItemStack stack1) {
 		return stack.isItemEqual(stack1) && ItemStack.areItemStackTagsEqual(stack, stack1);
 	}
 	

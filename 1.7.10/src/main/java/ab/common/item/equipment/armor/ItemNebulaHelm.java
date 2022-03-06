@@ -1,5 +1,6 @@
 package ab.common.item.equipment.armor;
 
+import java.util.List;
 import java.util.UUID;
 
 import com.google.common.collect.HashMultimap;
@@ -9,6 +10,8 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import vazkii.botania.api.mana.IManaDiscountArmor;
 import vazkii.botania.api.mana.IManaGivingItem;
@@ -33,6 +36,12 @@ public class ItemNebulaHelm extends ItemNebulaArmor implements IManaDiscountArmo
 		else 
 			super.onItemRightClick(stack, world, player);
 		return stack;
+	}
+	
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean adv) {
+		super.addInformation(stack, player, list, adv);
+		if(!enableCosmicFace(stack))
+			addStringToTooltip(EnumChatFormatting.GREEN + StatCollector.translateToLocal("ab.nebulaHelm.mask"), list);
 	}
 	
 	public boolean enableCosmicFace(ItemStack stack) {

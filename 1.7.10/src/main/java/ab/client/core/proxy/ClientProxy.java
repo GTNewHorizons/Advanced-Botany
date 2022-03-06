@@ -1,5 +1,6 @@
 package ab.client.core.proxy;
 
+import ab.client.core.BoundRender;
 import ab.client.core.ClientHandler;
 import ab.client.core.HudRender;
 import ab.client.core.PlayerRenderer;
@@ -23,6 +24,7 @@ import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
+import vazkii.botania.common.Botania;
 import vazkii.botania.common.item.ModItems;
 
 public class ClientProxy extends CommonProxy {
@@ -37,27 +39,23 @@ public class ClientProxy extends CommonProxy {
     	FMLCommonHandler.instance().bus().register(new ClientHandler());
     	MinecraftForge.EVENT_BUS.register(new HudRender());
     	MinecraftForge.EVENT_BUS.register(new PlayerRenderer());
+    	MinecraftForge.EVENT_BUS.register(new BoundRender());
     	
     	ClientRegistry.bindTileEntitySpecialRenderer(TileAgglomerationPlate.class, new RenderTileAgglomerationPlate());
     	ClientRegistry.bindTileEntitySpecialRenderer(TileABSpreader.class, new RenderTileABSpreader());    
     	ClientRegistry.bindTileEntitySpecialRenderer(TileManaContainer.class, new RenderTileManaContainer());    
     	ClientRegistry.bindTileEntitySpecialRenderer(TileManaCrystalCube.class, new RenderTileManaCrystalCube());
     	ClientRegistry.bindTileEntitySpecialRenderer(TileManaCharger.class, new RenderTileManaCharger()); 
+    	ClientRegistry.bindTileEntitySpecialRenderer(TileEngineerHopper.class, new RenderTileEngineerHopper()); 
+    	if(Botania.thaumcraftLoaded)
+    		ClientRegistry.bindTileEntitySpecialRenderer(TileMagicCraftCrate.class, new RenderTileMagicCraftingCrate()); 
     	
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileCorporeaCatalyst.class, new RenderTileCorporeaCatalyst());   
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileModifiedCorporeaFunnel.class, new RenderModifiedFunnel());   
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileCorporeaInterrupter.class, new RenderModifiedInterrupter());  
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileModifiedInterceptor.class, new RenderTileModifiedInterceptor()); 
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileModifiedRetainer.class, new RenderModifiedRetainer()); 
     	
     	BlockListAB.blockABSpreaderRI = RenderingRegistry.getNextAvailableRenderId();
     	BlockListAB.blockManaContainerRI = RenderingRegistry.getNextAvailableRenderId();
     	BlockListAB.blockManaCrystalCubeRI = RenderingRegistry.getNextAvailableRenderId();
     	BlockListAB.blockManaChargerRI = RenderingRegistry.getNextAvailableRenderId();
     	BlockListAB.blockEngineerHopperRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockModifiedCorporeaFunnelRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockModifiedCorporeaInterrupterRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockModifiedCorporeaInterceptorRI = RenderingRegistry.getNextAvailableRenderId();
     	
         RenderingRegistry.registerBlockHandler(new RenderBlockABSpreader());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaContainer());
@@ -75,5 +73,7 @@ public class ClientProxy extends CommonProxy {
 
     public void postInit(FMLPostInitializationEvent event) {
         super.postInit(event);
+//        ItemStack renderTime = null;
+//        System.out.println(renderTime.stackSize);
     }
 }

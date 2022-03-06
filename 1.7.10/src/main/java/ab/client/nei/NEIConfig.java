@@ -23,8 +23,5 @@ public class NEIConfig implements IConfigureNEI {
 		API.registerUsageHandler((IUsageHandler)new RecipeHandlerAlphirine());
 		API.registerRecipeHandler((ICraftingHandler)new RecipeHandlerAdvancedPlate());
 		API.hideItem(new ItemStack(BlockListAB.blockAntigravitation));
-		API.hideItem(new ItemStack(BlockListAB.blockModifiedCorporeaFunnel));
-		API.hideItem(new ItemStack(BlockListAB.blockModifiedInterceptor));
-		API.hideItem(new ItemStack(BlockListAB.blockModifiedRetainer));
 	}
 }

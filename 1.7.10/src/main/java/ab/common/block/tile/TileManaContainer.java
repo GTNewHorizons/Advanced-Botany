@@ -1,10 +1,12 @@
 package ab.common.block.tile;
 
+import java.awt.Color;
 import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
 import ab.client.core.ClientHelper;
+import ab.common.core.ConfigABHandler;
 import ab.common.lib.register.BlockListAB;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
@@ -28,25 +30,31 @@ import vazkii.botania.api.mana.IThrottledPacket;
 import vazkii.botania.api.mana.spark.ISparkAttachable;
 import vazkii.botania.api.mana.spark.ISparkEntity;
 import vazkii.botania.client.core.handler.HUDHandler;
+import vazkii.botania.common.Botania;
 import vazkii.botania.common.block.tile.TileMod;
 
 public class TileManaContainer extends TileMod implements IManaPool, ISparkAttachable {
-
-	private static final int MAX_MANA = 64000000;
 	
 	protected int mana = 0;
 	int knownMana = -1;
 	
     public boolean canUpdate() {
-        return false;
+        return true;
     }
 	
-	public void updateEntity() {}
+	public void updateEntity() {
+		if(this.worldObj.isRemote) {
+			double particleChance = 1.0D - getCurrentMana() / getMaxMana() * 0.1D;
+			Color color = new Color(50943);
+			if(Math.random() > particleChance)   
+				Botania.proxy.wispFX(this.worldObj, this.xCoord + 0.5f + (Math.random() - 0.5) * 0.4f, this.yCoord + 0.81D + (Math.random() * 0.05D), this.zCoord + 0.5f + (Math.random() - 0.5) * 0.4f, color.getRed() / 255.0F, color.getGreen() / 255.0F, color.getBlue() / 255.0F, (float)Math.random() / 4.2F, (float)-Math.random() / 50.0F, 2.0F); 
+		} 
+	}
 	
 	public void onWanded(EntityPlayer player, ItemStack wand) {
-		if (player == null)
+		if(player == null)
 			return; 
-		if (!this.worldObj.isRemote) {
+		if(!this.worldObj.isRemote) {
 			NBTTagCompound nbttagcompound = new NBTTagCompound();
 			writeCustomNBT(nbttagcompound);
 			nbttagcompound.setInteger("knownMana", getCurrentMana());
@@ -57,9 +65,9 @@ public class TileManaContainer extends TileMod implements IManaPool, ISparkAttac
 	}
 	
 	public void renderHUD(Minecraft mc, ScaledResolution res) {
-		String name = StatCollector.translateToLocal("ab.manaContainer.hud");
+		String name = StatCollector.translateToLocal("ab.manaContainer." + worldObj.getBlockMetadata(xCoord, yCoord, zCoord) + ".hud");
 		int color = 0x30ead1;
-		ClientHelper.drawPoolManaHUD(res, name, this.knownMana, MAX_MANA, color);
+		ClientHelper.drawPoolManaHUD(res, name, this.knownMana, getMaxMana(), color);
 	}
 	
 	public int getCurrentMana() {
@@ -69,13 +77,17 @@ public class TileManaContainer extends TileMod implements IManaPool, ISparkAttac
 	public boolean canRecieveManaFromBursts() {
 		return true;
 	}
+	
+	public int getMaxMana() {
+		return worldObj.getBlockMetadata(xCoord, yCoord, zCoord) == 1 ? ConfigABHandler.maxContainerMana / 8 : ConfigABHandler.maxContainerMana;
+	}
 
 	public boolean isFull() {
-		return this.mana == MAX_MANA;
+		return this.mana == getMaxMana();
 	}
 
 	public void recieveMana(int mana) {
-		this.mana = Math.max(0, Math.min(getCurrentMana() + mana, MAX_MANA));
+		this.mana = Math.max(0, Math.min(getCurrentMana() + mana, getMaxMana()));
 	}
 	
 	public void writeCustomNBT(NBTTagCompound nbtt) {
@@ -108,7 +120,7 @@ public class TileManaContainer extends TileMod implements IManaPool, ISparkAttac
 	}
 
 	public int getAvailableSpaceForMana() {
-		return Math.max(0, MAX_MANA - getCurrentMana());
+		return Math.max(0, getMaxMana() - getCurrentMana());
 	}
 	
 	public boolean isOutputtingPower() {

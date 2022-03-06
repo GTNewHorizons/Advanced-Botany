@@ -8,6 +8,7 @@ import org.lwjgl.opengl.GL11;
 
 import ab.api.IRenderHud;
 import ab.client.core.ClientHelper;
+import ab.common.core.ConfigABHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -82,7 +83,8 @@ public class TileManaCharger extends TileInventory implements ISidedInventory, I
 						if(this.worldObj.getTotalWorldTime() % 15 == 0)
 							hasUpdate = true;
 					} else {
-						clientTick[i]++;
+						if(ConfigABHandler.useManaChargerAnimation)
+							clientTick[i]++;
 					}
 					receiver.recieveMana(-manaVal);
 				}

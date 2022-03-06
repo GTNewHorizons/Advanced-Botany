@@ -29,8 +29,9 @@ public class ItemListAB {
 	public static Item itemNebulaChest;
 	public static Item itemNebulaLegs;
 	public static Item itemNebulaBoots;	
-//	public static Item itemFreyrSlingshot;
-//	public static Item itemNebulaRod;
+	public static Item itemFreyrSlingshot;
+	public static Item itemNebulaRod;
+	public static Item itemCraftingPattern;
 	
 	public static void init() {
 		ItemListAB.itemABResource = new ItemABResource();
@@ -55,10 +56,10 @@ public class ItemListAB {
 		GameRegistry.registerItem(itemNebulaBlaze, "itemNebulaBlaze");
 		ItemListAB.itemAntigravityCharm = new ItemAntigravityCharm();
 		GameRegistry.registerItem(itemAntigravityCharm, "itemAntigravityCharm");
-//		ItemListAB.itemFreyrSlingshot = new ItemFreyrSlingshot();
-//		GameRegistry.registerItem(itemFreyrSlingshot, "itemFreyrSlingshot");
-//		ItemListAB.itemNebulaRod = new ItemNebulaRod();
-//		GameRegistry.registerItem(itemNebulaRod, "itemNebulaRod");
+		ItemListAB.itemFreyrSlingshot = new ItemFreyrSlingshot();
+		GameRegistry.registerItem(itemFreyrSlingshot, "itemFreyrSlingshot");
+		ItemListAB.itemNebulaRod = new ItemNebulaRod();
+		GameRegistry.registerItem(itemNebulaRod, "itemNebulaRod");
 		ItemListAB.itemNebulaHelm = new ItemNebulaHelm();
 		ItemListAB.itemNebulaChest = new ItemNebulaChest();
 		ItemListAB.itemNebulaLegs = new ItemNebulaLegs();
@@ -71,5 +72,7 @@ public class ItemListAB {
 	
 	public static void thaumcraft() {
 		ItemListAB.itemNebulaHelmReveal = new ItemNebulaHelmRevealing();
+		ItemListAB.itemCraftingPattern = new ItemCraftingPattern();
+		GameRegistry.registerItem(itemCraftingPattern, "itemCraftingPattern");
 	}
 }

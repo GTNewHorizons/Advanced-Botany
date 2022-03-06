@@ -1,5 +1,6 @@
 package ab.common.core.proxy;
 
+import ab.common.core.ConfigABHandler;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.EntityListAB;
 import ab.common.lib.register.FlowerRegister;
@@ -16,6 +17,7 @@ public class CommonProxy {
 		ItemListAB.init();
 		EntityListAB.init();
 		FlowerRegister.init();
+		ConfigABHandler.loadConfig(event.getSuggestedConfigurationFile());
 	}
  
 	public void init(FMLInitializationEvent event) {
@@ -23,6 +25,6 @@ public class CommonProxy {
 	}
 	 
 	public void postInit(FMLPostInitializationEvent event) {
-		
+		ConfigABHandler.loadPostInit();
 	}
 }
