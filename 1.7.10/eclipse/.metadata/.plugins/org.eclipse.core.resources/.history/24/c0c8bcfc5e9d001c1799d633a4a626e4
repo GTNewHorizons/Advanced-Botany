@@ -1,0 +1,36 @@
+package ab.common.entity;
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
+
+public class EntitySword extends EntityThrowable {
+
+	public EntitySword(World world) {
+		super(world);
+		this.dataWatcher.addObject(27, new ItemStack(Items.diamond_sword));
+		this.dataWatcher.setObjectWatched(27);
+	}
+	
+	public EntitySword(World world, EntityPlayer e, ItemStack stack) {
+		super(world, e);
+		this.dataWatcher.addObject(27, stack.copy());
+		this.dataWatcher.setObjectWatched(27);
+	}
+	
+	public void onUpdate() {
+		super.onUpdate();
+		if(ticksExisted > 240)
+			setDead();
+	}
+
+	protected void onImpact(MovingObjectPosition mov) {
+		Block block = this.worldObj.getBlock(mov.blockX, mov.blockY, mov.blockZ);
+		if(block != null && (block instanceof net.minecraft.block.BlockBush || block instanceof net.minecraft.block.BlockLeaves))
+			return;
+	}
+}

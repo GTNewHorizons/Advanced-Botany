@@ -1,0 +1,39 @@
+package ab.common.minetweaker;
+
+import java.util.List;
+
+import ab.api.recipe.lexicon.AdvancedPlateCraftPage;
+import minetweaker.MineTweakerAPI;
+import stanhebben.zenscript.annotations.ZenClass;
+import stanhebben.zenscript.annotations.ZenMethod;
+import vazkii.botania.api.BotaniaAPI;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.lexicon.LexiconPage;
+
+@ZenClass("mods.advBotany.AdvancedPlatePage")
+public class AdvancedPlatePageMT {
+	
+	@ZenMethod
+	public static void refresh(String name, int page) {
+		List<LexiconEntry> entries = BotaniaAPI.getAllEntries();
+		LexiconEntry entry = null;
+		LexiconPage recipePage = null;
+		for(int i = 0; i < entries.size(); i++) {
+			if(((LexiconEntry)entries.get(i)).getUnlocalizedName().equalsIgnoreCase(name)) {
+				entry = entries.get(i);
+				recipePage = entries.get(i).pages.get(page);
+				break;
+			}
+		}
+		if(entry == null) {
+			MineTweakerAPI.getLogger().logError("Cannot find lexicon entry " + entry);
+			return;
+		}
+		else if(recipePage == null || !(recipePage instanceof AdvancedPlateCraftPage)) {
+			MineTweakerAPI.getLogger().logError("Cannot find Advanced Plate Craft Page");
+			return;
+		}
+		AdvancedPlateCraftPage abPlatePage = (AdvancedPlateCraftPage)recipePage;
+		abPlatePage.refreshRecipe(entry, abPlatePage.getResult());
+	}
+}

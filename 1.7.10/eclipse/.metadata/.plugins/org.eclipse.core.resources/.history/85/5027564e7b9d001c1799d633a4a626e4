@@ -1,0 +1,103 @@
+package ab.common.entity;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
+import vazkii.botania.common.Botania;
+
+public class EntitySword extends EntityThrowable {
+
+	public EntitySword(World world) {
+		super(world);
+	}
+	
+	public EntitySword(World world, EntityPlayer e, ItemStack stack) {
+		super(world, e);
+		this.setSword(stack);
+	}
+	
+	protected void entityInit() {
+		super.entityInit();
+		this.dataWatcher.addObject(27, new ItemStack(Items.diamond_sword));
+		this.dataWatcher.setObjectWatched(27);
+		this.dataWatcher.addObject(28, Float.valueOf(0.0f));
+		this.dataWatcher.setObjectWatched(28);
+		this.dataWatcher.addObject(29, Float.valueOf(0.0f));
+		this.dataWatcher.setObjectWatched(29);
+	}
+	
+	public void onUpdate() {
+		super.onUpdate();
+		if(ticksExisted < 20) {
+			this.motionX *= 1.075f;
+			this.motionY *= 1.075f;
+			this.motionZ *= 1.075f;
+		}
+		if(ticksExisted > 240)
+			setDead();
+	//	if(this.worldObj.isRemote)
+		//	Botania.proxy.wispFX(worldObj, posX, posY, posZ, 1, 1, 1, 0.4f, 0, 1);
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void setPositionAndRotation2(double x, double y, double z, float help, float me, int please) {}	
+
+	protected void onImpact(MovingObjectPosition mov) {
+		Block block = this.worldObj.getBlock(mov.blockX, mov.blockY, mov.blockZ);
+		if(block != null && (block instanceof net.minecraft.block.BlockBush || block instanceof net.minecraft.block.BlockLeaves))
+			return;
+	}
+	
+	public ItemStack getSword() {
+		return this.dataWatcher.getWatchableObjectItemStack(27);
+	}
+	
+	public void setSword(ItemStack stack) {
+		this.dataWatcher.updateObject(27, stack);
+	}
+	
+	public float getRotation1() {
+		return this.dataWatcher.getWatchableObjectFloat(28);
+	}
+	
+	public void setRotation1(float rot) {
+		this.dataWatcher.updateObject(28, rot);
+	}
+	
+	public float getRotation2() {
+		return this.dataWatcher.getWatchableObjectFloat(29);
+	}
+	
+	public void setRotation2(float rot) {
+		this.dataWatcher.updateObject(29, rot);
+	}
+	
+	public void readEntityFromNBT(NBTTagCompound nbtt) {
+		super.readEntityFromNBT(nbtt);
+		ticksExisted = nbtt.getInteger("ticks");
+		NBTTagCompound stackCmp = nbtt.getCompoundTag("sword");
+		ItemStack stack = ItemStack.loadItemStackFromNBT(stackCmp);
+		setSword(stack);
+	}
+
+	public void writeEntityToNBT(NBTTagCompound nbtt) {
+		super.writeEntityToNBT(nbtt);
+		nbtt.setInteger("ticks", ticksExisted);
+		ItemStack stack = getSword();
+	    NBTTagCompound stackNbt = new NBTTagCompound();
+	    if(stack != null)
+	    	stack.writeToNBT(stackNbt); 
+	    nbtt.setTag("sword", stackNbt);
+	}
+	
+	protected float getGravityVelocity() {
+		return 0.0F;
+	}
+}

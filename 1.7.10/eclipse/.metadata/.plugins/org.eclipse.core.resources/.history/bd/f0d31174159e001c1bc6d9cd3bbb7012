@@ -1,0 +1,10 @@
+package ab.common.minetweaker;
+
+import minetweaker.MineTweakerAPI;
+
+public class MineTweakerConfig {
+
+	public static void registerMT() {
+		 MineTweakerAPI.registerClass(AdvancedPlateMT.class);
+	}
+}

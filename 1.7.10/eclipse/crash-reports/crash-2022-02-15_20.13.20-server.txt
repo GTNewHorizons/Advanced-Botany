@@ -1,0 +1,80 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 15.02.22 20:13
+Description: Exception ticking world
+
+java.lang.NullPointerException: Exception ticking world
+	at ab.common.block.tile.TileModifiedCorporeaFunnel.writeToNBT(TileModifiedCorporeaFunnel.java:271)
+	at ab.common.block.tile.TileModifiedCorporeaFunnel.getDescriptionPacket(TileModifiedCorporeaFunnel.java:285)
+	at net.minecraft.server.management.PlayerManager$PlayerInstance.sendTileToAllPlayersWatchingChunk(PlayerManager.java:632)
+	at net.minecraft.server.management.PlayerManager$PlayerInstance.sendChunkUpdate(PlayerManager.java:574)
+	at net.minecraft.server.management.PlayerManager.updatePlayerInstances(PlayerManager.java:80)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:193)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:692)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at ab.common.block.tile.TileModifiedCorporeaFunnel.writeToNBT(TileModifiedCorporeaFunnel.java:271)
+	at ab.common.block.tile.TileModifiedCorporeaFunnel.getDescriptionPacket(TileModifiedCorporeaFunnel.java:285)
+	at net.minecraft.server.management.PlayerManager$PlayerInstance.sendTileToAllPlayersWatchingChunk(PlayerManager.java:632)
+	at net.minecraft.server.management.PlayerManager$PlayerInstance.sendChunkUpdate(PlayerManager.java:574)
+	at net.minecraft.server.management.PlayerManager.updatePlayerInstances(PlayerManager.java:80)
+	at net.minecraft.world.WorldServer.tick(WorldServer.java:193)
+
+-- Affected level --
+Details:
+	Level name: DevWorld
+	All players: 1 total; [EntityPlayerMP['Player454'/194, l='DevWorld', x=-839,11, y=4,00, z=1481,46]]
+	Chunk stats: ServerChunkCache: 546 Drop: 0
+	Level seed: 5935452927711604994
+	Level generator: ID 01 - flat, ver 0. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-234,4,1115), Chunk: (at 6,0,11 in -15,69; contains blocks -240,0,1104 to -225,255,1119), Region: (-1,2; contains chunks -32,64 to -1,95, blocks -512,0,1024 to -1,255,1535)
+	Level time: 41419 game time, 10479 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 97824 (now: false), thunder time: 96238 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:692)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_311, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 714101240 bytes (681 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 9 mods loaded, 9 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	NotEnoughItems{1.0.5.120} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.120-universal.jar) 
+	UCHIJAAAA	CodeChickenCore{1.0.7.48} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10-dev.jar) 
+	UCHIJAAAA	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft-1.7.10-4.2.3.5-deobf.jar) 
+	UCHIJAAAA	Botania{r1.8-249} [Botania] (Botania+r1.8-249-deobf.jar) 
+	UCHIJAAAA	AdvancedBotany{1.0.1.0} [Advanced Botany] (bin) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player454'/194, l='DevWorld', x=-839,11, y=4,00, z=1481,46]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

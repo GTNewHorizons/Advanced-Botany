@@ -1,0 +1,19 @@
+-Removes recipe from Advanced Agglomeration Plate- Par: Output
+mods.advBotany.AdvancedPlate.remove(<AdvancedBotany:itemABResource:5>); -Example
+
+-Added recipe from Advanced Agglomeration Plate- Par: Output, String (Color RGB Hex), Input_1, Input_2, Input_3, Mana
+mods.advBotany.AdvancedPlate.addRecipe(<AdvancedBotany:itemABResource:5>, "0xf11010", <minecraft:gold_block>, <AdvancedBotany:itemTerraHoe>, <minecraft:activator_rail>, 18000000); -Example
+
+-Removes recipe from Ancient Alphirine- Par: Output
+mods.advBotany.AncientAlphirine.remove(<AdvancedBotany:itemABResource:4>); -Example
+
+-Added recipe from Ancient Alphirine- Par: Output, Input, Chance
+mods.advBotany.AncientAlphirine.addRecipe(<AdvancedBotany:itemABResource:6>, <AdvancedBotany:itemABResource:1>, 100); -Example
+
+-Updates a modified recipe in the Lexicon- Par: Entry, Page
+mods.advBotany.AdvancedPlatePage.refresh("botania.entry.nebula", 1); -Example
+mods.advBotany.AlphirinePage.refresh("botania.entry.manaFlower", 1); -Example
+
+-Adds recipe page to Lexicon- Par: Entry, Page, Output, String (Name)
+mods.advBotany.AdvancedPlatePage.addPage("botania.entry.nebula", 3, <AdvancedBotany:itemABResource:3>, ""); -Example
+mods.advBotany.AlphirinePage.addPage("botania.entry.manaFlower", 1, <AdvancedBotany:itemABResource:6>, ""); -Example

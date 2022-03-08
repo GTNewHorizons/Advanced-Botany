@@ -1,0 +1,102 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 05.03.22 23:21
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at ab.common.block.BlockMagicCraftCrate.onBlockActivated(BlockMagicCraftCrate.java:112)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.onPlayerRightClick(PlayerControllerMP.java:376)
+	at net.minecraft.client.Minecraft.func_147121_ag(Minecraft.java:1529)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:2044)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1039)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at ab.common.block.BlockMagicCraftCrate.onBlockActivated(BlockMagicCraftCrate.java:112)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.onPlayerRightClick(PlayerControllerMP.java:376)
+	at net.minecraft.client.Minecraft.func_147121_ag(Minecraft.java:1529)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player376'/201, l='MpServer', x=-433,03, y=5,62, z=9,90]]
+	Chunk stats: MultiplayerChunkCache: 49, 49
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-433,4,13), Chunk: (at 15,0,13 in -28,0; contains blocks -448,0,0 to -433,255,15), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 30146 game time, 30146 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: true), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 36 total; [EntityChicken['Chicken'/128, l='MpServer', x=-384,50, y=4,00, z=10,50], EntityItem['item.item.feather'/129, l='MpServer', x=-386,03, y=4,13, z=10,16], EntityChicken['Chicken'/130, l='MpServer', x=-389,38, y=4,00, z=13,44], EntityChicken['Chicken'/131, l='MpServer', x=-385,94, y=4,00, z=18,66], EntityHorse['Horse'/68, l='MpServer', x=-474,66, y=4,00, z=-1,50], EntityChicken['Chicken'/132, l='MpServer', x=-398,47, y=4,00, z=26,41], EntityPig['Pig'/69, l='MpServer', x=-472,91, y=4,00, z=12,44], EntityItem['item.item.egg'/133, l='MpServer', x=-388,91, y=4,13, z=19,34], EntityPig['Pig'/70, l='MpServer', x=-470,13, y=4,00, z=8,69], EntitySheep['Sheep'/134, l='MpServer', x=-384,78, y=4,00, z=60,66], EntityPig['Pig'/71, l='MpServer', x=-479,47, y=4,00, z=7,41], EntityHorse['Horse'/72, l='MpServer', x=-472,03, y=4,00, z=9,72], EntitySheep['Sheep'/73, l='MpServer', x=-466,06, y=4,00, z=12,88], EntitySheep['Sheep'/74, l='MpServer', x=-477,44, y=4,00, z=18,37], EntityPig['Pig'/75, l='MpServer', x=-475,91, y=4,00, z=20,75], EntitySlime['Slime'/76, l='MpServer', x=-470,03, y=4,00, z=28,47], EntitySlime['Slime'/77, l='MpServer', x=-478,04, y=4,00, z=17,31], EntitySlime['Slime'/78, l='MpServer', x=-481,19, y=5,01, z=41,81], EntitySlime['Slime'/79, l='MpServer', x=-472,38, y=4,00, z=55,88], EntityClientPlayerMP['Player376'/201, l='MpServer', x=-433,03, y=5,62, z=9,90], EntitySheep['Sheep'/90, l='MpServer', x=-456,78, y=4,00, z=-45,78], EntitySlime['Slime'/91, l='MpServer', x=-454,53, y=4,03, z=37,79], EntityItem['item.item.slimeball'/92, l='MpServer', x=-457,03, y=4,13, z=50,09], EntityHorse['Horse'/104, l='MpServer', x=-440,53, y=4,00, z=-37,34], EntityHorse['Horse'/105, l='MpServer', x=-438,91, y=4,00, z=-37,72], EntitySheep['Sheep'/106, l='MpServer', x=-446,81, y=4,00, z=-44,50], EntitySheep['Sheep'/107, l='MpServer', x=-440,56, y=4,00, z=-35,75], EntityItem['item.item.slimeball'/108, l='MpServer', x=-435,13, y=1,13, z=11,13], EntitySlime['Slime'/109, l='MpServer', x=-435,86, y=4,49, z=23,22], EntitySlime['Slime'/119, l='MpServer', x=-414,09, y=4,00, z=43,91], EntitySlime['Slime'/56, l='MpServer', x=-497,38, y=2,64, z=-13,51], EntitySlime['Slime'/57, l='MpServer', x=-483,52, y=4,47, z=-8,23], EntityHorse['Horse'/58, l='MpServer', x=-486,39, y=4,00, z=9,49], EntitySlime['Slime'/59, l='MpServer', x=-499,40, y=4,72, z=4,26], EntityPig['Pig'/126, l='MpServer', x=-395,81, y=4,00, z=-1,41], EntityPig['Pig'/127, l='MpServer', x=-394,44, y=4,00, z=0,56]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:991)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_311, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 812228688 bytes (774 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 9 mods loaded, 9 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	NotEnoughItems{1.0.5.120} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.120-universal.jar) 
+	UCHIJAAAA	CodeChickenCore{1.0.7.48} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10-dev.jar) 
+	UCHIJAAAA	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft-1.7.10-4.2.3.5-deobf.jar) 
+	UCHIJAAAA	Botania{r1.8-249} [Botania] (Botania+r1.8-249-deobf.jar) 
+	UCHIJAAAA	AdvancedBotany{1.2.0.1} [Advanced Botany] (bin) 
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.6.14761 Compatibility Profile Context 21.10.2 30.0.13025.5005' Renderer: 'AMD Radeon(TM) Graphics'
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: AMD Radeon(TM) Graphics GL version 4.6.14761 Compatibility Profile Context 21.10.2 30.0.13025.5005, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (UK)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)
