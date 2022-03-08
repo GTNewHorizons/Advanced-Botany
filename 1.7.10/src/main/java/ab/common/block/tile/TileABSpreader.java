@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.lwjgl.opengl.GL11;
 
+import ab.common.core.ConfigABHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.RenderHelper;
@@ -30,15 +31,15 @@ public class TileABSpreader extends TileSpreader {
 	public void readCustomNBT(NBTTagCompound cmp) {
 		 super.readCustomNBT(cmp);
 		 this.requestsClientUpdate = cmp.getBoolean("requestUpdate");
-		 if (cmp.hasKey("knownMana"))
+		 if(cmp.hasKey("knownMana"))
 			 this.knownMana = cmp.getInteger("knownMana"); 
-		 if (this.requestsClientUpdate && this.worldObj != null) {
+		 if(this.requestsClientUpdate && this.worldObj != null) {
 			 int x = cmp.getInteger("forceClientBindingX");
 			 int y = cmp.getInteger("forceClientBindingY");
 			 int z = cmp.getInteger("forceClientBindingZ");
-			 if (y != -1) {
+			 if(y != -1) {
 				 TileEntity tile = this.worldObj.getTileEntity(x, y, z);
-				 if (tile instanceof IManaReceiver) {
+				 if(tile instanceof IManaReceiver) {
 					 this.receiver = (IManaReceiver)tile;
 				 } else {
 					 this.receiver = null;
@@ -51,20 +52,20 @@ public class TileABSpreader extends TileSpreader {
 	
     public EntityManaBurst getBurst(boolean fake) {
     	EntityManaBurst burst = new EntityManaBurst(this, fake);
-    	if (burst != null) {
-    		int maxMana = 16890;
+    	if(burst != null) {
+    		int maxMana = ConfigABHandler.spreaderBurstMana;
     		int color = 0xcdd419;
     		int ticksBeforeManaLoss = 35;
-    		float manaLossPerTick = 2976;
+    		float manaLossPerTick = ConfigABHandler.spreaderBurstMana / 4.5f;
     		float motionModifier = 6.5f;
     		float gravity = 0.0f;
     		BurstProperties props = new BurstProperties(maxMana, ticksBeforeManaLoss, manaLossPerTick, gravity, motionModifier, color);
     		ItemStack lens = this.getStackInSlot(0);
-    		if (lens != null && lens.getItem() instanceof ILensEffect) {
+    		if(lens != null && lens.getItem() instanceof ILensEffect) {
     			((ILensEffect)lens.getItem()).apply(lens, props);
     		}
     		burst.setSourceLens(lens);
-    		if (this.getCurrentMana() >= props.maxMana || fake) {
+    		if(this.getCurrentMana() >= props.maxMana || fake) {
     			burst.setColor(props.color);
 				burst.setMana(props.maxMana);
 				burst.setStartingMana(props.maxMana);
@@ -82,7 +83,7 @@ public class TileABSpreader extends TileSpreader {
         int color = 0xcdd419;
         HUDHandler.drawSimpleManaHUD(color, this.knownMana, getMaxMana(), name, res);
         ItemStack lens = getStackInSlot(0);
-        if (lens != null) {
+        if(lens != null) {
         	GL11.glEnable(3042);
         	GL11.glBlendFunc(770, 771);
         	String lensName = lens.getDisplayName();
@@ -96,12 +97,12 @@ public class TileABSpreader extends TileSpreader {
         	GL11.glDisable(2896);
         	GL11.glDisable(3042);
         } 
-        if (this.receiver != null) {
+        if(this.receiver != null) {
         	TileEntity receiverTile = (TileEntity)this.receiver;
         	ItemStack recieverStack = new ItemStack(this.worldObj.getBlock(receiverTile.xCoord, receiverTile.yCoord, receiverTile.zCoord), 1, receiverTile.getBlockMetadata());
         	GL11.glEnable(3042);
         	GL11.glBlendFunc(770, 771);
-        	if (recieverStack != null && recieverStack.getItem() != null) {
+        	if(recieverStack != null && recieverStack.getItem() != null) {
         		String stackName = recieverStack.getDisplayName();
         		int width = 16 + mc.fontRenderer.getStringWidth(stackName) / 2;
         		int x = res.getScaledWidth() / 2 - width;
@@ -118,6 +119,6 @@ public class TileABSpreader extends TileSpreader {
     }
     
 	public int getMaxMana() {
-        return 192000;
+        return ConfigABHandler.spreaderMaxMana;
     }
 }

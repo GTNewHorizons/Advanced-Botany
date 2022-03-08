@@ -1,6 +1,7 @@
 package ab.client.nei;
 
 import ab.AdvancedBotany;
+import ab.common.core.ConfigABHandler;
 import ab.common.lib.register.BlockListAB;
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
@@ -21,7 +22,10 @@ public class NEIConfig implements IConfigureNEI {
 	public void loadConfig() {
 		API.registerRecipeHandler((ICraftingHandler)new RecipeHandlerAlphirine());
 		API.registerUsageHandler((IUsageHandler)new RecipeHandlerAlphirine());
-		API.registerRecipeHandler((ICraftingHandler)new RecipeHandlerAdvancedPlate());
+		if(ConfigABHandler.hasAbPlate) {
+			API.registerRecipeHandler((ICraftingHandler)new RecipeHandlerAdvancedPlate());
+			API.registerUsageHandler((IUsageHandler)new RecipeHandlerAdvancedPlate());
+		}
 		API.hideItem(new ItemStack(BlockListAB.blockAntigravitation));
 	}
 }

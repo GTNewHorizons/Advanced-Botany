@@ -12,6 +12,10 @@ public class RecipeAncientAlphirine {
 	public RecipeAncientAlphirine(ItemStack output, ItemStack input, int chance) {
 		this.output = output;
 		this.input = input;
+		if(chance > 100)
+			chance = 100;
+		else if(chance <= 0)
+			chance = 1;
 		this.chance = chance;
 	}
 	

@@ -9,6 +9,7 @@ import ab.client.render.entity.*;
 import ab.client.render.item.RenderAntigravityCharm;
 import ab.client.render.tile.*;
 import ab.common.block.tile.*;
+import ab.common.core.ConfigABHandler;
 import ab.common.core.proxy.CommonProxy;
 import ab.common.entity.*;
 import ab.common.lib.register.BlockListAB;
@@ -41,15 +42,16 @@ public class ClientProxy extends CommonProxy {
     	MinecraftForge.EVENT_BUS.register(new PlayerRenderer());
     	MinecraftForge.EVENT_BUS.register(new BoundRender());
     	
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileAgglomerationPlate.class, new RenderTileAgglomerationPlate());
+    	if(ConfigABHandler.hasAbPlate)
+    		ClientRegistry.bindTileEntitySpecialRenderer(TileAgglomerationPlate.class, new RenderTileAgglomerationPlate());
     	ClientRegistry.bindTileEntitySpecialRenderer(TileABSpreader.class, new RenderTileABSpreader());    
     	ClientRegistry.bindTileEntitySpecialRenderer(TileManaContainer.class, new RenderTileManaContainer());    
     	ClientRegistry.bindTileEntitySpecialRenderer(TileManaCrystalCube.class, new RenderTileManaCrystalCube());
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileManaCharger.class, new RenderTileManaCharger()); 
+    	if(ConfigABHandler.hasManaCharger)
+    		ClientRegistry.bindTileEntitySpecialRenderer(TileManaCharger.class, new RenderTileManaCharger()); 
     	ClientRegistry.bindTileEntitySpecialRenderer(TileEngineerHopper.class, new RenderTileEngineerHopper()); 
     	if(Botania.thaumcraftLoaded)
     		ClientRegistry.bindTileEntitySpecialRenderer(TileMagicCraftCrate.class, new RenderTileMagicCraftingCrate()); 
-    	
     	
     	BlockListAB.blockABSpreaderRI = RenderingRegistry.getNextAvailableRenderId();
     	BlockListAB.blockManaContainerRI = RenderingRegistry.getNextAvailableRenderId();
@@ -67,13 +69,14 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityNebulaBlaze.class, new EntityNullRender());
         RenderingRegistry.registerEntityRenderingHandler(EntityManaVine.class, new EntityNullRender());
         RenderingRegistry.registerEntityRenderingHandler(EntityAlphirinePortal.class, new RenderEntityAlphirinePortal());
+        RenderingRegistry.registerEntityRenderingHandler(EntitySword.class, new EntityNullRender());
         
         MinecraftForgeClient.registerItemRenderer(ItemListAB.itemAntigravityCharm, new RenderAntigravityCharm());
     }
 
     public void postInit(FMLPostInitializationEvent event) {
         super.postInit(event);
-//        ItemStack renderTime = null;
-//        System.out.println(renderTime.stackSize);
+//        ItemStack crashGameForRender = null;
+//        System.out.println(crashGameForRender.stackSize);
     }
 }

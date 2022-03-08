@@ -26,8 +26,9 @@ public class ItemNebulaBlaze extends ItemMod implements IManaUsingItem {
 	public void onUsingTick(ItemStack stack, EntityPlayer player, int count) {
 		if(player.worldObj.isRemote)
 			return;
-		else if(count % 7 == 4 && ManaItemHandler.requestManaExactForTool(stack, player, 125, true)) {
+		else if(count % 5 == 2 && ManaItemHandler.requestManaExactForTool(stack, player, 125, true)) {
 			EntityNebulaBlaze blaze = new EntityNebulaBlaze(player.worldObj, player);
+			blaze.setAttacker(player.getCommandSenderName());
 			player.worldObj.spawnEntityInWorld(blaze);
 		}
 	}

@@ -90,8 +90,9 @@ public class EntityManaVine extends EntityThrowable {
 						if(isPlant(xCoord, yCoord, zCoord)) {
 							for(int i = 0; i < 10; i++)
 								block.updateTick(world, xCoord, yCoord, zCoord, world.rand);
-							if(ConfigHandler.blockBreakParticles)this.worldObj.playAuxSFX(2005, xCoord, yCoord, zCoord, 6 + this.worldObj.rand.nextInt(4));
-							this.worldObj.playSoundEffect(x, y, z, "botania:agricarnation", 0.01F, 0.5F + (float) Math.random() * 0.5F);
+							if(ConfigHandler.blockBreakParticles)
+								this.worldObj.playAuxSFX(2005, xCoord, yCoord, zCoord, 6 + this.worldObj.rand.nextInt(4));
+								this.worldObj.playSoundEffect(x, y, z, "botania:agricarnation", 0.01F, 0.5F + (float) Math.random() * 0.5F);
 						} else if(block instanceof BlockGrass && world.rand.nextInt(2) == 0) {
 							if (!world.isRemote) {
 								this.worldObj.playAuxSFX(2005, xCoord, yCoord + 1, zCoord, 6 + this.worldObj.rand.nextInt(4));
@@ -105,12 +106,11 @@ public class EntityManaVine extends EntityThrowable {
 								while (yCoord > 0) {
 									block = worldObj.getBlock(xCoord, yCoord, zCoord);
 									if(block.isAir(worldObj, xCoord, yCoord, zCoord)) {
-										if (world.rand.nextInt(4) < 3)
+										if(world.rand.nextInt(4) < 3)
 											worldObj.setBlock(xCoord, yCoord, zCoord, BlockListAB.blockFreyrLiana);
 										else
 											worldObj.setBlock(xCoord, yCoord, zCoord,BlockListAB.blockLuminousFreyrLiana);
-										worldObj.playAuxSFX(2001, xCoord, yCoord, zCoord,
-												Block.getIdFromBlock(BlockListAB.blockFreyrLiana));
+										worldObj.playAuxSFX(2001, xCoord, yCoord, zCoord, Block.getIdFromBlock(BlockListAB.blockFreyrLiana));
 										yCoord--;
 									} else
 										break;

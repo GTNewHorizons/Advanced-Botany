@@ -10,6 +10,7 @@ import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.IRankItem;
 import ab.common.core.ConfigABHandler;
+import ab.common.entity.EntitySword;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -49,7 +50,7 @@ import vazkii.botania.common.Botania;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
 import vazkii.botania.common.entity.EntityManaBurst;
 
-public class ItemSpaceBlade extends ItemSword implements IRankItem, ILensEffect, IManaUsingItem {
+public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingItem {
 	
 	private static final IIcon[] icons = new IIcon[3];
 	private static final int recharge = 36;
@@ -64,7 +65,7 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, ILensEffect,
 	}
 	
 	public void getSubItems(Item item, CreativeTabs tab, List list) {
-		for (int mana : CREATIVE_MANA) {
+		for(int mana : CREATIVE_MANA) {
 			ItemStack stack = new ItemStack(item);
 			setMana(stack, mana);
 			list.add(stack);
@@ -78,10 +79,10 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, ILensEffect,
 				float size = this.getLevel(stack) >= 4 ? (this.getLevel(stack) >= 5 ? 3.2f : 2.2f) : 1.2f; 
 				AxisAlignedBB axis = AxisAlignedBB.getBoundingBox(entity.posX, entity.posY, entity.posZ, entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).expand(size, 1.0f, size);
 				List<EntityLivingBase> entities = entity.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, axis);
-				for (EntityLivingBase living : entities) {
-					if (living instanceof EntityPlayer && (((EntityPlayer)living).getCommandSenderName().equals(player.getCommandSenderName()) || (MinecraftServer.getServer() != null && !MinecraftServer.getServer().isPVPEnabled())))
+				for(EntityLivingBase living : entities) {
+					if(living instanceof EntityPlayer && (((EntityPlayer)living).getCommandSenderName().equals(player.getCommandSenderName()) || (MinecraftServer.getServer() != null && !MinecraftServer.getServer().isPVPEnabled())))
 						continue; 
-					if (living.hurtTime == 0) {
+					if(living.hurtTime == 0) {
 						float damage = 4.0F + AdvancedBotanyAPI.mithrilToolMaterial.getDamageVsEntity();
 						living.attackEntityFrom(DamageSource.causePlayerDamage(player), damage);
 					}
@@ -104,8 +105,13 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, ILensEffect,
 				PotionEffect haste = player.getActivePotionEffect(Potion.digSpeed);
 		        float check = (haste == null) ? 0.16666667F : ((haste.getAmplifier() == 1) ? 0.5F : 0.4F);
 		        if(player.getCurrentEquippedItem() == stack && player.swingProgress == check && this.getLevel(stack) >= 1 && postAttackTick == 0 && ManaItemHandler.requestManaExactForTool(stack, player, 120, true)) {
-		        	EntityManaBurst burst = getBurst(player, stack);
-		        	world.spawnEntityInWorld((Entity)burst);
+		        	EntitySword sword = new EntitySword(world, player);
+		        	sword.setDamage(getSwordDamage(stack));
+		        	sword.setAttacker(player.getCommandSenderName());
+		        	sword.motionX *= 0.1f;
+		        	sword.motionY *= 0.1f;
+		        	sword.motionZ *= 0.1f;
+		        	world.spawnEntityInWorld(sword);
 		        }
 			}
 		} else {
@@ -136,22 +142,6 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, ILensEffect,
 			ItemNBTHelper.setBoolean(stack, "isEnabledMode", !this.isEnabledMode(stack));
 		}
 		return super.onItemRightClick(stack, world, player);
-	}
-	
-	public EntityManaBurst getBurst(EntityPlayer player, ItemStack stack) {
-		EntityManaBurst burst = new EntityManaBurst(player);
-		float motionModifier = 8.0F;
-		burst.setColor(player.worldObj.rand.nextBoolean() ? 0x78dde6 : 0xe143f0);
-		burst.setMana(100);
-		burst.setStartingMana(100);
-		burst.setMinManaLoss(40);
-		burst.setManaLossPerTick(5.0F);
-		burst.setGravity(0.0F);
-		burst.setMotion(burst.motionX * motionModifier, burst.motionY * motionModifier, burst.motionZ * motionModifier);
-		ItemStack lens = stack.copy();
-		ItemNBTHelper.setString(lens, "attackerUsername", player.getCommandSenderName());
-		burst.setSourceLens(lens);
-		return burst;
 	}
 	
 	public void addInformation(ItemStack stack, EntityPlayer par2EntityPlayer, List list, boolean par4) {
@@ -266,41 +256,6 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, ILensEffect,
 
 	public boolean isNoExport(ItemStack stack) {
 		return true;
-	}
-
-	public void apply(ItemStack stack, BurstProperties burst) {}
-
-	public boolean collideBurst(IManaBurst burst, MovingObjectPosition pos, boolean isManaBlock, boolean dead, ItemStack stack) {
-		return dead;
-	}
-
-	public boolean doParticles(IManaBurst burst, ItemStack stack) {
-		return true;
-	}
-
-	public void updateBurst(IManaBurst burst, ItemStack stack) {		
-		EntityThrowable entity = (EntityThrowable)burst;
-		String attacker = ItemNBTHelper.getString(burst.getSourceLens(), "attackerUsername", "");		
-		AxisAlignedBB axis = AxisAlignedBB.getBoundingBox(entity.posX, entity.posY, entity.posZ, entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).expand(1.0D, 1.0D, 1.0D);
-		List<EntityLivingBase> entities = entity.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, axis);
-		for (EntityLivingBase living : entities) {
-			if (living instanceof EntityPlayer && (((EntityPlayer)living).getCommandSenderName().equals(attacker) || (MinecraftServer.getServer() != null && !MinecraftServer.getServer().isPVPEnabled())))
-				continue; 
-			if (living.hurtTime == 0) {
-				int cost = 33;
-				int mana = burst.getMana();
-		        if (mana >= cost) {
-		        	burst.setMana(mana - cost);
-		        	float damage = getSwordDamage(stack);
-		        	if (!burst.isFake() && !entity.worldObj.isRemote) {
-		        		EntityPlayer player = living.worldObj.getPlayerEntityByName(attacker);
-		        		living.attackEntityFrom((player == null) ? DamageSource.magic : DamageSource.causePlayerDamage(player), damage);
-		        		entity.setDead();
-		        		break;
-		        	} 
-		        } 
-			} 
-		} 
 	}
 	
 	public boolean usesMana(ItemStack stack) {

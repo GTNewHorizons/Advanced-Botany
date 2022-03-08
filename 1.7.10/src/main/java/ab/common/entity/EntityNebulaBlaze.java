@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
@@ -19,14 +20,16 @@ public class EntityNebulaBlaze extends EntityThrowable {
 	
 	public EntityNebulaBlaze(World world) {
 		super(world);
-		this.dataWatcher.addObject(27, "");
-		this.dataWatcher.setObjectWatched(27);
 	}
 	
 	public EntityNebulaBlaze(World world, EntityPlayer e) {
 		super(world, e);
-		this.dataWatcher.addObject(27, e.getCommandSenderName());
-		this.dataWatcher.setObjectWatched(27);
+	}
+	
+	protected void entityInit() {
+		super.entityInit();
+		this.dataWatcher.addObject(28, "");
+		this.dataWatcher.setObjectWatched(28);
 	}
 	
 	public void onUpdate() {
@@ -35,6 +38,7 @@ public class EntityNebulaBlaze extends EntityThrowable {
 		double posX = this.posX;
 		double posY = this.posY;
 		double posZ = this.posZ;
+		update();
 		super.onUpdate();
 		AxisAlignedBB axis = AxisAlignedBB.getBoundingBox(this.posX, this.posY, this.posZ, this.posX + 1, this.posY + 1, this.posZ + 1).expand(3.75f, 3.75f, 3.75f);
 		List<EntityLivingBase> livs = this.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, axis);
@@ -58,8 +62,47 @@ public class EntityNebulaBlaze extends EntityThrowable {
 			break;
 		}
 		if(this.worldObj.isRemote) 
-			for(int i = 0; i < 9; i++)
-				Botania.proxy.wispFX(this.worldObj, this.posX, this.posY, this.posZ, 1.0f - (float)(Math.random() / 5.0f), 0.0f + (float)(Math.random() / 5.0f), 1.0f - (float)(Math.random() / 5.0f) , 0.2F * (float)((Math.random()) - 0.25D), (float)((Math.random() / 2) - 0.25D) * 0.03F, (float)((Math.random() / 2) - 0.25D) * 0.03F, (float)((Math.random() / 2) - 0.25D) * 0.03F);	
+			for(int i = 0; i < 12; i++)
+				Botania.proxy.sparkleFX(worldObj, posX + ((Math.random() - 0.5D)) * 0.15f, posY + ((Math.random() - 0.5D) * 0.15f), (posZ + (Math.random() - 0.5D) * 0.15f), 1.0f - (float)(Math.random() / 5.0f), 0.0f + (float)(Math.random() / 5.0f), 1.0f - (float)(Math.random() / 5.0f), 1.2F * (float)(Math.random() - 0.5D), 3);
+	}
+	
+	public void update() {		
+		String attacker = getAttacker();		
+		AxisAlignedBB axis = AxisAlignedBB.getBoundingBox(posX, posY, posZ, lastTickPosX, lastTickPosY, lastTickPosZ).expand(1.0D, 1.0D, 1.0D);
+		List<EntityLivingBase> entities = worldObj.getEntitiesWithinAABB(EntityLivingBase.class, axis);
+		for(EntityLivingBase living : entities) {
+			if(living instanceof EntityPlayer && (((EntityPlayer)living).getCommandSenderName().equals(attacker) || (MinecraftServer.getServer() != null && !MinecraftServer.getServer().isPVPEnabled())))
+				continue; 
+			if(living.hurtTime == 0) {
+				float damage = 18.0f;
+	        	if(!worldObj.isRemote) {
+	        		EntityPlayer player = living.worldObj.getPlayerEntityByName(attacker);
+	        		living.attackEntityFrom((player == null) ? DamageSource.magic : DamageSource.causePlayerDamage(player), damage);
+	        		setDead();
+	        		break;
+	        	}
+			} 
+		} 
+	}
+	
+	public void readEntityFromNBT(NBTTagCompound nbtt) {
+		super.readEntityFromNBT(nbtt);
+		ticksExisted = nbtt.getInteger("ticks");
+		setAttacker(nbtt.getString("attacker"));
+	}
+
+	public void writeEntityToNBT(NBTTagCompound nbtt) {
+		super.writeEntityToNBT(nbtt);
+		nbtt.setInteger("ticks", ticksExisted);
+		nbtt.setString("attacker", getAttacker());
+	}
+	
+	public String getAttacker() {
+		return this.dataWatcher.getWatchableObjectString(28);
+	}
+	
+	public void setAttacker(String str) {
+		this.dataWatcher.updateObject(28, str);
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -68,27 +111,13 @@ public class EntityNebulaBlaze extends EntityThrowable {
 	protected float getGravityVelocity() {
 		return 0.0F;
 	}
-	
-	public String getPlayerName() {
-		if(this.dataWatcher.getWatchableObjectString(27) == null)
-			return "null";
-		return this.dataWatcher.getWatchableObjectString(27);
-	}
 
 	protected void onImpact(MovingObjectPosition mov) {
 		Block block = this.worldObj.getBlock(mov.blockX, mov.blockY, mov.blockZ);
-		if(mov.entityHit != null && mov.entityHit instanceof EntityLivingBase) {
-			EntityPlayer player = mov.entityHit.worldObj.getPlayerEntityByName(getPlayerName());
-			EntityLivingBase liv = (EntityLivingBase)mov.entityHit;
-			if(liv instanceof EntityPlayer && liv == player)
+		if(block != null && mov.entityHit == null) {
+			if(block instanceof net.minecraft.block.BlockBush || block instanceof net.minecraft.block.BlockLeaves)
 				return;
-			else if(liv.getHealth() <= 0.0f)
-				return;
-			liv.hurtResistantTime = 0;
-			liv.attackEntityFrom((player == null) ? DamageSource.magic : DamageSource.causePlayerDamage(player), 24.0f);
+			setDead();
 		}
-		else if(block instanceof net.minecraft.block.BlockBush || block instanceof net.minecraft.block.BlockLeaves)
-	    	return;
-	    setDead();
 	}
 }

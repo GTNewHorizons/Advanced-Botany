@@ -1,5 +1,6 @@
 package ab.client.render.entity;
 
+import java.awt.Color;
 import java.util.Random;
 
 import org.lwjgl.opengl.GL11;
@@ -7,16 +8,22 @@ import org.lwjgl.opengl.GL11;
 import ab.client.core.ClientHelper;
 import ab.common.block.BlockLebethronWood;
 import ab.common.lib.register.BlockListAB;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.IItemRenderer.ItemRendererHelper;
 import vazkii.botania.client.core.handler.ClientTickHandler;
 
@@ -24,7 +31,7 @@ public class RenderEntityAlphirinePortal extends Render {
 
 	public void doRender(Entity entity, double x, double y, double z, float fl, float fl1) {
 		double worldTime = (entity.worldObj == null) ? 0.0D : (ClientTickHandler.ticksInGame + fl1);
-		if (entity != null)
+		if(entity != null)
 			worldTime += (new Random(((int)entity.posX ^ (int)entity.posY ^ (int)entity.posZ))).nextInt(360); 	
 		Minecraft mc = Minecraft.getMinecraft();
 		float burn = Math.min(1.0f, entity.ticksExisted * 0.0561f);

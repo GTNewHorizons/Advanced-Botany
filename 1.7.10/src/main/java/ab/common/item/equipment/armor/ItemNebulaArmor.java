@@ -43,7 +43,7 @@ public class ItemNebulaArmor extends ItemManasteelArmor implements IManaItem, IM
 	}
 	
 	public ISpecialArmor.ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {
-		return new ISpecialArmor.ArmorProperties(0, getArmorMaterial().getDamageReductionAmount(slot) * ((0.0175f * ConfigABHandler.protectionFactorNebula) + ((0.0525D * ConfigABHandler.protectionFactorNebula) * (1.0f - (this.getDamage(armor) / 1000.0f)))), 2147483647);
+		return new ISpecialArmor.ArmorProperties(0, getArmorMaterial().getDamageReductionAmount(slot) * (0.03f + (0.0725D * (1.0f - (this.getDamage(armor) / 1000.0f)))), 2147483647);
 	}
 	  
 	@SideOnly(Side.CLIENT)

@@ -77,7 +77,7 @@ public class BlockTerraFarmland extends Block implements ILexiconable {
 	private void refreshSeed(World world, int x, int y, int z, Block block, int meta) {
 		IPlantable seed = (IPlantable)block;
 		List<ItemStack> list = block.getDrops(world, x, y + 1, z, meta, 0);
-		for (ItemStack stack : list) {
+		for(ItemStack stack : list) {
 			if(stack == null)
 				continue;
 			else if(stack.getItem() == seed) {
@@ -87,7 +87,7 @@ public class BlockTerraFarmland extends Block implements ILexiconable {
 				stack.stackSize = Math.min(64, (int)(stack.stackSize * 3.5f));		
 			}
 		}
-		for (ItemStack stack : list) {
+		for(ItemStack stack : list) {
 			if(stack == null)
 				continue;
 			EntityItem itemEnt = new EntityItem(world, x + 0.5f, y + 1, z + 0.5f, stack);

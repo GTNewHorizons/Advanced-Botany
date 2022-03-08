@@ -68,5 +68,6 @@
 	<classpathentry kind="lib" path="libs/CodeChickenLib-1.7.10-1.1.3.141-universal.jar"/>
 	<classpathentry kind="lib" path="libs/NotEnoughItems-1.7.10-1.0.5.120-universal.jar"/>
 	<classpathentry kind="lib" path="libs/Thaumcraft-1.7.10-4.2.3.5-deobf.jar"/>
+	<classpathentry kind="lib" path="libs/MineTweaker3-1.7.10-3.0.10B-deobf.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

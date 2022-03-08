@@ -25,6 +25,7 @@ import vazkii.botania.common.Botania;
 import vazkii.botania.common.block.ModBlocks;
 import vazkii.botania.common.block.ModFluffBlocks;
 import vazkii.botania.common.block.tile.TileMod;
+import vazkii.botania.common.core.handler.ConfigHandler;
 
 public class TileLebethronCore extends TileMod implements IRenderHud {
 	
@@ -46,19 +47,16 @@ public class TileLebethronCore extends TileMod implements IRenderHud {
 	}
 	
 	public void updateEntity() {
-		if(!this.worldObj.isRemote) {
-			++tick;
-			if(tick >= 120) {
-				updateStructure();
-				if(validTree && getBlock() != null) {
-					spawnLeaves();
-					tick = 0;
-				}
+		if(tick <= 0) {
+			updateStructure();
+			if(validTree && getBlock() != null) {
+				spawnLeaves();
+				tick = 40;
 			}
-		} else {
-			if(this.worldObj.rand.nextBoolean() && this.worldObj.isRemote)
-				Botania.proxy.sparkleFX(this.worldObj, this.xCoord + Math.random(), this.yCoord + Math.random(), this.zCoord + Math.random(), 0.5F, 1.0F, 0.5F, (float)Math.random() * 2, 2); 
-		}
+		} else 
+			tick--;
+		if(worldObj.isRemote && worldObj.rand.nextBoolean() && this.worldObj.isRemote)
+			Botania.proxy.sparkleFX(this.worldObj, this.xCoord + Math.random(), this.yCoord + Math.random(), this.zCoord + Math.random(), 0.5F, 1.0F, 0.5F, (float)Math.random() * 2, 2); 
 	}
 	
 	public boolean getValidTree() {
@@ -177,7 +175,9 @@ public class TileLebethronCore extends TileMod implements IRenderHud {
 	}
 	
 	private void setBlock(World world, int x, int y, int z) {
-		if(world.getBlock(x, y, z).getMaterial() == Material.air && y < 256)
+		if(world.rand.nextInt(10) <= 8)
+			return;
+		else if(world.getBlock(x, y, z).getMaterial() == Material.air && y < 256)
 			world.setBlock(x, y, z, this.block, this.meta, 3);
 	}
 

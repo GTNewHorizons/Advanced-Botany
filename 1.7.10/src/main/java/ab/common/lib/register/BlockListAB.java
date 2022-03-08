@@ -21,6 +21,7 @@ import ab.common.block.tile.TileMagicCraftCrate;
 import ab.common.block.tile.TileManaCharger;
 import ab.common.block.tile.TileManaContainer;
 import ab.common.block.tile.TileManaCrystalCube;
+import ab.common.core.ConfigABHandler;
 import ab.common.item.block.ItemBlockBase;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -73,14 +74,16 @@ public class BlockListAB {
 	
 	private static void registerBlocks() {
 		GameRegistry.registerBlock(BlockListAB.blockABSpreader, "blockABSpreader");
-		GameRegistry.registerBlock(BlockListAB.blockABPlate, "blockABPlate");
+		if(ConfigABHandler.hasAbPlate)
+			GameRegistry.registerBlock(BlockListAB.blockABPlate, "blockABPlate");
 		GameRegistry.registerBlock(BlockListAB.blockManaContainer, ItemBlockBase.class, "blockManaContainer");
 		GameRegistry.registerBlock(BlockListAB.blockLebethron, ItemBlockBase.class, "blockLebethron");
 		GameRegistry.registerBlock(BlockListAB.blockABStorage, ItemBlockBase.class, "blockABStorage");
 		GameRegistry.registerBlock(BlockListAB.blockManaCrystalCube, "blockManaCrystalCube");
 		GameRegistry.registerBlock(BlockListAB.blockTerraFarmland, "blockTerraFarmland");
 		GameRegistry.registerBlock(BlockListAB.blockAntigravitation, "blockAntigravitation");
-		GameRegistry.registerBlock(BlockListAB.blockManaCharger, "blockManaCharger");
+		if(ConfigABHandler.hasManaCharger)
+			GameRegistry.registerBlock(BlockListAB.blockManaCharger, "blockManaCharger");
 		GameRegistry.registerBlock(BlockListAB.blockEngineerHopper, "blockEngineerHopper");
 		GameRegistry.registerBlock(BlockListAB.blockFreyrLiana, "blockFreyrLiana");
 		GameRegistry.registerBlock(BlockListAB.blockLuminousFreyrLiana, "blockLuminousFreyrLiana");
@@ -88,11 +91,13 @@ public class BlockListAB {
 	
 	private static void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileABSpreader.class, "tileABSpreader");
-		GameRegistry.registerTileEntity(TileAgglomerationPlate.class, "tileAgglomerationPlate");
+		if(ConfigABHandler.hasAbPlate)
+			GameRegistry.registerTileEntity(TileAgglomerationPlate.class, "tileAgglomerationPlate");
 		GameRegistry.registerTileEntity(TileLebethronCore.class, "tileLebethronCore");
 		GameRegistry.registerTileEntity(TileManaContainer.class, "tileManaContainer");
 		GameRegistry.registerTileEntity(TileManaCrystalCube.class, "tileManaCrystalCube");
-		GameRegistry.registerTileEntity(TileManaCharger.class, "tileManaCharger");
+		if(ConfigABHandler.hasManaCharger)
+			GameRegistry.registerTileEntity(TileManaCharger.class, "tileManaCharger");
 		GameRegistry.registerTileEntity(TileEngineerHopper.class, "tileEngineerHopper");
 		if(Botania.thaumcraftLoaded)
 			GameRegistry.registerTileEntity(TileMagicCraftCrate.class, "tileMagicCraftCrate");

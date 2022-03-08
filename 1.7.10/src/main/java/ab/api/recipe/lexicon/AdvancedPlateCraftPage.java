@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
+import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAdvancedPlate;
 import ab.client.core.ClientHelper;
 import ab.common.lib.register.BlockListAB;
@@ -29,16 +30,34 @@ public class AdvancedPlateCraftPage extends PageRecipe {
 	
 	private static final ResourceLocation plateOverlay = new ResourceLocation("botania:textures/gui/petalOverlay.png");
 	private RecipeAdvancedPlate recipe;
+	private final ItemStack resultStack;
 	int ticksElapsed = 0;
 
-	public AdvancedPlateCraftPage(RecipeAdvancedPlate recipe) {
-		super(".abCraft");
-		this.recipe = recipe;
+	public AdvancedPlateCraftPage(LexiconEntry entry, ItemStack stack) {
+		this(entry, stack, "");
 	}
 	
-	public AdvancedPlateCraftPage(RecipeAdvancedPlate recipe, String str) {
-		super(".abCraft" + str);
-		this.recipe = recipe;
+	public AdvancedPlateCraftPage(LexiconEntry entry, ItemStack stack, String str) {
+		super(str);
+		resultStack = stack;
+		refreshRecipe(entry, stack);
+	}
+	
+	public ItemStack getResult() {
+		return resultStack;
+	}
+	
+	public void refreshRecipe(LexiconEntry entry, ItemStack stack) {
+		RecipeAdvancedPlate rec = null;
+		for(RecipeAdvancedPlate recipe : AdvancedBotanyAPI.advancedPlateRecipes) {
+			if(stack != null && recipe.getOutput() != null && recipe.getOutput().isItemEqual(stack)) {
+				rec = recipe;
+				break;
+			}
+		}
+		if(rec == null)
+			entry.pages.remove(this);
+		recipe = rec;
 	}
 	
 	public void onPageAdded(LexiconEntry entry, int index) {

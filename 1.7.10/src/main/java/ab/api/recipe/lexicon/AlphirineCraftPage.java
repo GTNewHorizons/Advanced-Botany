@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
+import ab.api.AdvancedBotanyAPI;
+import ab.api.recipe.RecipeAdvancedPlate;
 import ab.api.recipe.RecipeAncientAlphirine;
 import ab.client.core.ClientHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -28,15 +30,33 @@ public class AlphirineCraftPage extends PageRecipe {
 	
 	private static final ResourceLocation alphirineOverlay = new ResourceLocation("botania:textures/gui/pureDaisyOverlay.png");
 	private RecipeAncientAlphirine recipe;
-
-	public AlphirineCraftPage(RecipeAncientAlphirine recipe) {
-		super(".alphirineCraft");
-		this.recipe = recipe;
+	private final ItemStack resultStack;
+	
+	public AlphirineCraftPage(LexiconEntry entry, ItemStack stack) {
+		this(entry, stack, "");
 	}
 	
-	public AlphirineCraftPage(RecipeAncientAlphirine recipe, String str) {
-		super(".alphirineCraft" + str);
-		this.recipe = recipe;
+	public AlphirineCraftPage(LexiconEntry entry, ItemStack stack, String str) {
+		super(str);
+		resultStack = stack;
+		refreshRecipe(entry, stack);
+	}
+	
+	public ItemStack getResult() {
+		return resultStack;
+	}
+	
+	public void refreshRecipe(LexiconEntry entry, ItemStack stack) {
+		RecipeAncientAlphirine rec = null;
+		for(RecipeAncientAlphirine recipe : AdvancedBotanyAPI.alphirineRecipes) {
+			if(stack != null && recipe.getOutput() != null && recipe.getOutput().isItemEqual(stack)) {
+				rec = recipe;
+				break;
+			}
+		}
+		if(rec == null)
+			entry.pages.remove(this);
+		recipe = rec;
 	}
 	
 	public void onPageAdded(LexiconEntry entry, int index) {
@@ -53,7 +73,7 @@ public class AlphirineCraftPage extends PageRecipe {
 		render.bindTexture(alphirineOverlay);
 		((GuiScreen)gui).drawTexturedModalRect(gui.getLeft() + 40, gui.getTop() + 44, 0, 0, gui.getWidth(), gui.getHeight()); 
 		ItemStack inp = recipe.getInput().copy();
-    	if (inp.getItemDamage() == 32767)
+    	if(inp.getItemDamage() == 32767)
     		inp.setItemDamage(0); 
 		this.renderItem(gui, gui.getLeft() + 34, gui.getTop() + 59, inp, false);
 		this.renderItem(gui, gui.getLeft() + 62, gui.getTop() + 57, ItemBlockSpecialFlower.ofType("ancientAlphirine").copy(), false);
