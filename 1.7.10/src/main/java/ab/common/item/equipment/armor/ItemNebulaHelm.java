@@ -9,12 +9,16 @@ import com.google.common.collect.Multimap;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.mana.IManaDiscountArmor;
 import vazkii.botania.api.mana.IManaGivingItem;
+import vazkii.botania.api.mana.IManaItem;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
 
@@ -56,10 +60,39 @@ public class ItemNebulaHelm extends ItemNebulaArmor implements IManaDiscountArmo
 	    super.onArmorTick(world, player, stack);
 	    if(hasArmorSet(player)) {
 	    	int food = player.getFoodStats().getFoodLevel();
-	    	if (food > 0 && food < 18 && player.shouldHeal() && player.ticksExisted % 80 == 0)
+	    	if(food > 0 && food < 18 && player.shouldHeal() && player.ticksExisted % 80 == 0)
 	    		player.heal(1.0F);
-	    	ManaItemHandler.dispatchManaExact(stack, player, 5, true);
+	    	dispatchManaExact(stack, player, 2, true);
 	    } 
+	}
+	
+	public static boolean dispatchManaExact(ItemStack stack, EntityPlayer player, int manaToSend, boolean add) {
+		if (stack == null)
+			return false; 
+	    InventoryPlayer inventoryPlayer = player.inventory;
+	    IInventory baublesInv = BotaniaAPI.internalHandler.getBaublesInventory(player);
+	    int invSize = inventoryPlayer.getSizeInventory();
+	    int size = invSize;
+	    if(baublesInv != null)
+	    	size += baublesInv.getSizeInventory(); 
+	    for(int i = 0; i < size; i++) {
+	    	boolean useBaubles = (i >= invSize);
+	    	IInventory inv = useBaubles ? baublesInv : (IInventory)inventoryPlayer;
+	    	int slot = i - (useBaubles ? invSize : 0);
+	    	ItemStack stackInSlot = inv.getStackInSlot(slot);
+	    	if(stackInSlot != stack)
+	    		if(stackInSlot != null && stackInSlot.getItem() instanceof IManaItem) {
+	    			IManaItem manaItemSlot = (IManaItem)stackInSlot.getItem();
+	    			if(manaItemSlot.getMana(stackInSlot) + manaToSend <= manaItemSlot.getMaxMana(stackInSlot) && manaItemSlot.canReceiveManaFromItem(stackInSlot, stack)) {
+	    				if(add)
+	    					manaItemSlot.addMana(stackInSlot, manaToSend); 
+	    				if(useBaubles)
+	    					BotaniaAPI.internalHandler.sendBaubleUpdatePacket(player, slot); 
+	    				return true;
+	    			} 
+	    		}  
+	    } 
+	    return false;
 	}
 	
 	public float getDiscount(ItemStack stack, int slot, EntityPlayer player) {

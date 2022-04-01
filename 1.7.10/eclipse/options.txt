@@ -11,13 +11,13 @@ anaglyph3d:false
 advancedOpengl:false
 maxFps:260
 fboEnable:true
-difficulty:1
+difficulty:2
 fancyGraphics:true
 ao:2
 clouds:true
 resourcePacks:[]
 lastServer:
-lang:en_GB
+lang:en_US
 chatVisibility:0
 chatColors:true
 chatLinks:true
@@ -89,6 +89,7 @@ key_Baubles Inventory:48
 key_Change Wand Focus:33
 key_Activate Hover Harness:35
 key_Misc Wand Toggle:34
+key_key.portaitreposition:52
 soundCategory_master:0.0
 soundCategory_music:1.0
 soundCategory_record:1.0

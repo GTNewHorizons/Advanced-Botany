@@ -77,13 +77,12 @@ public class ItemABResource extends Item implements IFlowerComponent {
 	}
 	
 	public ItemStack onEaten(ItemStack stack, World world, EntityPlayer player) {
-		System.out.println("122");
 		if(stack.getItemDamage() != 3)
 			return super.onEaten(stack, world, player);
 		else if(!world.isRemote)
 			player.addPotionEffect(new PotionEffect(Potion.confusion.id, 120, 3));
 		ItemStack bottle = new ItemStack(Items.glass_bottle);  
-		if (!player.inventory.addItemStackToInventory(bottle))
+		if(!player.inventory.addItemStackToInventory(bottle))
 			player.dropPlayerItemWithRandomChoice(bottle, false);
 		--stack.stackSize;
 		return stack;

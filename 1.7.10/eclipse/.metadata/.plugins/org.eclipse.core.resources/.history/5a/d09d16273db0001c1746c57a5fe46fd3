@@ -1,0 +1,30 @@
+package ab.common.item.relic;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.ReflectionHelper;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+
+public class ItemSehrimnirHide extends ItemModRelic {
+	
+	public static final String[] DROP_FEW_ITEMS = new String[] { "dropFewItems", "func_70628_a" };
+	
+	public ItemSehrimnirHide() {
+		super("sehrimnirHide");
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+
+	@SubscribeEvent
+	public void onPlayerAttack(LivingDeathEvent event) {
+		if(event != null && event.entityLiving != null) {
+			EntityLivingBase liv = event.entityLiving;
+			try {
+				for(int i = 0; i < 1000; i++)
+					ReflectionHelper.findMethod(EntityLivingBase.class, liv, DROP_FEW_ITEMS,  new Class[] { boolean.class, int.class }).invoke(liv, new Object[] { true, 3 });
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

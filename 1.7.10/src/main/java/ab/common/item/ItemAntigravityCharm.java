@@ -1,6 +1,8 @@
 package ab.common.item;
 
 import java.util.List;
+
+import ab.common.core.CommonHelper;
 import ab.common.lib.register.BlockListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,6 +12,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityFallingBlock;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
@@ -50,25 +53,29 @@ public class ItemAntigravityCharm extends ItemMod {
 		return stack;
 	}
 	
-	public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean inHand) {	
-		if(ItemNBTHelper.getBoolean(stack, "isActive", true)) {
-			double posX = entity.posX;
-			double posY = entity.posY;
-			double posZ = entity.posZ;
-			final AxisAlignedBB asis = AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(8, 8, 8);
-	    	final List<EntityFallingBlock> listEntity = (List<EntityFallingBlock>)world.getEntitiesWithinAABB((Class)EntityFallingBlock.class, asis);
-	    	for(EntityFallingBlock fallBlock : listEntity) {  
-	    		int x = (int) (fallBlock.posX >= 0 ? fallBlock.posX : fallBlock.posX - 1);
-	    		int y = (int) fallBlock.posY;
-	    		int z = (int) (fallBlock.posZ >= 0 ? fallBlock.posZ : fallBlock.posZ - 1);	    		
-	    		Block block = fallBlock.func_145805_f();	
-	    		fallBlock.setInvisible(true);
-	    		if(!world.isRemote) {
-	    			setBlock(world, x, y, z, block, fallBlock.field_145814_a);
-	    			setBlock(world, x, y - 1, z, BlockListAB.blockAntigravitation, 0);	 
-	    		}   			
-	    		fallBlock.setDead();    			  	   			    			  		    		 	    
-	    	}		
+	public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean inHand) {
+		if(entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer)entity;
+			if(ItemNBTHelper.getBoolean(stack, "isActive", true)) {
+				double posX = player.posX;
+				double posY = player.posY;
+				double posZ = player.posZ;
+				final AxisAlignedBB asis = AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX + 1, posY + 1, posZ + 1).expand(8, 8, 8);
+		    	final List<EntityFallingBlock> listEntity = world.getEntitiesWithinAABB(EntityFallingBlock.class, asis);
+		    	for(EntityFallingBlock fallBlock : listEntity) {  
+		    		int x = (int) (fallBlock.posX >= 0 ? fallBlock.posX : fallBlock.posX - 1);
+		    		int y = (int) fallBlock.posY;
+		    		int z = (int) (fallBlock.posZ >= 0 ? fallBlock.posZ : fallBlock.posZ - 1);	    		
+		    		Block block = fallBlock.func_145805_f();	
+		    		fallBlock.setInvisible(true);
+		    		if(!world.isRemote) {
+		    			if(CommonHelper.setBlock(world, BlockListAB.blockAntigravitation, 0, x, y - 1, z, (EntityPlayerMP)player, true)) {
+		    				CommonHelper.setBlock(world, block, fallBlock.field_145814_a, x, y, z, (EntityPlayerMP)player, true);   
+		    				fallBlock.setDead(); 
+		    			}		
+		    		}   				  	   			    			  		    		 	    
+		    	}		
+			}
 		}
 	}
 	

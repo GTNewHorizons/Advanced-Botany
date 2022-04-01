@@ -186,7 +186,7 @@ public class ModelArmorNebula extends ModelBiped {
 
 		lArm = new ModelRenderer(this);
 		lArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
-		lArm.cubeList.add(new ModelBox(lArm, 0, 27, -4.0F, -2.4F, -2.5F, 5, 5, 5, 0.0F));
+		lArm.cubeList.add(new ModelBox(lArm, 0, 27, -4.0F, -2.4F, -2.5F, 5, 5, 5, 0.05F));
 		lArm.cubeList.add(new ModelBox(lArm, 21, 27, -3.0F, 6.0F, -2.0F, 4, 4, 4, 0.2F));
 
 		cube_r17 = new ModelRenderer(this);
@@ -209,7 +209,7 @@ public class ModelArmorNebula extends ModelBiped {
 
 		rArm = new ModelRenderer(this);
 		rArm.setRotationPoint(5.0F, 2.0F, 0.0F);
-		rArm.cubeList.add(new ModelBox(rArm, 38, 26, -1.0F, -2.4F, -2.5F, 5, 5, 5, 0.0F));
+		rArm.cubeList.add(new ModelBox(rArm, 38, 26, -1.0F, -2.4F, -2.5F, 5, 5, 5, 0.05F));
 		rArm.cubeList.add(new ModelBox(rArm, 0, 38, -1.0F, 6.0F, -2.0F, 4, 4, 4, 0.2F));
 
 		cube_r18 = new ModelRenderer(this);

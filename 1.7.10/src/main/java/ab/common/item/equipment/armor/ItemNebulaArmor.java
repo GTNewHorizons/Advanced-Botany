@@ -5,7 +5,7 @@ import java.util.List;
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.client.model.armor.ModelArmorNebula;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.lib.register.ItemListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -135,7 +135,7 @@ public class ItemNebulaArmor extends ItemManasteelArmor implements IManaItem, IM
 		stack.setItemDamage(getDamage(stack));
 	}
 
-	public boolean canExportManaToItem(ItemStack arg0, ItemStack arg1) {
+	public boolean canExportManaToItem(ItemStack stack, ItemStack stack1) {
 		return false;
 	}
 

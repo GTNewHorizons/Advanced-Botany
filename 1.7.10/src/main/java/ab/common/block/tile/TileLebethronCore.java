@@ -12,11 +12,13 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.api.lexicon.multiblock.Multiblock;
@@ -47,15 +49,16 @@ public class TileLebethronCore extends TileMod implements IRenderHud {
 	}
 	
 	public void updateEntity() {
-		if(tick <= 0) {
-			updateStructure();
-			if(validTree && getBlock() != null) {
-				spawnLeaves();
-				tick = 40;
-			}
-		} else 
-			tick--;
-		if(worldObj.isRemote && worldObj.rand.nextBoolean() && this.worldObj.isRemote)
+		if(!worldObj.isRemote) {
+			if(tick <= 0) {
+				updateStructure();
+				if(validTree && getBlock() != null) {
+					spawnLeaves();
+					tick = 40;
+				}
+			} else 
+				tick--;
+		} else if(worldObj.rand.nextBoolean())
 			Botania.proxy.sparkleFX(this.worldObj, this.xCoord + Math.random(), this.yCoord + Math.random(), this.zCoord + Math.random(), 0.5F, 1.0F, 0.5F, (float)Math.random() * 2, 2); 
 	}
 	
@@ -84,19 +87,18 @@ public class TileLebethronCore extends TileMod implements IRenderHud {
 		this.validTree = nbtt.getBoolean("validTree");
 	}
 	
-	public boolean setBlock(Block block, int meta) {
+	public boolean setBlock(EntityPlayer player, Block block, int meta) {
 		if(this.block == null) {
 			this.block = block;
 			this.meta = meta;
 			return true;
 		} else {
-			if(Block.isEqualTo(this.block, block) && this.meta == meta) {
+			if(Block.isEqualTo(this.block, block) && this.meta == meta)
 				return false;
-			}
-			if(!this.worldObj.isRemote) {
-				EntityItem entity = new EntityItem(this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-				entity.setEntityItemStack(new ItemStack(this.block, 1, this.meta));
-				this.worldObj.spawnEntityInWorld(entity);
+			else if(!worldObj.isRemote) {
+				Vec3 vec3 = player.getLook(1.0F).normalize();
+				EntityItem entityitem = new EntityItem(worldObj, player.posX + vec3.xCoord, player.posY + 1.2f, player.posZ + vec3.zCoord, new ItemStack(this.block, 1, this.meta));
+				worldObj.spawnEntityInWorld(entityitem);
 			}
 			this.block = block;
 			this.meta = meta;

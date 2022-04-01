@@ -8,7 +8,7 @@ import org.lwjgl.opengl.GL11;
 
 import ab.api.IRenderHud;
 import ab.client.core.ClientHelper;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;

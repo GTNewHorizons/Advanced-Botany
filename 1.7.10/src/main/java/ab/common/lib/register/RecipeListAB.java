@@ -13,7 +13,7 @@ import ab.api.recipe.lexicon.AlphirineCraftPage;
 import ab.common.block.tile.TileAgglomerationPlate;
 import ab.common.block.tile.TileLebethronCore;
 import ab.common.block.tile.TileMagicCraftCrate;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.ItemCraftingPattern;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
@@ -34,10 +34,13 @@ import vazkii.botania.api.lexicon.LexiconPage;
 import vazkii.botania.api.recipe.RecipePetals;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.block.ModBlocks;
+import vazkii.botania.common.block.ModFluffBlocks;
+import vazkii.botania.common.core.handler.ConfigHandler;
 import vazkii.botania.common.item.ModItems;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 import vazkii.botania.common.lexicon.BLexiconCategory;
 import vazkii.botania.common.lexicon.BLexiconEntry;
+import vazkii.botania.common.lexicon.RLexiconEntry;
 import vazkii.botania.common.lexicon.page.PageText;
 
 public class RecipeListAB {
@@ -48,8 +51,8 @@ public class RecipeListAB {
 	public static RecipeAncientAlphirine forgottenLandRecipe;
 	public static RecipeAncientAlphirine advancedSparkRecipe;
 	public static RecipeAncientAlphirine manaFlowerRecipe;
-	public static RecipeAncientAlphirine slingshotRecipe;
 	public static RecipeAncientAlphirine hopperRecipe;
+	public static RecipeAncientAlphirine fateBoardRecipe;
 	
 	public static RecipeAdvancedPlate manaStarRecipe;
 	public static RecipeAdvancedPlate terrasteelRecipe;
@@ -60,6 +63,7 @@ public class RecipeListAB {
 	public static RecipePetals dictariusRecipe;
 	public static RecipePetals aspecolusRecipe;
 	public static RecipePetals pureGladRecipe;
+	public static RecipePetals azartFlowerRecipe;
 	
 	public static LexiconEntry advandedAgglomerationPlate;
 	public static LexiconEntry ancientAlphirine;
@@ -85,6 +89,12 @@ public class RecipeListAB {
 	public static LexiconEntry nebulaRod;
 	public static LexiconEntry thaumAutoCraft;
 	public static LexiconEntry gladious;
+	public static LexiconEntry gameBoard;
+	public static LexiconEntry fateBoard;
+	public static LexiconEntry richesKey;
+	public static LexiconEntry cubeWardrobe;
+	public static LexiconEntry sprawlRod;
+	public static LexiconEntry azartFlower;
 	
 	public static KnowledgeType forgotten;
 	
@@ -97,8 +107,8 @@ public class RecipeListAB {
 		forgottenLandRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemABResource, 1, 3), new ItemStack(ModItems.manaResource, 1, 15), 75);
 		advancedSparkRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemAdvancedSpark), new ItemStack(ModItems.spark), 11);
 		manaFlowerRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemABResource, 1, 4), new ItemStack(ModBlocks.flower, 1, 32767), 32);
-		slingshotRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(ItemListAB.itemFreyrSlingshot), new ItemStack(ModItems.slingshot), 66);
 		hopperRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(BlockListAB.blockEngineerHopper), new ItemStack(Blocks.hopper), 23);
+		fateBoardRecipe =  AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(BlockListAB.blockBoardFate, 1, 1), new ItemStack(BlockListAB.blockBoardFate), 60);
 		
 		mithrillRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModBlocks.storage, 1, 0), new ItemStack(ModItems.manaResource, 1, 18), 7500000, 0x25d6b7);
 		terrasteelRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ModItems.manaResource, 1, 4), new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 1), 500000, 0x29de20);
@@ -206,9 +216,6 @@ public class RecipeListAB {
 		IRecipe nBoots = getLastRecipe();
 		nebulaArmor = new BLexiconEntry("nebulaArmor", categoryForgotten);
 		nebulaArmor.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1"), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nHelm), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nChest), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nLegs), BotaniaAPI.internalHandler.craftingRecipePage(".craft", nBoots)});
-
-		freyrSlingshot = new BLexiconEntry("freyrSlingshot", categoryForgotten);
-		freyrSlingshot.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new AlphirineCraftPage(freyrSlingshot, slingshotRecipe.getOutput(), ".alphirineCraft")});
 		
 		engineerHopper = new BLexiconEntry("engineerHopper", categoryForgotten);
 		engineerHopper.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new AlphirineCraftPage(engineerHopper, hopperRecipe.getOutput(), ".alphirineCraft")});
@@ -216,6 +223,30 @@ public class RecipeListAB {
 		GameRegistry.addShapedRecipe(new ItemStack(ItemListAB.itemNebulaRod), new Object[] { " WN", " RW", "W  ", Character.valueOf('W'), new ItemStack(ModItems.manaResource, 1, 13), Character.valueOf('R'), new ItemStack(ModItems.rune, 1, 8), Character.valueOf('N'), new ItemStack(ItemListAB.itemABResource, 1, 6)});
 		nebulaRod = new BLexiconEntry("nebulaRod", categoryForgotten);
 		nebulaRod.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe())});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(BlockListAB.blockBoardFate), new Object[] { "   ", "QDQ", "MPM", Character.valueOf('Q'), new ItemStack(ModFluffBlocks.manaQuartz), Character.valueOf('D'), new ItemStack(ModItems.manaResource, 1, 2), Character.valueOf('M'), new ItemStack(ModItems.manaResource), Character.valueOf('P'), new ItemStack(ModItems.manaResource, 1, 23)});
+		gameBoard = new BLexiconEntry("gameBoard", BotaniaAPI.categoryMisc);
+		gameBoard.setLexiconPages(new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe())});
+		
+		fateBoard = new BLexiconEntry("fateBoard", categoryForgotten);
+		fateBoard.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new AlphirineCraftPage(fateBoard, fateBoardRecipe.getOutput(), ".alphirineCraft")});
+			
+		freyrSlingshot = new RLexiconEntry("freyrSlingshot", BotaniaAPI.categoryAlfhomancy, AchievementRegister.relicSlingshot);
+		freyrSlingshot.setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1")});
+			
+		richesKey = new RLexiconEntry("richesKey", BotaniaAPI.categoryAlfhomancy, AchievementRegister.relicItemChest);
+		richesKey.setLexiconPages(new LexiconPage[] { new PageText("0")});
+			
+		cubeWardrobe = new RLexiconEntry("cubeWardrobe", BotaniaAPI.categoryAlfhomancy, AchievementRegister.relicPocketArmor);
+		cubeWardrobe.setLexiconPages(new LexiconPage[] { new PageText("0")});
+
+		GameRegistry.addShapedRecipe(new ItemStack(ItemListAB.itemSprawlRod), new Object[] { " SC", " WS", "W  ", Character.valueOf('S'), new ItemStack(ModItems.grassSeeds, 1, 32767), Character.valueOf('C'), new ItemStack(BlockListAB.blockLebethron, 1, 4), Character.valueOf('W'), new ItemStack(ModItems.manaResource, 1, 3)});
+		sprawlRod = new BLexiconEntry("sprawlRod", categoryForgotten);
+		sprawlRod.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe())});
+		
+		azartFlowerRecipe = BotaniaAPI.registerPetalRecipe(ItemBlockSpecialFlower.ofType("ardentAzarcissus"), new ItemStack(ItemListAB.itemABResource, 1, 4), new ItemStack(ModItems.petal, 1, 11), new ItemStack(ModItems.petal, 1, 11), new ItemStack(ModItems.petal, 1, 14), new ItemStack(ModItems.petal, 1, 14), new ItemStack(ModItems.petal, 1, 13), new ItemStack(ModItems.manaResource, 1, 5));
+		azartFlower = new BLexiconEntry("azartFlower", BotaniaAPI.categoryGenerationFlowers);
+		azartFlower.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", azartFlowerRecipe)});
 		
 		if(Botania.thaumcraftLoaded)
 			thaumcraft();

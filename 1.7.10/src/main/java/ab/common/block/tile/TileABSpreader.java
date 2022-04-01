@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.lwjgl.opengl.GL11;
 
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.RenderHelper;

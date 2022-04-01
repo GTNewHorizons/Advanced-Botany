@@ -3,13 +3,11 @@ package ab.common.item.equipment;
 import java.awt.Color;
 import java.util.List;
 import java.util.UUID;
-
 import com.google.common.collect.Multimap;
-
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.IRankItem;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.*;
 import ab.common.entity.EntitySword;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -49,6 +47,7 @@ import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
 import vazkii.botania.common.entity.EntityManaBurst;
+import vazkii.botania.common.lib.LibObfuscation;
 
 public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingItem {
 	
@@ -83,7 +82,7 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 					if(living instanceof EntityPlayer && (((EntityPlayer)living).getCommandSenderName().equals(player.getCommandSenderName()) || (MinecraftServer.getServer() != null && !MinecraftServer.getServer().isPVPEnabled())))
 						continue; 
 					if(living.hurtTime == 0) {
-						float damage = 4.0F + AdvancedBotanyAPI.mithrilToolMaterial.getDamageVsEntity();
+						float damage = getSwordDamage(stack);
 						living.attackEntityFrom(DamageSource.causePlayerDamage(player), damage);
 					}
 				}
@@ -93,26 +92,26 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 	}
 	
 	public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5) {
+		if(!(entity instanceof EntityPlayer))
+			return;
+		EntityPlayer player = (EntityPlayer)entity;
 		int tick = ItemNBTHelper.getInt(stack, "tick", 0);
 		if(tick > 0) 
 			ItemNBTHelper.setInt(stack, "tick", tick - 1);
 		if(!world.isRemote) {
 			int postAttackTick = ItemNBTHelper.getInt(stack, "postAttackTick", 0);
-			if(postAttackTick > 0) 
+			if(postAttackTick > 0 && !player.isUsingItem()) 
 				ItemNBTHelper.setInt(stack, "postAttackTick", postAttackTick - 1);
-			if(entity instanceof EntityPlayer) {
-				EntityPlayer player = (EntityPlayer)entity;
-				PotionEffect haste = player.getActivePotionEffect(Potion.digSpeed);
-		        float check = (haste == null) ? 0.16666667F : ((haste.getAmplifier() == 1) ? 0.5F : 0.4F);
-		        if(player.getCurrentEquippedItem() == stack && player.swingProgress == check && this.getLevel(stack) >= 1 && postAttackTick == 0 && ManaItemHandler.requestManaExactForTool(stack, player, 120, true)) {
-		        	EntitySword sword = new EntitySword(world, player);
-		        	sword.setDamage(getSwordDamage(stack));
-		        	sword.setAttacker(player.getCommandSenderName());
-		        	sword.motionX *= 0.1f;
-		        	sword.motionY *= 0.1f;
-		        	sword.motionZ *= 0.1f;
-		        	world.spawnEntityInWorld(sword);
-		        }
+			PotionEffect haste = player.getActivePotionEffect(Potion.digSpeed);
+			float check = (haste == null) ? 0.16666667F : ((haste.getAmplifier() == 1) ? 0.5F : 0.4F);
+			if(player.getCurrentEquippedItem() == stack && player.swingProgress == check && this.getLevel(stack) >= 1 && postAttackTick == 0 && ManaItemHandler.requestManaExactForTool(stack, player, 120, true)) {
+				EntitySword sword = new EntitySword(world, player);
+				sword.setDamage(getSwordDamage(stack));
+				sword.setAttacker(player.getCommandSenderName());
+				sword.motionX *= 0.1f;
+				sword.motionY *= 0.1f;
+				sword.motionZ *= 0.1f;
+				world.spawnEntityInWorld(sword);
 			}
 		} else {
 			if(tick > 0 && par5) {
@@ -120,28 +119,37 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 					float r = world.rand.nextBoolean() ? (225.0f / 255.0f) : (101.0f / 255.0f);
 					float g = world.rand.nextBoolean() ? (67.0f / 255.0f) : (209.0f / 255.0f);
 					float b = world.rand.nextBoolean() ? (240.0f / 255.0f) : (225.0f / 255.0f);
-					Botania.proxy.sparkleFX(world, entity.posX + (Math.random() - 0.5D), entity.posY + (Math.random() - 0.5D) - 0.4f, entity.posZ + (Math.random() - 0.5D), r + (float)(Math.random() / 4 - 0.125D), g + (float)(Math.random() / 4 - 0.125D), b + (float)(Math.random() / 4 - 0.125D), 1.2F * (float)(Math.random() - 0.5D), 2);
+					Botania.proxy.sparkleFX(world, entity.posX + (Math.random() - 0.5D), entity.posY + ((Math.random() - 0.5D) * 2) - 0.5f, entity.posZ + (Math.random() - 0.5D), r + (float)(Math.random() / 4 - 0.125D), g + (float)(Math.random() / 4 - 0.125D), b + (float)(Math.random() / 4 - 0.125D), 1.2F * (float)(Math.random() - 0.5D), 2);
 				}
 			}
 		}
 	}
 	
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		if(!player.isUsingItem() && !player.isSneaking() && ItemNBTHelper.getInt(stack, "tick", 0) == 0 && this.getLevel(stack) >= 2) {
-			double posX = player.posX;
-			double posY = player.posY;
-			double posZ = player.posZ;					  
-			Vec3 vec3 = player.getLook(1.0F).normalize();
-			player.motionX += vec3.xCoord * 2.5f;
-			player.motionY += (vec3.yCoord / 1.8f);
-			player.motionZ += vec3.zCoord * 2.5f;
-			ItemNBTHelper.setInt(stack, "tick", recharge);
-			return stack;					      	
-		}
-		else if(player.isSneaking() && this.getLevel(stack) >= 3) {
-			ItemNBTHelper.setBoolean(stack, "isEnabledMode", !this.isEnabledMode(stack));
-		}
+		if(ItemNBTHelper.getInt(stack, "tick", 0) != 0)
+			return stack;
 		return super.onItemRightClick(stack, world, player);
+	}
+	
+	public void onPlayerStoppedUsing(ItemStack stack, World world, EntityPlayer player, int lastTime) {
+		int useTime = getMaxItemUseDuration(stack) - lastTime;
+		if(useTime < 4) {
+			if(!player.isSneaking() && ItemNBTHelper.getInt(stack, "tick", 0) == 0 && this.getLevel(stack) >= 2) {
+				double posX = player.posX;
+				double posY = player.posY;
+				double posZ = player.posZ;					  
+				Vec3 vec3 = player.getLook(1.0F).normalize();
+				player.motionX += vec3.xCoord * 3.25f;
+				player.motionY += (vec3.yCoord / 1.6f);
+				player.motionZ += vec3.zCoord * 3.25f;
+				ItemNBTHelper.setInt(stack, "tick", recharge); 
+				return;					      	
+			}
+			if(player.isSneaking() && this.getLevel(stack) >= 3) {
+				ItemNBTHelper.setBoolean(stack, "isEnabledMode", !this.isEnabledMode(stack));
+				return;
+			}
+		}
 	}
 	
 	public void addInformation(ItemStack stack, EntityPlayer par2EntityPlayer, List list, boolean par4) {

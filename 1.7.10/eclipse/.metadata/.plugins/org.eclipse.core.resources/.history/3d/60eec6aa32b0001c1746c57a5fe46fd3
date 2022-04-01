@@ -1,0 +1,50 @@
+package ab.common.item.relic;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.ReflectionHelper;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+
+public class ItemSehrimnirHide extends ItemModRelic {
+	
+	public static final String[] dropFewItems = new String[] { "dropFewItems", "field_75307_b", "a" };
+	
+	public ItemSehrimnirHide() {
+		super("sehrimnirHide");
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+
+	@SubscribeEvent
+	public void onPlayerAttack(LivingDropsEvent event) {
+
+//		.invoke(event.entityLiving, new Object[] {true, 5});
+		EntityLivingBase liv = event.entityLiving;
+		try {
+			ReflectionHelper.findMethod(EntityLivingBase.class, liv, dropFewItems, new Class[0]).invoke(liv, true, 5);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+//		List<EntityItem> items = event.drops;
+//		World world = event.entityLiving.worldObj;
+//		double posX = event.entityLiving.posX;
+//		double posY = event.entityLiving.posY;
+//		double posZ = event.entityLiving.posZ;
+//		for(EntityItem entity : items) {
+//			if(!world.isRemote) {
+//				ItemStack loot = entity.getEntityItem().copy();
+//				loot.stackSize = Math.max(1, (int)(loot.stackSize / 1.5f));
+//				EntityItem item = new EntityItem(world, posX, posY, posZ, loot);
+//				world.spawnEntityInWorld(item);
+//			}
+//		}
+	}
+}

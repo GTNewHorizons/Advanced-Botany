@@ -4,6 +4,7 @@ import ab.common.block.BlockABSpreader;
 import ab.common.block.BlockABStorage;
 import ab.common.block.BlockAgglomerationPlate;
 import ab.common.block.BlockAntigravitation;
+import ab.common.block.BlockBoardFate;
 import ab.common.block.BlockEngineerHopper;
 import ab.common.block.BlockFreyrLiana;
 import ab.common.block.BlockLebethronWood;
@@ -15,17 +16,20 @@ import ab.common.block.BlockManaCrystalCube;
 import ab.common.block.BlockTerraFarmland;
 import ab.common.block.tile.TileABSpreader;
 import ab.common.block.tile.TileAgglomerationPlate;
+import ab.common.block.tile.TileBoardFate;
 import ab.common.block.tile.TileEngineerHopper;
+import ab.common.block.tile.TileGameBoard;
 import ab.common.block.tile.TileLebethronCore;
 import ab.common.block.tile.TileMagicCraftCrate;
 import ab.common.block.tile.TileManaCharger;
 import ab.common.block.tile.TileManaContainer;
 import ab.common.block.tile.TileManaCrystalCube;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.block.ItemBlockBase;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import vazkii.botania.common.Botania;
+import vazkii.botania.common.core.handler.ConfigHandler;
 
 public class BlockListAB {
 	
@@ -42,6 +46,7 @@ public class BlockListAB {
 	public static Block blockFreyrLiana;
 	public static Block blockLuminousFreyrLiana;
 	public static Block blockMagicCraftCrate;
+	public static Block blockBoardFate;
 	
 	public static int blockABSpreaderRI;
 	public static int blockManaContainerRI;
@@ -68,6 +73,7 @@ public class BlockListAB {
 		BlockListAB.blockEngineerHopper = new BlockEngineerHopper();
 		BlockListAB.blockLuminousFreyrLiana = new BlockLuminousFreyrLiana();
 		BlockListAB.blockFreyrLiana = new BlockFreyrLiana();
+		BlockListAB.blockBoardFate = new BlockBoardFate();
 		if(Botania.thaumcraftLoaded)
 			BlockListAB.blockMagicCraftCrate = new BlockMagicCraftCrate();
 	}
@@ -82,11 +88,11 @@ public class BlockListAB {
 		GameRegistry.registerBlock(BlockListAB.blockManaCrystalCube, "blockManaCrystalCube");
 		GameRegistry.registerBlock(BlockListAB.blockTerraFarmland, "blockTerraFarmland");
 		GameRegistry.registerBlock(BlockListAB.blockAntigravitation, "blockAntigravitation");
-		if(ConfigABHandler.hasManaCharger)
-			GameRegistry.registerBlock(BlockListAB.blockManaCharger, "blockManaCharger");
+		GameRegistry.registerBlock(BlockListAB.blockManaCharger, "blockManaCharger");
 		GameRegistry.registerBlock(BlockListAB.blockEngineerHopper, "blockEngineerHopper");
 		GameRegistry.registerBlock(BlockListAB.blockFreyrLiana, "blockFreyrLiana");
 		GameRegistry.registerBlock(BlockListAB.blockLuminousFreyrLiana, "blockLuminousFreyrLiana");
+		GameRegistry.registerBlock(BlockListAB.blockBoardFate, ItemBlockBase.class, "blockBoardFate");
 	}
 	
 	private static void registerTileEntities() {
@@ -96,9 +102,11 @@ public class BlockListAB {
 		GameRegistry.registerTileEntity(TileLebethronCore.class, "tileLebethronCore");
 		GameRegistry.registerTileEntity(TileManaContainer.class, "tileManaContainer");
 		GameRegistry.registerTileEntity(TileManaCrystalCube.class, "tileManaCrystalCube");
+		GameRegistry.registerTileEntity(TileEngineerHopper.class, "tileEngineerHopper");
 		if(ConfigABHandler.hasManaCharger)
 			GameRegistry.registerTileEntity(TileManaCharger.class, "tileManaCharger");
-		GameRegistry.registerTileEntity(TileEngineerHopper.class, "tileEngineerHopper");
+		GameRegistry.registerTileEntity(TileBoardFate.class, "tileBoardFate");
+		GameRegistry.registerTileEntity(TileGameBoard.class, "tileGameBoard");
 		if(Botania.thaumcraftLoaded)
 			GameRegistry.registerTileEntity(TileMagicCraftCrate.class, "tileMagicCraftCrate");
 	}

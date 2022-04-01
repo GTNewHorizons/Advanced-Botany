@@ -10,6 +10,7 @@ ab.flower.ancientAlphirine.name=Ancient Alphirine
 ab.flower.dictarius.name=Dictarius
 ab.flower.aspecolus.name=Aspecolus
 ab.flower.pureGladiolus.name=Pure Gladiolus
+ab.flower.ardentAzarcissus.name=Ardent Azarcissus
 tile.advancedSpreader.name=Natural Mana Spreader
 tile.ABPlate.name=Advanced Agglomeration Plate
 tile.lebethronWood.0.name=Lebethron Wood
@@ -27,11 +28,14 @@ tile.botania:flower.ancientAlphirine.name=Ancient Alphirine
 tile.botania:flower.aspecolus.name=Aspecolus
 tile.botania:flower.dictarius.name=Dictarius
 tile.botania:flower.pureGladiolus.name=Pure Gladiolus
+tile.botania:flower.ardentAzarcissus.name=Ardent Azarcissus
 tile.terraFarmland.name=Fertile soil
 tile.engineerHopper.name=Engineer Hopper
-tile.BlockFreyrLiana.name=Freyr Liana
-tile.BlockLuminousFreyrLiana.name=Luminous Freyr Liana
+tile.BlockFreyrLiana.name=Fertile Liana
+tile.BlockLuminousFreyrLiana.name=Glowing Fertile Liana
 tile.botania:magicThaumCrafter.name=Thaumim Crafty Crate
+tile.boardFate.0.name=Playing Board
+tile.boardFate.1.name=Fate Playing Board
 
 //Item
 
@@ -69,6 +73,9 @@ item.ab.pattern6.name=Thaumim - Crafting Pattern #6
 item.ab.pattern7.name=Thaumim - Crafting Pattern #7
 item.ab.pattern8.name=Thaumim - Crafting Pattern #8
 item.ab.pattern9.name=Thaumim - Crafting Pattern #9
+item.sprawlRod.name=Rod of Sprawl
+item.autoPocketWardrobe.name=Nimble Cube
+item.talismanHiddenRiches.name=Key to Hidden Wealth
 
 //MISC
 
@@ -81,7 +88,7 @@ ab.manaCharger.wandHud=Mana Charger
 ab.manaContainer.0.hud=Mana Container
 ab.manaContainer.1.hud=Diluted Mana Container
 ab.manaContainer.2.hud=Fabulous Mana Container
-abmisc.swordInfo.1=Mana Beam on Attack
+abmisc.swordInfo.1=Starburst
 abmisc.swordInfo.2=Spatial leap
 abmisc.swordInfo.3=Square Impact 3х3
 abmisc.swordInfo.4=Square Impact 5х5
@@ -89,6 +96,24 @@ abmisc.swordInfo.5=Square Impact 7х7
 abmisc.swordFull=Maximum mana, for the coolest nerd possible!
 ab.armorset.nebula.name=Kinship with the cosmos
 ab.armorset.nebula.desc0=30% less Mana cost on Mana Tools and Rods
+ab.gameBoard.misc.0=%s wins the game
+ab.gameBoard.misc.1=Game ends in a draw
+ab.gameBoard.misc.2=%s loses the game
+ab.gameBoard.misc.0.mult=%s wins the game
+ab.gameBoard.misc.1.mult=Game ends in a draw
+ab.gameBoard.misc.2.mult=%s wins the game
+ab.gameBoard.misc.notPlayer=The game ends, the second player is missing
+
+//ACHIEVEMENT
+
+achievement.ab:fateBoard=Playing with fate
+achievement.ab:fateBoard.desc=Get the Destiny Playing Board!
+achievement.ab:relicSlingshot=The land coup
+achievement.ab:relicSlingshot.desc=Be rewarded with Freyr Slingshot for your heroic deeds
+achievement.ab:relicPocketArmor=A fake appearance
+achievement.ab:relicPocketArmor.desc=Be rewarded with Nimble Cube for your heroic deeds
+achievement.ab:relicItemChest=Access to personal wealth
+achievement.ab:relicItemChest.desc=Be rewarded with Key to Hidden Wealth for your heroic deeds
 
 //LEXICON
 
@@ -212,8 +237,8 @@ botania.page.nebulaArmor.craft=Shall we fly?
 
 botania.entry.freyrSlingshot=Freyr Slingshot
 botania.tagline.freyrSlingshot=&mLust&0 Love and flowers
-botania.page.freyrSlingshot0=Freyr Slingshot - a magical device capable of: speeding up the growth of crops, growing flowers and grass, creating a Liana Freya and organising a romantic environment for animals. <br>Freyr Liana - a plant under which any crop from below starts to grow several times faster!
-botania.page.freyrSlingshot.alphirineCraft=Take the slingshot away from Asa, no problem!
+botania.page.freyrSlingshot0=Freyr Slingshot - one of Pantheon's mythical items. The abilities of this slingshot, allow you to speed up the growth of various seeds or saplings within Natural Flash's range, as well as creating a romantic setting for livestock!
+botania.page.freyrSlingshot1=In addition, when a Tree is hit by Natural Flash, it is enveloped in an instant by a previously unknown vines!<br>1) Fertile Liana - speeds up the growth of the seeds underneath<br>2) The Glowing Fertile Liana is the counterpart of the Fertile Liana, but is also capable of generating gold nuggets!
 
 botania.entry.engineerHopper=Engineer Hopper
 botania.tagline.engineerHopper=Hide not pretty mechanisms deep underground! Make it beautiful!
@@ -236,3 +261,33 @@ botania.entry.gladious=Pure Gladiolus
 botania.tagline.gladious=Did someone die? Where did the pieces of the whiskers come from?
 botania.page.gladious0=Pure Gladiolus - The flower is designed to generate pieces - a vis for mana. It generates them randomly, due to its high sensitivity to primal aspects.
 botania.page.gladious.petalCraft=Alternative charging - vis?
+
+botania.entry.gameBoard=Playing Board
+botania.tagline.gameBoard=A favourite pastime of many nerds when they are bored
+botania.page.gameBoard0=Playing Board - a fun activity for nerds to relax and take a break from the drudgery of everyday life.<br>The game board supports 2 game modes - Play with a Friend and Single. These can be switched by SHIFT + RBM - while waiting for the next game.
+botania.page.gameBoard.craft=Shall we play for mana? How's that?
+
+botania.entry.fateBoard=Fate Playing Board
+botania.tagline.fateBoard=1 cube - 6 relics, makes sense. 2 cubes...
+botania.page.fateBoard0=Fate Playing Board - a kind of fun, just like a normal Playing Board, but - the game requires a few Destiny Cubes.<br>As you know - by rolling the Fate Cube you can get a relic associated with that number.<br>Consequently, 2 cubes will yield up to 12 relics. [Currently up to 9, with 3 more in development]
+botania.page.fateBoard.alphirineCraft=Shall we play relics?
+
+botania.entry.richesKey=Key to Hidden Wealth
+botania.tagline.richesKey=Insert, twist - open. Doesn't seem difficult...
+botania.page.richesKey0=Key to Hidden Wealth - a mythical Pantheon object. Once you pick it up, chests of personal possessions immediately appear. <br>You can stash your valuables in each one, or simply use it while camping in the mine - it's very handy.
+
+botania.entry.cubeWardrobe=Nimble Сube
+botania.tagline.cubeWardrobe=A double set, beautiful on the outside, strong on the inside!
+botania.page.cubeWardrobe0=Nimble Сube - One of Pantheon's mythical items. Allows you to cheat during battle, or just store outfits! <br>The trick during combat is the cube's sensitivity to damage on the wearer. As soon as the wearer is attacked, the cube changes to the set that is set in the red area, then returns the previous outfit afterwards!
+
+botania.entry.sprawlRod=Rod of Sprawl
+botania.tagline.sprawlRod=Poking the seeds isn't an option? Poke once - but with all your might!
+botania.page.sprawlRod0=Rod of Sprawl - a magical wand capable of sticking ordinary meadow seeds into the ground with mana, with a spreading area many times larger!<br>Guide: How to change everything around you beyond recognition - Create the biggest balloon possible, launch it into the sky, wait for it to fall, flee the scene!
+botania.page.sprawlRod.craft=And how to get it all back...
+
+botania.entry.azartFlower=Ardent Azarcissus
+botania.tagline.azartFlower=Don't worry, you won't be left without a home...
+botania.page.azartFlower0=Ardent Azarcissus - The flower is a gambler, one of the representatives of the passive flora, to make a long story short.<br>In fact, he can make up to 8 moves at a time on the Game Board, trying to beat the board itself. If he wins, he gives mana, the amount of which depends on the difference between the sums of the numbers on the Game Board.
+botania.page.azartFlower.petalCraft=Just give him the will, and he'll give you mana.
+
+

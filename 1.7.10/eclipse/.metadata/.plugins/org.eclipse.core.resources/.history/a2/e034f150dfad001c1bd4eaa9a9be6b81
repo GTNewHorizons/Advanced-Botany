@@ -1,0 +1,27 @@
+package ab.common.lib.register;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ab.api.AchievementAB;
+import ab.api.AdvancedBotanyAPI;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Achievement;
+import net.minecraftforge.common.AchievementPage;
+import vazkii.botania.common.item.ModItems;
+
+public class AchievementRegister {
+	
+	public static Achievement relicSlingshot;
+	public static Achievement relicPocketArmor;
+	public static Achievement relicItemChest;
+
+	public static void init() {
+		relicSlingshot = new AchievementAB("relicSlingshot", 1, 0, ItemListAB.itemFreyrSlingshot, null);
+		relicPocketArmor = new AchievementAB("relicPocketArmor", 0, 1, ItemListAB.itemPocketWardrobe, null);
+		relicItemChest = new AchievementAB("relicItemChest", 1, 1, ItemListAB.itemTalismanHiddenRiches, null);
+		AchievementPage page = new AchievementPage("Advanced Botany", AdvancedBotanyAPI.achievements.<Achievement>toArray(new Achievement[AdvancedBotanyAPI.achievements.size()]));
+		AchievementPage.registerAchievementPage(page);
+	}
+}

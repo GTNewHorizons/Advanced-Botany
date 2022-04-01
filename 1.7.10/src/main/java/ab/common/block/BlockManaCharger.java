@@ -63,12 +63,13 @@ public class BlockManaCharger extends BlockContainer implements IWandHUD, IWanda
 					return true;
 				}
 			} else {
-				if (heldItem != null && heldItem.getItem() instanceof IManaItem && stackInSlot == null && heldItem.getMaxStackSize() == 1) {
+				if(heldItem != null && heldItem.getItem() instanceof IManaItem && stackInSlot == null && heldItem.getMaxStackSize() == 1) {
 					ItemStack copy = heldItem.copy();
 					copy.stackSize = 1;
 					heldItem.stackSize--;
 					if(heldItem.stackSize == 0)
 						player.inventory.setInventorySlotContents(player.inventory.currentItem, null); 	
+					player.inventory.markDirty();
 					if(!world.isRemote) {
 						tile.setInventorySlotContents(slotSide, copy);
 						tile.requestUpdate = true;

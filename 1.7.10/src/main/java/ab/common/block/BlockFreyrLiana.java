@@ -2,6 +2,7 @@ package ab.common.block;
 
 import java.util.Random;
 
+import ab.common.core.CommonHelper;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.RecipeListAB;
 import net.minecraft.block.Block;
@@ -36,7 +37,7 @@ public class BlockFreyrLiana extends BlockBush implements ILexiconable {
 				|| world.getBlock(x, y + 1, z).getMaterial() == Material.ground
 				|| world.getBlock(x, y + 1, z).getMaterial() == Material.rock
 				|| world.getBlock(x, y + 1, z).getMaterial() == Material.sand
-						|| world.getBlock(x, y + 1, z).getMaterial() == Material.grass
+				|| world.getBlock(x, y + 1, z).getMaterial() == Material.grass
 				|| world.getBlock(x, y + 1, z) instanceof BlockFreyrLiana;
 	}
 
@@ -45,9 +46,8 @@ public class BlockFreyrLiana extends BlockBush implements ILexiconable {
 		world.markBlockForUpdate(x, y, z);
 		for(int i1 = 1; i1 < 5; i1++) {
 			Block block = world.getBlock(x, y - i1, z);
-			if(block instanceof IGrowable || (block instanceof BlockBush && !(block instanceof BlockFreyrLiana))) {
-				for(int i = 0; i < 16 + rand.nextInt(16); i++)
-					block.updateTick(world, x, y - i1, z, rand);
+			if(block instanceof IGrowable) {
+				CommonHelper.fertilizer(world, block, x, y - i1, z, 18);
 				if(world.getBlock(x, y - i1 - 1, z) == BlockListAB.blockTerraFarmland)
 					world.getBlock(x, y - i1 - 1, z).updateTick(world, x, y - i1 - 1, z, rand);
 				break;

@@ -10,6 +10,7 @@ ab.flower.ancientAlphirine.name=Древний Альфирин
 ab.flower.dictarius.name=Диктариус
 ab.flower.aspecolus.name=Аспеколус
 ab.flower.pureGladiolus.name=Чистый Гладиулос
+ab.flower.ardentAzarcissus.name=Пылкий Азарцисс
 tile.advancedSpreader.name=Природный распространитель маны
 tile.ABPlate.name=Улучшенная агломерационная плита
 tile.lebethronWood.0.name=Древесина Лебертона
@@ -27,11 +28,14 @@ tile.botania:flower.ancientAlphirine.name=Древний Альфирин
 tile.botania:flower.aspecolus.name=Аспекулос
 tile.botania:flower.dictarius.name=Диктариус
 tile.botania:flower.pureGladiolus.name=Чистый Гладиулос
+tile.botania:flower.ardentAzarcissus.name=Пылкий Азарцисс
 tile.terraFarmland.name=Плодородная почва
 tile.engineerHopper.name=Воронка инженера
-tile.BlockFreyrLiana.name=Лиана Фрейи
-tile.BlockLuminousFreyrLiana.name=Светящаяся Лиана Фрейи
+tile.BlockFreyrLiana.name=Плодородная Лиана
+tile.BlockLuminousFreyrLiana.name=Светящаяся Плодородная Лиана
 tile.botania:magicThaumCrafter.name=Таум - Сборочный ящик
+tile.boardFate.0.name=Игральная Доска
+tile.boardFate.1.name=Игральная Доска Судьбы
 
 //Item
 
@@ -57,7 +61,7 @@ item.botania:nebulaHelmRevealing.name=Туманный шлем откровен
 item.botania:nebulaChest.name=Туманная кираса
 item.botania:nebulaLegs.name=Туманные поножи
 item.botania:nebulaBoots.name=Туманные ботинки
-item.freyrSlingshot.name=Рогатка Фрейи
+item.freyrSlingshot.name=Рогатка Фрейра
 item.nebulaRod.name=Жезл туманности
 item.ab.pattern0.name=Таум - Заполнитель сборщика
 item.ab.pattern1.name=Таум - Сетка крафта #1 
@@ -69,6 +73,9 @@ item.ab.pattern6.name=Таум - Сетка крафта #6
 item.ab.pattern7.name=Таум - Сетка крафта #7
 item.ab.pattern8.name=Таум - Сетка крафта #8
 item.ab.pattern9.name=Таум - Сетка крафта #9
+item.sprawlRod.name=Жезл разрастания
+item.autoPocketWardrobe.name=Куб Проворства
+item.talismanHiddenRiches.name=Ключ от Скрытых Богатств
 
 //MISC
 
@@ -81,7 +88,7 @@ ab.manaCharger.wandHud=Зарядник маны
 ab.manaContainer.0.hud=Контейнер маны
 ab.manaContainer.1.hud=Контейнер разбавленной маны
 ab.manaContainer.2.hud=Мифический контейнер маны
-abmisc.swordInfo.1=Мана-луч при атаке
+abmisc.swordInfo.1=Звездная вспышка
 abmisc.swordInfo.2=Пространственный скачок
 abmisc.swordInfo.3=Удар по площади 3х3
 abmisc.swordInfo.4=Удар по площади 5х5
@@ -89,6 +96,25 @@ abmisc.swordInfo.5=Удар по площади 7х7
 abmisc.swordFull=Максимум маны, для максимально крутого ботаника!
 ab.armorset.nebula.name=Родство с космосом
 ab.armorset.nebula.desc0=На 30% меньше маны на Инструментах Маны
+ab.gameBoard.misc.0=%s побеждает в игре
+ab.gameBoard.misc.1=Игра завершается ничьей
+ab.gameBoard.misc.2=%s проигрывает в игре
+ab.gameBoard.misc.0.mult=%s побеждает в игре
+ab.gameBoard.misc.1.mult=Игра завершается ничьей
+ab.gameBoard.misc.2.mult=%s побеждает в игре
+ab.gameBoard.misc.notPlayer=Игра завершается, отсутствует второй игрок
+
+//ACHIEVEMENT
+
+achievement.ab:fateBoard=Игра с судьбой
+achievement.ab:fateBoard.desc=Получите Игральную Доску Судьбы!
+achievement.ab:relicSlingshot=Земельный переворот
+achievement.ab:relicSlingshot.desc=Будьте вознаграждены Рогаткой Фрейра за героический подвиг
+achievement.ab:relicPocketArmor=Фальшивый облик
+achievement.ab:relicPocketArmor.desc=Будьте вознаграждены Кубом Проворства за героический подвиг
+achievement.ab:relicItemChest=Доступ к личному богатсву
+achievement.ab:relicItemChest.desc=Будьте вознаграждены Ключом от Скрытых Богатств за героический подвиг
+
 
 //LEXICON
 
@@ -166,7 +192,7 @@ botania.page.manaFlower.alphirineCraft=Красивый цветочек
 
 botania.entry.mithrillSword=Клинок пространства
 botania.tagline.mithrillSword=Оружие, способное делать рывки, и наносить ущерб
-botania.page.mithrillSword0=Клинок пространства - это магическое оружие, требующее ману для улучшения своих способностей, а также урона. 
+botania.page.mithrillSword0=Клинок пространства - это обычное оружие ближнего боя, но стоит лишь влить в него ману - Оно сразу наделяется необычными магическими свойствами. Например: Рывок или Звездная Вспышка <br>Примечание: При использовании звездной вспышки, некоторое время недоступен Блок
 botania.page.mithrillSword.craft=Порежь их всех!!!
 
 botania.entry.dictarius=Диктариус
@@ -210,10 +236,10 @@ botania.page.nebulaArmor0=Броня туманности - это мощное 
 botania.page.nebulaArmor1=Характеристика каждого элемента брони: <br>Туманный шлем - повышает здоровье <br>Туманная кираса - позволяет владельцу летать, а также имеет сопротивление к отбрасыванию <br>Туманные поножи - увеличивают высоту прыжка <br>Туманные ботинки - ускоряют носителя
 botania.page.nebulaArmor.craft=Полетаем?
 
-botania.entry.freyrSlingshot=Рогатка Фрейи
+botania.entry.freyrSlingshot=Рогатка Фрейра
 botania.tagline.freyrSlingshot=&mПохоть&0 Любовь и цветочки
-botania.page.freyrSlingshot0=Рогатка Фрейи - магическое приспособление, способное: ускорять рост культур, выращивать цветы и траву, создавать Лиану Фрейи и организовывать романтическую обстановку животным. <br>Лиана Фрейи - растение, под которым снизу любые культуры начинают рости в несколько раз быстрее!
-botania.page.freyrSlingshot.alphirineCraft=Отобрать у Аса рогатку - запросто!
+botania.page.freyrSlingshot0=Рогатка Фрейра - одна из мифических вещей Пантеона. Способности данной рогатки, позволяют ускорять рост различных семян или саженцев в радиусе попадания Природной Вспышки, а также создавать романтическую обстановку для скота!
+botania.page.freyrSlingshot1=Помимо этого, при попадании Природной Вспышки в Дерево, оно в миг окутывается неизвестной ранее лианой!<br>1) Плодородная Лиана - ускоряет рост семян, находящихся снизу<br>2) Светящаяся Плодородная Лиана - аналог Плодородной Лианы, но ещё способно генерировать золотые самородки!
 
 botania.entry.engineerHopper=Воронка инженера
 botania.tagline.engineerHopper=Срячь не красивые механизмы глубоко подземлю! Наведи красоту!
@@ -236,3 +262,34 @@ botania.entry.gladious=Чистый гладиоус
 botania.tagline.gladious=Кто-то умер? Откуда кусочки вис?
 botania.page.gladious0=Чистый гладиоус - цветок предназначенный для генерации кусочков - вис за ману. Создает он их случайным образом, из-за высокой чувтсвительности к первородным аспектам.
 botania.page.gladious.petalCraft=Альтернативная зарядка - вис?
+
+botania.entry.gameBoard=Игральная Доска
+botania.tagline.gameBoard=Любимое занятие многих ботаников, когда им скучно
+botania.page.gameBoard0=Игральная Доска - развлечение для ботаников, позволяющее расслабиться и отдохнуть от тяжкой бытовой жизни.<br>Игральная доска поддерживает 2 режима игры - Игра с Другом и Одиночный. Переключать их можно на SHIFT + ПКМ - во время ожидания следующей игры.
+botania.page.gameBoard.craft=Поиграем на ману? Как тебе такое??
+
+botania.entry.fateBoard=Игральная Доска Судьбы
+botania.tagline.fateBoard=1 кубик - 6 реликвий, вполне логично. 2 кубика...
+botania.page.fateBoard0=Игральная Доска Судьбы - своего рода развлечение, как и обычная Игральная Доска, но - партия требует несколько Кубиков Судьбы.<br>Как известно - бросая Кубик Судьбы можно получить реликвию, связанную с этим числом.<br>Следовательно, 2 кубика позволят получить до 12 реликвий. [В данный момент до 9, ещё 3 в разработке]
+botania.page.fateBoard.alphirineCraft=Поиграем на реликвии?
+
+botania.entry.richesKey=Ключ от Скрытых Богатств
+botania.tagline.richesKey=Вставить, провернуть - открыть. Вроде несложно...
+botania.page.richesKey0=Ключ от Скрытых Богатств - мифический предмет Пантеона. Стоит взять его в руки, так сразу же появляются сундуки личного пользования. <br>В каждый из них можно прятать свои ценные вещи, или просто использовать во время похода в шахту - это очень удобно.
+
+botania.entry.cubeWardrobe=Куб Проворства
+botania.tagline.cubeWardrobe=Двойной сет, снаружи - красив, внутри - силен!
+botania.page.cubeWardrobe0=Куб Проворства - одна из мифических вещей Пантеона. Позволяет хитрить во время боя, или же просто хранить наряды! <br>Хитрость во время боя - заключается в чувствительности куба на урон по владельцу. Как только носителя атакуют, куб переодевает его в сет, который задан в красной области, после же - обратно возвращает предыдущий наряд!
+
+botania.entry.sprawlRod=Жезл Разрастания
+botania.tagline.sprawlRod=Тыкать семечки не вариант? Тыкни один раз - но со всей силы!
+botania.page.sprawlRod0=Жезл Разрастания - магический жезл, способный втыкать обычные луговые семена в землю при помощи маны, при этом площадь распространения в разы выше!<br>Гайд: Как все вокруг изменить до неузнаваемости - Создать максимально большой шар, запустить его в небо, ждать его падения, убежать с места проишествия!
+botania.page.sprawlRod.craft=А как все назад вернуть...
+
+botania.entry.azartFlower=Пылкий Азарцисс
+botania.tagline.azartFlower=Не бойтесь, без дома не останетесь...
+botania.page.azartFlower0=Пылкий Азарцисс - цветок - игроман, один из представителей пассивной флоры - это если в кратце.<br>На деле, он может совершать до 8 ходов одновременно на Игровой Доске, пытаясь обыграть саму доску. В случае победы, он дает ману, количество которой зависит от разницы между суммами чисел на Игровой доске.
+botania.page.azartFlower.petalCraft=Просто дай ему волю, а он тебе ману
+
+
+

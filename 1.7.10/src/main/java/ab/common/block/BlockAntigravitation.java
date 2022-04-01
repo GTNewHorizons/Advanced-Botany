@@ -49,10 +49,6 @@ public class BlockAntigravitation extends Block {
     	if(world.isAirBlock(x, y + 1, z))
     		world.setBlockToAir(x, y, z);
     }
-    
-	public void updateTick(World world, int x, int y, int z, Random rand) {
-		world.setBlockToAir(x, y, z);
-	}
 	
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World world, int x, int y, int z, Random random) {	

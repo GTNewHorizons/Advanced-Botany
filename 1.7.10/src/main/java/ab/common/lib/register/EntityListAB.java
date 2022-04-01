@@ -5,6 +5,7 @@ import ab.common.entity.EntityAdvancedSpark;
 import ab.common.entity.EntityAlphirinePortal;
 import ab.common.entity.EntityManaVine;
 import ab.common.entity.EntityNebulaBlaze;
+import ab.common.entity.EntitySeed;
 import ab.common.entity.EntitySword;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
@@ -17,5 +18,6 @@ public class EntityListAB {
 		 EntityRegistry.registerModEntity(EntityManaVine.class, "ab:manaVineBall", id++, AdvancedBotany.instance, 64, 10, true);
 		 EntityRegistry.registerModEntity(EntityAlphirinePortal.class, "ab:alphirinePortal", id++, AdvancedBotany.instance, 64, 10, false);
 		 EntityRegistry.registerModEntity(EntitySword.class, "ab:entitySword", id++, AdvancedBotany.instance, 64, 10, true);
+		 EntityRegistry.registerModEntity(EntitySeed.class, "ab:entitySeed", id++, AdvancedBotany.instance, 64, 10, true);
 	 }
 }

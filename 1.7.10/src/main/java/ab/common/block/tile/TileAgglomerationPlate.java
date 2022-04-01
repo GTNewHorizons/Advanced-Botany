@@ -76,12 +76,15 @@ public class TileAgglomerationPlate extends TileInventory implements ISparkAttac
 		boolean hasUpdate = false;
 		List<EntityItem> items = this.worldObj.getEntitiesWithinAABB(EntityItem.class, AxisAlignedBB.getBoundingBox(this.xCoord, this.yCoord, this.zCoord, (this.xCoord + 1), (this.yCoord + 1), (this.zCoord + 1)));		
 		for(EntityItem item : items) {
-			if(!item.isDead && item.getEntityItem() != null) {
+			if(item.getEntityItem() != null && !item.isDead) {
 				ItemStack stack = item.getEntityItem();
 				int splitCount = addItemStack(stack);
-				stack.splitStack(splitCount);
+				stack.stackSize -= splitCount;
+				if(stack.stackSize <= 0)
+					item.setDead();
 				if(splitCount > 0)
 					hasUpdate = true;
+				break;
 			}
 		}
 		int wasManaToGet = this.manaToGet;
@@ -175,7 +178,7 @@ public class TileAgglomerationPlate extends TileInventory implements ISparkAttac
 		for (int i = 1; i < getSizeInventory(); i++) {
 			if(getStackInSlot(i) == null) {
 				ItemStack stackToAdd = stack.copy();
-				setInventorySlotContents(i, stackToAdd);	
+				setInventorySlotContents(i, stackToAdd);
 				return stack.stackSize;
 			} else if(isItemEqual(stack, getStackInSlot(i))) {
 				if(getStackInSlot(i).stackSize < stack.getMaxStackSize()) {

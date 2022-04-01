@@ -44,26 +44,24 @@ public class BlockLebethronWood extends Block implements ILexiconable, ITileEnti
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
 		int meta = world.getBlockMetadata(x, y, z);
 		if(meta == 4) {
-			TileEntity tile = world.getTileEntity(x, y, z);
-			if(!(tile instanceof TileLebethronCore)) {
-				return false;
-			}
-			TileLebethronCore core = (TileLebethronCore)tile;
+			TileLebethronCore core = (TileLebethronCore)world.getTileEntity(x, y, z);
 			ItemStack heldItem = player.getCurrentEquippedItem();
 			if(heldItem == null)
 				return false;
 			Block block = Block.getBlockFromItem(heldItem.getItem());
 			if(block.getMaterial() == Material.leaves) {
-				core.updateStructure();
-				if(core.getValidTree()) {
-					if(core.setBlock(block, heldItem.getItemDamage())) {
-						heldItem.stackSize--;
-						if (heldItem.stackSize == 0)
-							player.inventory.setInventorySlotContents(player.inventory.currentItem, null); 	
-						VanillaPacketDispatcher.dispatchTEToNearbyPlayers(world, x, y, z); 
-						return true;
+				if(!world.isRemote) {
+					core.updateStructure();
+					if(core.getValidTree()) {
+						if(core.setBlock(player, block, heldItem.getItemDamage())) {
+							heldItem.stackSize--;
+							if(heldItem.stackSize == 0)
+								player.inventory.setInventorySlotContents(player.inventory.currentItem, null);
+							VanillaPacketDispatcher.dispatchTEToNearbyPlayers(world, x, y, z); 
+						}
 					}
 				}
+				return true;
 			}			
 		}
 		return false;

@@ -1,7 +1,7 @@
 package ab.client.nei;
 
 import ab.AdvancedBotany;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.lib.register.BlockListAB;
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;

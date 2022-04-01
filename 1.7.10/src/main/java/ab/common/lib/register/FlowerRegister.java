@@ -2,7 +2,7 @@ package ab.common.lib.register;
 
 import ab.common.block.subtile.ABSubTileSignature;
 import ab.common.block.subtile.SubTileAncientAlphirine;
-import ab.common.block.subtile.SubTileAngryMallos;
+import ab.common.block.subtile.SubTileArdentAzarcissus;
 import ab.common.block.subtile.SubTileAspecolus;
 import ab.common.block.subtile.SubTileDictarius;
 import ab.common.block.subtile.SubTilePureGladiolus;
@@ -15,7 +15,7 @@ public class FlowerRegister {
 	public static void init() {
 		registerFlower(SubTileAncientAlphirine.class, "ancientAlphirine");
 		registerFlower(SubTileDictarius.class, "dictarius");
-	//	registerFlower(SubTileAngryMallos.class, "angryMallos");
+		registerFlower(SubTileArdentAzarcissus.class, "ardentAzarcissus");
 		if(Botania.thaumcraftLoaded) {
 			registerFlower(SubTileAspecolus.class, "aspecolus");
 			registerFlower(SubTilePureGladiolus.class, "pureGladiolus");

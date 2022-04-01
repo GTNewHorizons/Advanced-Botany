@@ -1,15 +1,15 @@
 package ab.client.core.proxy;
 
-import ab.client.core.BoundRender;
-import ab.client.core.ClientHandler;
-import ab.client.core.HudRender;
-import ab.client.core.PlayerRenderer;
+import ab.client.core.handler.BoundRenderHandler;
+import ab.client.core.handler.ClientHandler;
+import ab.client.core.handler.HudRenderHandler;
+import ab.client.core.handler.PlayerRendererHandler;
 import ab.client.render.block.*;
 import ab.client.render.entity.*;
-import ab.client.render.item.RenderAntigravityCharm;
+import ab.client.render.item.RenderItemAntigravityCharm;
 import ab.client.render.tile.*;
 import ab.common.block.tile.*;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.core.proxy.CommonProxy;
 import ab.common.entity.*;
 import ab.common.lib.register.BlockListAB;
@@ -34,13 +34,13 @@ public class ClientProxy extends CommonProxy {
         super.preInit(event);
     }
 
-    public void init(FMLInitializationEvent event) { 
+    public void init(FMLInitializationEvent event) {
     	super.init(event);
     	
     	FMLCommonHandler.instance().bus().register(new ClientHandler());
-    	MinecraftForge.EVENT_BUS.register(new HudRender());
-    	MinecraftForge.EVENT_BUS.register(new PlayerRenderer());
-    	MinecraftForge.EVENT_BUS.register(new BoundRender());
+    	MinecraftForge.EVENT_BUS.register(new HudRenderHandler());
+    	MinecraftForge.EVENT_BUS.register(new PlayerRendererHandler());
+    	MinecraftForge.EVENT_BUS.register(new BoundRenderHandler());
     	
     	if(ConfigABHandler.hasAbPlate)
     		ClientRegistry.bindTileEntitySpecialRenderer(TileAgglomerationPlate.class, new RenderTileAgglomerationPlate());
@@ -50,6 +50,8 @@ public class ClientProxy extends CommonProxy {
     	if(ConfigABHandler.hasManaCharger)
     		ClientRegistry.bindTileEntitySpecialRenderer(TileManaCharger.class, new RenderTileManaCharger()); 
     	ClientRegistry.bindTileEntitySpecialRenderer(TileEngineerHopper.class, new RenderTileEngineerHopper()); 
+    	ClientRegistry.bindTileEntitySpecialRenderer(TileBoardFate.class, new RenderTileBoardFate()); 
+    	ClientRegistry.bindTileEntitySpecialRenderer(TileGameBoard.class, new RenderTileGameBoard()); 
     	if(Botania.thaumcraftLoaded)
     		ClientRegistry.bindTileEntitySpecialRenderer(TileMagicCraftCrate.class, new RenderTileMagicCraftingCrate()); 
     	
@@ -70,8 +72,9 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityManaVine.class, new EntityNullRender());
         RenderingRegistry.registerEntityRenderingHandler(EntityAlphirinePortal.class, new RenderEntityAlphirinePortal());
         RenderingRegistry.registerEntityRenderingHandler(EntitySword.class, new EntityNullRender());
+        RenderingRegistry.registerEntityRenderingHandler(EntitySeed.class, new EntityNullRender());
         
-        MinecraftForgeClient.registerItemRenderer(ItemListAB.itemAntigravityCharm, new RenderAntigravityCharm());
+        MinecraftForgeClient.registerItemRenderer(ItemListAB.itemAntigravityCharm, new RenderItemAntigravityCharm());
     }
 
     public void postInit(FMLPostInitializationEvent event) {

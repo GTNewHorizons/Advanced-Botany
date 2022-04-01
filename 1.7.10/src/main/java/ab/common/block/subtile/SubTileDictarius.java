@@ -16,7 +16,7 @@ import vazkii.botania.api.subtile.SubTileGenerating;
 
 public class SubTileDictarius extends SubTileGenerating {
 	
-	int cooldown = 0;
+	int cooldown;
 	int workMana = 400;
 	
 	public void onUpdate() {

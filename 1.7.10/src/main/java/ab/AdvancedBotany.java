@@ -9,11 +9,11 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod (modid = AdvancedBotany.modid, name="Advanced Botany", version = AdvancedBotany.version, dependencies = "required-after:Botania", guiFactory = "ab.client.core.GuiABFactory")
+@Mod (modid = AdvancedBotany.modid, name="Advanced Botany", version = AdvancedBotany.version, dependencies = "required-after:Botania", guiFactory = "ab.client.core.handler.GuiABFactory")
 public class AdvancedBotany {
 	
 	public static final String modid = "AdvancedBotany";
-	public static final String version = "1.2.0.1";
+	public static final String version = "1.2.3.1";
 
 	@Mod.Instance("AdvancedBotany")
     public static AdvancedBotany instance;

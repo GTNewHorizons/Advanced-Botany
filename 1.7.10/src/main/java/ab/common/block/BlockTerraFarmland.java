@@ -16,6 +16,7 @@ import net.minecraft.block.BlockFarmland;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -75,6 +76,9 @@ public class BlockTerraFarmland extends Block implements ILexiconable {
 	}
 	
 	private void refreshSeed(World world, int x, int y, int z, Block block, int meta) {
+		List<EntityItem> items = world.getEntitiesWithinAABB(EntityItem.class, AxisAlignedBB.getBoundingBox(x - 4, y - 4, z - 4, x + 4, y + 4, z + 4));
+		if(!items.isEmpty() && items.size() > 7)
+			return;
 		IPlantable seed = (IPlantable)block;
 		List<ItemStack> list = block.getDrops(world, x, y + 1, z, meta, 0);
 		for(ItemStack stack : list) {
@@ -83,9 +87,8 @@ public class BlockTerraFarmland extends Block implements ILexiconable {
 			else if(stack.getItem() == seed) {
 				if(stack.stackSize > 1)
 					stack.stackSize -= 1;
-			} else {
-				stack.stackSize = Math.min(64, (int)(stack.stackSize * 3.5f));		
-			}
+			} else
+				stack.stackSize = Math.min(64, (int)(stack.stackSize * 2.5f));	
 		}
 		for(ItemStack stack : list) {
 			if(stack == null)

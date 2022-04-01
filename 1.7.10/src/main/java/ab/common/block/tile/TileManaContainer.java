@@ -6,7 +6,7 @@ import java.util.List;
 import org.lwjgl.opengl.GL11;
 
 import ab.client.core.ClientHelper;
-import ab.common.core.ConfigABHandler;
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.lib.register.BlockListAB;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;

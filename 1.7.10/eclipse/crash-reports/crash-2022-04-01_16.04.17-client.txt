@@ -1,0 +1,119 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 01.04.22 16:04
+Description: Ticking block entity
+
+java.lang.NullPointerException: Ticking block entity
+	at net.minecraft.world.World.getPlayerEntityByName(World.java:3897)
+	at ab.common.block.tile.TileLebethronCore.setBlock(TileLebethronCore.java:197)
+	at ab.common.block.tile.TileLebethronCore.spawnLeaves(TileLebethronCore.java:156)
+	at ab.common.block.tile.TileLebethronCore.updateEntity(TileLebethronCore.java:57)
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:2097)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1039)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.world.World.getPlayerEntityByName(World.java:3897)
+	at ab.common.block.tile.TileLebethronCore.setBlock(TileLebethronCore.java:197)
+	at ab.common.block.tile.TileLebethronCore.spawnLeaves(TileLebethronCore.java:156)
+	at ab.common.block.tile.TileLebethronCore.updateEntity(TileLebethronCore.java:57)
+
+-- Block entity being ticked --
+Details:
+	Name: tileLebethronCore // ab.common.block.tile.TileLebethronCore
+	Block type: ID #684 (tile.lebethronWood // ab.common.block.BlockLebethronWood)
+	Block data value: 4 / 0x4 / 0b0100
+	Block location: World: (2646,64,1695), Chunk: (at 6,4,15 in 165,105; contains blocks 2640,0,1680 to 2655,255,1695), Region: (5,3; contains chunks 160,96 to 191,127, blocks 2560,0,1536 to 3071,255,2047)
+	Actual block type: ID #684 (tile.lebethronWood // ab.common.block.BlockLebethronWood)
+	Actual block data value: 4 / 0x4 / 0b0100
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player222'/411, l='MpServer', x=2651,23, y=65,62, z=1692,00]]
+	Chunk stats: MultiplayerChunkCache: 49, 49
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (184,64,252), Chunk: (at 8,4,12 in 11,15; contains blocks 176,0,240 to 191,255,255), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 641453 game time, 222221 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 39 total; [EntityBat['Летучая мышь'/719, l='MpServer', x=2686,69, y=13,00, z=1636,43], EntityBat['Летучая мышь'/720, l='MpServer', x=2682,25, y=22,66, z=1710,45], EntityZombie['Зомби'/412, l='MpServer', x=2644,63, y=47,00, z=1673,16], EntitySpider['Паук'/413, l='MpServer', x=2645,72, y=48,00, z=1669,81], EntityItem['item.item.freyrSlingshot'/414, l='MpServer', x=2654,00, y=56,13, z=1701,28], EntityItem['item.item.dyePowder.black'/415, l='MpServer', x=2648,13, y=56,13, z=1709,03], EntityCreeper['Крипер'/416, l='MpServer', x=2638,31, y=52,00, z=1674,97], EntityZombie['Зомби'/417, l='MpServer', x=2632,97, y=50,00, z=1676,47], EntityWitch['Ведьма'/418, l='MpServer', x=2632,50, y=51,00, z=1679,50], EntityChicken['Курица'/419, l='MpServer', x=2610,56, y=64,00, z=1690,38], EntityItem['item.item.egg'/420, l='MpServer', x=2611,03, y=64,13, z=1688,13], EntityBat['Летучая мышь'/612, l='MpServer', x=2630,38, y=32,80, z=1632,88], EntitySquid['Спрут'/421, l='MpServer', x=2649,53, y=56,00, z=1713,75], EntityBat['Летучая мышь'/613, l='MpServer', x=2636,39, y=30,07, z=1636,14], EntityChicken['Курица'/422, l='MpServer', x=2630,47, y=71,00, z=1659,63], EntityItem['item.item.egg'/423, l='MpServer', x=2630,59, y=70,13, z=1661,56], EntitySheep['Овца'/424, l='MpServer', x=2651,46, y=78,47, z=1729,15], EntityChicken['Курица'/425, l='MpServer', x=2636,59, y=77,15, z=1732,21], EntitySkeleton['Скелет'/873, l='MpServer', x=-36,23, y=-15,62, z=4,00], EntityItem['item.item.egg'/426, l='MpServer', x=2638,84, y=77,13, z=1733,88], EntityCow['Корова'/427, l='MpServer', x=2607,41, y=66,00, z=1696,69], EntityCow['Корова'/428, l='MpServer', x=2605,47, y=89,00, z=1696,65], EntityCow['Корова'/429, l='MpServer', x=2604,47, y=93,00, z=1697,78], EntityCow['Корова'/430, l='MpServer', x=2605,53, y=93,00, z=1703,25], EntityCreeper['Крипер'/431, l='MpServer', x=2625,50, y=15,00, z=1645,50], EntitySheep['Овца'/432, l='MpServer', x=2666,84, y=84,00, z=1728,06], EntitySheep['Овца'/433, l='MpServer', x=2661,06, y=83,00, z=1730,09], EntitySheep['Овца'/434, l='MpServer', x=2659,66, y=83,00, z=1730,44], EntitySheep['Овца'/435, l='MpServer', x=2698,59, y=64,00, z=1651,13], EntitySheep['Овца'/436, l='MpServer', x=2690,59, y=64,00, z=1648,78], EntityChicken['Курица'/437, l='MpServer', x=2677,44, y=84,00, z=1742,53], EntityChicken['Курица'/438, l='MpServer', x=2669,04, y=87,00, z=1739,00], EntitySheep['Овца'/439, l='MpServer', x=2699,09, y=64,00, z=1636,16], EntitySheep['Овца'/440, l='MpServer', x=2689,38, y=64,00, z=1632,22], EntityBat['Летучая мышь'/504, l='MpServer', x=2684,30, y=21,82, z=1715,92], EntityBat['Летучая мышь'/506, l='MpServer', x=2671,49, y=19,10, z=1700,04], EntityBat['Летучая мышь'/507, l='MpServer', x=2676,75, y=19,26, z=1700,44], EntityBat['Летучая мышь'/508, l='MpServer', x=2684,50, y=20,35, z=1709,32], EntityClientPlayerMP['Player222'/411, l='MpServer', x=2651,23, y=65,62, z=1692,00]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:984)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_311, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 549071320 bytes (523 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 12 mods loaded, 12 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	NotEnoughItems{1.0.5.120} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.120-universal.jar) 
+	UCHIJAAAA	CodeChickenCore{1.0.7.48} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10-dev.jar) 
+	UCHIJAAAA	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft-1.7.10-4.2.3.5-deobf.jar) 
+	UCHIJAAAA	Botania{r1.8-249} [Botania] (Botania+r1.8-249-deobf.jar) 
+	UCHIJAAAA	AdvancedBotany{1.2.2.1} [Advanced Botany] (bin) 
+	UCHIJAAAA	MineTweaker3{3.0.10} [MineTweaker 3] (MineTweaker3-1.7.10-3.0.10B-deobf.jar) 
+	UCHIJAAAA	DamageIndicatorsMod{3.3.2} [Damage Indicators] (1.7.10DamageIndicatorsMod_3.3.2-deobf.jar) 
+	UCHIJAAAA	BiblioCraft{1.10.4} [BiblioCraft] (BiblioCraft[v1.10.4][MC1.7.10]-deobf.jar) 
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.6.14761 Compatibility Profile Context 21.10.2 30.0.13025.5005' Renderer: 'AMD Radeon(TM) Graphics'
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: AMD Radeon(TM) Graphics GL version 4.6.14761 Compatibility Profile Context 21.10.2 30.0.13025.5005, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: Русский (Россия)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)

@@ -1,0 +1,65 @@
+package ab.common.block.subtile;
+
+import ab.common.block.tile.TileGameBoard;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import vazkii.botania.api.subtile.SubTileGenerating;
+
+public class SubTileArdentAzarcissus extends SubTileGenerating {
+	
+	public static final String playerName = "ArdentAzarcissus#21sda2gaj91*21df#111sfq3jrns@#";
+	int cooldown;
+	int workMana = 400;
+
+	public void onUpdate() {
+		super.onUpdate();
+		int posX = this.supertile.xCoord;
+		int posY = this.supertile.yCoord;
+		int posZ = this.supertile.zCoord;
+		World world = this.supertile.getWorldObj();
+		if(cooldown > 0) {
+			cooldown--;
+			return;
+		}
+		for(int i = -1; i <= 1; i++)
+			for(int j = -1; j <= 1; j++) {
+//				if(i == 0 || j == 0)
+//					continue;
+				int x = posX + i;
+				int z = posZ + j;
+				TileEntity tile = world.getTileEntity(x, posY, z);
+				if(tile != null && tile instanceof TileGameBoard) {
+					TileGameBoard board = (TileGameBoard)tile;
+					if(board.isSingleGame) {
+						if(!board.hasGame()) {
+							board.setPlayer(playerName);
+							cooldown = 20;
+						}
+						else {
+							board.dropDice(playerName);
+							cooldown = 20;
+						}
+					}
+				}
+			}
+	}
+	
+	public int getMaxMana() {
+		return 15000;
+	}
+	
+	public int getColor() {
+		return 0xd2cdb2;
+	}
+	
+	public void writeToPacketNBT(NBTTagCompound cmp) {
+		super.writeToPacketNBT(cmp);
+		cmp.setInteger("cooldown", this.cooldown);
+	}
+		  
+	public void readFromPacketNBT(NBTTagCompound cmp) {
+		super.readFromPacketNBT(cmp);
+		this.cooldown = cmp.getInteger("cooldown");
+	}
+}

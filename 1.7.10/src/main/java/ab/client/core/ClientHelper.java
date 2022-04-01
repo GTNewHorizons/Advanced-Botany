@@ -22,6 +22,7 @@ import net.minecraft.util.StatCollector;
 import vazkii.botania.client.core.handler.ClientTickHandler;
 import vazkii.botania.client.core.handler.HUDHandler;
 import vazkii.botania.common.block.ModBlocks;
+import vazkii.botania.common.core.helper.Vector3;
 
 public class ClientHelper {
 	
@@ -33,7 +34,6 @@ public class ClientHelper {
 	private static FloatBuffer field_147528_b = GLAllocation.createDirectFloatBuffer(16);
 	
 	public static void renderCosmicBackground() {
-		GL11.glDisable(GL11.GL_LIGHTING);
 		field_147527_e.setSeed(31100L);
 	    float f4 = 0.24F;
 	    for (int i = 0; i < 16; i++) {
@@ -83,7 +83,7 @@ public class ClientHelper {
 	    	float f11 = color.getRed() / 255.0F;
 	    	float f12 = color.getGreen() / 255.0F;
 	    	float f13 = color.getBlue() / 255.0F;
-	    	tessellator.setBrightness(180);
+	    	tessellator.setBrightness(60);
 	    	tessellator.setColorRGBA_F(f11 * f7, f12 * f7, f13 * f7, 1.0F);
 	    	tessellator.addVertex(0.0D, f4, 0.0D);
 	    	tessellator.addVertex(0.0D, f4, 1.0D);
@@ -98,7 +98,6 @@ public class ClientHelper {
         GL11.glDisable(GL11.GL_TEXTURE_GEN_T);
         GL11.glDisable(GL11.GL_TEXTURE_GEN_R);
         GL11.glDisable(GL11.GL_TEXTURE_GEN_Q);
-        GL11.glEnable(GL11.GL_LIGHTING);
 	}
 	
 	private static FloatBuffer func_147525_a(float p_147525_1_, float p_147525_2_, float p_147525_3_, float p_147525_4_) {
@@ -177,6 +176,25 @@ public class ClientHelper {
 		int lightmapX = light % 65536;
 		int lightmapY = light / 65536;
 		OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, lightmapX, lightmapY);
+	}
+	
+	public static Vector3 setRotation(float angel, float vX, float vY, float vZ, Vector3 v3) {
+		Vector3 rVec = new Vector3(vX, vY, vZ);
+		Vector3 rVec1 = v3.copy().normalize();
+		double rAngel = Math.toRadians(angel) * 0.5f;
+		double sin = Math.sin(rAngel);
+		double x = rVec.x * sin;
+		double y = rVec.y * sin;
+		double z = rVec.z * sin;
+		rAngel = Math.cos(rAngel);
+		double d = -x * rVec1.x - y * rVec1.y - z * rVec1.z;
+		double d1 = rAngel * rVec1.x + y * rVec1.z - z * rVec1.y;
+		double d2 = rAngel * rVec1.y - x * rVec1.z + z * rVec1.x;
+		double d3 = rAngel * rVec1.z + x * rVec1.y - y * rVec1.x;
+		v3.x = d1 * rAngel - d * x - d2 * z + d3 * y;
+		v3.y = d2 * rAngel - d * y + d1 * z - d3 * x;
+		v3.z = d3 * rAngel - d * z - d1 * y + d2 * x;
+		return v3;
 	}
 	
 	public static Color getCorporeaRuneColor(int posX, int posY, int posZ, int meta) {

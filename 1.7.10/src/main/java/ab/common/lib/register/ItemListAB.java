@@ -7,9 +7,15 @@ import ab.common.item.equipment.armor.ItemNebulaChest;
 import ab.common.item.equipment.armor.ItemNebulaHelm;
 import ab.common.item.equipment.armor.ItemNebulaHelmRevealing;
 import ab.common.item.equipment.armor.ItemNebulaLegs;
+import ab.common.item.relic.ItemFreyrSlingshot;
+import ab.common.item.relic.ItemPocketWardrobe;
+import ab.common.item.relic.ItemSehrimnirHide;
+import ab.common.item.relic.ItemSpiritJar;
+import ab.common.item.relic.ItemTalismanHiddenRiches;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import vazkii.botania.common.Botania;
+import vazkii.botania.common.core.handler.ConfigHandler;
 
 public class ItemListAB {
 	
@@ -32,6 +38,11 @@ public class ItemListAB {
 	public static Item itemFreyrSlingshot;
 	public static Item itemNebulaRod;
 	public static Item itemCraftingPattern;
+	public static Item itemSprawlRod;
+	public static Item itemPocketWardrobe;
+	public static Item itemTalismanHiddenRiches;
+	public static Item itemSehrimnirHide;
+	public static Item itemSpiritJar;
 	
 	public static void init() {
 		ItemListAB.itemABResource = new ItemABResource();
@@ -56,15 +67,23 @@ public class ItemListAB {
 		GameRegistry.registerItem(itemNebulaBlaze, "itemNebulaBlaze");
 		ItemListAB.itemAntigravityCharm = new ItemAntigravityCharm();
 		GameRegistry.registerItem(itemAntigravityCharm, "itemAntigravityCharm");
-		ItemListAB.itemFreyrSlingshot = new ItemFreyrSlingshot();
-		GameRegistry.registerItem(itemFreyrSlingshot, "itemFreyrSlingshot");
+
 		ItemListAB.itemNebulaRod = new ItemNebulaRod();
 		GameRegistry.registerItem(itemNebulaRod, "itemNebulaRod");
+		ItemListAB.itemSprawlRod = new ItemSprawlRod();
+		GameRegistry.registerItem(itemSprawlRod, "itemSprawlRod");
+		
+		ItemListAB.itemPocketWardrobe = new ItemPocketWardrobe();
+		ItemListAB.itemTalismanHiddenRiches = new ItemTalismanHiddenRiches();
+		ItemListAB.itemFreyrSlingshot = new ItemFreyrSlingshot();
+	//	ItemListAB.itemSehrimnirHide = new ItemSehrimnirHide();
+
+	//	ItemListAB.itemSpiritJar = new ItemSpiritJar();
+		
 		ItemListAB.itemNebulaHelm = new ItemNebulaHelm();
 		ItemListAB.itemNebulaChest = new ItemNebulaChest();
 		ItemListAB.itemNebulaLegs = new ItemNebulaLegs();
 		ItemListAB.itemNebulaBoots = new ItemNebulaBoots();
-		
 		if(Botania.thaumcraftLoaded)
 			thaumcraft();
 		
