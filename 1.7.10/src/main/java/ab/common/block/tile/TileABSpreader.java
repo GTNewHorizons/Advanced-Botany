@@ -50,33 +50,31 @@ public class TileABSpreader extends TileSpreader {
 		 }
 	}
 	
-    public EntityManaBurst getBurst(boolean fake) {
-    	EntityManaBurst burst = new EntityManaBurst(this, fake);
-    	if(burst != null) {
-    		int maxMana = ConfigABHandler.spreaderBurstMana;
-    		int color = 0xcdd419;
-    		int ticksBeforeManaLoss = 35;
-    		float manaLossPerTick = ConfigABHandler.spreaderBurstMana / 4.5f;
-    		float motionModifier = 6.5f;
-    		float gravity = 0.0f;
-    		BurstProperties props = new BurstProperties(maxMana, ticksBeforeManaLoss, manaLossPerTick, gravity, motionModifier, color);
-    		ItemStack lens = this.getStackInSlot(0);
-    		if(lens != null && lens.getItem() instanceof ILensEffect) {
-    			((ILensEffect)lens.getItem()).apply(lens, props);
-    		}
-    		burst.setSourceLens(lens);
-    		if(this.getCurrentMana() >= props.maxMana || fake) {
-    			burst.setColor(props.color);
-				burst.setMana(props.maxMana);
-				burst.setStartingMana(props.maxMana);
-				burst.setMinManaLoss(props.ticksBeforeManaLoss);
-                burst.setManaLossPerTick(props.manaLossPerTick);
-                burst.setGravity(props.gravity);
-                burst.setMotion(burst.motionX * props.motionModifier, burst.motionY * props.motionModifier, burst.motionZ * props.motionModifier);           
-    		}
-    	}
-    	return burst;
-    }   
+	public EntityManaBurst getBurst(boolean fake) {
+	    EntityManaBurst burst = new EntityManaBurst(this, fake);
+	    int maxMana = ConfigABHandler.spreaderBurstMana;
+	    int color = 0xcdd419;
+	    int ticksBeforeManaLoss = 35;
+	    float manaLossPerTick = ConfigABHandler.spreaderBurstMana / 4.5f;
+	    float motionModifier = 2.5f;
+	    float gravity = 0.0F;
+	    BurstProperties props = new BurstProperties(maxMana, ticksBeforeManaLoss, manaLossPerTick, gravity, motionModifier, color);
+	    ItemStack lens = getStackInSlot(0);
+	    if(lens != null && lens.getItem() instanceof ILensEffect)
+	    	((ILensEffect)lens.getItem()).apply(lens, props); 
+	    burst.setSourceLens(lens);
+	    if(getCurrentMana() >= props.maxMana || fake) {
+	    	burst.setColor(props.color);
+	    	burst.setMana(props.maxMana);
+	    	burst.setStartingMana(props.maxMana);
+	    	burst.setMinManaLoss(props.ticksBeforeManaLoss);
+	    	burst.setManaLossPerTick(props.manaLossPerTick);
+	    	burst.setGravity(props.gravity);
+	    	burst.setMotion(burst.motionX * props.motionModifier, burst.motionY * props.motionModifier, burst.motionZ * props.motionModifier);
+	    	return burst;
+	    } 
+	    return null;
+	}
     
     public void renderHUD(Minecraft mc, ScaledResolution res) {
     	String name = StatCollector.translateToLocal("tile.advancedSpreader.name");

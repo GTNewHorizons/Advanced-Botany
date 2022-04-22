@@ -22,10 +22,8 @@ public class NEIConfig implements IConfigureNEI {
 	public void loadConfig() {
 		API.registerRecipeHandler((ICraftingHandler)new RecipeHandlerAlphirine());
 		API.registerUsageHandler((IUsageHandler)new RecipeHandlerAlphirine());
-		if(ConfigABHandler.hasAbPlate) {
-			API.registerRecipeHandler((ICraftingHandler)new RecipeHandlerAdvancedPlate());
-			API.registerUsageHandler((IUsageHandler)new RecipeHandlerAdvancedPlate());
-		}
+		API.registerRecipeHandler((ICraftingHandler)new RecipeHandlerAdvancedPlate());
+		API.registerUsageHandler((IUsageHandler)new RecipeHandlerAdvancedPlate());
 		API.hideItem(new ItemStack(BlockListAB.blockAntigravitation));
 	}
 }

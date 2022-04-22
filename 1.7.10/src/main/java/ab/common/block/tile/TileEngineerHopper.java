@@ -225,7 +225,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 	            ItemStack stack = sideInv.getStackInSlot(slots[i]);
 	            if(stack == null)
 	                return inv.getInventoryStackLimit();
-	            else if(inv.getInventoryStackLimit() != stack.stackSize && stack.stackSize != stack.getMaxStackSize() && TileAgglomerationPlate.isItemEqual(stack, getStackInSlot(0))) 
+	            else if(inv.getInventoryStackLimit() != stack.stackSize && stack.stackSize != stack.getMaxStackSize() && TileNidavellirForge.isItemEqual(stack, getStackInSlot(0))) 
 	            	return inv.getInventoryStackLimit() - stack.stackSize;
 	        }
 		} else {
@@ -234,7 +234,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 	            ItemStack stack = inv.getStackInSlot(i);
 	            if(stack == null)
 	                return inv.getInventoryStackLimit();
-	            else if(inv.getInventoryStackLimit() != stack.stackSize && stack.stackSize != stack.getMaxStackSize() && TileAgglomerationPlate.isItemEqual(stack, getStackInSlot(0))) 
+	            else if(inv.getInventoryStackLimit() != stack.stackSize && stack.stackSize != stack.getMaxStackSize() && TileNidavellirForge.isItemEqual(stack, getStackInSlot(0))) 
 	            	return inv.getInventoryStackLimit() - stack.stackSize;
 	        }
 	    }
@@ -275,7 +275,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 	            if(stack != null)
 	            	if(getStackInSlot(0) == null)
 	            		return getInventoryStackLimit();
-	            	else if(getInventoryStackLimit() != getStackInSlot(0).stackSize && getStackInSlot(0).stackSize != getStackInSlot(0).getMaxStackSize() && TileAgglomerationPlate.isItemEqual(stack, getStackInSlot(0)))
+	            	else if(getInventoryStackLimit() != getStackInSlot(0).stackSize && getStackInSlot(0).stackSize != getStackInSlot(0).getMaxStackSize() && TileNidavellirForge.isItemEqual(stack, getStackInSlot(0)))
 	            		return getInventoryStackLimit() - getStackInSlot(0).stackSize;
 	        }		
 	    } else {
@@ -284,7 +284,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 	        	if(stack != null)
 	        		if(getStackInSlot(0) == null)
 	        			return getInventoryStackLimit();
-	        		else if(getInventoryStackLimit() != getStackInSlot(0).stackSize && getStackInSlot(0).stackSize != getStackInSlot(0).getMaxStackSize() && TileAgglomerationPlate.isItemEqual(stack, getStackInSlot(0)))
+	        		else if(getInventoryStackLimit() != getStackInSlot(0).stackSize && getStackInSlot(0).stackSize != getStackInSlot(0).getMaxStackSize() && TileNidavellirForge.isItemEqual(stack, getStackInSlot(0)))
 	        			return getInventoryStackLimit() - getStackInSlot(0).stackSize;
 	        }
 	    }

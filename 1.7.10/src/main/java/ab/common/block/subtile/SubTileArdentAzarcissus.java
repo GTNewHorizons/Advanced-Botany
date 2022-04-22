@@ -2,15 +2,18 @@ package ab.common.block.subtile;
 
 import ab.common.block.tile.TileGameBoard;
 import ab.common.lib.register.RecipeListAB;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.subtile.SubTileGenerating;
+import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
 public class SubTileArdentAzarcissus extends SubTileGenerating {
 	
 	public static final String playerName = "ArdentAzarcissus#21sda2gaj91*21df#111sfq3jrns@#";
+	public static final ItemStack flowerStack = ItemBlockSpecialFlower.ofType("ardentAzarcissus");
 	
 	int cooldown;
 	int workMana = 320;
@@ -56,6 +59,7 @@ public class SubTileArdentAzarcissus extends SubTileGenerating {
 								board.dropDice(playerName);
 							cooldown = 120;
 						}
+						board.changeCustomStack(flowerStack);
 					}
 				}
 			}

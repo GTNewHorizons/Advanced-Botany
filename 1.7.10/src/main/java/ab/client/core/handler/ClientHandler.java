@@ -9,6 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import ab.api.IBoundRender;
 import ab.api.IRankItem;
+import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
 import ab.common.block.tile.TileLebethronCore;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
@@ -42,12 +43,19 @@ import vazkii.botania.client.core.handler.ClientTickHandler;
 import vazkii.botania.common.lib.LibObfuscation;
 
 public class ClientHandler {
-
+	
 	@SubscribeEvent
 	public void renderTick(TickEvent.RenderTickEvent event) {
-		if (event.phase != TickEvent.Phase.START) {
+		if(event.phase != TickEvent.Phase.START)
 			renderTooltip();
-		} 
+	}
+	
+	@SubscribeEvent
+	public void clientTickEnd(TickEvent.ClientTickEvent event) {
+		if(event.phase == TickEvent.Phase.END) {
+			ItemsRemainingRender.tick();
+			ClientSoundHandler.tick();
+		}
 	}
 	
 	public static void renderTooltip() {

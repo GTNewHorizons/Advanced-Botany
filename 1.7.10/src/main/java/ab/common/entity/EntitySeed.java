@@ -11,6 +11,7 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -18,6 +19,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.item.ItemGrassSeeds;
 
@@ -116,9 +121,13 @@ public class EntitySeed extends EntityThrowable {
 								break;	
 						}
 						posY = j;
-						if(!worldObj.isRemote)
+						if(!worldObj.isRemote && isDirt(posX, posY, posZ)) { 
+							BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(posX, posY, posZ, worldObj, worldObj.getBlock(posX, posY, posZ), worldObj.getBlockMetadata(posX, posY, posZ), player);
+							MinecraftForge.EVENT_BUS.post(event);
+							if(event.isCanceled())
+								continue;
 							itemSeed.onItemUse(seed.copy(), player, worldObj, posX, posY, posZ, mov.sideHit, 0, 0, 0);
-						else if((Math.random() < 0.15f || getRadius() < 3) && isDirt(posX, posY, posZ))
+						} else if((Math.random() < 0.15f || getRadius() < 3) && isDirt(posX, posY, posZ))
 							spawnGrowParticle(posX, posY, posZ);
 					}
 				}

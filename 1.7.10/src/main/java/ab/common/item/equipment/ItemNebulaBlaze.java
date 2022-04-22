@@ -30,6 +30,7 @@ public class ItemNebulaBlaze extends ItemMod implements IManaUsingItem {
 			EntityNebulaBlaze blaze = new EntityNebulaBlaze(player.worldObj, player);
 			blaze.setAttacker(player.getCommandSenderName());
 			player.worldObj.spawnEntityInWorld(blaze);
+			player.worldObj.playSoundAtEntity(player, "ab:nebulaBlaze", 0.4F, 1.4F);
 		}
 	}
 	

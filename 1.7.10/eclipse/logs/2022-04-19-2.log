@@ -1,0 +1,18 @@
+[20:31:37] [main/INFO]: Setting user: Player266
+[20:31:39] [Client thread/INFO]: LWJGL Version: 2.9.1
+[20:31:50] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[20:31:56] [Sound Library Loader/INFO]: Sound engine started
+[20:31:57] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[20:31:57] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[20:32:00] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[20:32:01] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[20:32:02] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[20:32:03] [Sound Library Loader/INFO]: Sound engine started
+[20:32:07] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[20:32:07] [Server thread/INFO]: Generating keypair
+[20:32:07] [Server thread/INFO]: Preparing start region for level 0
+[20:32:08] [Server thread/INFO]: Changing view distance to 4, from 10
+[20:32:09] [Server thread/INFO]: Player266[local:E:4786b810] logged in with entity id 358 at (394.45838267739043, 7.0, 116.36714579260361)
+[20:32:09] [Server thread/INFO]: Player266 присоединился к игре
+[20:32:18] [Server thread/INFO]: Player266 заработал достижение [Проверить карманы]
+[20:32:18] [Client thread/INFO]: [CHAT] Player266 заработал достижение [Проверить карманы]

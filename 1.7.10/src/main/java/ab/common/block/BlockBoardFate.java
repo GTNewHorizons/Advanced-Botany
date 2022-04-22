@@ -13,6 +13,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -82,6 +83,8 @@ public class BlockBoardFate extends BlockContainer implements IPickupAchievement
 			TileGameBoard tile = (TileGameBoard)world.getTileEntity(x, y, z);
 			if(player.isSneaking() && !tile.hasGame()) {
 				tile.isSingleGame = !tile.isSingleGame;
+				if(!world.isRemote)
+					world.playSoundAtEntity((Entity)player, "botania:ding", 0.11F, 0.8F);
 				return true;
 			}
 			if(!tile.hasGame())

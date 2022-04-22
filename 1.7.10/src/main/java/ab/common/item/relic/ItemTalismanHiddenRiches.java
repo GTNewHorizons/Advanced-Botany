@@ -8,6 +8,7 @@ import org.lwjgl.opengl.GL11;
 
 import ab.AdvancedBotany;
 import ab.client.core.ClientHelper;
+import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
 import ab.common.entity.EntityAnonymousSteve;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
@@ -42,8 +43,8 @@ public class ItemTalismanHiddenRiches extends ItemModRelic {
 
 	protected static List<TileEntityChest> chestList = new ArrayList<TileEntityChest>();
 	protected static final ResourceLocation glowTexture = new ResourceLocation("ab:textures/misc/glow3.png");
-	protected static final int segmentCount = 7;
-	protected static final int maxSegmentCount = 14;
+	protected static final int segmentCount = 11;
+	protected static final int maxSegmentCount = 16;
 	
 	public ItemTalismanHiddenRiches() {
 		super("talismanHiddenRiches");
@@ -51,6 +52,7 @@ public class ItemTalismanHiddenRiches extends ItemModRelic {
 	}
 	
 	public void onUpdate(ItemStack stack, World world, Entity entity, int pos, boolean equipped) {
+		super.onUpdate(stack, world, entity, pos, equipped);
 		if(entity != null && entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)entity;
 			boolean eqLastTick = wasEquipped(stack);
@@ -69,14 +71,19 @@ public class ItemTalismanHiddenRiches extends ItemModRelic {
 						TileEntityChest chest = getChestForSegment(i);
 						if(chest != null) {
 							chest.prevLidAngle = chest.lidAngle;
-							if(i == getOpenChest(stack) && chest.lidAngle < 1.0F)
-								chest.lidAngle = Math.min(1.0f, chest.lidAngle + 0.1F);
-							else if(chest.lidAngle > 0.0F)
-								chest.lidAngle = Math.max(0.0f, chest.lidAngle - 0.1F);
+							float lidAngel = chest.lidAngle;
+							if(i == getOpenChest(stack) && chest.lidAngle < 1.0F) {
+								if(lidAngel == 0.0F)
+									Minecraft.getMinecraft().theWorld.playSound(player.posX, player.posY - 0.5f, player.posZ, "random.chestopen", 0.5f, world.rand.nextFloat() * 0.1F + 0.9F, false);
+								chest.lidAngle = Math.min(1.0f, lidAngel + 0.1F);
+							} else if(i != getOpenChest(stack) && lidAngel > 0.0F) {
+								if((int)(lidAngel * 10) == 5)
+									Minecraft.getMinecraft().theWorld.playSound(player.posX, player.posY - 0.5f, player.posZ, "random.chestclosed", 0.5f, world.rand.nextFloat() * 0.1F + 0.9F, false);
+								chest.lidAngle = Math.max(0.0f, lidAngel - 0.1F);
+							}
 						}
 					}
-				} else
-					chestList.removeAll(chestList);
+				}
 			}
 		}
 	}
@@ -139,7 +146,7 @@ public class ItemTalismanHiddenRiches extends ItemModRelic {
 	    	GL11.glTranslated(0.375f, Math.sin(worldTime / 8.0D) / 20.0D, -0.375F);
 	    	float scale = 0.75F;
 	    	GL11.glScalef(scale, scale, scale);
-	    	//render
+	    	
 	    	GL11.glRotatef(-90.0f, 0.0f, 1.0f, 0.0f);
 	    	TileEntityChest chest = getChestForSegment(seg);
 	    	TileEntityRendererDispatcher.instance.renderTileEntityAt(chest, 0.0D, 0.0D, 0.0D, partialTicks);

@@ -13,6 +13,7 @@ import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -21,6 +22,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -35,6 +37,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
@@ -75,8 +78,8 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 		if(!player.worldObj.isRemote) {
 			ItemNBTHelper.setInt(stack, "postAttackTick", 3);
 			if(this.getLevel(stack) >= 3 && this.isEnabledMode(stack)) {
-				float size = this.getLevel(stack) >= 4 ? (this.getLevel(stack) >= 5 ? 3.2f : 2.2f) : 1.2f; 
-				AxisAlignedBB axis = AxisAlignedBB.getBoundingBox(entity.posX, entity.posY, entity.posZ, entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).expand(size, 1.0f, size);
+				float size = this.getLevel(stack) >= 4 ? (this.getLevel(stack) >= 5 ? 3.5f : 2.5f) : 1.5f;
+				AxisAlignedBB axis = AxisAlignedBB.getBoundingBox(entity.posX, entity.posY, entity.posZ, entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).expand(size, 1.7f, size);
 				List<EntityLivingBase> entities = entity.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, axis);
 				for(EntityLivingBase living : entities) {
 					if(living instanceof EntityPlayer && (((EntityPlayer)living).getCommandSenderName().equals(player.getCommandSenderName()) || (MinecraftServer.getServer() != null && !MinecraftServer.getServer().isPVPEnabled())))
@@ -96,30 +99,31 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 			return;
 		EntityPlayer player = (EntityPlayer)entity;
 		int tick = ItemNBTHelper.getInt(stack, "tick", 0);
-		if(tick > 0) 
-			ItemNBTHelper.setInt(stack, "tick", tick - 1);
 		if(!world.isRemote) {
 			int postAttackTick = ItemNBTHelper.getInt(stack, "postAttackTick", 0);
 			if(postAttackTick > 0 && !player.isUsingItem()) 
 				ItemNBTHelper.setInt(stack, "postAttackTick", postAttackTick - 1);
+			if(tick > 0) 
+				ItemNBTHelper.setInt(stack, "tick", tick - 1);
 			PotionEffect haste = player.getActivePotionEffect(Potion.digSpeed);
 			float check = (haste == null) ? 0.16666667F : ((haste.getAmplifier() == 1) ? 0.5F : 0.4F);
 			if(player.getCurrentEquippedItem() == stack && player.swingProgress == check && this.getLevel(stack) >= 1 && postAttackTick == 0 && ManaItemHandler.requestManaExactForTool(stack, player, 120, true)) {
 				EntitySword sword = new EntitySword(world, player);
 				sword.setDamage(getSwordDamage(stack));
 				sword.setAttacker(player.getCommandSenderName());
-				sword.motionX *= 0.1f;
-				sword.motionY *= 0.1f;
-				sword.motionZ *= 0.1f;
+				sword.motionX *= 0.2f;
+				sword.motionY *= 0.2f;
+				sword.motionZ *= 0.2f;
 				world.spawnEntityInWorld(sword);
+				player.worldObj.playSoundAtEntity(player, "ab:bladeSpace", 0.5F, 3.6F); 
 			}
 		} else {
-			if(tick > 0 && par5) {
-				for(int i = 0; i < 9; i++) {
+			if(tick > 26 && par5) {
+				for(int i = 0; i < 14; i++) {
 					float r = world.rand.nextBoolean() ? (225.0f / 255.0f) : (101.0f / 255.0f);
 					float g = world.rand.nextBoolean() ? (67.0f / 255.0f) : (209.0f / 255.0f);
 					float b = world.rand.nextBoolean() ? (240.0f / 255.0f) : (225.0f / 255.0f);
-					Botania.proxy.sparkleFX(world, entity.posX + (Math.random() - 0.5D), entity.posY + ((Math.random() - 0.5D) * 2) - 0.5f, entity.posZ + (Math.random() - 0.5D), r + (float)(Math.random() / 4 - 0.125D), g + (float)(Math.random() / 4 - 0.125D), b + (float)(Math.random() / 4 - 0.125D), 1.2F * (float)(Math.random() - 0.5D), 2);
+					Botania.proxy.sparkleFX(world, entity.posX + (Math.random() - 0.5D), entity.posY + ((Math.random() - 0.5D) * 2) - 0.5f, entity.posZ + (Math.random() - 0.5D), r + (float)(Math.random() / 4 - 0.125D), g + (float)(Math.random() / 4 - 0.125D), b + (float)(Math.random() / 4 - 0.125D), 1.8F * (float)(Math.random() - 0.5D), 3);
 				}
 			}
 		}
@@ -134,15 +138,11 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 	public void onPlayerStoppedUsing(ItemStack stack, World world, EntityPlayer player, int lastTime) {
 		int useTime = getMaxItemUseDuration(stack) - lastTime;
 		if(useTime < 4) {
-			if(!player.isSneaking() && ItemNBTHelper.getInt(stack, "tick", 0) == 0 && this.getLevel(stack) >= 2) {
-				double posX = player.posX;
-				double posY = player.posY;
-				double posZ = player.posZ;					  
-				Vec3 vec3 = player.getLook(1.0F).normalize();
-				player.motionX += vec3.xCoord * 3.25f;
-				player.motionY += (vec3.yCoord / 1.6f);
-				player.motionZ += vec3.zCoord * 3.25f;
-				ItemNBTHelper.setInt(stack, "tick", recharge); 
+			if(!world.isRemote && !player.isSneaking() && ItemNBTHelper.getInt(stack, "tick", 0) == 0 && this.getLevel(stack) >= 2) {
+				NetworkHandler.sendPacketToSpaceDash((EntityPlayerMP)player);
+				onPlayerSpaceDash(player);
+				ItemNBTHelper.setInt(stack, "tick", recharge);
+				player.worldObj.playSoundAtEntity(player, "ab:bladeSpace", 2.3F, 1.2F); 
 				return;					      	
 			}
 			if(player.isSneaking() && this.getLevel(stack) >= 3) {
@@ -150,6 +150,16 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 				return;
 			}
 		}
+	}
+	
+	public static void onPlayerSpaceDash(EntityPlayer player) {
+		double posX = player.posX;
+		double posY = player.posY;
+		double posZ = player.posZ;					  
+		Vec3 vec3 = player.getLook(1.0F).normalize();
+		player.motionX += vec3.xCoord * 3.25f;
+		player.motionY += (vec3.yCoord / 1.6f);
+		player.motionZ += vec3.zCoord * 3.25f;
 	}
 	
 	public void addInformation(ItemStack stack, EntityPlayer par2EntityPlayer, List list, boolean par4) {
@@ -278,8 +288,9 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 	public Multimap getAttributeModifiers(ItemStack stack) {
 		Multimap multimap = this.getItemAttributeModifiers();
 		multimap.clear();
+		UUID uuid = new UUID(getUnlocalizedName().hashCode(), 0L);
 		multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", getSwordDamage(stack), 0));
-		multimap.put(SharedMonsterAttributes.movementSpeed.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon speed", 0.1f, 0));
+		multimap.put(SharedMonsterAttributes.movementSpeed.getAttributeUnlocalizedName(), new AttributeModifier(uuid, "Weapon speed", 0.1f, 0));
 		return multimap;
 	}
 }

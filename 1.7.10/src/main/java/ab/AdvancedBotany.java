@@ -13,7 +13,7 @@ import net.minecraftforge.common.MinecraftForge;
 public class AdvancedBotany {
 	
 	public static final String modid = "AdvancedBotany";
-	public static final String version = "1.2.3.1";
+	public static final String version = "1.3.0";
 
 	@Mod.Instance("AdvancedBotany")
     public static AdvancedBotany instance;
@@ -27,7 +27,7 @@ public class AdvancedBotany {
 	}
 
 	@Mod.EventHandler
-	public void init(FMLInitializationEvent event) {		
+	public void init(FMLInitializationEvent event) {	
 		proxy.init(event);
 	}
 

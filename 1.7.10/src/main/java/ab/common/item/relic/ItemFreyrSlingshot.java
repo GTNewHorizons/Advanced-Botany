@@ -47,6 +47,7 @@ public class ItemFreyrSlingshot extends ItemModRelic implements IManaUsingItem {
 			ball.motionZ *= 0.9D;
 			ball.setAttacker(player.getCommandSenderName());
 			world.spawnEntityInWorld(ball);
+			player.worldObj.playSoundAtEntity(player, "ab:freyrSlingshot", 0.4F, 2.8F);
 		}
 	}
 	

@@ -1,0 +1,9 @@
+{
+	"boardCube": { "category": "block", "sounds":["boardCube"] },
+	"nebulaBlaze": { "category": "player", "sounds":["nebulaBlaze"] },
+	"bladeSpace": { "category": "player", "sounds":["bladeSpace"] },
+	"nebulaRod": { "category": "player", "sounds":["nebulaRod"] },
+	"hornPlentyUsing": { "category": "player", "sounds":["hornPlentyUsing"] },
+	"freyrSlingshot": { "category": "player", "sounds":["freyrSlingshot"] },
+	"lokiCubeArmor": { "category": "player", "sounds":["lokiCubeArmor"] }
+}

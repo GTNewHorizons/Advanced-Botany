@@ -1,0 +1,33 @@
+[17:44:09] [main/INFO]: Setting user: Player318
+[17:44:11] [Client thread/INFO]: LWJGL Version: 2.9.1
+[17:44:21] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[17:44:27] [Sound Library Loader/INFO]: Sound engine started
+[17:44:28] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[17:44:28] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[17:44:30] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[17:44:31] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[17:44:32] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[17:44:33] [Sound Library Loader/INFO]: Sound engine started
+[17:44:37] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[17:44:37] [Server thread/INFO]: Generating keypair
+[17:44:38] [Server thread/INFO]: Preparing start region for level 0
+[17:44:38] [Server thread/INFO]: Changing view distance to 4, from 10
+[17:44:39] [Server thread/INFO]: Player318[local:E:677725c1] logged in with entity id 156 at (-387.1411406553934, 4.0, -2087.5944642823174)
+[17:44:39] [Server thread/INFO]: Player318 присоединился к игре
+[17:44:49] [Server thread/INFO]: Saving and paus[17:44:53] [Client thread/INFO]: LWJGL Version: 2.9.1
+[17:45:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[17:45:19] [Sound Library Loader/INFO]: Sound engine started
+[17:45[17:45:29] [Server thread/INFO]: Player318 заработал достижение [Проверить карманы]
+[17:45:29] [Client thread/INFO]: [CHAT] Player318 заработал достижение [Проверить карманы]
+[17:45:39] [User Authenticator #1/WARN]: Failed to verify username but will let them in anyway!
+[17:45:39] [Server thread/INFO]: Player56[/192.168.1.106:63894] logged in with entity id 265145 at (284.5, 4.0, -512.5)
+[17:45:39] [Server thread/INFO]: Player56 присоединился к игре
+[17:45:40] [Client thread/INFO]: [CHAT] Player56 присоединился к игре
+[17:45:51] [Server thread/INFO]: [Player56: Player56 телепортирован к Player318]
+[17:45:51] [Client thread/INFO]: [CHAT] [Player56: Player56 телепортирован к Player318]
+[17:46:51] [Server thread/INFO]: Player56 заработал достижение [Проверить карманы]
+[17:46:51] [Client thread/INFO]: [CHAT] Player56 заработал достижение [Проверить карманы]
+[23:49:29] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 19970148ms behind, skipping 399402 tick(s)
+[23:49:29] [Server thread/INFO]: Player56 lost connection: TextComponent{text='Disconnected', siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null}}
+[23:49:29] [Server thread/INFO]: Player56 покинул игру
+[23:49:30] [Client thread/INFO]: [CHAT] Player56 покинул игру

@@ -1,24 +1,33 @@
 package ab.common.item.equipment;
 
 import java.awt.Color;
-
 import ab.client.core.ClientHelper;
+import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.ItemMod;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.ISound;
+import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.ChatStyle;
 import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import vazkii.botania.api.mana.IManaUsingItem;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.Botania;
@@ -38,9 +47,16 @@ public class ItemNebulaRod extends ItemMod implements IManaUsingItem {
 	}
 	
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
-		if(stack.getItemDamage() == 0)
+		if(stack.getItemDamage() == 0 && checkWorld(world.provider.getDimensionName()))
 			player.setItemInUse(stack, getMaxItemUseDuration(stack));
 		return stack;
+	}
+	
+	private boolean checkWorld(String name) {
+		for(String str : ConfigABHandler.lockWorldNameNebulaRod)
+			if(str.equals(name))
+				return false;
+		return true;
 	}
 	
 	public EnumAction getItemUseAction(ItemStack par1ItemStack) {
@@ -55,30 +71,33 @@ public class ItemNebulaRod extends ItemMod implements IManaUsingItem {
 	public void onUsingTick(ItemStack stack, EntityPlayer p, int time) {
 		time = this.getMaxItemUseDuration(stack) - time;
 		if(time > 110 && !p.isSneaking()) {
-			Vec3 vec3 = p.getLook(1.0F).normalize();
-			MathHelper.floor_double(time);
-			int limitXZ = ConfigABHandler.limitXZCoords;
-			int posX = MathHelper.floor_double(p.posX + vec3.xCoord * 256);
-			int posY = MathHelper.floor_double(p.posY);
-			int posZ = MathHelper.floor_double(p.posZ + vec3.zCoord * 256);
-			ChunkCoordinates chunkcoordinates = new ChunkCoordinates(Math.min(Math.max(posX, -(limitXZ - 1)), limitXZ - 1), posY, Math.min(Math.max(posZ, -(limitXZ - 1)), limitXZ - 1));
-			int topY = getTopBlock(p.worldObj, posX, posZ);
-			if(topY == -1) {
-				p.stopUsingItem();
-				return;
-			}
-			chunkcoordinates.posY = topY;
-			if(!p.worldObj.isRemote) 
-				((EntityPlayerMP)p).playerNetServerHandler.setPlayerLocation(chunkcoordinates.posX + 0.5D, chunkcoordinates.posY + 1.6D, chunkcoordinates.posZ + 0.5D, p.rotationYaw, p.rotationPitch); 
+			if(!p.worldObj.isRemote) {
+				ChunkCoordinates chunkcoordinates = getTopBlock(p.worldObj, p);
+				if(chunkcoordinates == null) {
+					p.stopUsingItem();
+					p.addChatMessage((new ChatComponentTranslation("ab.nebulaRod.notTeleporting", new Object[0])).setChatStyle((new ChatStyle()).setColor(EnumChatFormatting.DARK_PURPLE)));
+					return;
+				}
+				EnderTeleportEvent event = new EnderTeleportEvent((EntityPlayerMP)p, chunkcoordinates.posX + 0.5D, chunkcoordinates.posY + 0.5D, chunkcoordinates.posZ + 0.5D, 0.0F);
+				MinecraftForge.EVENT_BUS.post(event);
+				if(event.isCanceled()) {
+					p.stopUsingItem();
+					p.addChatMessage((new ChatComponentTranslation("ab.nebulaRod.notTeleportingEvent", new Object[0])).setChatStyle((new ChatStyle()).setColor(EnumChatFormatting.DARK_PURPLE)));
+					return;
+				}
+				((EntityPlayerMP)p).playerNetServerHandler.setPlayerLocation(chunkcoordinates.posX + 0.5D, chunkcoordinates.posY + 0.5D, chunkcoordinates.posZ + 0.5D, p.rotationYaw, p.rotationPitch); 
+				p.worldObj.playSoundAtEntity(p, "ab:nebulaRod", 1.2F, 1.2F);
+			} 
 			if(!p.capabilities.isCreativeMode)
 				stack.setItemDamage(100);
 			p.stopUsingItem();
-		} 
+		}
 		spawnPortalParticle(p.worldObj, p, time, p.worldObj.rand.nextBoolean() ? 0x931fec : 0x4b1682, 1.0f);
 	}
 	
 	public void spawnPortalParticle(World world, EntityPlayer p, int time, int color, float particleTime) {
 		if(world.isRemote) {
+			ClientSoundHandler.playSound(p, "portal.portal", 1.2F, 1.0F, 40);
 			boolean isFinish = time > 80;
 			int ticks = Math.min(100, time);
 			int totalSpiritCount = (int)Math.max(3, ticks / 100.0f * 18);
@@ -116,16 +135,24 @@ public class ItemNebulaRod extends ItemMod implements IManaUsingItem {
 		return true;
 	}
 	
-	public int getTopBlock(World world, int posX, int posZ) {
-        Chunk chunk = world.getChunkFromBlockCoords(posX, posZ);
-        posX &= 15;
-        posZ &= 15;
-        for(int k = chunk.getTopFilledSegment() + 15; k > 0; --k) {
-            Block block = chunk.getBlock(posX, k, posZ);
-            boolean hasAir = chunk.getBlock(posX, k + 1, posZ).getMaterial() == Material.air && chunk.getBlock(posX, k + 2, posZ).getMaterial() == Material.air;
-            if(!block.isAir(world, posX, k, posZ) && block != Blocks.bedrock && hasAir)
-                return k + 1;
-        }
-        return -1;
+	public ChunkCoordinates getTopBlock(World world, EntityPlayer player) {
+		Vec3 vec3 = player.getLook(1.0F).normalize();
+		int limitXZ = ConfigABHandler.limitXZCoords;
+		for(int nextPos = 256; nextPos > 0 && nextPos > 8; nextPos--) {
+			int nPosX = MathHelper.floor_double(player.posX + vec3.xCoord * nextPos);
+			int nPosZ = MathHelper.floor_double(player.posZ + vec3.zCoord * nextPos);
+			nPosX = Math.min(Math.max(nPosX, -(limitXZ - 1)), limitXZ - 1);
+			nPosZ = Math.min(Math.max(nPosZ, -(limitXZ - 1)), limitXZ - 1);
+			Chunk chunk = world.getChunkFromBlockCoords(nPosX, nPosZ);
+	        int x = nPosX & 15;
+	        int z = nPosZ & 15;
+	        for(int k = chunk.getTopFilledSegment() + 15; k > 0; --k) {
+	            Block block = chunk.getBlock(x, k, z);
+	            boolean hasTopAir = chunk.getBlock(x, k + 1, z).getMaterial() == Material.air && chunk.getBlock(x, k + 2, z).getMaterial() == Material.air;
+	            if(!block.isAir(world, x, k, z) && block != Blocks.bedrock && hasTopAir)
+	            	return new ChunkCoordinates(nPosX, k + 1, nPosZ);
+	        }
+		}
+        return null;
     }
 }

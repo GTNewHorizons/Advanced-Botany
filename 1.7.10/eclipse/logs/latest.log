@@ -1,0 +1,28 @@
+[21:36:39] [main/INFO]: Setting user: Player195
+[21:36:42] [Client thread/INFO]: LWJGL Version: 2.9.1
+[21:36:55] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[21:37:04] [Sound Library Loader/INFO]: Sound engine started
+[21:37:06] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[21:37:06] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[21:37:08] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[21:37:10] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[21:37:11] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[21:37:12] [Sound Library Loader/INFO]: Sound engine started
+[21:37:17] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[21:37:17] [Server thread/INFO]: Generating keypair
+[21:37:18] [Server thread/INFO]: Preparing start region for level 0
+[21:37:19] [Server thread/INFO]: Changing view distance to 4, from 10
+[21:37:20] [Server thread/INFO]: Player195[local:E:0fb9f755] logged in with entity id 414 at (-269.4873596316427, 71.0, 133.23834233477245)
+[21:37:20] [Server thread/INFO]: Player195 присоединился к игре
+[21:37:38] [Server thread/INFO]: Player195 заработал достижение [X-Ray? Или отличная реликвия?]
+[21:37:38] [Client thread/INFO]: [CHAT] Player195 заработал достижение [X-Ray? Или отличная реликвия?]
+[21:37:44] [Client thread/INFO]: Stopping!
+[21:37:44] [Server thread/INFO]: Stopping server
+[21:37:44] [Server thread/INFO]: Saving players
+[21:37:44] [Server thread/INFO]: Saving worlds
+[21:37:44] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[21:37:44] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[21:37:44] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
+[21:37:44] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The Outer Lands
+[21:37:44] [Client Shutdown Thread/INFO]: Stopping server
+[21:37:44] [Client Shutdown Thread/INFO]: Saving players

@@ -1,0 +1,53 @@
+[13:29:51] [main/INFO]: Setting user: Player859
+[13:29:53] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:30:03] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:30:09] [Sound Library Loader/INFO]: Sound engine started
+[13:30:10] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:30:10] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:30:12] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:30:13] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[13:30:14] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[13:30:15] [Sound Library Loader/INFO]: Sound engine started
+[13:30:33] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[13:30:33] [Server thread/INFO]: Generating keypair
+[13:30:34] [Server thread/INFO]: Preparing start region for level 0
+[13:30:34] [Server thread/INFO]: Changing view distance to 4, from 10
+[13:30:35] [Server thread/INFO]: Player859[local:E:54263a8d] logged in with entity id 166 at (-457.5, 4.0, 1340.5)
+[13:30:35] [Server thread/INFO]: Player859 присоединился к игре
+[13:30:41] [Server thread/INFO]: Player859 заработал достижение [Проверить карманы]
+[13:30:41] [Client thread/INFO]: [CHAT] Player859 заработал достижение [Проверить карманы]
+[13:31:22] [main/INFO]: Setting user: Player891
+[13:31:26] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:31:40] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:31:48] [Sound Library Loader/INFO]: Sound engine started
+[13:31:51] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:31:51] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:31:53] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:31:55] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[13:31:56] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[13:31:57] [Sound Library Loader/INFO]: Sound engine started
+[13:34:10] [Client thread/INFO]: Stopping!
+161
+[13:32:25] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:32:44] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:32:55] [Sound Library Loader/INFO]: Sound engine started
+[13:32:58] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:32:58] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:33:01] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:33:03] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[13:33:04] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[13:33:05] [Sound Library Loader/INFO]: Sound engine started
+[13:34:12] [Client thread/INFO]: Stopping!
+650
+[13:33:26] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:33:55] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loade[13:34:22] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:34:41] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:A[13:34:45] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forg[13:34:54] [Sound Library Loader/INFO]: Sound engine started
+[13:34:56] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:34:56] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:34:59] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader[13:36:28] [Client thread/INFO]: Stopping!
+leResourcePack:Not Enough Items, FMLFileResourcePack:Advance[13:36:32] [Client thread/INFO]: Stopping!
+leResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[13:35:01] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[13:35:03] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[13:35:03] [Sound Library Loader/INFO]: Sound engine started
+[13:36:35] [Client thread/INFO]: Stopping!

@@ -42,14 +42,14 @@ public class ItemNebulaBoots extends ItemNebulaArmor {
 	
 	@SubscribeEvent
 	public void updatePlayerStepStatus(LivingEvent.LivingUpdateEvent event) {
-		if (event.entityLiving instanceof EntityPlayer) {
+		if(event.entityLiving instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)event.entityLiving;
 			ItemStack armor = player.getCurrentArmor(0);
 			String s = playerStr(player);
-			if(armor != null && playersWithStepup.contains(s)) {
+			if(playersWithStepup.contains(s)) {
 				if(shouldPlayerHaveStepup(player)) {
 					if((player.onGround || player.capabilities.isFlying) && player.moveForward > 0.0F) {
-						float speed = getSpeed(armor) * (player.isSprinting() ? 1.0f : 0.45f);
+						float speed = getSpeed(armor) * (player.isSprinting() ? 1.0f : 0.2f);
 						player.moveFlying(0.0F, 1.0F, player.capabilities.isFlying ? speed * 0.6f : speed);
 					}
 					if(player.isSneaking()) {

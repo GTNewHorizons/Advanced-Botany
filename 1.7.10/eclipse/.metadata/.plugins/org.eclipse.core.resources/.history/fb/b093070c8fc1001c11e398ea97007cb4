@@ -1,0 +1,8 @@
+package ab.api;
+
+public interface IEngeneerLens {
+
+	public int getCooldown();
+	
+	
+}

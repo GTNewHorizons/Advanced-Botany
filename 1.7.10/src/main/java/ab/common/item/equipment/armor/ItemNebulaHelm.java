@@ -6,6 +6,7 @@ import java.util.UUID;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
@@ -44,7 +45,7 @@ public class ItemNebulaHelm extends ItemNebulaArmor implements IManaDiscountArmo
 	
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean adv) {
 		super.addInformation(stack, player, list, adv);
-		if(!enableCosmicFace(stack))
+		if(!GuiScreen.isShiftKeyDown() && !enableCosmicFace(stack))
 			addStringToTooltip(EnumChatFormatting.GREEN + StatCollector.translateToLocal("ab.nebulaHelm.mask"), list);
 	}
 	

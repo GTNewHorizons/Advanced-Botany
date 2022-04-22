@@ -1,0 +1,117 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 01.04.22 22:53
+Description: Rendering Block Entity
+
+java.lang.ClassCastException: ab.common.block.tile.TileAgglomerationPlate cannot be cast to ab.common.block.tile.TileNidavellirForge
+	at ab.client.render.tile.RenderTileAgglomerationPlate.renderTileEntityAt(RenderTileAgglomerationPlate.java:31)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1091)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1067)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at ab.client.render.tile.RenderTileAgglomerationPlate.renderTileEntityAt(RenderTileAgglomerationPlate.java:31)
+
+-- Block Entity Details --
+Details:
+	Name: tileAgglomerationPlate // ab.common.block.tile.TileAgglomerationPlate
+	Block type: ID #682 (tile.ABPlate // ab.common.block.BlockAgglomerationPlate)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (-205,4,-11), Chunk: (at 3,0,5 in -13,-1; contains blocks -208,0,-16 to -193,255,-1), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Actual block type: ID #682 (tile.ABPlate // ab.common.block.BlockAgglomerationPlate)
+	Actual block data value: 0 / 0x0 / 0b0000
+Stacktrace:
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntityAt(TileEntityRendererDispatcher.java:141)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.renderTileEntity(TileEntityRendererDispatcher.java:126)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:539)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1300)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player450'/22, l='MpServer', x=-201,42, y=5,62, z=-10,45]]
+	Chunk stats: MultiplayerChunkCache: 49, 49
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-219,4,6), Chunk: (at 5,0,6 in -14,0; contains blocks -224,0,0 to -209,255,15), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 12750 game time, 12750 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 33 total; [EntitySheep['Sheep'/134031, l='MpServer', x=-170,50, y=4,00, z=-40,50], EntitySheep['Sheep'/134034, l='MpServer', x=-174,47, y=4,00, z=-37,72], EntitySheep['Sheep'/134035, l='MpServer', x=-169,50, y=4,00, z=-43,50], EntitySheep['Sheep'/134032, l='MpServer', x=-175,94, y=4,00, z=-40,19], EntitySheep['Sheep'/134033, l='MpServer', x=-176,06, y=4,00, z=-41,31], EntitySheep['Sheep'/134038, l='MpServer', x=-170,50, y=4,00, z=-38,50], EntitySheep['Sheep'/134036, l='MpServer', x=-172,44, y=4,00, z=-41,31], EntitySheep['Sheep'/134037, l='MpServer', x=-173,19, y=4,00, z=-37,50], EntityCow['Cow'/134042, l='MpServer', x=-185,22, y=4,00, z=-41,16], EntityClientPlayerMP['Player450'/22, l='MpServer', x=-201,42, y=5,62, z=-10,45], EntityCow['Cow'/134040, l='MpServer', x=-173,66, y=4,00, z=-47,66], EntityCow['Cow'/134041, l='MpServer', x=-179,25, y=4,00, z=-43,22], EntityHorse['Horse'/134055, l='MpServer', x=-163,66, y=4,00, z=19,53], EntityHorse['Horse'/134058, l='MpServer', x=-169,50, y=4,00, z=26,50], EntityHorse['Horse'/134056, l='MpServer', x=-164,72, y=4,00, z=24,56], EntityHorse['Horse'/134062, l='MpServer', x=-167,50, y=4,00, z=22,50], EntityItem['item.item.egg'/1690921, l='MpServer', x=-168,88, y=4,13, z=-56,06], EntityHorse['Horse'/134068, l='MpServer', x=-172,03, y=4,00, z=19,97], EntityHorse['Horse'/134076, l='MpServer', x=-167,72, y=4,00, z=20,72], EntityItem['item.item.feather'/1553746, l='MpServer', x=-169,19, y=4,13, z=-56,44], EntityItem['item.item.egg'/1371995, l='MpServer', x=-166,25, y=4,13, z=-57,03], EntityChicken['Chicken'/133983, l='MpServer', x=-164,97, y=4,00, z=-57,09], EntitySheep['Sheep'/133987, l='MpServer', x=-164,16, y=4,00, z=-55,31], EntityChicken['Chicken'/133984, l='MpServer', x=-164,84, y=4,00, z=-56,25], EntityChicken['Chicken'/133985, l='MpServer', x=-169,56, y=4,00, z=-58,09], EntitySheep['Sheep'/133990, l='MpServer', x=-170,88, y=4,00, z=-57,59], EntityPig['Pig'/133991, l='MpServer', x=-166,31, y=4,00, z=-56,81], EntitySheep['Sheep'/133988, l='MpServer', x=-168,50, y=4,00, z=-52,50], EntitySheep['Sheep'/133989, l='MpServer', x=-173,84, y=4,00, z=-48,94], EntityPig['Pig'/133994, l='MpServer', x=-158,88, y=4,00, z=-42,09], EntityPig['Pig'/133992, l='MpServer', x=-161,09, y=4,00, z=-46,75], EntityPig['Pig'/133993, l='MpServer', x=-159,50, y=4,00, z=-44,50], EntitySlime['Slime'/2153561, l='MpServer', x=-197,04, y=4,33, z=-51,32]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:984)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_311, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 783089432 bytes (746 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1614-1.7.10.jar) 
+	UCHIJAAAA	NotEnoughItems{1.0.5.120} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.120-universal.jar) 
+	UCHIJAAAA	CodeChickenCore{1.0.7.48} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10-dev.jar) 
+	UCHIJAAAA	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft-1.7.10-4.2.3.5-deobf.jar) 
+	UCHIJAAAA	Botania{r1.8-249} [Botania] (Botania+r1.8-249-deobf.jar) 
+	UCHIJAAAA	AdvancedBotany{1.3.0} [Advanced Botany] (bin) 
+	UCHIJAAAA	MineTweaker3{3.0.10} [MineTweaker 3] (MineTweaker3-1.7.10-3.0.10B-deobf.jar) 
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.6.14761 Compatibility Profile Context 21.10.2 30.0.13025.5005' Renderer: 'AMD Radeon(TM) Graphics'
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: AMD Radeon(TM) Graphics GL version 4.6.14761 Compatibility Profile Context 21.10.2 30.0.13025.5005, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)

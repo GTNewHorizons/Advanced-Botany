@@ -3,7 +3,7 @@ mouseSensitivity:0.5
 fov:0.0
 gamma:1.0
 saturation:0.0
-renderDistance:3
+renderDistance:4
 guiScale:2
 particles:0
 bobView:true
@@ -17,7 +17,7 @@ ao:2
 clouds:true
 resourcePacks:[]
 lastServer:
-lang:en_US
+lang:ru_RU
 chatVisibility:0
 chatColors:true
 chatLinks:true
@@ -89,11 +89,10 @@ key_Baubles Inventory:48
 key_Change Wand Focus:33
 key_Activate Hover Harness:35
 key_Misc Wand Toggle:34
-key_key.portaitreposition:52
-soundCategory_master:0.0
-soundCategory_music:1.0
+soundCategory_master:1.0
+soundCategory_music:0.0
 soundCategory_record:1.0
-soundCategory_weather:1.0
+soundCategory_weather:0.0
 soundCategory_block:1.0
 soundCategory_hostile:1.0
 soundCategory_neutral:1.0

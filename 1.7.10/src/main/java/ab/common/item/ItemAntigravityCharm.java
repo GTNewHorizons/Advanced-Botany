@@ -32,9 +32,8 @@ public class ItemAntigravityCharm extends ItemMod {
 	
 	public void registerIcons(IIconRegister ir) {
 		icons = new IIcon[2];
-		for(int i = 0; i < icons.length; i++) {
+		for(int i = 0; i < icons.length; i++)
 			icons[i] = icons[i] = ir.registerIcon("ab:" + "itemAntigravityCharm_" + i);
-		}
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -69,8 +68,8 @@ public class ItemAntigravityCharm extends ItemMod {
 		    		Block block = fallBlock.func_145805_f();	
 		    		fallBlock.setInvisible(true);
 		    		if(!world.isRemote) {
-		    			if(CommonHelper.setBlock(world, BlockListAB.blockAntigravitation, 0, x, y - 1, z, (EntityPlayerMP)player, true)) {
-		    				CommonHelper.setBlock(world, block, fallBlock.field_145814_a, x, y, z, (EntityPlayerMP)player, true);   
+		    			if(CommonHelper.setBlock(world, BlockListAB.blockAntigravitation, 0, x, y - 1, z, player, true)) {
+		    				CommonHelper.setBlock(world, block, fallBlock.field_145814_a, x, y, z, player, true); 
 		    				fallBlock.setDead(); 
 		    			}		
 		    		}   				  	   			    			  		    		 	    

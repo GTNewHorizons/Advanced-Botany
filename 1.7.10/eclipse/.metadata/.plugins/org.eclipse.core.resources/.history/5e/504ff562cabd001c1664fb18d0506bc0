@@ -1,0 +1,5 @@
+package ab.common.core.proxy.packet;
+
+public class S01PacketFindNearBlocks {
+
+}

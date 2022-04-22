@@ -7,6 +7,7 @@ import ab.client.core.handler.PlayerRendererHandler;
 import ab.client.render.block.*;
 import ab.client.render.entity.*;
 import ab.client.render.item.RenderItemAntigravityCharm;
+import ab.client.render.item.RenderItemSphereNavigation;
 import ab.client.render.tile.*;
 import ab.common.block.tile.*;
 import ab.common.core.handler.ConfigABHandler;
@@ -42,8 +43,7 @@ public class ClientProxy extends CommonProxy {
     	MinecraftForge.EVENT_BUS.register(new PlayerRendererHandler());
     	MinecraftForge.EVENT_BUS.register(new BoundRenderHandler());
     	
-    	if(ConfigABHandler.hasAbPlate)
-    		ClientRegistry.bindTileEntitySpecialRenderer(TileAgglomerationPlate.class, new RenderTileAgglomerationPlate());
+    	ClientRegistry.bindTileEntitySpecialRenderer(TileNidavellirForge.class, new RenderTileNidavellirForge());
     	ClientRegistry.bindTileEntitySpecialRenderer(TileABSpreader.class, new RenderTileABSpreader());    
     	ClientRegistry.bindTileEntitySpecialRenderer(TileManaContainer.class, new RenderTileManaContainer());    
     	ClientRegistry.bindTileEntitySpecialRenderer(TileManaCrystalCube.class, new RenderTileManaCrystalCube());
@@ -52,7 +52,7 @@ public class ClientProxy extends CommonProxy {
     	ClientRegistry.bindTileEntitySpecialRenderer(TileEngineerHopper.class, new RenderTileEngineerHopper()); 
     	ClientRegistry.bindTileEntitySpecialRenderer(TileBoardFate.class, new RenderTileBoardFate()); 
     	ClientRegistry.bindTileEntitySpecialRenderer(TileGameBoard.class, new RenderTileGameBoard()); 
-    	if(Botania.thaumcraftLoaded)
+    	if(Botania.thaumcraftLoaded && ConfigABHandler.hasAutoThaum)
     		ClientRegistry.bindTileEntitySpecialRenderer(TileMagicCraftCrate.class, new RenderTileMagicCraftingCrate()); 
     	
     	BlockListAB.blockABSpreaderRI = RenderingRegistry.getNextAvailableRenderId();
@@ -60,12 +60,14 @@ public class ClientProxy extends CommonProxy {
     	BlockListAB.blockManaCrystalCubeRI = RenderingRegistry.getNextAvailableRenderId();
     	BlockListAB.blockManaChargerRI = RenderingRegistry.getNextAvailableRenderId();
     	BlockListAB.blockEngineerHopperRI = RenderingRegistry.getNextAvailableRenderId();
+    	BlockListAB.blockABPlateRI = RenderingRegistry.getNextAvailableRenderId();
     	
         RenderingRegistry.registerBlockHandler(new RenderBlockABSpreader());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaContainer());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaCrystalCube());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaCharger());
         RenderingRegistry.registerBlockHandler(new RenderBlockEngineerHopper());
+        RenderingRegistry.registerBlockHandler(new RenderBlockNidavellirForge());
         
         RenderingRegistry.registerEntityRenderingHandler(EntityAdvancedSpark.class, new RenderEntityAdvancedSpark());
         RenderingRegistry.registerEntityRenderingHandler(EntityNebulaBlaze.class, new EntityNullRender());
@@ -75,6 +77,7 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntitySeed.class, new EntityNullRender());
         
         MinecraftForgeClient.registerItemRenderer(ItemListAB.itemAntigravityCharm, new RenderItemAntigravityCharm());
+        MinecraftForgeClient.registerItemRenderer(ItemListAB.itemSphereNavigation, new RenderItemSphereNavigation());
     }
 
     public void postInit(FMLPostInitializationEvent event) {

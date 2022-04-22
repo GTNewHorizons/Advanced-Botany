@@ -1,0 +1,11 @@
+package ab.common.item;
+
+public class ItemEngineerLens extends ItemMod {
+
+	public ItemEngineerLens() {
+		super("itemEngineerLens");
+		this.setMaxStackSize(1);
+		this.setNoRepair();
+	}
+	
+}

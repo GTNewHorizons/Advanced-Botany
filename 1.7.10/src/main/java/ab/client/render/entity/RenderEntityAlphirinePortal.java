@@ -38,6 +38,7 @@ public class RenderEntityAlphirinePortal extends Render {
 		GL11.glPushMatrix();
 		GL11.glTranslated(x, y, z);
 		GL11.glEnable(3042);
+		GL11.glBlendFunc(770, 771);
 		burn = Math.max(0.0f, (float)(burn + (Math.sin(worldTime / 3.2f) / 9.0f)));
 		GL11.glScalef(burn / 3.15f, burn / 3.15f, burn / 3.15f);
 	    GL11.glRotatef(180.0f - this.renderManager.playerViewY, 0.0f, 1.0f, 0.0f);

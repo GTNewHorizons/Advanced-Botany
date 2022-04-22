@@ -41,6 +41,7 @@ public class ItemPocketWardrobe extends ItemModRelic {
 	}
 	
 	public void onUpdate(ItemStack pocketWardrobe, World world, Entity entity, int pos, boolean equipped) {
+		super.onUpdate(pocketWardrobe, world, entity, pos, equipped);
 		boolean eqLastTick = wasEquipped(pocketWardrobe);
 		if(!equipped && eqLastTick)
 			setEquipped(pocketWardrobe, equipped);
@@ -106,6 +107,8 @@ public class ItemPocketWardrobe extends ItemModRelic {
 		ItemStack[] playerSet = player.inventory.armorInventory;
 		player.inventory.armorInventory = getArmorSet(stack, segment);
 		setArmorSet(stack, playerSet, segment);
+		if(!player.worldObj.isRemote) 
+			player.worldObj.playSoundAtEntity(player, "ab:lokiCubeArmor", 0.3f, 0.86f);
 	}
 	
 	@SubscribeEvent

@@ -51,9 +51,12 @@ public class HudRenderHandler {
 			}
 			if(equippedStack != null && equippedStack.getItem() instanceof ItemBlackHalo) {
 				profiler.startSection("blackHalo");
-				ItemBlackHalo.renderHUD(event.resolution, (EntityPlayer)mc.thePlayer, equippedStack);
+				ItemBlackHalo.renderHUD(event.resolution, mc.thePlayer, equippedStack);
 				profiler.endSection();
 			} 
+			profiler.endStartSection("itemsRemainingAB");
+			ItemsRemainingRender.render(event.resolution, event.partialTicks);
+			profiler.endSection();
 		}
 	}
 }

@@ -42,6 +42,7 @@ public class BlockTerraFarmland extends Block implements ILexiconable {
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.9375F, 1.0F);
         this.setBlockName("terraFarmland");
         this.setLightOpacity(255);
+        this.setStepSound(soundTypeGravel);
     }
 	
 	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plantable) {

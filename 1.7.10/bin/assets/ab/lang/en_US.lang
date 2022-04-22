@@ -12,7 +12,7 @@ ab.flower.aspecolus.name=Aspecolus
 ab.flower.pureGladiolus.name=Pure Gladiolus
 ab.flower.ardentAzarcissus.name=Ardent Azarcissus
 tile.advancedSpreader.name=Natural Mana Spreader
-tile.ABPlate.name=Advanced Agglomeration Plate
+tile.ABPlate.name=Forge of Nidavellir
 tile.lebethronWood.0.name=Lebethron Wood
 tile.lebethronWood.1.name=Lebethron Wood Planks
 tile.lebethronWood.2.name=Mossy Lebethron Wood Planks
@@ -76,13 +76,15 @@ item.ab.pattern9.name=Thaumim - Crafting Pattern #9
 item.sprawlRod.name=Rod of Sprawl
 item.autoPocketWardrobe.name=Nimble Cube
 item.talismanHiddenRiches.name=Key to Hidden Wealth
+item.hornPlenty.name=Horn of Plenty
+item.sphereNavigation.name=Sphere of Navigation
 
 //MISC
 
 ab.nebulaHelm.mask=A natural look is included
 botania.category.forgotten=Connecting with the past
 ab.nei.alphirine=Ancient Alphirine
-ab.nei.advancedPlate=Advanced aggl. plate
+ab.nei.advancedPlate=Forge of Nidavellir
 ab.manaCrystalCube.hud=Amount of mana in the network
 ab.manaCharger.wandHud=Mana Charger
 ab.manaContainer.0.hud=Mana Container
@@ -103,6 +105,9 @@ ab.gameBoard.misc.0.mult=%s wins the game
 ab.gameBoard.misc.1.mult=Game ends in a draw
 ab.gameBoard.misc.2.mult=%s wins the game
 ab.gameBoard.misc.notPlayer=The game ends, the second player is missing
+ab.nebulaRod.notTeleporting=Portal could not find the right place to move
+ab.nebulaRod.notTeleportingEvent=Something prevents the portal from transporting you to your chosen location
+ab.sphereNavigation.founded=Found
 
 //ACHIEVEMENT
 
@@ -114,6 +119,10 @@ achievement.ab:relicPocketArmor=A fake appearance
 achievement.ab:relicPocketArmor.desc=Be rewarded with Nimble Cube for your heroic deeds
 achievement.ab:relicItemChest=Access to personal wealth
 achievement.ab:relicItemChest.desc=Be rewarded with Key to Hidden Wealth for your heroic deeds
+achievement.ab:relicHornPlenty=Good hunting call
+achievement.ab:relicHornPlenty.desc=Be rewarded with Horn of Plenty for your heroic deeds
+achievement.ab:relicSphereNavigation=X-Ray? Or a great relic?
+achievement.ab:relicSphereNavigation.desc=Be rewarded with Sphere of Navigation for your heroic deeds
 
 //LEXICON
 
@@ -127,14 +136,15 @@ botania.entry.ancientAlphirine=Ancient Alphirine
 botania.tagline.ancientAlphirine=Turn the world upside down, and shake out the interesting stuff!
 botania.page.ancientAlphirine0=The ancient Alphyrin is the keeper of all technology and knowledge! Wherever it is placed, it will penetrate the soil and learn everything that happened on it. <br>Chances are, you were wondering how the Elves manage the Earth's resources, and what their value is <br>Toss him your Lexicon for Alphyrin to share his knowledge!
 botania.page.ancientAlphirine1=The study of history and technology is not all that Alphyrin can do! He is able to find analogues, abandoned near him, of resources from the past.<br>As soon as he discovers an analog, he will immediately start trying to recreate it, through a small portal, but it requires a certain number of attempts - the number depends on the difficulty of recreating the resource.
+botania.page.ancientAlphirine2=Opening of the portal by the Ancient Alphirine
 botania.page.ancientAlphirine.petalCraft=The wisest flower, by the way
 botania.page.ancientAlphirine.alphirineCraft=DO NOT BREATHE IN!
 
-botania.entry.advancedPlate=Advanced. aggl. plate
+botania.entry.advancedPlate=Forge of Nidavellir
 botania.tagline.advancedPlate=Created from the drawings of dwarves from Nidavellir
-botania.page.advancedPlate0=The Advanced agglomeration plate is a plate for sintering materials into one piece, at the expense of mana, created by the Dwarves' drawings.<br>One of the main changes, compared to the last version of the plate, is the creation of new resources, in addition to terrastal, and another equally important one is the increased operating experience.
+botania.page.advancedPlate0=Forge of Nidavellir - a really powerful Dwarf invention for fusing different materials into one whole, the main thing is to know the proportions!<br>This forge was given to the Elves, that is, it came to our land at the time of "Destruction," but... Not for long - it was soon destroyed.
 botania.page.advancedPlate.craft=The Engineering Revolution
-botania.page.advancedPlate.structure=A.A.plate
+botania.page.advancedPlate.structure=Forge of Nidavellir
 botania.page.advancedPlate.abCraft0=Creating everyone's favorite terrastal
 botania.page.advancedPlate.abCraft1=Burn My Star...
 
@@ -153,9 +163,9 @@ botania.page.lebethronSpreader.craft=You can't have too much mana
 
 botania.entry.mithrill=Mithrill
 botania.tagline.mithrill=Mighty and indestructible metal!
-botania.page.mithrill0=Mithrill - stands out for its strength among other metals, or rather its lack of it, as it can not get any damage. <br>The process of creating it is not the easiest, because it requires a very large amount of mana.
+botania.page.mithrill0=Mithrill - stands out for its strength among other metals, or rather its lack of it, as it can not get any damage. <br>Such unique properties are the result of a successful proportion of Gaia Spirit and Terrasteel, with the addition of Manasteel, to balance the energy within the alloy.
 botania.page.mithrill.abCraft=Where's all my mana!?
-botania.page.mithrill1=The Material Destroyer is a harsh tool, capable of breaking any block in a short period of time. Its speed is so high that it was necessary to create a *Fuse* in it - that is, to turn it off/on.
+botania.page.mithrill1=The Material Destroyer - a harsh tool based on a global catastrophe in the past. <br>He is perfectly capable of breaking any block almost instantly. His speed is so high that it was necessary to create a *Fuse* in him - that is, to turn him off/on.
 botania.page.mithrill.craft=Break this world
 
 botania.entry.manaContainer=Mana Container's
@@ -191,7 +201,7 @@ botania.page.manaFlower.alphirineCraft=Beautiful flower
 
 botania.entry.mithrillSword=Blade of Space
 botania.tagline.mithrillSword=Weapons capable of making jerks and doing damage
-botania.page.mithrillSword0=Blade of Space is a magical weapon that requires mana to improve its abilities as well as its damage. 
+botania.page.mithrillSword0=Blade of Space - is an ordinary melee weapon, but as soon as you pour mana into it, it is immediately endowed with unusual magical properties. For example: Dash or Starburst <br>Note: When using the Spatial leap, the Block is unavailable for a while.
 botania.page.mithrillSword.craft=Cut them all up!!!
 
 botania.entry.dictarius=Dictarius
@@ -269,7 +279,7 @@ botania.page.gameBoard.craft=Shall we play for mana? How's that?
 
 botania.entry.fateBoard=Fate Playing Board
 botania.tagline.fateBoard=1 cube - 6 relics, makes sense. 2 cubes...
-botania.page.fateBoard0=Fate Playing Board - a kind of fun, just like a normal Playing Board, but - the game requires a few Destiny Cubes.<br>As you know - by rolling the Fate Cube you can get a relic associated with that number.<br>Consequently, 2 cubes will yield up to 12 relics. [Currently up to 9, with 3 more in development]
+botania.page.fateBoard0=Fate Playing Board - a kind of fun, just like a normal Playing Board, but - the game requires a few Destiny Cubes.<br>As you know - by rolling the Fate Cube you can get a relic associated with that number.<br>Consequently, 2 cubes will yield up to 12 relics. [Currently up to 11, with 1 more in development]
 botania.page.fateBoard.alphirineCraft=Shall we play relics?
 
 botania.entry.richesKey=Key to Hidden Wealth
@@ -289,5 +299,13 @@ botania.entry.azartFlower=Ardent Azarcissus
 botania.tagline.azartFlower=Don't worry, you won't be left without a home...
 botania.page.azartFlower0=Ardent Azarcissus - The flower is a gambler, one of the representatives of the passive flora, to make a long story short.<br>In fact, he can make up to 8 moves at a time on the Game Board, trying to beat the board itself. If he wins, he gives mana, the amount of which depends on the difference between the sums of the numbers on the Game Board.
 botania.page.azartFlower.petalCraft=Just give him the will, and he'll give you mana.
+
+botania.entry.sphereNavigation=Sphere of Navigation
+botania.tagline.sphereNavigation=It will show you and show you the way anywhere!	
+botania.page.sphereNavigation0=The Sphere of Navigation - is a relic with the unique property of finding a pointed through blocks and marking the location! <br>For such a pleasure it is required to pay mana, and not a small amount in the long run.
+
+botania.entry.hornPlenty=Horn of Plenty
+botania.tagline.hornPlenty=Double booty - what could be better?
+botania.page.hornPlenty0=The Horn of Plenty is a relic of one of the Ases associated with hunting!<br>Use the horn to charge it, charging requires some mana. After filling with mystical powers, go hunting, each time the victim dies at your hand, there is a chance to get additional drop from this creature. 
 
 

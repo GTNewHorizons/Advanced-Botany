@@ -102,7 +102,8 @@ public class BlockEngineerHopper extends BlockContainer implements IWandable, IW
 		if(!player.isSneaking()) {
 			TileEngineerHopper tile = (TileEngineerHopper)world.getTileEntity(x, y, z);
 			tile.changeBindType();
-			System.out.println("sdfsdf");
+			if(!world.isRemote)
+				world.playSoundAtEntity((Entity)player, "botania:ding", 0.11F, 1.0F);
 		}
 		return true;
 	}

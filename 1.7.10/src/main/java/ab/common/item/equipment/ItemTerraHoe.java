@@ -30,44 +30,44 @@ public class ItemTerraHoe extends ItemHoe implements IManaUsingItem {
 		this.setTextureName("ab:terraHoe");
 	}
 	
-	public boolean onItemUse(ItemStack p_77648_1_, EntityPlayer p_77648_2_, World p_77648_3_, int p_77648_4_, int p_77648_5_, int p_77648_6_, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_) {
-		if (!p_77648_2_.canPlayerEdit(p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_1_)) {
+	public boolean onItemUse(ItemStack stack, EntityPlayer p, World world, int x, int y, int z, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_) {
+		if (!p.canPlayerEdit(x, y, z, p_77648_7_, stack)) {
 			return false;
 		} else {
-			UseHoeEvent event = new UseHoeEvent(p_77648_2_, p_77648_1_, p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_);
+			UseHoeEvent event = new UseHoeEvent(p, stack, world, x, y, z);
 			if (MinecraftForge.EVENT_BUS.post(event)) {
 				return false;
 			}
 			if (event.getResult() == Result.ALLOW) {
-				p_77648_1_.damageItem(1, p_77648_2_);
+				stack.damageItem(1, p);
 				return true;
 			}
-			Block block = p_77648_3_.getBlock(p_77648_4_, p_77648_5_, p_77648_6_);
-			if (p_77648_7_ != 0 && p_77648_3_.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_).isAir(p_77648_3_, p_77648_4_, p_77648_5_ + 1, p_77648_6_) && (block == Blocks.grass || block == Blocks.dirt)) {
+			Block block = world.getBlock(x, y, z);
+			if (p_77648_7_ != 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z) && (block == Blocks.grass || block == Blocks.dirt)) {
 				Block block1 = BlockListAB.blockTerraFarmland;
-				p_77648_3_.playSoundEffect((double)((float)p_77648_4_ + 0.5F), (double)((float)p_77648_5_ + 0.5F), (double)((float)p_77648_6_ + 0.5F), block1.stepSound.getStepResourcePath(), (block1.stepSound.getVolume() + 1.0F) / 2.0F, block1.stepSound.getPitch() * 0.8F);
-				if (p_77648_3_.isRemote) {
+				world.playSoundEffect((double)((float)x + 0.5F), (double)((float)y + 0.5F), (double)((float)z + 0.5F), block1.stepSound.getStepResourcePath(), (block1.stepSound.getVolume() + 1.0F) / 2.0F, block1.stepSound.getPitch() * 0.8F);
+				if (world.isRemote) {
 			        float velMul = 0.025F;
 			        for (int i = 0; i < 48; i++) {
-				        double x = (Math.random() - 0.5D) * 3.0D;
-				        double y = Math.random() - 0.5D + 1.0D;
-				        double z = (Math.random() - 0.5D) * 3.0D;
-				        Botania.proxy.wispFX(p_77648_3_, p_77648_4_ + 0.5D + x, p_77648_5_ + 0.5D + y, p_77648_6_ + 0.5D + z, 0.0f, 0.4f, 0.0f, (float)Math.random() * 0.15F + 0.15F, (float)-x * velMul, (float)-y * velMul, (float)-z * velMul);
+				        double px = (Math.random() - 0.5D) * 3.0D;
+				        double py = Math.random() - 0.5D + 1.0D;
+				        double pz = (Math.random() - 0.5D) * 3.0D;
+				        Botania.proxy.wispFX(world, x + 0.5D + px, y + 0.5D + py, z + 0.5D + pz, 0.0f, 0.4f, 0.0f, (float)Math.random() * 0.15F + 0.15F, (float)-px * velMul, (float)-py * velMul, (float)-pz * velMul);
 			        }
 					return true;
 				} else {
-					p_77648_3_.setBlock(p_77648_4_, p_77648_5_, p_77648_6_, block1);
-					p_77648_1_.damageItem(1, p_77648_2_);
+					world.setBlock(x, y, z, block1);
+					stack.damageItem(1, p);
 					return true;
 				}			
 			} 
-			else if(p_77648_2_.isSneaking() && p_77648_7_ != 0 && p_77648_3_.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_).isAir(p_77648_3_, p_77648_4_, p_77648_5_ + 1, p_77648_6_) && (block == ModBlocks.enchantedSoil)) {
-				if (p_77648_3_.isRemote)
+			else if(p.isSneaking() && p_77648_7_ != 0 && world.getBlock(x, y + 1, z).isAir(world, x, y + 1, z) && (block == ModBlocks.enchantedSoil)) {
+				if (world.isRemote)
 					return true;
-				p_77648_3_.setBlock(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.dirt);
-				p_77648_1_.damageItem(1, p_77648_2_);
-				EntityItem entity = new EntityItem(p_77648_3_, p_77648_4_ + 0.5f, p_77648_5_ + 1, p_77648_6_ + 0.5f, new ItemStack(ModItems.overgrowthSeed));
-				p_77648_3_.spawnEntityInWorld(entity);
+				world.setBlock(x, y, z, Blocks.dirt);
+				stack.damageItem(1, p);
+				EntityItem entity = new EntityItem(world, x + 0.5f, y + 1, z + 0.5f, new ItemStack(ModItems.overgrowthSeed));
+				world.spawnEntityInWorld(entity);
 				return true;
 			} else {
 				return false;

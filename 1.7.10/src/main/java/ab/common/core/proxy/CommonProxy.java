@@ -4,6 +4,7 @@ import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.core.handler.GuiHandler;
+import ab.common.core.handler.NetworkHandler;
 import ab.common.lib.register.AchievementRegister;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.EntityListAB;
@@ -34,15 +35,7 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(AdvancedBotany.instance, new GuiHandler());
 		RecipeListAB.init();
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.infiniteFruit));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.kingKey));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.flugelEye));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.thorRing));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.odinRing));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.lokiRing));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ItemListAB.itemFreyrSlingshot));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ItemListAB.itemTalismanHiddenRiches));
-		AdvancedBotanyAPI.relicList.add(new ItemStack(ItemListAB.itemPocketWardrobe));
+		NetworkHandler.registerPackets();
 	}
 	 
 	public void postInit(FMLPostInitializationEvent event) {

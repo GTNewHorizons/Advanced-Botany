@@ -117,11 +117,10 @@ public class EntityManaVine extends EntityThrowable {
 									if(block.isAir(worldObj, xCoord, yCoord, zCoord)) {
 										EntityPlayer player = worldObj.getPlayerEntityByName(getAttacker());
 										if(player != null) {
-											EntityPlayerMP playerMP = (EntityPlayerMP)player;
 											if(world.rand.nextInt(4) < 3)
-												CommonHelper.setBlock(world, BlockListAB.blockFreyrLiana, 0, xCoord, yCoord, zCoord, playerMP, false);
+												CommonHelper.setBlock(world, BlockListAB.blockFreyrLiana, 0, xCoord, yCoord, zCoord, player, false);
 											else
-												CommonHelper.setBlock(world, BlockListAB.blockLuminousFreyrLiana, 0, xCoord, yCoord, zCoord, playerMP, false);
+												CommonHelper.setBlock(world, BlockListAB.blockLuminousFreyrLiana, 0, xCoord, yCoord, zCoord, player, false);
 											worldObj.playAuxSFX(2001, xCoord, yCoord, zCoord, Block.getIdFromBlock(BlockListAB.blockFreyrLiana));
 										}
 										yCoord--;

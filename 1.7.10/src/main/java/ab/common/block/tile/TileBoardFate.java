@@ -66,6 +66,7 @@ public class TileBoardFate extends TileInventory {
 			return false;
 		else if(!worldObj.isRemote) {
 			ItemStack relic = AdvancedBotanyAPI.relicList.get(Math.min(relicCount - 1, AdvancedBotanyAPI.relicList.size() - 1)).copy();
+			worldObj.playSoundAtEntity(player, "random.bow", 0.5F, 0.4F / (worldObj.rand.nextFloat() * 0.4F + 0.8F));
 			if(hasRelicAchievement(player, relic)) {
 				player.addChatMessage((new ChatComponentTranslation("botaniamisc.dudDiceRoll", new Object[] { Integer.valueOf(relicCount) })).setChatStyle((new ChatStyle()).setColor(EnumChatFormatting.DARK_GREEN)));
 			} else {
@@ -124,6 +125,7 @@ public class TileBoardFate extends TileInventory {
 					if(stack.stackSize == 0)
 				    	  item.setDead(); 
 					hasUpdate = true;
+					worldObj.playSoundEffect(this.xCoord, this.yCoord, this.zCoord, "ab:boardCube", 0.6F, 1.0F);
 					break label666;
 				}
 			}
