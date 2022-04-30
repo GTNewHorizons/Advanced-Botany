@@ -13,7 +13,7 @@ import net.minecraftforge.common.MinecraftForge;
 public class AdvancedBotany {
 	
 	public static final String modid = "AdvancedBotany";
-	public static final String version = "1.3.0";
+	public static final String version = "1.3.1.1";
 
 	@Mod.Instance("AdvancedBotany")
     public static AdvancedBotany instance;

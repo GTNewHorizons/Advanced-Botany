@@ -78,6 +78,7 @@ item.autoPocketWardrobe.name=Куб Проворства
 item.talismanHiddenRiches.name=Ключ от Скрытых Богатств
 item.hornPlenty.name=Рог изобилия
 item.sphereNavigation.name=Шар навигации
+item.itemAquaSword.name=Клинок Моря
 
 //MISC
 
@@ -124,6 +125,14 @@ achievement.ab:relicHornPlenty.desc=Будьте вознаграждены Ро
 achievement.ab:relicSphereNavigation=X-Ray? Или отличная реликвия?
 achievement.ab:relicSphereNavigation.desc=Будьте вознаграждены Шаром Навигации за героический подвиг
 
+//ENTITY
+
+entity.AdvancedBotany.advancedSpark.name=Сверхпроводимая искра
+entity.AdvancedBotany.nebulaBlaze=Снаряд Удара Небулы
+entity.AdvancedBotany.manaVineBall=Шар Лозы Фрейра
+entity.AdvancedBotany.alphirinePortal=Портал из прошлого
+entity.AdvancedBotany.entitySword=Звездная вспышка
+entity.AdvancedBotany.entitySeed=Снаряд разрастания
 
 //LEXICON
 
@@ -208,6 +217,7 @@ botania.page.mithrillSword.craft=Порежь их всех!!!
 botania.entry.dictarius=Диктариус
 botania.tagline.dictarius=Перевернет одним словом все вокруг, будьте осторожны
 botania.page.dictarius0=Диктариус - самый открытый цветок из всех, который пытается высказать свое мнение, но чаще всего, он пытается принудить окружающих совершить какое-либо действие. <br>В целом, если не слушать его, то вполне отличный способ добычи маны! Чем больше слушателей вокруг него, тем больше маны.
+botania.page.dictarius1=У Диктариуса есть одно слабое место - большое скопление подобных ему цветов, дискуссии со столь разговорными оппонентами постепенно травят его - в результате Диктариус погибает!
 botania.page.dictarius.petalCraft=Не самый лучший собеседник ночью
 
 botania.entry.aspecolus=Аспеколус
@@ -308,5 +318,10 @@ botania.page.sphereNavigation0=Шар Навигации - реликвия об
 botania.entry.hornPlenty=Рог изобилия
 botania.tagline.hornPlenty=Двойная добыча - что может быть лучше?
 botania.page.hornPlenty0=Рог Изобилия - реликвия одного из Асов, связанного с охотой!<br>Используйте рог, чтобы его зарядить, зарядка требует немного маны. После наполнения мистическими силами, отправляйтесь на охоту, каждый раз когда жертва умирает от вашей руки, появляется шанс получить дополнительный дроп с этого существа. 
+
+botania.entry.aquaSword=Клинок Моря
+botania.tagline.aquaSword=Отойди от меня! Я мокрый...
+botania.page.aquaSword0=Клинок моря - мистическое оружие ближнего боя, пропитанное силами морей! <br>Атака с помощью Клинка Моря сопрождается водным всплеском, и отталкивает всех вокруг в сторону, куда смотрит игрок<br>Блок же сопрождается водным щитом, который не дает подойти врагам к игроку.
+botania.page.aquaSword.craft=Медитация в полной тишине
 
 

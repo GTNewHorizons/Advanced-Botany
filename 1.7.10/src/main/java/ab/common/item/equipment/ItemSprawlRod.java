@@ -1,6 +1,8 @@
 package ab.common.item.equipment;
 
 import java.awt.Color;
+
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.entity.EntitySeed;
 import ab.common.item.ItemMod;
 import net.minecraft.entity.Entity;
@@ -102,7 +104,7 @@ public class ItemSprawlRod extends ItemMod implements IManaUsingItem {
 				if(!world.isRemote) {
 					EntitySeed entitySeed = new EntitySeed(world, player);
 					entitySeed.setSeed(stack.copy());
-					entitySeed.setRadius(useTime / 2);
+					entitySeed.setRadius((int)((Math.min(useTime, 128.0f) / 128.0f) * ConfigABHandler.sprawlRodMaxArea));
 					entitySeed.setAttacker(player.getCommandSenderName());
 					world.spawnEntityInWorld(entitySeed);
 				}

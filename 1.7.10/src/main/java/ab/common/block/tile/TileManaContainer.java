@@ -79,7 +79,8 @@ public class TileManaContainer extends TileMod implements IManaPool, ISparkAttac
 	}
 	
 	public int getMaxMana() {
-		return worldObj.getBlockMetadata(xCoord, yCoord, zCoord) == 1 ? ConfigABHandler.maxContainerMana / 8 : ConfigABHandler.maxContainerMana;
+		int meta = worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
+		return ConfigABHandler.maxContainerMana[Math.min(Math.max(meta, 0), ConfigABHandler.maxContainerMana.length)];
 	}
 
 	public boolean isFull() {

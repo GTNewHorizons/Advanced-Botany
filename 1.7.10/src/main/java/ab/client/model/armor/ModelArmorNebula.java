@@ -16,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import vazkii.botania.client.core.handler.ClientTickHandler;
 
@@ -308,6 +309,12 @@ public class ModelArmorNebula extends ModelBiped {
 	}
 	
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		if(entity instanceof net.minecraft.entity.monster.EntitySkeleton || entity instanceof net.minecraft.entity.monster.EntityZombie)
+			setRotationAnglesMonster(f, f1, f2, f3, f4, f5, entity);
+		else {
+			prepareForRender(entity);
+			setRotationAngles(f, f1, f2, f3, f4, f5, entity);   
+		}
 	    this.head.showModel = (this.slot == 0);
 	    this.chestplate.showModel = (this.slot == 1);
 	    this.lArm.showModel = (this.slot == 1);
@@ -328,9 +335,33 @@ public class ModelArmorNebula extends ModelBiped {
 	    	this.bipedRightLeg = this.rBoot;
 	    	this.bipedLeftLeg = this.lBoot;
 	    } 
-	    prepareForRender(entity);
-	    super.render(entity, f, f1, f2, f3, f4, f5);
-	  }
+	    if(this.isChild) {
+            float f6 = 2.0F;
+            GL11.glPushMatrix();
+            GL11.glScalef(1.5F / f6, 1.5F / f6, 1.5F / f6);
+            GL11.glTranslatef(0.0F, 16.0F * f5, 0.0F);
+            this.bipedHead.render(f5);
+            GL11.glPopMatrix();
+            GL11.glPushMatrix();
+            GL11.glScalef(1.0F / f6, 1.0F / f6, 1.0F / f6);
+            GL11.glTranslatef(0.0F, 24.0F * f5, 0.0F);
+            this.bipedBody.render(f5);
+            this.bipedRightArm.render(f5);
+            this.bipedLeftArm.render(f5);
+            this.bipedRightLeg.render(f5);
+            this.bipedLeftLeg.render(f5);
+            this.bipedHeadwear.render(f5);
+            GL11.glPopMatrix();
+        } else {
+            this.bipedHead.render(f5);
+            this.bipedBody.render(f5);
+            this.bipedRightArm.render(f5);
+            this.bipedLeftArm.render(f5);
+            this.bipedRightLeg.render(f5);
+            this.bipedLeftLeg.render(f5);
+            this.bipedHeadwear.render(f5);
+        }
+	}
 	
 	public void prepareForRender(Entity entity) {
 		EntityLivingBase living = (EntityLivingBase)entity;
@@ -349,6 +380,24 @@ public class ModelArmorNebula extends ModelBiped {
 	    		} 
 	    	} 
 	    } 
+	}
+	
+	public void setRotationAnglesMonster(float p_78087_1_, float p_78087_2_, float p_78087_3_, float p_78087_4_, float p_78087_5_, float p_78087_6_, Entity p_78087_7_) {
+	    setRotationAngles(p_78087_1_, p_78087_2_, p_78087_3_, p_78087_4_, p_78087_5_, p_78087_6_, p_78087_7_);
+	    float f6 = MathHelper.sin(this.onGround * 3.1415927F);
+	    float f7 = MathHelper.sin((1.0F - (1.0F - this.onGround) * (1.0F - this.onGround)) * 3.1415927F);
+	    this.bipedRightArm.rotateAngleZ = 0.0F;
+	    this.bipedLeftArm.rotateAngleZ = 0.0F;
+	    this.bipedRightArm.rotateAngleY = -(0.1F - f6 * 0.6F);
+	    this.bipedLeftArm.rotateAngleY = 0.1F - f6 * 0.6F;
+	    this.bipedRightArm.rotateAngleX = -1.5707964F;
+	    this.bipedLeftArm.rotateAngleX = -1.5707964F;
+	    this.bipedRightArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
+	    this.bipedLeftArm.rotateAngleX -= f6 * 1.2F - f7 * 0.4F;
+	    this.bipedRightArm.rotateAngleZ += MathHelper.cos(p_78087_3_ * 0.09F) * 0.05F + 0.05F;
+	    this.bipedLeftArm.rotateAngleZ -= MathHelper.cos(p_78087_3_ * 0.09F) * 0.05F + 0.05F;
+	    this.bipedRightArm.rotateAngleX += MathHelper.sin(p_78087_3_ * 0.067F) * 0.05F;
+	    this.bipedLeftArm.rotateAngleX -= MathHelper.sin(p_78087_3_ * 0.067F) * 0.05F;
 	}
 	
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

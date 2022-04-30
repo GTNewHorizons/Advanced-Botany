@@ -53,7 +53,7 @@ public class SubTileAncientAlphirine extends SubTileFunctional {
 								item.getEntityItem().stackSize -= 1;
 							else
 								item.setDead();
-							if(world.rand.nextInt(210) <= recipe.getChance()) {
+							if(world.rand.nextInt(111) <= recipe.getChance()) {
 								spawnPortal(world, recipe.getOutput().copy(), posX, posY, posZ);
 								this.mana -= manaRequare;
 							} else {

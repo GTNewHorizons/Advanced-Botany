@@ -1,0 +1,9 @@
+{
+	"boardcube": { "sounds":["ab:boardcube"], "subtitle": "ab.subtitle.boardcube" },
+	"nebulablaze": { "sounds":["ab:nebulablaze"], "subtitle": "ab.subtitle.nebulablaze" },
+	"bladespace": { "sounds":["ab:bladespace"], "subtitle": "ab.subtitle.bladespace" },
+	"nebularod": { "sounds":["ab:nebularod"], "subtitle": "ab.subtitle.nebularod" },
+	"hornplentyusing": { "sounds":["ab:hornplentyusing"], "subtitle": "ab.subtitle.hornplentyusing" },
+	"freyrslingshot": { "sounds":["ab:freyrslingshot"], "subtitle": "ab.subtitle.freyrslingshot" },
+	"lokicubearmor": { "sounds":["ab:lokicubearmor"], "subtitle": "ab.subtitle.lokicubearmor" }
+}

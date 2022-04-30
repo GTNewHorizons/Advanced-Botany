@@ -1,0 +1,33 @@
+[17:46:35] [main/INFO]: Setting user: Player144
+[17:46:37] [Client thread/INFO]: LWJGL Version: 2.9.1
+[17:46:45] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[17:46:50] [Sound Library Loader/INFO]: Sound engine started
+[17:46:51] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[17:46:51] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[17:46:53] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[17:46:54] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[17:46:54] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[17:46:55] [Sound Library Loader/INFO]: Sound engine started
+[17:46:59] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[17:46:59] [Server thread/INFO]: Generating keypair
+[17:46:59] [Server thread/INFO]: Preparing start region for level 0
+[17:46:59] [Server thread/INFO]: Changing view distance to 4, from 10
+[17:47:00] [Server thread/INFO]: Player144[local:E:ac5b379f] logged in with entity id 330 at (-898.051410231817, 9.0, 496.5234696051316)
+[17:47:00] [Server thread/INFO]: Player144 присоединился к игре
+[17:47:08] [Server thread/INFO]: Player144 заработал достижение [Проверить карманы]
+[17:47:08] [Client thread/INFO]: [CHAT] Player144 заработал достижение [Проверить карманы]
+[17:47:27] [Server thread/INFO]: Player144 заработал достижение [Зов удачной охоты]
+[17:47:27] [Client thread/INFO]: [CHAT] Player144 заработал достижение [Зов удачной охоты]
+[17:47:31] [Server thread/INFO]: Player144 заработал достижение [X-Ray? Или отличная реликвия?]
+[17:47:31] [Client thread/INFO]: [CHAT] Player144 заработал достижение [X-Ray? Или отличная реликвия?]
+[17:54:32] [Server thread/INFO]: Saving and pausing game...
+[17:54:32] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[17:54:32] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[17:54:32] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
+[17:54:32] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The Outer Lands
+[18:34:10] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2366286ms behind, skipping 47325 tick(s)
+[18:39:06] [Server thread/INFO]: Saving and pausing game...
+[18:39:06] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Overworld
+[18:39:07] [Server thread/INFO]: Saving chunks for level 'Новый мир'/Nether
+[18:39:07] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The End
+[18:39:07] [Server thread/INFO]: Saving chunks for level 'Новый мир'/The Outer Lands

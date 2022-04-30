@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": 
+    {
+        "layer0": "ab:items/space_blade_0",
+        "layer1": "ab:items/space_blade_overlay"
+    }
+}

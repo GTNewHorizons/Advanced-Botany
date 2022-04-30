@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": 
+    {
+        "layer0": "ab:items/air_forgotten_lands"
+    }
+}

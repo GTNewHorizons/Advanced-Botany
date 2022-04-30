@@ -78,6 +78,7 @@ item.autoPocketWardrobe.name=Nimble Cube
 item.talismanHiddenRiches.name=Key to Hidden Wealth
 item.hornPlenty.name=Horn of Plenty
 item.sphereNavigation.name=Sphere of Navigation
+item.itemAquaSword.name=Blade of Sea
 
 //MISC
 
@@ -123,6 +124,15 @@ achievement.ab:relicHornPlenty=Good hunting call
 achievement.ab:relicHornPlenty.desc=Be rewarded with Horn of Plenty for your heroic deeds
 achievement.ab:relicSphereNavigation=X-Ray? Or a great relic?
 achievement.ab:relicSphereNavigation.desc=Be rewarded with Sphere of Navigation for your heroic deeds
+
+//ENTITY
+
+entity.AdvancedBotany.advancedSpark.name=Superconductive spark
+entity.AdvancedBotany.nebulaBlaze=Projectile Nebula Blaze
+entity.AdvancedBotany.manaVineBall=The Orb of Vine Freyr
+entity.AdvancedBotany.alphirinePortal=Portal from the past
+entity.AdvancedBotany.entitySword=Star Burst
+entity.AdvancedBotany.entitySeed=Projectile Sprawl
 
 //LEXICON
 
@@ -207,6 +217,7 @@ botania.page.mithrillSword.craft=Cut them all up!!!
 botania.entry.dictarius=Dictarius
 botania.tagline.dictarius=Turns everything around in one word, be careful
 botania.page.dictarius0=Dictarius - the most open flower of all, which tries to express its opinion, but more often than not, it tries to force those around it to take some action. <br>Overall, if you don't listen to it, it's quite a great way to extract mana! The more listeners around him, the more mana.
+botania.page.dictarius1=Dictarius has one weakness - a large cluster of similar flowers, discussions with such talkative opponents gradually poison him - as a result Dictarius dies!
 botania.page.dictarius.petalCraft=Not the best conversationalist at night
 
 botania.entry.aspecolus=Aspecolus
@@ -308,4 +319,8 @@ botania.entry.hornPlenty=Horn of Plenty
 botania.tagline.hornPlenty=Double booty - what could be better?
 botania.page.hornPlenty0=The Horn of Plenty is a relic of one of the Ases associated with hunting!<br>Use the horn to charge it, charging requires some mana. After filling with mystical powers, go hunting, each time the victim dies at your hand, there is a chance to get additional drop from this creature. 
 
+botania.entry.aquaSword=Blade of Sea
+botania.tagline.aquaSword=Get away from me! I'm wet...
+botania.page.aquaSword0=Blade of Sea - a mystical melee weapon imbued with the powers of the seas!<br>An attack with Blade of the Sea is resisted by a water splash, and pushes everyone around in the direction the player is looking<br>The block, on the other hand, is resisted by a water shield, which prevents enemies from approaching the player.
+botania.page.aquaSword.craft=Meditation in total silence
 

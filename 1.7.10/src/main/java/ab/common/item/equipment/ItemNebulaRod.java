@@ -110,7 +110,7 @@ public class ItemNebulaRod extends ItemMod implements IManaUsingItem {
 			Vector3 l = new Vector3(look.xCoord, look.yCoord + yawOffset, look.zCoord);
 			Vector3 player = Vector3.fromEntity(p).add(0.0f, 0.0f, 0.0f);
 			Vector3 v3 = new Vector3();	
-			for(int i = 0; i < totalSpiritCount; i++) {	
+			for(int i = 0; i < totalSpiritCount; i++) {
 				float size = Math.max(0.215f, ticks / 100.0f);
 				v3.set(Math.sin(wticks * Math.PI / 180.0D) / 1.825f * r, Math.cos(wticks * Math.PI / 180.0D) * r, 0.8f);
 				ClientHelper.setRotation(p.rotationPitch, 1.0f, 0.0f, 0.0f, v3);

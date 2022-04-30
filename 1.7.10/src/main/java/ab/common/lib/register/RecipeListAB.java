@@ -98,10 +98,12 @@ public class RecipeListAB {
 	public static LexiconEntry hornPlenty;
 	public static LexiconEntry sprawlRod;
 	public static LexiconEntry azartFlower;
+	public static LexiconEntry aquaSword;
 	
 	public static KnowledgeType forgotten;
 	
 	public static void init() {
+		relicInit();
 		
 		BotaniaAPI.addCategory(categoryForgotten = new BLexiconCategory("forgotten", 5));
 		forgotten = BotaniaAPI.registerKnowledgeType("ab_forgotten", EnumChatFormatting.BLUE, false);
@@ -113,7 +115,7 @@ public class RecipeListAB {
 		hopperRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(BlockListAB.blockEngineerHopper), new ItemStack(Blocks.hopper), 23);
 		fateBoardRecipe =  AdvancedBotanyAPI.registerAlphirineRecipe(new ItemStack(BlockListAB.blockBoardFate, 1, 1), new ItemStack(BlockListAB.blockBoardFate), 60);
 		
-		mithrillRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModBlocks.storage, 1, 0), new ItemStack(ModItems.manaResource, 1, 18), 7500000, 0x25d6b7);
+		mithrillRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModBlocks.storage, 1, 0), new ItemStack(ModItems.manaResource, 1, 18), 5000000, 0x25d6b7);
 		terrasteelRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ModItems.manaResource, 1, 4), new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 1), 500000, 0x29de20);
 		manaStarRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(Items.nether_star), 250000, 0x6bc9ec);
 		nebulaRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 8), new ItemStack(ModBlocks.storage, 1, 4), new ItemStack(ItemListAB.itemABResource, 1, 1), 50000000, 0x8d16e0);
@@ -180,7 +182,7 @@ public class RecipeListAB {
 		
 		dictariusRecipe = BotaniaAPI.registerPetalRecipe(ItemBlockSpecialFlower.ofType("dictarius"), new ItemStack(ItemListAB.itemABResource, 1, 4), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.rune, 1, 15), new ItemStack(ModItems.petal, 1, 4), new ItemStack(ModItems.petal, 1, 4), new ItemStack(ModItems.petal, 1, 1));
 		dictarius = new BLexiconEntry("dictarius", BotaniaAPI.categoryGenerationFlowers);
-		dictarius.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", dictariusRecipe)});
+		dictarius.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1"), BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", dictariusRecipe)});
 
 		nebula = new BLexiconEntry("nebula", categoryForgotten);
 		nebula.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), new AdvancedPlateCraftPage(nebula, nebulaRecipe.getOutput(), ".abCraft")});
@@ -250,6 +252,10 @@ public class RecipeListAB {
 		azartFlowerRecipe = BotaniaAPI.registerPetalRecipe(ItemBlockSpecialFlower.ofType("ardentAzarcissus"), new ItemStack(ItemListAB.itemABResource, 1, 4), new ItemStack(ModItems.petal, 1, 11), new ItemStack(ModItems.petal, 1, 11), new ItemStack(ModItems.petal, 1, 14), new ItemStack(ModItems.petal, 1, 14), new ItemStack(ModItems.petal, 1, 13), new ItemStack(ModItems.manaResource, 1, 5));
 		azartFlower = new BLexiconEntry("azartFlower", BotaniaAPI.categoryGenerationFlowers);
 		azartFlower.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", azartFlowerRecipe)});
+		
+		GameRegistry.addShapedRecipe(new ItemStack(ItemListAB.itemAquaSword), new Object[] { "  N", "RM ", "WR ", Character.valueOf('N'), new ItemStack(ItemListAB.itemABResource, 1, 1), Character.valueOf('M'), new ItemStack(ItemListAB.itemABResource), Character.valueOf('R'), new ItemStack(ModItems.rune), Character.valueOf('W'), new ItemStack(ModItems.manaResource, 1, 13)});
+		aquaSword = new BLexiconEntry("aquaSword", categoryForgotten);
+		aquaSword.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe())});
 		
 		if(Botania.thaumcraftLoaded)
 			thaumcraft();

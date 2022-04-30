@@ -67,10 +67,6 @@ public class ItemSphereNavigation extends ItemModRelic {
 		addStringToTooltip(StatCollector.translateToLocal(stack.getItemDamage() == 0 ? "botaniamisc.active" : "botaniamisc.inactive"), list);
 	}
 	
-	void addStringToTooltip(String s, List tooltip) {
-		tooltip.add(s.replaceAll("&", "\u00A7"));
-	}
-	
 	public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
 		if(getFindBlock(stack) != null && player.isSneaking()) {
 			int dmg = stack.getItemDamage();

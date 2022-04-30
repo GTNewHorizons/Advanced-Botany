@@ -63,14 +63,14 @@ public class ItemNebulaArmor extends ItemManasteelArmor implements IManaItem, IM
 	}
 	
 	public ItemStack[] getArmorSetStacks() {
-		if (armorset == null)
+		if(armorset == null)
 			armorset = new ItemStack[] { new ItemStack(ItemListAB.itemNebulaHelm), new ItemStack(ItemListAB.itemNebulaChest), new ItemStack(ItemListAB.itemNebulaLegs), new ItemStack(ItemListAB.itemNebulaBoots) }; 
 		return armorset;
 	}
 	
 	public boolean hasArmorSetItem(EntityPlayer player, int i) {
 		ItemStack stack = player.inventory.armorInventory[3 - i];
-	    if (stack == null)
+	    if(stack == null)
 	    	return false; 
 	    switch (i) {
 	    	case 0:
@@ -88,15 +88,13 @@ public class ItemNebulaArmor extends ItemManasteelArmor implements IManaItem, IM
 	public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot) {
 		int manaVal = Math.min(damage * 15, this.getMana(stack));
 		if(entity instanceof EntityPlayer && !entity.worldObj.isRemote)
-			if(!ManaItemHandler.requestManaExactForTool(stack, (EntityPlayer)entity, manaVal, true)) {
+			if(!ManaItemHandler.requestManaExactForTool(stack, (EntityPlayer)entity, manaVal, true))
 				this.addMana(stack, -manaVal);
-			}
 	}
 	
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack) {
-		if(!world.isRemote && this.getMana(stack) != this.getMaxMana(stack) && ManaItemHandler.requestManaExactForTool(stack, player, 1000, true)) {
+		if(!world.isRemote && this.getMana(stack) != this.getMaxMana(stack) && ManaItemHandler.requestManaExactForTool(stack, player, 1000, true))
 			this.addMana(stack, 1000);
-		}
 	}
 	
 	public void addArmorSetDescription(ItemStack stack, List<String> list) {

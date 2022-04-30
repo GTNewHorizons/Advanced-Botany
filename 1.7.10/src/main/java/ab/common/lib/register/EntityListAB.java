@@ -13,11 +13,11 @@ public class EntityListAB {
 
 	 public static void init() {
 		 int id = 0;
-		 EntityRegistry.registerModEntity(EntityAdvancedSpark.class, "ab:advancedSpark", id++, AdvancedBotany.instance, 64, 10, false);
-		 EntityRegistry.registerModEntity(EntityNebulaBlaze.class, "ab:nebulaBlaze", id++, AdvancedBotany.instance, 64, 10, true);
-		 EntityRegistry.registerModEntity(EntityManaVine.class, "ab:manaVineBall", id++, AdvancedBotany.instance, 64, 10, true);
-		 EntityRegistry.registerModEntity(EntityAlphirinePortal.class, "ab:alphirinePortal", id++, AdvancedBotany.instance, 64, 10, false);
-		 EntityRegistry.registerModEntity(EntitySword.class, "ab:entitySword", id++, AdvancedBotany.instance, 64, 10, true);
-		 EntityRegistry.registerModEntity(EntitySeed.class, "ab:entitySeed", id++, AdvancedBotany.instance, 64, 10, true);
+		 EntityRegistry.registerModEntity(EntityAdvancedSpark.class, "advancedSpark", id++, AdvancedBotany.instance, 64, 10, false);
+		 EntityRegistry.registerModEntity(EntityNebulaBlaze.class, "nebulaBlaze", id++, AdvancedBotany.instance, 64, 10, true);
+		 EntityRegistry.registerModEntity(EntityManaVine.class, "manaVineBall", id++, AdvancedBotany.instance, 64, 10, true);
+		 EntityRegistry.registerModEntity(EntityAlphirinePortal.class, "alphirinePortal", id++, AdvancedBotany.instance, 64, 10, false);
+		 EntityRegistry.registerModEntity(EntitySword.class, "entitySword", id++, AdvancedBotany.instance, 64, 10, true);
+		 EntityRegistry.registerModEntity(EntitySeed.class, "entitySeed", id++, AdvancedBotany.instance, 64, 10, true);
 	 }
 }

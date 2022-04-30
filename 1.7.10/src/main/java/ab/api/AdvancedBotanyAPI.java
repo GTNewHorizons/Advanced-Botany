@@ -23,8 +23,9 @@ public class AdvancedBotanyAPI {
 	public static List<Achievement> achievements = new ArrayList<Achievement>();
 	public static List<ItemStack> relicList = new ArrayList<ItemStack>();
 	
-	public static Item.ToolMaterial mithrilToolMaterial = EnumHelper.addToolMaterial("MITHRIL", 7, -1, 8.0F, 8.0F, 24);
+	public static Item.ToolMaterial mithrilToolMaterial = EnumHelper.addToolMaterial("MITHRIL", 7, -1, 8.0F, 4.0F, 24);
 	public static ItemArmor.ArmorMaterial nebulaArmorMaterial = EnumHelper.addArmorMaterial("NEBULA", 0, new int[] { (int)(3 * ConfigABHandler.protectionFactorNebula), (int)(8 * ConfigABHandler.protectionFactorNebula), (int)(6 * ConfigABHandler.protectionFactorNebula), (int)(3 * ConfigABHandler.protectionFactorNebula) }, 26);
+	public static ItemArmor.ArmorMaterial wildHundArmor = EnumHelper.addArmorMaterial("WILD_HUNT_MATERIAL", 34, new int[] { 7, 8, 3, 2 }, 26);
 	
 	public static RecipeAdvancedPlate registerAdvancedPlateRecipe(ItemStack output, ItemStack input1, ItemStack input2, ItemStack input3, int mana, int color) {
 		RecipeAdvancedPlate recipe = new RecipeAdvancedPlate(output, mana, color, input1, input2, input3);

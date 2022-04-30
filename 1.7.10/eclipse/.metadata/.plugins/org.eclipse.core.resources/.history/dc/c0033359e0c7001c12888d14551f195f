@@ -1,0 +1,12 @@
+package ab.client.model.armor;
+
+import net.minecraft.client.model.ModelBiped;
+
+public class ModelArmorWildHunt extends ModelBiped {
+	
+	int slot;
+	
+	public ModelArmorWildHunt(int slot) {
+		this.slot = slot;
+	}
+}

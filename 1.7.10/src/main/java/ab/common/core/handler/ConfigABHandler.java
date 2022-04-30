@@ -14,7 +14,7 @@ public class ConfigABHandler {
 
 	public static Configuration config;
 	public static boolean useManaChargerAnimation = true;
-	public static int maxContainerMana = 64000000;
+	public static int[] maxContainerMana = new int[] { 64000000, 8000000, 64000000 };
 	public static double protectionFactorNebula = 1.0f;
 	public static double damageFactorSpaceSword = 1.0f;
 	public static int nebulaWandCooldownTick = 18;
@@ -25,6 +25,8 @@ public class ConfigABHandler {
 	public static String[] lockWorldNameNebulaRod = new String[] {};
 	public static int limitXZCoords = 30000000;
 	public static boolean hasAutoThaum = true;
+	public static int maxDictariusCount = 64;
+	public static int sprawlRodMaxArea = 64;
 	
 	public static void loadConfig(File configFile) {
 		config = new Configuration(configFile);
@@ -34,8 +36,12 @@ public class ConfigABHandler {
 	}
 	
 	public static void load() {
-		String desc = "Maximum mana capacity for Mana Container (Diluted Mana Container will receive an eighth of the set value)";
-		maxContainerMana = loadPropInt("Mana Container capacity", desc, maxContainerMana);
+		String desc = "Maximum mana capacity for Mana Container";
+		maxContainerMana[0] = loadPropInt("Mana Container Capacity", desc, maxContainerMana[0]);
+		desc = "Maximum mana capacity for Diluted Mana Container";
+		maxContainerMana[1] = loadPropInt("Mana Container Capacity (Diluted)", desc, maxContainerMana[1]);
+		desc = "Maximum mana capacity for Fabulous Mana Container";
+		maxContainerMana[2] = loadPropInt("Mana Container Capacity (Fabulous)", desc, maxContainerMana[2]);
 		desc = "Activating the charging animation for the Mana Charger";
 		useManaChargerAnimation = loadPropBool("Mana Charger lighting", desc, useManaChargerAnimation);
 		desc = "Protection factor for nebula armour";
@@ -58,6 +64,10 @@ public class ConfigABHandler {
 		limitXZCoords = loadPropInt("Restriction on X Z coordinates for Rod of Nebula", desc, limitXZCoords);
 		desc = "Switching the Thaumim Crafty Crate on or off in the game";
 		hasAutoThaum = loadPropBool("Enable Thaumim Crafty Crate", desc, hasAutoThaum);
+		desc = "Limit the number of flowers next to each other";
+		maxDictariusCount = loadPropInt("Max Dictarius Count", desc, maxDictariusCount);
+		desc = "Changes the area of effect of a projectile created with Rod of Sprawl";
+		sprawlRodMaxArea = loadPropInt("Rod of Sprawl Max Area", desc, sprawlRodMaxArea);
 		if(config.hasChanged())
 			config.save(); 
 	}

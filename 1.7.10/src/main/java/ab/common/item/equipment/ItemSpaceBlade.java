@@ -152,10 +152,7 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 		}
 	}
 	
-	public static void onPlayerSpaceDash(EntityPlayer player) {
-		double posX = player.posX;
-		double posY = player.posY;
-		double posZ = player.posZ;					  
+	public static void onPlayerSpaceDash(EntityPlayer player) {				  
 		Vec3 vec3 = player.getLook(1.0F).normalize();
 		player.motionX += vec3.xCoord * 3.25f;
 		player.motionY += (vec3.yCoord / 1.6f);
@@ -282,7 +279,7 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 	
 	private float getSwordDamage(ItemStack stack) {
 		int level = this.getLevel(stack);
-		return (float)Math.round((AdvancedBotanyAPI.mithrilToolMaterial.getDamageVsEntity() + (level * level / 1.5f)) * ConfigABHandler.damageFactorSpaceSword);
+		return 4.0F + (float)Math.round((AdvancedBotanyAPI.mithrilToolMaterial.getDamageVsEntity() + (level * level / 1.5f)) * ConfigABHandler.damageFactorSpaceSword);
 	}
 	
 	public Multimap getAttributeModifiers(ItemStack stack) {
