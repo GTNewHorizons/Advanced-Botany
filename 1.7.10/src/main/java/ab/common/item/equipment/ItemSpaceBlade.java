@@ -24,6 +24,7 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -174,6 +175,10 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 			if(this.getLevel(stack) != 0)
 				list.add(StatCollector.translateToLocal("botaniamisc.shiftinfo").replaceAll("&", "\u00A7"));
 		} 
+	}
+	
+	public EnumRarity getRarity(ItemStack stack) {
+		return AdvancedBotanyAPI.rarityNebula;
 	}
 	
 	public int getEntityLifespan(ItemStack itemStack, World world) {

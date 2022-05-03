@@ -1,11 +1,13 @@
 package ab.common.item.equipment;
 
+import ab.api.AdvancedBotanyAPI;
 import ab.common.entity.EntityNebulaBlaze;
 import ab.common.item.ItemMod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import vazkii.botania.api.mana.IManaUsingItem;
@@ -32,6 +34,10 @@ public class ItemNebulaBlaze extends ItemMod implements IManaUsingItem {
 			player.worldObj.spawnEntityInWorld(blaze);
 			player.worldObj.playSoundAtEntity(player, "ab:nebulaBlaze", 0.4F, 1.4F);
 		}
+	}
+	
+	public EnumRarity getRarity(ItemStack stack) {
+		return AdvancedBotanyAPI.rarityNebula;
 	}
 	
     public EnumAction getItemUseAction(ItemStack stack) {

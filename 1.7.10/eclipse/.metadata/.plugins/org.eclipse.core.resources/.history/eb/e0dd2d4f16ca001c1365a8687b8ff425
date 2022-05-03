@@ -1,0 +1,5 @@
+package ab.common.item.block;
+
+public class ItemBlockBoard {
+
+}

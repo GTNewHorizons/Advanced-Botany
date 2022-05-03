@@ -3,6 +3,7 @@ package ab.common.item;
 import java.util.List;
 
 import ab.AdvancedBotany;
+import ab.api.AdvancedBotanyAPI;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -11,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -33,6 +35,12 @@ public class ItemABResource extends Item implements IFlowerComponent {
 		for(int i = 0; i < icons.length; i++) {
 			icons[i] = ir.registerIcon("ab:resourceAB_" + i);
 		}
+	}
+	
+	public EnumRarity getRarity(ItemStack stack) {
+		if(stack.getItemDamage() == 5 || stack.getItemDamage() == 6)
+			return AdvancedBotanyAPI.rarityNebula;
+		return super.getRarity(stack);
 	}
 	
     @SideOnly(Side.CLIENT)

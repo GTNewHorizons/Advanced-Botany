@@ -1,8 +1,13 @@
 {
     "parent": "minecraft:item/handheld",
-    "textures": 
-    {
-        "layer0": "ab:items/space_blade_0",
+    "textures": {
+        "layer0": "ab:items/space_blade",
         "layer1": "ab:items/space_blade_overlay"
-    }
+    },
+    "overrides": [{
+    	"predicate": {
+            "ab:enabled": 1
+        }, 
+        "model": "ab:item/space_blade_enabled"
+    }]
 }

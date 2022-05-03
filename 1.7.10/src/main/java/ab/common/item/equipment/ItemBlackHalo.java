@@ -65,6 +65,8 @@ public class ItemBlackHalo extends ItemMod implements IBlockProvider {
 				return halo;
 			}
 			stack.setItemDamage(stack.getItemDamage() == 0 ? 1 : 0);
+			if(!world.isRemote)
+				world.playSoundAtEntity(player, "random.orb", 0.3F, 0.1F);
 			this.setItemSlot(halo, stack, segment);
 			return halo;
 		}		

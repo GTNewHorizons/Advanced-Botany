@@ -13,6 +13,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
@@ -40,6 +41,10 @@ public class ItemNebulaArmor extends ItemManasteelArmor implements IManaItem, IM
 		this.setCreativeTab(AdvancedBotany.tabAB);
 		this.setMaxDamage(1000);
 		this.setNoRepair();
+	}
+	
+	public EnumRarity getRarity(ItemStack stack) {
+		return AdvancedBotanyAPI.rarityNebula;
 	}
 	
 	public ISpecialArmor.ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage, int slot) {

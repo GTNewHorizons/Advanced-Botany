@@ -9,6 +9,7 @@ import com.google.common.collect.Multimap;
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.client.core.ClientHelper;
+import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
 import ab.common.core.handler.ConfigABHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -49,17 +50,22 @@ public class ItemAquaSword extends ItemSword {
 		double posY = entity.posY + entity.getEyeHeight();
 		double posZ = entity.posZ;
 		if(!player.worldObj.isRemote) {
+			boolean hasWaterSplash = false;
 			for(EntityLivingBase living : entities) {
 				if(living instanceof EntityPlayer && (((EntityPlayer)living).getCommandSenderName().equals(player.getCommandSenderName()) || (MinecraftServer.getServer() != null && !MinecraftServer.getServer().isPVPEnabled())))
 					continue; 
 				else if(ManaItemHandler.requestManaExactForTool(stack, player, 10, false) && living.attackEntityFrom(DamageSource.causePlayerDamage(player), AdvancedBotanyAPI.mithrilToolMaterial.getDamageVsEntity() / 2.0f)) {
 					ManaItemHandler.requestManaExactForTool(stack, player, 10, true);
+					if(!hasWaterSplash)
+						hasWaterSplash = true;
 					Vec3 vec3 = player.getLook(1.0F).normalize();
 					living.motionX += vec3.xCoord * 1.35f;
 					living.motionY += (vec3.yCoord / 1.8f);
 					living.motionZ += vec3.zCoord * 1.35f;
 				}
 			}
+			if(hasWaterSplash)
+				player.worldObj.playSoundAtEntity(player, "ab:aquaSword", 1.2F, 1.2F);
 		} else {
 			if(ManaItemHandler.requestManaExactForTool(stack, player, 10, false)) {
 				for(int i = 0; i < 24; i++) {
@@ -77,6 +83,7 @@ public class ItemAquaSword extends ItemSword {
 		if(p.worldObj.isRemote) {
 			if(!ManaItemHandler.requestManaExactForTool(stack, p, 15, false))
 				return;
+			ClientSoundHandler.playSound(p, "liquid.water", 0.8F, 1.7F, 13, false);
 			time = (this.getMaxItemUseDuration(stack) - time) % 120 + 1;
 			if(time > 50) 
 				time = 120 - time;

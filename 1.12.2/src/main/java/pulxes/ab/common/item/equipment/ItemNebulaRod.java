@@ -100,9 +100,9 @@ public class ItemNebulaRod extends ItemMod implements IManaUsingItem {
 			ClientSoundHandler.playSound(p, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.PLAYERS, 1.2F, 1.0F, 40);
 			boolean isFinish = time > 80;
 			int ticks = Math.min(100, time);
-			int totalSpiritCount = (int)Math.max(3, ticks / 100.0f * 26);
+			int totalSpiritCount = (int)Math.max(3, ticks / 100.0f * 18);
 			double tickIncrement = 360.0D / totalSpiritCount;
-			int speed = 9;
+			int speed = 8;
 			double wticks = (ticks * speed) - tickIncrement;
 			double r = Math.sin((ticks) / 100.0D) * Math.max(0.75f, 1.4D * ticks / 100.0f);
 			Vec3d look = p.getLookVec();
@@ -111,7 +111,7 @@ public class ItemNebulaRod extends ItemMod implements IManaUsingItem {
 			Vector3 player = Vector3.fromEntity(p);
 			for(int i = 0; i < totalSpiritCount; i++) {
 				float size = Math.max(0.215f, ticks / 100.0f);
-				Vector3 v3 = new Vector3(Math.sin(wticks * Math.PI / 180.0D) / 1.825f * r, Math.cos(wticks * Math.PI / 180.0D) * r, 0.6f);
+				Vector3 v3 = new Vector3(Math.sin(wticks * Math.PI / 180.0D) / 1.825f * r, Math.cos(wticks * Math.PI / 180.0D) * r, 0.8f);
 				v3 = ClientHelper.setRotation(p.rotationPitch, 1.0f, 0.0f, 0.0f, v3);
 				v3 = ClientHelper.setRotation(-p.rotationYaw, 0.0f, 1.0f, 0.0f, v3);
 				v3 = v3.add(l.multiply(1.0f)).add(player);

@@ -1,4 +1,4 @@
-﻿//Russian translate
+﻿//English translate
 
 //Tab
 
@@ -53,7 +53,7 @@ item.mithrillManaRing.name=Mithrill Mana Ring
 item.nebulaManaRing.name=Nebula Mana Ring
 item.terraHoe.name=Terrahoe
 item.manaFlower.name=Mana Flower
-item.blackHalo.name=Black Hole Talisman Halo
+item.blackHalo.name=Black Hole Box
 item.nebulaBlaze.name=Nebula Blaze
 item.antigravityCharm.name=Sphere of Attraction
 item.botania:nebulaHelm.name=Nebula Helmet
@@ -79,6 +79,14 @@ item.talismanHiddenRiches.name=Key to Hidden Wealth
 item.hornPlenty.name=Horn of Plenty
 item.sphereNavigation.name=Sphere of Navigation
 item.itemAquaSword.name=Blade of Sea
+
+//FLOWER LORE
+
+ab.flower.ancientAlphirine.reference=Knows when you first got the Lexicon
+ab.flower.dictarius.reference=It's like he has no tongue, but he's chatty...
+ab.flower.aspecolus.reference=Everything tends to start...
+ab.flower.pureGladiolus.reference=The outcome of unsuccessful node creation
+ab.flower.ardentAzarcissus.reference=He once lost his honor
 
 //MISC
 
@@ -109,6 +117,8 @@ ab.gameBoard.misc.notPlayer=The game ends, the second player is missing
 ab.nebulaRod.notTeleporting=Portal could not find the right place to move
 ab.nebulaRod.notTeleportingEvent=Something prevents the portal from transporting you to your chosen location
 ab.sphereNavigation.founded=Found
+abmisc.fateBoard.info0=The opportunity to play on this board, he dreamed of 
+abmisc.fateBoard.info1=every Elf, hoping to get a valuable prize...
 
 //ACHIEVEMENT
 
@@ -174,9 +184,9 @@ botania.page.lebethronSpreader.craft=You can't have too much mana
 botania.entry.mithrill=Mithrill
 botania.tagline.mithrill=Mighty and indestructible metal!
 botania.page.mithrill0=Mithrill - stands out for its strength among other metals, or rather its lack of it, as it can not get any damage. <br>Such unique properties are the result of a successful proportion of Gaia Spirit and Terrasteel, with the addition of Manasteel, to balance the energy within the alloy.
-botania.page.mithrill.abCraft=Where's all my mana!?
+botania.page.mithrill.abCraft=Gaia Spirit Ingot [Remake]
 botania.page.mithrill1=The Material Destroyer - a harsh tool based on a global catastrophe in the past. <br>He is perfectly capable of breaking any block almost instantly. His speed is so high that it was necessary to create a *Fuse* in him - that is, to turn him off/on.
-botania.page.mithrill.craft=Break this world
+botania.page.mithrill.craft=The hip never breaks :(
 
 botania.entry.manaContainer=Mana Container's
 botania.tagline.manaContainer=A mana depot for madmen
@@ -189,8 +199,8 @@ botania.page.manaContainer.alphirineCraft=The speed of sound is you?
 
 botania.entry.manaCrystalCube=Mana Crystal Cube
 botania.tagline.manaCrystalCube=Every nerd's personal mana manager
-botania.page.manaCrystalCube0=It's not always convenient to run around and check every mana cube, wondering how much there is in the end. That's what the Crystal Mana Cube was designed and created for! <br>It shows the mana of all pools or other accumulators that have a spark.
-botania.page.manaCrystalCube.craft=Where's the spark?
+botania.page.manaCrystalCube0=It's not always convenient to run around and check every mana cube, wondering how much there is in the end. That's what the Crystal Mana Cube was designed and created for! <br>It shows the mana of all pools or other accumulators that have a spark, while the cube itself does not need it.
+botania.page.manaCrystalCube.craft=Magical arithmetic
 
 botania.entry.terraHoe=Terrahoe
 botania.tagline.terraHoe=Self-help training for plants
@@ -210,9 +220,10 @@ botania.page.manaFlower.craft=Economy is the best friend
 botania.page.manaFlower.alphirineCraft=Beautiful flower
 
 botania.entry.mithrillSword=Blade of Space
-botania.tagline.mithrillSword=Weapons capable of making jerks and doing damage
-botania.page.mithrillSword0=Blade of Space - is an ordinary melee weapon, but as soon as you pour mana into it, it is immediately endowed with unusual magical properties. For example: Dash or Starburst <br>Note: When using the Spatial leap, the Block is unavailable for a while.
-botania.page.mithrillSword.craft=Cut them all up!!!
+botania.tagline.mithrillSword=Mobility in battle never hurts
+botania.page.mithrillSword0=Blade of Space - is a melee weapon that uses mana to communicate with the cosmic forces, the more mana in the blade, the stronger the connection. <br>The power of connection to cosmic forces is divided into Ranks, like Terra Shatterer. Each rank unlocks a new magical property for the Space Blade, more on the next page.
+botania.page.mithrillSword1=Description of the magical properties: <br>Starburst - a projectile filled with star power, released at the swing of the sword. <br>Spatial leap - a jerk in the direction of the player's gaze, performed by pressing the RCM<br>Note: The player cannot use a block, during blade reloads. 
+botania.page.mithrillSword.craft=It'll look great in your hand!
 
 botania.entry.dictarius=Dictarius
 botania.tagline.dictarius=Turns everything around in one word, be careful
@@ -228,16 +239,16 @@ botania.page.aspecolus.petalCraft=Mini psychologist
 botania.entry.nebula=Nebula
 botania.tagline.nebula=The connection to the cosmos
 botania.page.nebula0=A nebula fragment is a material filled with part of the power of space. It allows you to create instruments and weapons that are unearthly in power.
-botania.page.nebula.abCraft=The greater the power, the greater the responsibility
+botania.page.nebula.abCraft=Ichor for Botania?
 
 botania.entry.nebulaBlaze=Nebula Blaze
 botania.tagline.nebulaBlaze=The Foggy Mayhem
 botania.page.nebulaBlaze0=Nebula Blaze - is a magical weapon that is used when someone is really getting to you. Just point it at the target and fire the projectile! If you're not good at pointing, the projectile will help you a little!
 botania.page.nebulaBlaze.craft=Space strike?
 
-botania.entry.blackHalo=Black Hole Talisman Halo
+botania.entry.blackHalo=Black Hole Box
 botania.tagline.blackHalo=The Lord of Black Holes
-botania.page.blackHalo0=Black Hole Talisman Halo - allows you to wear 12 black hole talismans in 1 slot! This allows you to comfortably go to the mine and not only.
+botania.page.blackHalo0=Black Hole Box - A handy invention for every advanced Elf to carry up to 12 Black Hole Talismans in 1 slot. <br>To put the Black Hole Talisman in the Black Hole Box - you need to have it in the Hotbar, and you need a given type of block in the Talisman.
 botania.page.blackHalo.craft=A stonemason's dream
 
 botania.entry.antigravityCharm=Sphere of attraction
@@ -254,7 +265,10 @@ botania.entry.nebulaArmor=Nebula Armor
 botania.tagline.nebulaArmor=Unbreakable Nerd outfit
 botania.page.nebulaArmor0=Nebula Armor is a powerful nerf gear created with Nebula Fragments and Terrastal armor. <br>Each piece of equipment has its own unique properties, which depend on the amount of mana, the less mana, the weaker the protective properties of the armor.
 botania.page.nebulaArmor1=Characteristics of each armor item: <br>Nebula Helmet - boosts health <br>Nebula Chestplate - allows the wearer to fly, and also has a throwback resistance <br>Nebula Leggings - increase jump height <br>Nebula Boots - accelerate the host
-botania.page.nebulaArmor.craft=Shall we fly?
+botania.page.nebulaArmor.craft0=Face of Space
+botania.page.nebulaArmor.craft1=Shall we fly?
+botania.page.nebulaArmor.craft2=Where are my pants?
+botania.page.nebulaArmor.craft3=Runner's slippers!
 
 botania.entry.freyrSlingshot=Freyr Slingshot
 botania.tagline.freyrSlingshot=&mLust&0 Love and flowers
@@ -262,9 +276,13 @@ botania.page.freyrSlingshot0=Freyr Slingshot - one of Pantheon's mythical items.
 botania.page.freyrSlingshot1=In addition, when a Tree is hit by Natural Flash, it is enveloped in an instant by a previously unknown vines!<br>1) Fertile Liana - speeds up the growth of the seeds underneath<br>2) The Glowing Fertile Liana is the counterpart of the Fertile Liana, but is also capable of generating gold nuggets!
 
 botania.entry.engineerHopper=Engineer Hopper
-botania.tagline.engineerHopper=Hide not pretty mechanisms deep underground! Make it beautiful!
-botania.page.engineerHopper0=Engineer Hopper is a real boon to designer engineers! Use the forest staff to set up the transfer of items from point A to point B.<br>According to preliminary information from Alphirine - such funnels were used in many advanced worlds, such as Asgard and Nidavellir.
-botania.page.engineerHopper.alphirineCraft=Hopper &mthe future&0 the past
+botania.tagline.engineerHopper=Hide not beautiful mechanisms deep underground! Make it beautiful!
+botania.page.engineerHopper0=Engineer Hopper is a real boon for designers-engineers! Thanks to it - you can safely hide the mechanisms, from prying eyes, or just for aesthetic pleasure.<br>According to preliminary information from Alphirine - such funnels were used in many advanced worlds, such as Asgard and Nidavellir.
+botania.page.engineerHopper1=See the item descriptions on the following pages.
+botania.page.engineerHopper2=Point 1 - a place to specify the storage facility from which things will be taken for transportation. <br>Point 2 - A place to specify the vault where things will come in. <br>Point 3 - Wand of the Forest icon: shows where you can bind the vault.
+botania.page.engineerHopper3=Binding the vault to the Engineer Hopper: <br>Step 1 - SHIFT + RCM on the hopper. <br>Step 2 - SHIFT + RCM on the vault. <br>RCM on the hopper - changes the location to indicate a vault.
+botania.page.engineerHopper4=Note 1: Binding a vault to an Engineer Hopper takes the side of the vault that you selected when binding into account in the further operation of the hopper. <br>Note 2: The Engineer Hopper cannot pick up things that are above it as a normal Hopper does, due to a technical difference in design.
+botania.page.engineerHopper.alphirineCraft=Hopper of the &mfuture&0 past
 
 botania.entry.nebulaRod=Rod of Nebula
 botania.tagline.nebulaRod=You're not afraid of portals, are you? Some people can't stand them, and ride the horse...
@@ -313,7 +331,7 @@ botania.page.azartFlower.petalCraft=Just give him the will, and he'll give you m
 
 botania.entry.sphereNavigation=Sphere of Navigation
 botania.tagline.sphereNavigation=It will show you and show you the way anywhere!	
-botania.page.sphereNavigation0=The Sphere of Navigation - is a relic with the unique property of finding a pointed through blocks and marking the location! <br>For such a pleasure it is required to pay mana, and not a small amount in the long run.
+botania.page.sphereNavigation0=Sphere of Navigation is a relic with the unique property of finding the specified block, through blocks, and marking the location! <br>For such a pleasure it is required to pay mana, and not a small amount in the long run.
 
 botania.entry.hornPlenty=Horn of Plenty
 botania.tagline.hornPlenty=Double booty - what could be better?

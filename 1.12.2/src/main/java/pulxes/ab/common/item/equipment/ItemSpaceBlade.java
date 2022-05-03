@@ -5,7 +5,10 @@ import javax.annotation.Nonnull;
 
 import com.google.common.collect.Multimap;
 
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,17 +25,21 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -63,7 +70,26 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 		this.setRegistryName(new ResourceLocation("ab", LibItemNames.SPACE_BLADE));
 	    this.setUnlocalizedName(LibItemNames.SPACE_BLADE);
 	    MinecraftForge.EVENT_BUS.register(this);
-//	    this.addPropertyOverride(new ResourceLocation("ab", "enabled"), (itemStack, world, entityLivingBase) -> isEnabledMode(itemStack) ? 1.0F : 0.0F);
+	    this.addPropertyOverride(new ResourceLocation("ab", "enabled"), (stack, world, entity) -> isEnabledMode(stack) ? 1.0F : 0.0F);
+	}
+	
+	public boolean hitEntity(ItemStack stack, EntityLivingBase entity, @Nonnull EntityLivingBase attacker) {
+		if(!attacker.world.isRemote && entity != null && attacker instanceof EntityPlayer) {
+			if(getLevel(stack) >= 3 && isEnabledMode(stack)) {
+				float size = getLevel(stack) >= 4 ? (getLevel(stack) >= 5 ? 3.5f : 2.5f) : 1.5f;
+				AxisAlignedBB axis = (new AxisAlignedBB(entity.posX - size, entity.posY - 1.7F, entity.posZ - size, entity.posX + size, entity.posY + 1.7F, entity.posZ + size));
+				List<EntityLivingBase> entities = entity.world.getEntitiesWithinAABB(EntityLivingBase.class, axis);
+				for(EntityLivingBase living : entities) {
+					if(living instanceof EntityPlayer && (((EntityPlayer)living).getName().equals(attacker.getName()) || (FMLCommonHandler.instance().getMinecraftServerInstance() != null && !FMLCommonHandler.instance().getMinecraftServerInstance().isPVPEnabled())))
+						continue; 
+					else if(living.hurtTime == 0) {
+						float damage = getSwordDamage(stack);
+						living.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer)attacker), damage);
+					}
+				}
+			}
+		}	
+		return super.hitEntity(stack, entity, attacker);
 	}
 	
 	@Nonnull
@@ -113,6 +139,26 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 	public void leftClick(PlayerInteractEvent.LeftClickEmpty evt) {
 		if(!evt.getItemStack().isEmpty() && evt.getItemStack().getItem() == ItemListAB.itemSpaceBlade && ItemSpaceBlade.getLevel_(evt.getItemStack()) >= 1)
 			NetworkHandler.sendPacketToSpaceBurst();
+	}
+	
+	public int getEntityLifespan(ItemStack itemStack, World world) {
+		return Integer.MAX_VALUE;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, World world, List<String> list, ITooltipFlag flags) {
+		String rank = I18n.format("botania.rank" + getLevel(stack), new Object[0]);
+	    String rankFormat = I18n.format("botaniamisc.toolRank", new Object[] { rank });
+	    list.add(rankFormat.replaceAll("&", "\u00A7"));
+	    if(getMana(stack) == Integer.MAX_VALUE)
+	    	list.add(TextFormatting.DARK_AQUA + I18n.format("abmisc.spaceBlade.maximumMana", new Object[0]));
+		if(GuiScreen.isShiftKeyDown()) {
+			int level = getLevel(stack);
+			list.add((level >= 1 ? TextFormatting.GREEN : "") + I18n.format("abmisc.spaceBlade.bladeInfo.0", new Object[0]));
+			list.add((level >= 2 ? TextFormatting.GREEN : "") + I18n.format("abmisc.spaceBlade.bladeInfo.1", new Object[0]));
+			list.add((level >= 3 ? TextFormatting.GREEN : "") + I18n.format("abmisc.spaceBlade.bladeInfo.LEVEL".replaceAll("LEVEL", Integer.toString(level < 3 ? 2 : level - 1)), new Object[0]));
+		} else
+			list.add(I18n.format("botaniamisc.shiftinfo", new Object[0]).replaceAll("&", "\u00A7")); 
 	}
 	
 	public static boolean spaceBurstAttack(EntityPlayer player) {
@@ -186,6 +232,10 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 		return ItemNBTHelper.getBoolean(stack, "isEnabledMode", false);
 	}
 	
+	private void changeEnableMode(ItemStack stack) {
+		ItemNBTHelper.setBoolean(stack, "isEnabledMode", !isEnabledMode(stack));
+	}
+	
 	public int[] getLevels() {
 		return ItemSpaceBlade.RANK_LEVELS;
 	}
@@ -249,4 +299,12 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 	public boolean usesMana(ItemStack stack) {
         return true;
     }
+	  
+	public boolean showDurabilityBar(ItemStack stack) {
+		return getRechargeTick(stack) != 0;
+	}
+	
+	public double getDurabilityForDisplay(ItemStack stack) {
+		return (float)getRechargeTick(stack) / (float)MAX_RECHARGE_TICK;
+	}
 }

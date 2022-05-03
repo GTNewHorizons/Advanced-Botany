@@ -159,19 +159,16 @@ public class BlockMagicCraftCrate extends BlockModContainer implements IWandable
 			Gui.drawRect(xc + 60, yc + 18, xc + 60 + 16, yc + 18 + 16, 0x22efd3f4);
 
 			AspectList waitingAspects = null;
-			if (craft.getWaitingStack() != null && craft.getPlayer() != null) {
+			
+			if(craft.getWaitingStack() != null && craft.getPlayer() != null) {
 				GL11.glColor4f(1.0f, 1.0f, 1.0f, 0.7f);
 				GL11.glEnable(GL12.GL_RESCALE_NORMAL);
-				RenderItem.getInstance().renderItemAndEffectIntoGUI(mc.fontRenderer, mc.renderEngine,
-						craft.getWaitingStack(), xc + 60, yc + 18);
+				RenderItem.getInstance().renderItemAndEffectIntoGUI(mc.fontRenderer, mc.renderEngine, craft.getWaitingStack(), xc + 60, yc + 18);
 				net.minecraft.client.renderer.RenderHelper.disableStandardItemLighting();
 				GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-
-				waitingAspects = ThaumcraftCraftingManager.findMatchingArcaneRecipeAspects((IInventory) craft,
-						craft.getPlayer());
+				waitingAspects = ThaumcraftCraftingManager.findMatchingArcaneRecipeAspects((IInventory) craft, craft.getPlayer());
 			}
-
-			if (craft.getStackInSlot(10) != null) {
+			if(craft.getStackInSlot(10) != null) {
 				GL11.glEnable(GL11.GL_BLEND);
 				ItemStack wand = craft.getStackInSlot(10);
 				ItemWandCasting itemWand = ((ItemWandCasting) wand.getItem());

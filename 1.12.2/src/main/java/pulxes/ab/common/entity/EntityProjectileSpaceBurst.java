@@ -31,10 +31,12 @@ public class EntityProjectileSpaceBurst extends EntityThrowable {
 	
 	public EntityProjectileSpaceBurst(World world) {
 		super(world);
+		setSize(0.0F, 0.0F);
 	}
 		  
 	public EntityProjectileSpaceBurst(EntityLivingBase thrower) {
 		super(thrower.world, thrower);
+		setSize(0.0F, 0.0F);
 	}
 	
 	protected void entityInit() {

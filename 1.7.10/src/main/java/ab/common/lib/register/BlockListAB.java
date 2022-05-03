@@ -26,6 +26,7 @@ import ab.common.block.tile.TileManaContainer;
 import ab.common.block.tile.TileManaCrystalCube;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.block.ItemBlockBase;
+import ab.common.item.block.ItemBlockBoard;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import vazkii.botania.common.Botania;
@@ -92,7 +93,7 @@ public class BlockListAB {
 		GameRegistry.registerBlock(BlockListAB.blockEngineerHopper, "blockEngineerHopper");
 		GameRegistry.registerBlock(BlockListAB.blockFreyrLiana, "blockFreyrLiana");
 		GameRegistry.registerBlock(BlockListAB.blockLuminousFreyrLiana, "blockLuminousFreyrLiana");
-		GameRegistry.registerBlock(BlockListAB.blockBoardFate, ItemBlockBase.class, "blockBoardFate");
+		GameRegistry.registerBlock(BlockListAB.blockBoardFate, ItemBlockBoard.class, "blockBoardFate");
 	}
 	
 	private static void registerTileEntities() {

@@ -60,12 +60,10 @@ public class TileMagicCraftCrate extends TileMagicWorkbench implements ISidedInv
 			return false;
 		TileMagicWorkbench craft = new TileMagicWorkbench() {
 			
-			@Override
 			public void setInventorySlotContents(int par1, ItemStack par2ItemStack) {
 				this.stackList[par1] = par2ItemStack;
 			}
 
-			@Override
 			public ItemStack decrStackSize(int par1, int par2) {
 				if(this.stackList[par1] == null) {
 					return null;

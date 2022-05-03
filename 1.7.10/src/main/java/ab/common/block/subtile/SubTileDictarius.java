@@ -52,15 +52,15 @@ public class SubTileDictarius extends SubTileGenerating {
 					}
 				}
 			}
-			else if(workMana > 0) {
+			if(workMana > 0) {
 				this.cooldown = 200;
 				workMana *= Math.random();
 				this.mana = Math.min(this.getMaxMana(), this.mana + workMana);
 				sync();
 			}
 		}
-		if(this.cooldown > 0)
-			this.cooldown -= 1;
+		if(cooldown > 0)
+			cooldown -= 1;
 	}
 	
 	public void checkNearDictarius() {

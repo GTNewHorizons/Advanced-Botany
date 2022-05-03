@@ -34,7 +34,7 @@ public class PlayerItemUsingSound {
 			if(!soundsList.isEmpty())
 				for(int i = 0; i < soundsList.size(); i++) {
 					PlayerItemUsingSound playerSound = soundsList.get(i);
-					if(playerSound.player.equals(player) && mc.getSoundHandler().isSoundPlaying(playerSound.sound)) {
+					if(playerSound.player.getCommandSenderName().equals(player.getCommandSenderName())) {
 						if(playerSound.maxTick != 0 && playerSound.maxTick <= playerSound.tick && !playerSound.isDeadingSound) {
 							playerSound.isDeadingSound = true;
 							setSound(player, name, volume, pitch, maxTick, hasCheckUse);

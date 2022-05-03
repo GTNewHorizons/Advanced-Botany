@@ -1,6 +1,8 @@
 package ab.common.item.equipment;
 
 import java.awt.Color;
+
+import ab.api.AdvancedBotanyAPI;
 import ab.client.core.ClientHelper;
 import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
 import ab.common.core.handler.ConfigABHandler;
@@ -16,6 +18,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.ChatStyle;
@@ -66,6 +69,10 @@ public class ItemNebulaRod extends ItemMod implements IManaUsingItem {
 	public void onUpdate(ItemStack stack, World world, Entity player, int par4, boolean par5) {
 	    if(!world.isRemote && player instanceof EntityPlayer && player.ticksExisted % ConfigABHandler.nebulaWandCooldownTick == 0 && stack.getItemDamage() > 0 && ManaItemHandler.requestManaExactForTool(stack, (EntityPlayer)player, 140, true))
 	    	stack.setItemDamage(stack.getItemDamage() - 1); 
+	}
+	
+	public EnumRarity getRarity(ItemStack stack) {
+		return AdvancedBotanyAPI.rarityNebula;
 	}
 	
 	public void onUsingTick(ItemStack stack, EntityPlayer p, int time) {

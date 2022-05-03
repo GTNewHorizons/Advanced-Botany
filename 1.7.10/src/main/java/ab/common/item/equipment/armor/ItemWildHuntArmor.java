@@ -11,6 +11,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import vazkii.botania.common.item.equipment.armor.manasteel.ItemManasteelArmor;
@@ -22,6 +23,10 @@ public class ItemWildHuntArmor extends ItemManasteelArmor {
 	public ItemWildHuntArmor(int type, String name) {
 		super(type, name, AdvancedBotanyAPI.wildHundArmor);
 		this.setCreativeTab(AdvancedBotany.tabAB);
+	}
+	
+	public EnumRarity getRarity(ItemStack stack) {
+		return AdvancedBotanyAPI.rarityWildHunt;
 	}
 	
 	public ItemStack[] getArmorSetStacks() {
