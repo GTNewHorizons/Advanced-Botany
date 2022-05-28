@@ -104,20 +104,20 @@ public class ClientHandler {
 	    int max = item.getLevels()[Math.min(item.getLevels().length - 1, level + 1)];
 	    boolean ss = (level >= item.getLevels().length - 1);
 	    int curr = item.getMana(stack);    
-	    float percent = (level == 0) ? 0.0F : (curr / max);
+	    float percent = (level == 0) ? 0.0F : ((float)curr / (float)max);
 	    int rainbowWidth = Math.min(width - (ss ? 0 : 1), (int)(width * percent));
 	    float huePer = (width == 0) ? 0.0F : (1.0F / width);
 	    float hueOff = (ClientTickHandler.ticksInGame + ClientTickHandler.partialTicks) * 0.01F;
 	    GL11.glDisable(2929);
 	    Gui.drawRect(mouseX + offx - 1, mouseY - offy - height - 1, mouseX + offx + width + 1, mouseY - offy, -16777216);
-	    for (int i = 0; i < rainbowWidth; i++)
+	    for(int i = 0; i < rainbowWidth; i++)
 	    	Gui.drawRect(mouseX + offx + i, mouseY - offy - height, mouseX + offx + i + 1, mouseY - offy, Color.HSBtoRGB(hueOff + huePer * i, 1.0F, 1.0F)); 
 	    Gui.drawRect(mouseX + offx + rainbowWidth, mouseY - offy - height, mouseX + offx + width, mouseY - offy, -11184811);
 	    String rank = StatCollector.translateToLocal("botania.rank" + level).replaceAll("&", "\u00A7");
 	    GL11.glPushAttrib(2896);
 	    GL11.glDisable(2896);
 	    font.drawStringWithShadow(rank, mouseX + offx, mouseY - offy - 12, 16777215);
-	    if (!ss) {
+	    if(!ss) {
 	    	rank = StatCollector.translateToLocal("botania.rank" + (level + 1)).replaceAll("&", "\u00A7");
 	    	font.drawStringWithShadow(rank, mouseX + offx + width - font.getStringWidth(rank), mouseY - offy - 12, 16777215);
 	    } 

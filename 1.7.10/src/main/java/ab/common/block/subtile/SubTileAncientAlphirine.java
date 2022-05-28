@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.lexicon.multiblock.Multiblock;
 import vazkii.botania.api.lexicon.multiblock.MultiblockSet;
+import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileEntity;
 import vazkii.botania.api.subtile.SubTileFunctional;
 import vazkii.botania.common.Botania;
@@ -84,6 +85,10 @@ public class SubTileAncientAlphirine extends SubTileFunctional {
 				}	
 			}
 		}		
+	}
+	
+	public RadiusDescriptor getRadius() {
+		return new RadiusDescriptor.Square(toChunkCoordinates(), 1);
 	}
 	
 	private void spawnPortal(World world, ItemStack stack, float posX, float posY, float posZ) {

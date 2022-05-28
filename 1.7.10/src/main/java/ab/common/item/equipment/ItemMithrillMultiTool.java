@@ -29,6 +29,10 @@ public class ItemMithrillMultiTool extends ItemTool {
 		this.setUnlocalizedName("mithrillMultiTool");
 	}
 	
+	public boolean isItemTool(ItemStack par1ItemStack) {
+	    return true;
+	}
+	
 	public boolean canHarvestBlock(Block block, ItemStack stack) {
 		return (block != Blocks.bedrock);
 	}

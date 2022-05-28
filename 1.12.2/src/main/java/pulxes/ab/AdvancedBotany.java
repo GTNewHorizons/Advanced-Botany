@@ -15,7 +15,7 @@ import pulxes.ab.common.core.proxy.CommonProxy;
 @Mod(modid = AdvancedBotany.MODID, name="Advanced Botany", version = AdvancedBotany.VERSION, dependencies = "required-after:botania", guiFactory = "pulxes.ab.client.core.proxy.GuiFactory", acceptedMinecraftVersions = "[1.12.2]")
 public class AdvancedBotany {
 
-	public static final String MODID = "advancedbotany";
+	public static final String MODID = "advanced_botany";
 	public static final String VERSION = "2.0.0";
 	
 	public static final CreativeTabs tabAB = new AdvancedBotanyTab();

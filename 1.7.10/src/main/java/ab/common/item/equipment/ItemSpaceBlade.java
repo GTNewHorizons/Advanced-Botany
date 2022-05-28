@@ -67,6 +67,10 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 		this.setUnlocalizedName("spaceBlade");
 	}
 	
+	public boolean isItemTool(ItemStack par1ItemStack) {
+	    return true;
+	}
+	
 	public void getSubItems(Item item, CreativeTabs tab, List list) {
 		for(int mana : CREATIVE_MANA) {
 			ItemStack stack = new ItemStack(item);
@@ -292,7 +296,7 @@ public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingIt
 		multimap.clear();
 		UUID uuid = new UUID(getUnlocalizedName().hashCode(), 0L);
 		multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Weapon modifier", getSwordDamage(stack), 0));
-		multimap.put(SharedMonsterAttributes.movementSpeed.getAttributeUnlocalizedName(), new AttributeModifier(uuid, "Weapon speed", 0.1f, 0));
+		multimap.put(SharedMonsterAttributes.movementSpeed.getAttributeUnlocalizedName(), new AttributeModifier(uuid, "Weapon speed", 0.25D, 1));
 		return multimap;
 	}
 }

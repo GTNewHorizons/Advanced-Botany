@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.entities.EntityAspectOrb;
 import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileFunctional;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.block.ModBlocks;
@@ -45,6 +46,10 @@ public class SubTilePureGladiolus extends SubTileFunctional {
 			cooldown = 180;
 			spawnAspectOrbs(world, x + 0.5, y + 1.0, z + 0.5);
 		}
+	}
+	
+	public RadiusDescriptor getRadius() {
+		return new RadiusDescriptor.Square(toChunkCoordinates(), 1);
 	}
 	
 	public LexiconEntry getEntry() {

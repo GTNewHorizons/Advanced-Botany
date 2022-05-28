@@ -1,0 +1,9 @@
+{
+	"boardcube": { "sounds":["advanced_botany:boardcube"], "subtitle": "ab.subtitle.boardcube" },
+	"nebulablaze": { "sounds":["advanced_botany:nebulablaze"], "subtitle": "ab.subtitle.nebulablaze" },
+	"bladespace": { "sounds":["advanced_botany:bladespace"], "subtitle": "ab.subtitle.bladespace" },
+	"nebularod": { "sounds":["advanced_botany:nebularod"], "subtitle": "ab.subtitle.nebularod" },
+	"hornplentyusing": { "sounds":["advanced_botany:hornplentyusing"], "subtitle": "ab.subtitle.hornplentyusing" },
+	"freyrslingshot": { "sounds":["advanced_botany:freyrslingshot"], "subtitle": "ab.subtitle.freyrslingshot" },
+	"lokicubearmor": { "sounds":["advanced_botany:lokicubearmor"], "subtitle": "ab.subtitle.lokicubearmor" }
+}

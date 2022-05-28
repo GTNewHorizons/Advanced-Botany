@@ -226,7 +226,8 @@ public class ItemBlackHalo extends ItemMod implements IBlockProvider {
 	      float rotationAngle = (seg + 0.5F) * segAngles + shift;
 	      GL11.glPushMatrix();
 	      GL11.glRotatef(rotationAngle, 0.0F, 1.0F, 0.0F);
-	      GL11.glTranslatef(s * m, -0.75F, 0.0F);
+	      double worldTime = ClientTickHandler.ticksInGame + ClientTickHandler.partialTicks + seg * 2.75f;
+	      GL11.glTranslated(s * m, -0.75F + Math.sin(worldTime / 12.0D) / 30.0D, 0.0F);
 	      if (segmentLookedAt == seg)
 	    	  inside = true; 
 	      ItemStack slotStack = getItemForSlot(stack, seg);

@@ -22,7 +22,7 @@ public class RenderTileManaCrystalCube extends TileEntitySpecialRenderer {
 	private EntityItem entity = null;
 	
 	public void renderTileEntityAt(TileEntity tile, double d0, double d1, double d2, float f) {
-		if (this.entity == null)
+		if(this.entity == null)
 			this.entity = new EntityItem(tile.getWorldObj(), tile.xCoord, tile.yCoord, tile.zCoord, new ItemStack(ModItems.twigWand)); 
 		this.entity.age = ClientTickHandler.ticksInGame;
 		double time = (ClientTickHandler.ticksInGame + f);
@@ -39,7 +39,7 @@ public class RenderTileManaCrystalCube extends TileEntitySpecialRenderer {
 		GL11.glScalef(1.0F, -1.0F, -1.0F);
 		this.model.renderBase();
 		GL11.glTranslatef(0.0F, (float)Math.sin(worldTicks / 20.0D) * 0.05F, 0.0F);
-		if (tile.getWorldObj() != null) {
+		if(tile.getWorldObj() != null) {
 			GL11.glPushMatrix();
 			float s = 0.5F;
 			GL11.glTranslatef(0.0F, 0.8F, 0.0F);

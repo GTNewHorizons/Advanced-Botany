@@ -26,6 +26,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
@@ -80,14 +81,15 @@ public class EntityManaVine extends EntityThrowable {
 	}
 
 	protected void onImpact(MovingObjectPosition pos) {
-		if(pos != null && pos.entityHit == null) {
+		EntityPlayer player = worldObj.getPlayerEntityByName(getAttacker());
+		if(pos != null && pos.entityHit == null && player != null) {
 			World world = this.worldObj;
 			int x = pos.blockX;
 			int y = pos.blockY;
 			int z = pos.blockZ;
 			List<EntityLivingBase> list = (List<EntityLivingBase>) (world.getEntitiesWithinAABB(EntityLivingBase.class, AxisAlignedBB.getBoundingBox(x - 10, y - 10, z - 10, x + 10, y + 10, z + 10)));
 			for(EntityLivingBase target : list) {
-				if(target instanceof EntityAnimal) {
+				if(target instanceof EntityAnimal && target.attackEntityFrom(DamageSource.causePlayerDamage(player), 0.0f)) {
 					EntityAnimal animal = (EntityAnimal) target;
 					ReflectionHelper.setPrivateValue(EntityAnimal.class, animal, 1200, LibObfuscation.IN_LOVE);
 					animal.setTarget(null);
@@ -102,7 +104,7 @@ public class EntityManaVine extends EntityThrowable {
 						int zCoord = z + k2 - 3;
 						Block block = this.worldObj.getBlock(xCoord, yCoord, zCoord);
 						if(block instanceof IGrowable && !(block instanceof BlockGrass)) {
-							CommonHelper.fertilizer(world, block, xCoord, yCoord, zCoord, 12);
+							CommonHelper.fertilizer(world, block, xCoord, yCoord, zCoord, 12, player);
 							if(ConfigHandler.blockBreakParticles) {
 								worldObj.playAuxSFX(2005, xCoord, yCoord, zCoord, 6 + this.worldObj.rand.nextInt(4));
 								worldObj.playSoundEffect(x, y, z, "botania:agricarnation", 0.01F, 0.5F + (float) Math.random() * 0.5F);
@@ -115,14 +117,11 @@ public class EntityManaVine extends EntityThrowable {
 								while(yCoord > 0) {
 									block = worldObj.getBlock(xCoord, yCoord, zCoord);
 									if(block.isAir(worldObj, xCoord, yCoord, zCoord)) {
-										EntityPlayer player = worldObj.getPlayerEntityByName(getAttacker());
-										if(player != null) {
-											if(world.rand.nextInt(4) < 3)
-												CommonHelper.setBlock(world, BlockListAB.blockFreyrLiana, 0, xCoord, yCoord, zCoord, player, false);
-											else
-												CommonHelper.setBlock(world, BlockListAB.blockLuminousFreyrLiana, 0, xCoord, yCoord, zCoord, player, false);
-											worldObj.playAuxSFX(2001, xCoord, yCoord, zCoord, Block.getIdFromBlock(BlockListAB.blockFreyrLiana));
-										}
+										if(world.rand.nextInt(4) < 3)
+											CommonHelper.setBlock(world, BlockListAB.blockFreyrLiana, 0, xCoord, yCoord, zCoord, player, false);
+										else
+											CommonHelper.setBlock(world, BlockListAB.blockLuminousFreyrLiana, 0, xCoord, yCoord, zCoord, player, false);
+										worldObj.playAuxSFX(2001, xCoord, yCoord, zCoord, Block.getIdFromBlock(BlockListAB.blockFreyrLiana));
 										yCoord--;
 									} else
 										break;

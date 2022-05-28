@@ -46,15 +46,11 @@ public class TileManaCrystalCube extends TileMod implements IRenderHud {
 	
 	public int[] getManaAround() {
 		int[] mana = new int[] { 0, 0 };
-		List<ISparkEntity> allSparks = SparkHelper.getSparksAround(this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-		for (ISparkEntity spark : allSparks) {
+		List<ISparkEntity> allSparks = SparkHelper.getSparksAround(worldObj, xCoord, yCoord, zCoord);
+		for(ISparkEntity spark : allSparks) {
 			ISparkAttachable tileMana = spark.getAttachedTile();
-			if(mana[1] + tileMana.getCurrentMana() + tileMana.getAvailableSpaceForMana() > 0) {
-				mana[1] += tileMana.getCurrentMana() + tileMana.getAvailableSpaceForMana();
-				mana[0] += tileMana.getCurrentMana();
-			}
-			else
-				break;
+			mana[1] += tileMana.getCurrentMana() + tileMana.getAvailableSpaceForMana();
+			mana[0] += tileMana.getCurrentMana();
 		}			
 		return mana;
 	}

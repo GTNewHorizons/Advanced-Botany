@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": 
+    {
+        "layer0": "advanced_botany:items/nebula_rod"
+    }
+}

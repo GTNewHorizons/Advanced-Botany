@@ -7,6 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileGenerating;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
@@ -65,6 +66,10 @@ public class SubTileArdentAzarcissus extends SubTileGenerating {
 			}
 		if(needSync)
 			sync();
+	}
+	
+	public RadiusDescriptor getRadius() {
+		return new RadiusDescriptor.Square(toChunkCoordinates(), 1);
 	}
 	
 	public int getMaxMana() {

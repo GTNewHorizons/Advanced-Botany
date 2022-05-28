@@ -15,7 +15,7 @@ public class SoundListAB {
 	public static final SoundEvent bladeSpace = makeSoundEvent("bladespace");
 	
 	private static SoundEvent makeSoundEvent(String name) {
-	    ResourceLocation loc = new ResourceLocation("ab", name);
+	    ResourceLocation loc = new ResourceLocation(AdvancedBotany.MODID, name);
 	    return (new SoundEvent(loc)).setRegistryName(loc);
 	}
 	

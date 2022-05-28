@@ -11,7 +11,7 @@ public class GuiABFactory implements IModGuiFactory {
 	public void initialize(Minecraft minecraftInstance) {}
 	  
 	public Class<? extends GuiScreen> mainConfigGuiClass() {
-		return (Class)GuiABConfigHandler.class;
+		return GuiABConfigHandler.class;
 	}
 	  
 	public Set<IModGuiFactory.RuntimeOptionCategoryElement> runtimeGuiCategories() {

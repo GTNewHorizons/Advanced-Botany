@@ -128,7 +128,6 @@ public class ItemTalismanHiddenRiches extends ItemModRelic {
 	    float y = v * 6.0F;
 	    float y0 = 0.0F;
 	    int segmentLookedAt = getSegmentLookedAt(stack, (EntityLivingBase)player);
-	    int k = 0;
 	    for(int seg = 0; seg < segmentCount; seg++) {
 	    	ClientHelper.setLightmapTextureCoords();
 	    	float rotationAngle = (seg + 0.5F) * segAngles + shift;
@@ -141,8 +140,7 @@ public class ItemTalismanHiddenRiches extends ItemModRelic {
 	    	GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 	    	GL11.glRotatef(rotationAngle, 0.0F, 1.0F, 0.0F);
 	    	GL11.glTranslatef(s * m, -0.75F, 0.0F);
-	    	double worldTime = ClientTickHandler.ticksInGame + ClientTickHandler.partialTicks;
-	    	worldTime += k * 2.75f;
+	    	double worldTime = ClientTickHandler.ticksInGame + ClientTickHandler.partialTicks + seg * 2.75f;
 	    	GL11.glTranslated(0.375f, Math.sin(worldTime / 8.0D) / 20.0D, -0.375F);
 	    	float scale = 0.75F;
 	    	GL11.glScalef(scale, scale, scale);
@@ -186,7 +184,6 @@ public class ItemTalismanHiddenRiches extends ItemModRelic {
 	    	ClientHelper.setLightmapTextureCoords();
 	    	GL11.glEnable(GL11.GL_CULL_FACE);
 	    	GL11.glDisable(3042);
-	    	k++;
 	    } 
 	    GL11.glPopMatrix();
 	}

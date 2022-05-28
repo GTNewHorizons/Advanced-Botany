@@ -20,6 +20,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.ItemHandlerHelper;
+import pulxes.ab.AdvancedBotany;
 import pulxes.ab.common.lib.LibItemNames;
 import vazkii.botania.api.recipe.IFlowerComponent;
 
@@ -50,7 +51,7 @@ public class ItemResource extends ItemMod implements IFlowerComponent {
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 		for(int i = 0; i < LibItemNames.RESOURCE_NAMES.length; i++)
-			ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation("ab:" + LibItemNames.RESOURCE_NAMES[i], "inventory"));  
+			ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(AdvancedBotany.MODID + ":" + LibItemNames.RESOURCE_NAMES[i], "inventory"));  
 	}
 
 	public int getParticleColor(ItemStack stack) {

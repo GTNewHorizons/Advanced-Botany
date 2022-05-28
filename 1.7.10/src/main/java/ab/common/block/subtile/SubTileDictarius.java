@@ -17,6 +17,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileGenerating;
 import vazkii.botania.common.block.tile.TileSpecialFlower;
 
@@ -61,6 +62,10 @@ public class SubTileDictarius extends SubTileGenerating {
 		}
 		if(cooldown > 0)
 			cooldown -= 1;
+	}
+	
+	public RadiusDescriptor getRadius() {
+		return new RadiusDescriptor.Square(toChunkCoordinates(), 2);
 	}
 	
 	public void checkNearDictarius() {

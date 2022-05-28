@@ -13,6 +13,11 @@ public class ClientTickHandler {
 	public void clientTickEnd(TickEvent.ClientTickEvent event) {
 		if(event.phase == TickEvent.Phase.END) {
 			ClientSoundHandler.tick();
+			ClientEffectHandler.tick();
 		}
+	}
+	
+	public static void renderTooltip() {
+		
 	}
 }

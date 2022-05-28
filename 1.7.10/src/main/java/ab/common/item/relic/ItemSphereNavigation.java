@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.List;
 
 import ab.client.core.handler.ItemsRemainingRender;
+import ab.common.core.handler.ConfigABHandler;
 import ab.common.core.handler.NetworkHandler;
 import ab.common.lib.register.ItemListAB;
 import cpw.mods.fml.relauncher.Side;
@@ -33,7 +34,6 @@ public class ItemSphereNavigation extends ItemModRelic {
 	public static IIcon[] icons;
 	public static final int rangeSearch = 16;
 	public static final int maxCooldown = 158;
-	public static final int manaCost = 1750;
 	
 	public ItemSphereNavigation() {
 		super("sphereNavigation");
@@ -80,7 +80,7 @@ public class ItemSphereNavigation extends ItemModRelic {
 		super.onUpdate(stack, world, entity, pos, equipped);
 		if(entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer)entity;
-			if(!world.isRemote && stack.getItemDamage() == 0 && getFindBlock(stack) != null && canWork(stack) && ManaItemHandler.requestManaExactForTool(stack, player, manaCost, true)) {
+			if(!world.isRemote && stack.getItemDamage() == 0 && getFindBlock(stack) != null && canWork(stack) && ManaItemHandler.requestManaExactForTool(stack, player, ConfigABHandler.sphereNavigationManaCost, true)) {
 				setMaxTick(stack);
 				NetworkHandler.sendPacketToFindBlocks((EntityPlayerMP)player, getFindBlock(stack), getFindMeta(stack));
 			}

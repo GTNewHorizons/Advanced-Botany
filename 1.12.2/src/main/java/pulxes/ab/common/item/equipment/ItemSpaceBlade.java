@@ -5,6 +5,7 @@ import javax.annotation.Nonnull;
 
 import com.google.common.collect.Multimap;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
@@ -45,7 +46,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import pulxes.ab.AdvancedBotany;
 import pulxes.ab.api.AdvancedBotanyAPI;
+import pulxes.ab.api.EffectRender;
 import pulxes.ab.api.IRankItem;
+import pulxes.ab.client.core.handler.ClientEffectHandler;
 import pulxes.ab.common.core.handler.AdvBotanyConfigHandler;
 import pulxes.ab.common.core.handler.NetworkHandler;
 import pulxes.ab.common.entity.EntityProjectileSpaceBurst;
@@ -67,10 +70,10 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 	public ItemSpaceBlade() {
 		super(AdvancedBotanyAPI.MITHRILL_TOOL_MATERIAL);
 		this.setCreativeTab(AdvancedBotany.tabAB);
-		this.setRegistryName(new ResourceLocation("ab", LibItemNames.SPACE_BLADE));
+		this.setRegistryName(new ResourceLocation(AdvancedBotany.MODID, LibItemNames.SPACE_BLADE));
 	    this.setUnlocalizedName(LibItemNames.SPACE_BLADE);
 	    MinecraftForge.EVENT_BUS.register(this);
-	    this.addPropertyOverride(new ResourceLocation("ab", "enabled"), (stack, world, entity) -> isEnabledMode(stack) ? 1.0F : 0.0F);
+	    this.addPropertyOverride(new ResourceLocation(AdvancedBotany.MODID, "enabled"), (stack, world, entity) -> isEnabledMode(stack) ? 1.0F : 0.0F);
 	}
 	
 	public boolean hitEntity(ItemStack stack, EntityLivingBase entity, @Nonnull EntityLivingBase attacker) {
@@ -100,15 +103,6 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 			if(!world.isRemote) {
 				if(rechargeTick > 0)
 					setRechargeTick(stack, --rechargeTick);
-			} else {
-				if(rechargeTick > 24 && (player.getHeldItemMainhand() == stack || player.getHeldItemOffhand() == stack)) {
-					for(int i = 0; i < 16; i++) {
-						float r = world.rand.nextBoolean() ? (225.0f / 255.0f) : (101.0f / 255.0f);
-						float g = world.rand.nextBoolean() ? (67.0f / 255.0f) : (209.0f / 255.0f);
-						float b = world.rand.nextBoolean() ? (240.0f / 255.0f) : (225.0f / 255.0f);
-						Botania.proxy.sparkleFX(entity.posX + (Math.random() - 0.5D), entity.posY + ((Math.random() - 0.5D) * 2) + 1.0f, entity.posZ + (Math.random() - 0.5D), r + (float)(Math.random() / 4 - 0.125D), g + (float)(Math.random() / 4 - 0.125D), b + (float)(Math.random() / 4 - 0.125D), 1.8F * (float)(Math.random() - 0.5D), 4);
-					}
-				}
 			}
 		}
 	}
@@ -177,6 +171,21 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 		return false;
 	}
 	
+	public static void doParticleDash() {
+		EffectRender effectRender = new EffectRender(7) {
+			public void doEffect() {
+				Minecraft mc = Minecraft.getMinecraft();
+				for(int i = 0; i < 16; i++) {
+					float r = mc.world.rand.nextBoolean() ? (225.0f / 255.0f) : (101.0f / 255.0f);
+					float g = mc.world.rand.nextBoolean() ? (67.0f / 255.0f) : (209.0f / 255.0f);
+					float b = mc.world.rand.nextBoolean() ? (240.0f / 255.0f) : (225.0f / 255.0f);
+					Botania.proxy.sparkleFX(mc.player.posX + (Math.random() - 0.5D), mc.player.posY + ((Math.random() - 0.5D) * 2) + 1.0f, mc.player.posZ + (Math.random() - 0.5D), r + (float)(Math.random() / 4 - 0.125D), g + (float)(Math.random() / 4 - 0.125D), b + (float)(Math.random() / 4 - 0.125D), 1.8F * (float)(Math.random() - 0.5D), 4);
+				}
+			}
+		};
+		ClientEffectHandler.addEffectRender(effectRender);
+	}
+	
 	@Nonnull
 	public static void playerSpaceDash(@Nonnull EntityPlayer player) {				  
 		Vec3d vec3 = player.getLook(1.0F).normalize();
@@ -212,7 +221,7 @@ public class ItemSpaceBlade extends ItemSword implements IModelRegister, IRankIt
 	
 	@Nonnull
 	public String getUnlocalizedNameInefficiently(@Nonnull ItemStack stack) {
-		return super.getUnlocalizedNameInefficiently(stack).replaceAll("item\\.", "item.ab:");
+		return super.getUnlocalizedNameInefficiently(stack).replaceAll("item\\.", "item." + AdvancedBotany.MODID + ":");
 	}
 	
 	@SideOnly(Side.CLIENT)

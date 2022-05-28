@@ -24,6 +24,7 @@ public class AdvancedBotanyAPI {
 	public static List<TerraFarmlandList> farmlandList = new ArrayList<TerraFarmlandList>();
 	public static List<Achievement> achievements = new ArrayList<Achievement>();
 	public static List<ItemStack> relicList = new ArrayList<ItemStack>();
+	public static List<ItemStack> diceList = new ArrayList<ItemStack>();
 	
 	public static Item.ToolMaterial mithrilToolMaterial = EnumHelper.addToolMaterial("MITHRIL", 7, -1, 8.0F, 4.0F, 24);
 	public static ItemArmor.ArmorMaterial nebulaArmorMaterial = EnumHelper.addArmorMaterial("NEBULA", 0, new int[] { (int)(3 * ConfigABHandler.protectionFactorNebula), (int)(8 * ConfigABHandler.protectionFactorNebula), (int)(6 * ConfigABHandler.protectionFactorNebula), (int)(3 * ConfigABHandler.protectionFactorNebula) }, 26);

@@ -200,6 +200,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 		else {
 			int side = invSide[0];
 			int pullCount = getPullCount(inv, side);
+			System.out.println("canExtractStack " + pullCount);
 			if(pullCount <= 0)
 				return false;
 			else {
@@ -246,6 +247,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 		if(inv != null) {
 			int side = invSide[1];
 			int takeCount = getTakeCount(inv, side);
+			System.out.println("canInsertStack " + takeCount);
 			if(takeCount <= 0)
 				return false;
 			if(inv instanceof ISidedInventory && side > -1) {
@@ -274,7 +276,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 	        	ItemStack stack = sideInv.getStackInSlot(slots[i]);
 	            if(stack != null)
 	            	if(getStackInSlot(0) == null)
-	            		return getInventoryStackLimit();
+	            		return Math.min(stack.getMaxStackSize(), getInventoryStackLimit());
 	            	else if(getInventoryStackLimit() != getStackInSlot(0).stackSize && getStackInSlot(0).stackSize != getStackInSlot(0).getMaxStackSize() && TileNidavellirForge.isItemEqual(stack, getStackInSlot(0)))
 	            		return getInventoryStackLimit() - getStackInSlot(0).stackSize;
 	        }		
@@ -283,7 +285,7 @@ public class TileEngineerHopper extends TileInventory implements IHopper, IBound
 	        	ItemStack stack = inv.getStackInSlot(i);
 	        	if(stack != null)
 	        		if(getStackInSlot(0) == null)
-	        			return getInventoryStackLimit();
+	        			return Math.min(stack.getMaxStackSize(), getInventoryStackLimit());
 	        		else if(getInventoryStackLimit() != getStackInSlot(0).stackSize && getStackInSlot(0).stackSize != getStackInSlot(0).getMaxStackSize() && TileNidavellirForge.isItemEqual(stack, getStackInSlot(0)))
 	        			return getInventoryStackLimit() - getStackInSlot(0).stackSize;
 	        }

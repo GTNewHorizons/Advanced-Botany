@@ -17,9 +17,6 @@ public class AdvBotanyConfigHandler {
 	public static double protectionFactorNebula = 1.0f;
 	public static double damageFactorSpaceSword = 1.0f;
 	public static int nebulaWandCooldownTick = 18;
-//	public static int spreaderMaxMana = 128000;
-//	public static int spreaderBurstMana = 32000;
-//	public static String[] lockEntityListToHorn = new String[] {};
 	public static String[] lockWorldNameNebulaRod = new String[] {};
 	public static int limitXZCoords = 30000000;
 

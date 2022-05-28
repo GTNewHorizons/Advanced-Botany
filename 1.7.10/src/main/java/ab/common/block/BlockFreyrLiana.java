@@ -47,7 +47,7 @@ public class BlockFreyrLiana extends BlockBush implements ILexiconable {
 		for(int i1 = 1; i1 < 5; i1++) {
 			Block block = world.getBlock(x, y - i1, z);
 			if(block instanceof IGrowable) {
-				CommonHelper.fertilizer(world, block, x, y - i1, z, 18);
+				CommonHelper.fertilizer(world, block, x, y - i1, z, 18, null);
 				if(world.getBlock(x, y - i1 - 1, z) == BlockListAB.blockTerraFarmland)
 					world.getBlock(x, y - i1 - 1, z).updateTick(world, x, y - i1 - 1, z, rand);
 				break;

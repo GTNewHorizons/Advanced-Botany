@@ -3,6 +3,7 @@ package ab.common.block.tile;
 import java.util.List;
 
 import ab.api.AdvancedBotanyAPI;
+import ab.common.core.handler.ConfigABHandler;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -67,7 +68,7 @@ public class TileBoardFate extends TileInventory {
 		else if(!worldObj.isRemote) {
 			ItemStack relic = AdvancedBotanyAPI.relicList.get(Math.min(relicCount - 1, AdvancedBotanyAPI.relicList.size() - 1)).copy();
 			worldObj.playSoundAtEntity(player, "random.bow", 0.5F, 0.4F / (worldObj.rand.nextFloat() * 0.4F + 0.8F));
-			if(hasRelicAchievement(player, relic)) {
+			if(hasRelicAchievement(player, relic) || !ConfigABHandler.fateBoardRelicEnables[relicCount - 1]) {
 				player.addChatMessage((new ChatComponentTranslation("botaniamisc.dudDiceRoll", new Object[] { Integer.valueOf(relicCount) })).setChatStyle((new ChatStyle()).setColor(EnumChatFormatting.DARK_GREEN)));
 			} else {
 				ItemRelic.updateRelic(relic, player);
@@ -109,21 +110,22 @@ public class TileBoardFate extends TileInventory {
 	protected boolean setDiceFate() {
 		boolean hasUpdate = false;
 		List<EntityItem> items = this.worldObj.getEntitiesWithinAABB(EntityItem.class, AxisAlignedBB.getBoundingBox(this.xCoord, this.yCoord, this.zCoord, (this.xCoord + 1), (this.yCoord + 0.7f), (this.zCoord + 1)));		
-		label666:
-		for(EntityItem item : items) {
+		label666: for(EntityItem item : items) {
 			if(!item.isDead && item.getEntityItem() != null) {
 				ItemStack stack = item.getEntityItem();
-				if(!(stack.getItem() instanceof ItemDice))
+				if(!isDice(stack))
 					continue;
 				for(int s = 0; s < getSizeInventory(); s++) {
 					ItemStack slotStack = getStackInSlot(s);
 					if(slotStack != null)
 						continue;
-					setInventorySlotContents(s, stack.copy());
+					ItemStack copy = stack.copy();
+					copy.stackSize = 1;
+					setInventorySlotContents(s, copy);
 					slotChance[s] = (byte)(worldObj.rand.nextInt(6) + 1);
 					stack.stackSize--;
 					if(stack.stackSize == 0)
-				    	  item.setDead(); 
+						item.setDead(); 
 					hasUpdate = true;
 					worldObj.playSoundEffect(this.xCoord, this.yCoord, this.zCoord, "ab:boardCube", 0.6F, 1.0F);
 					break label666;
@@ -131,6 +133,14 @@ public class TileBoardFate extends TileInventory {
 			}
 		}
 		return hasUpdate;
+	}
+	
+	public static boolean isDice(ItemStack stack) {
+		for(ItemStack dice : AdvancedBotanyAPI.diceList) {
+			if(dice.getItem() == stack.getItem() && (dice.getItemDamage() == stack.getItemDamage() || dice.getItemDamage() == 32767))
+				return true;
+		}
+		return false;
 	}
 	
 	public void writeCustomNBT(NBTTagCompound cmp) {

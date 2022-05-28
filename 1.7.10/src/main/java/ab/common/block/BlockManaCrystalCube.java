@@ -48,8 +48,8 @@ public class BlockManaCrystalCube extends BlockContainer implements ILexiconable
 			int[] mana = tile.getManaAround();
 			nbttagcompound.setInteger("knownMana", mana[0]);
 			nbttagcompound.setInteger("knownMaxMana", mana[1]);
-			if (player instanceof EntityPlayerMP)
-				((EntityPlayerMP)player).playerNetServerHandler.sendPacket((Packet)new S35PacketUpdateTileEntity(tile.xCoord, tile.yCoord, tile.zCoord, -999, nbttagcompound)); 
+			if(player instanceof EntityPlayerMP)
+				((EntityPlayerMP)player).playerNetServerHandler.sendPacket(new S35PacketUpdateTileEntity(tile.xCoord, tile.yCoord, tile.zCoord, -999, nbttagcompound)); 
 		} 
 		world.playSoundAtEntity((Entity)player, "botania:ding", 0.11F, 1.0F);
 		return true;

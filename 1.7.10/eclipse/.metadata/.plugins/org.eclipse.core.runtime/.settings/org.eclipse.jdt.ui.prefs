@@ -1,4 +1,4 @@
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="vazkii.botania.common.core.helper.Vector3"><rhs name\="vazkii.botania.common.core.helper.Vector3"/></lhs><lhs name\="java.lang.Enum"><rhs name\="cpw.mods.fml.relauncher.Side"/></lhs><lhs name\="net.minecraft.block.material.Material"><rhs name\="net.minecraft.block.material.Material"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="vazkii.botania.common.core.helper.Vector3"><rhs name\="vazkii.botania.common.core.helper.Vector3"/></lhs><lhs name\="java.lang.Enum"><rhs name\="cpw.mods.fml.relauncher.Side"/></lhs><lhs name\="net.minecraft.block.material.Material"><rhs name\="net.minecraft.block.material.Material"/></lhs><lhs name\="vazkii.botania.api.subtile.RadiusDescriptor"><rhs name\="vazkii.botania.api.subtile.RadiusDescriptor$Square"/></lhs></history>
 content_assist_number_of_computers=12
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0

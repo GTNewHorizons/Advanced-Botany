@@ -1,0 +1,13 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "advanced_botany:items/space_blade",
+        "layer1": "advanced_botany:items/space_blade_overlay"
+    },
+    "overrides": [{
+    	"predicate": {
+            "advanced_botany:enabled": 1
+        }, 
+        "model": "advanced_botany:item/space_blade_enabled"
+    }]
+}

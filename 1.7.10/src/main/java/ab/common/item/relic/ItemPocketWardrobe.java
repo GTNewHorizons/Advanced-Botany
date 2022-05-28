@@ -228,7 +228,8 @@ public class ItemPocketWardrobe extends ItemModRelic {
 	    		GL11.glPushMatrix();	
 	    		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		    	GL11.glRotatef(rotationAngle, 0.0F, 1.0F, 0.0F);
-		    	GL11.glTranslatef(s * m, -0.75F, 0.0F);
+		    	double worldTime = ClientTickHandler.ticksInGame + ClientTickHandler.partialTicks + seg * 2.75f;
+		    	GL11.glTranslated(s * m, -0.75F + Math.sin(worldTime / 12.0D) / 26.0D, 0.0F);
 		    	float scale = 0.6F;
 		    	GL11.glRotatef(-90.0f, 0.0f, 1.0f, 0.0f);
 		    	GL11.glTranslatef(0.0f, 0.8125f, 0.0f);

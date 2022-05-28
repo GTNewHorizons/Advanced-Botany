@@ -12,9 +12,11 @@ import pulxes.ab.common.item.equipment.*;
 @EventBusSubscriber(modid = AdvancedBotany.MODID)
 public class ItemListAB {
 	
-	public static Item itemResource = new ItemResource();
-	public static Item itemNebulaRod = new ItemNebulaRod();
-	public static Item itemSpaceBlade = new ItemSpaceBlade();
+	public static final Item itemResource = new ItemResource();
+	public static final Item itemNebulaRod = new ItemNebulaRod();
+	public static final Item itemSpaceBlade = new ItemSpaceBlade();
+	public static final Item itemBlackHoleBox = new ItemBlackHoleBox();
+	public static final Item itemElvenSpark = new ItemElvenSpark();
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> evt) {
@@ -22,5 +24,7 @@ public class ItemListAB {
 		r.register(itemResource);
 		r.register(itemNebulaRod);
 		r.register(itemSpaceBlade);
+		r.register(itemBlackHoleBox);
+		r.register(itemElvenSpark);
 	}
 }

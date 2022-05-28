@@ -300,6 +300,8 @@ public class RecipeListAB {
 	}
 	
 	public static void relicInit() {
+		AdvancedBotanyAPI.diceList.add(new ItemStack(ModItems.dice));
+		
 		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.infiniteFruit));
 		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.kingKey));
 		AdvancedBotanyAPI.relicList.add(new ItemStack(ModItems.flugelEye));

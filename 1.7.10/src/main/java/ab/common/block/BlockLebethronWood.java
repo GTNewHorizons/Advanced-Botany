@@ -49,7 +49,7 @@ public class BlockLebethronWood extends Block implements ILexiconable, ITileEnti
 			if(heldItem == null)
 				return false;
 			Block block = Block.getBlockFromItem(heldItem.getItem());
-			if(block.getMaterial() == Material.leaves) {
+			if(block.getMaterial() == Material.leaves && !heldItem.hasTagCompound()) {
 				if(!world.isRemote) {
 					core.updateStructure();
 					if(core.getValidTree()) {

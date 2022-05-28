@@ -24,12 +24,12 @@ import vazkii.botania.common.item.ModItems;
 public class CommonProxy {
 
 	public void preInit(FMLPreInitializationEvent event) {
-		ConfigABHandler.loadConfig(event.getSuggestedConfigurationFile());
 		BlockListAB.init();
 		ItemListAB.init();
 		AchievementRegister.init();
 		EntityListAB.init();
 		FlowerRegister.init();
+		ConfigABHandler.loadConfig(event.getSuggestedConfigurationFile());
 	}
  
 	public void init(FMLInitializationEvent event) {

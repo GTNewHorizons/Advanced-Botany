@@ -96,8 +96,33 @@ public class BlockBoardFate extends BlockContainer implements IPickupAchievement
 			}
 			return false;
 		} else {
-			TileBoardFate tile = (TileBoardFate)world.getTileEntity(x, y, z);
-			return tile.spawnRelic(player);
+			if(!player.isSneaking()) {
+				ItemStack heldItem = player.getCurrentEquippedItem();
+				TileBoardFate tile = (TileBoardFate)world.getTileEntity(x, y, z);
+				if(heldItem != null && tile != null && tile.isDice(heldItem)) {
+					for(int i = 0; i < tile.getSizeInventory(); i++) {
+						ItemStack slotStack = tile.getStackInSlot(i);
+						if(slotStack != null)
+							continue;
+						heldItem.stackSize--;
+						if(heldItem.stackSize == 0)
+							player.inventory.setInventorySlotContents(player.inventory.currentItem, null); 	
+						if(!world.isRemote) {
+							ItemStack copy = heldItem.copy();
+							copy.stackSize = 1;
+							tile.setInventorySlotContents(i, copy);
+							tile.slotChance[i] = (byte)(world.rand.nextInt(6) + 1);
+							tile.requestUpdate = true;
+							world.playSoundEffect(x, y, z, "ab:boardCube", 0.6F, 1.0F);
+						}
+						return true;
+					}
+				}	
+				return false;
+			} else {
+				TileBoardFate tile = (TileBoardFate)world.getTileEntity(x, y, z);
+				return tile.spawnRelic(player);
+			}
 		}
 	}
 	

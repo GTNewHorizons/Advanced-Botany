@@ -1,74 +1,29 @@
-[18:29:00] [main/INFO]: Setting user: Player138
-[18:29:01] [Client thread/INFO]: LWJGL Version: 2.9.1
-[18:29:10] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
-[18:29:15] [Sound Library Loader/INFO]: Sound engine started
-[18:29:16] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[18:29:16] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[18:29:18] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
-[18:29:19] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[18:29:19] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
-[18:29:20] [Sound Library Loader/INFO]: Sound engine started
-[18:29:28] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[18:29:28] [Server thread/INFO]: Generating keypair
-[18:29:29] [Server thread/INFO]: Preparing start region for level 0
-[18:29:29] [Server thread/INFO]: Changing view distance to 4, from 10
-[18:29:30] [Server thread/INFO]: Player138[local:E:4e7ea3bf] logged in with entity id 328 at (-985.091261856961, 4.0, -316.39047992505095)
-[18:29:30] [Server thread/INFO]: Player138 присоединился к игре
-[18:29:34] [Server thread/INFO]: Saving and pausing game...
-[18:29:34] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[18:29:34] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[18:29:34] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[18:29:34] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
-[18:30:25] [Server thread/INFO]: Player138 заработал достижение [Проверить карманы]
-[18:30:25] [Client thread/INFO]: [CHAT] Player138 заработал достижение [Проверить карманы]
-[18:31:34] [Server thread/INFO]: [Player138: Дано [Игральная Доска Судьбы] * 63 игроку Player138]
-[18:31:34] [Client thread/INFO]: [CHAT] Дано [Игральная Доска Судьбы] * 63 игроку Player138
-[18:32:09] [Server thread/INFO]: [Player138: Дано [Древесина Лебертона] * 63 игроку Player138]
-[18:32:09] [Client thread/INFO]: [CHAT] Дано [Древесина Лебертона] * 63 игроку Player138
-[18:32:10] [Server thread/INFO]: [Player138: Дано [Природное ядро] * 63 игроку Player138]
-[18:32:10] [Client thread/INFO]: [CHAT] Дано [Природное ядро] * 63 игроку Player138
-[18:32:58] [Server thread/INFO]: Saving and pausing game...
-[18:32:58] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[18:32:58] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[18:32:58] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[18:32:58] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
-[18:33:00] [Server thread/INFO]: Saving and pausing game...
-[18:33:00] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[18:33:00] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[18:33:00] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[18:33:00] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
-[18:33:22] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
-[18:33:23] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[18:33:24] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
-[18:33:25] [Sound Library Loader/INFO]: Sound engine started
-[18:33:48] [Server thread/INFO]: Saving and pausing game...
-[18:33:48] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[18:33:48] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[18:33:48] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[18:33:48] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
-[18:33:49] [Server thread/INFO]: Saving and pausing game...
-[18:33:49] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[18:33:49] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[18:33:49] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[18:33:49] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
-[18:52:38] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
-[18:52:40] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[18:52:40] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
-[18:52:41] [Sound Library Loader/INFO]: Sound engine started
-[19:02:01] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
-[19:02:02] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
-[19:02:03] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
-[19:02:04] [Sound Library Loader/INFO]: Sound engine started
-[19:03:05] [Server thread/INFO]: Saving and pausing game...
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
-[19:03:05] [Server thread/INFO]: Stopping server
-[19:03:05] [Server thread/INFO]: Saving players
-[19:03:05] [Server thread/INFO]: Saving worlds
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/The End
-[19:03:05] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
-[19:03:08] [Client thread/INFO]: Stopping!
+[11:30:21] [main/INFO]: Setting user: Player362
+[11:30:23] [Client thread/INFO]: LWJGL Version: 2.9.1
+[11:30:32] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[11:30:38] [Sound Library Loader/INFO]: Sound engine started
+[11:30:39] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[11:30:39] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[11:30:40] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Not Enough Items, FMLFileResourcePack:Advanced Botany, FMLFileResourcePack:Baubles, FMLFileResourcePack:Botania, FMLFileResourcePack:Thaumcraft, FMLFileResourcePack:MineTweaker 3
+[11:30:42] [Client thread/INFO]: Created: 1024x512 textures/blocks-atlas
+[11:30:42] [Client thread/INFO]: Created: 1024x512 textures/items-atlas
+[11:30:43] [Sound Library Loader/INFO]: Sound engine started
+[11:30:47] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[11:30:47] [Server thread/INFO]: Generating keypair
+[11:30:47] [Server thread/INFO]: Preparing start region for level 0
+[11:30:48] [Server thread/INFO]: Changing view distance to 4, from 10
+[11:30:48] [Server thread/INFO]: Player362[local:E:1ed35b9d] logged in with entity id 373 at (-790.3738200370783, 4.0, 317.8674105602118)
+[11:30:48] [Server thread/INFO]: Player362 присоединился к игре
+[11:30:56] [Server thread/INFO]: Saving and pausing game...
+[11:30:56] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[11:30:57] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[11:30:57] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[11:30:57] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
+[11:30:57] [Server thread/INFO]: Stopping server
+[11:30:57] [Server thread/INFO]: Saving players
+[11:30:57] [Server thread/INFO]: Saving worlds
+[11:30:57] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[11:30:57] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[11:30:57] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[11:30:57] [Server thread/INFO]: Saving chunks for level 'New World'/The Outer Lands
+[11:31:17] [Client thread/INFO]: Stopping!

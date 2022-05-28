@@ -43,6 +43,10 @@ public class ItemAquaSword extends ItemSword {
 		this.setTextureName("ab:itemAquaSword");
 	}
 	
+	public boolean isItemTool(ItemStack par1ItemStack) {
+		return true;
+	}
+	
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		AxisAlignedBB axis = AxisAlignedBB.getBoundingBox(entity.posX, entity.posY, entity.posZ, entity.lastTickPosX, entity.lastTickPosY, entity.lastTickPosZ).expand(1.7f, 1.7f, 1.7f);
 		List<EntityLivingBase> entities = entity.worldObj.getEntitiesWithinAABB(EntityLivingBase.class, axis);

@@ -17,6 +17,7 @@ import thaumcraft.common.lib.network.PacketHandler;
 import thaumcraft.common.lib.network.playerdata.PacketAspectPool;
 import thaumcraft.common.lib.network.playerdata.PacketSyncAspects;
 import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileFunctional;
 
 public class SubTileAspecolus extends SubTileFunctional {
@@ -69,6 +70,10 @@ public class SubTileAspecolus extends SubTileFunctional {
 		}
 		if(countPlayer > 0)
 			this.cooldown = 75 * countPlayer;
+	}
+	
+	public RadiusDescriptor getRadius() {
+		return new RadiusDescriptor.Square(toChunkCoordinates(), 1);
 	}
 	
 	public int getMaxMana() {

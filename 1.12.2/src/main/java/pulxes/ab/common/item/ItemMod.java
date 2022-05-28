@@ -16,13 +16,13 @@ public class ItemMod extends Item implements IModelRegister {
 
 	public ItemMod(String name) {
 		this.setCreativeTab(AdvancedBotany.tabAB);
-		this.setRegistryName(new ResourceLocation("ab", name));
+		this.setRegistryName(new ResourceLocation(AdvancedBotany.MODID, name));
 	    this.setUnlocalizedName(name);
 	}
 	
 	@Nonnull
 	public String getUnlocalizedNameInefficiently(@Nonnull ItemStack stack) {
-		return super.getUnlocalizedNameInefficiently(stack).replaceAll("item\\.", "item.ab:");
+		return super.getUnlocalizedNameInefficiently(stack).replaceAll("item\\.", "item." + AdvancedBotany.MODID + ":");
 	}
 	
 	@SideOnly(Side.CLIENT)
