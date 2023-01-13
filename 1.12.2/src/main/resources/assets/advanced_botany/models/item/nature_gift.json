@@ -1,7 +1,0 @@
-{
-    "parent": "minecraft:item/generated",
-    "textures": 
-    {
-        "layer0": "advanced_botany:items/nature_gift"
-    }
-}
