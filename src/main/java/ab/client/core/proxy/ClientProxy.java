@@ -1,5 +1,9 @@
 package ab.client.core.proxy;
 
+import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.MinecraftForge;
+
+import vazkii.botania.common.Botania;
 import ab.client.core.handler.BoundRenderHandler;
 import ab.client.core.handler.ClientHandler;
 import ab.client.core.handler.HudRenderHandler;
@@ -21,13 +25,6 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderSnowball;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.MinecraftForgeClient;
-import net.minecraftforge.common.MinecraftForge;
-import vazkii.botania.common.Botania;
-import vazkii.botania.common.item.ModItems;
 
 public class ClientProxy extends CommonProxy {
 
@@ -36,53 +33,54 @@ public class ClientProxy extends CommonProxy {
     }
 
     public void init(FMLInitializationEvent event) {
-    	super.init(event);
-    	
-    	FMLCommonHandler.instance().bus().register(new ClientHandler());
-    	MinecraftForge.EVENT_BUS.register(new HudRenderHandler());
-    	MinecraftForge.EVENT_BUS.register(new PlayerRendererHandler());
-    	MinecraftForge.EVENT_BUS.register(new BoundRenderHandler());
-    	
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileNidavellirForge.class, new RenderTileNidavellirForge());
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileABSpreader.class, new RenderTileABSpreader());    
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileManaContainer.class, new RenderTileManaContainer());    
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileManaCrystalCube.class, new RenderTileManaCrystalCube());
-    	if(ConfigABHandler.hasManaCharger)
-    		ClientRegistry.bindTileEntitySpecialRenderer(TileManaCharger.class, new RenderTileManaCharger()); 
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileEngineerHopper.class, new RenderTileEngineerHopper()); 
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileBoardFate.class, new RenderTileBoardFate()); 
-    	ClientRegistry.bindTileEntitySpecialRenderer(TileGameBoard.class, new RenderTileGameBoard()); 
-    	if(Botania.thaumcraftLoaded && ConfigABHandler.hasAutoThaum)
-    		ClientRegistry.bindTileEntitySpecialRenderer(TileMagicCraftCrate.class, new RenderTileMagicCraftingCrate()); 
-    	
-    	BlockListAB.blockABSpreaderRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockManaContainerRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockManaCrystalCubeRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockManaChargerRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockEngineerHopperRI = RenderingRegistry.getNextAvailableRenderId();
-    	BlockListAB.blockABPlateRI = RenderingRegistry.getNextAvailableRenderId();
-    	
+        super.init(event);
+
+        FMLCommonHandler.instance().bus().register(new ClientHandler());
+        MinecraftForge.EVENT_BUS.register(new HudRenderHandler());
+        MinecraftForge.EVENT_BUS.register(new PlayerRendererHandler());
+        MinecraftForge.EVENT_BUS.register(new BoundRenderHandler());
+
+        ClientRegistry.bindTileEntitySpecialRenderer(TileNidavellirForge.class, new RenderTileNidavellirForge());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileABSpreader.class, new RenderTileABSpreader());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileManaContainer.class, new RenderTileManaContainer());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileManaCrystalCube.class, new RenderTileManaCrystalCube());
+        if (ConfigABHandler.hasManaCharger)
+            ClientRegistry.bindTileEntitySpecialRenderer(TileManaCharger.class, new RenderTileManaCharger());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEngineerHopper.class, new RenderTileEngineerHopper());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileBoardFate.class, new RenderTileBoardFate());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileGameBoard.class, new RenderTileGameBoard());
+        if (Botania.thaumcraftLoaded && ConfigABHandler.hasAutoThaum)
+            ClientRegistry.bindTileEntitySpecialRenderer(TileMagicCraftCrate.class, new RenderTileMagicCraftingCrate());
+
+        BlockListAB.blockABSpreaderRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockManaContainerRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockManaCrystalCubeRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockManaChargerRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockEngineerHopperRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockABPlateRI = RenderingRegistry.getNextAvailableRenderId();
+
         RenderingRegistry.registerBlockHandler(new RenderBlockABSpreader());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaContainer());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaCrystalCube());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaCharger());
         RenderingRegistry.registerBlockHandler(new RenderBlockEngineerHopper());
         RenderingRegistry.registerBlockHandler(new RenderBlockNidavellirForge());
-        
+
         RenderingRegistry.registerEntityRenderingHandler(EntityAdvancedSpark.class, new RenderEntityAdvancedSpark());
         RenderingRegistry.registerEntityRenderingHandler(EntityNebulaBlaze.class, new EntityNullRender());
         RenderingRegistry.registerEntityRenderingHandler(EntityManaVine.class, new EntityNullRender());
-        RenderingRegistry.registerEntityRenderingHandler(EntityAlphirinePortal.class, new RenderEntityAlphirinePortal());
+        RenderingRegistry
+                .registerEntityRenderingHandler(EntityAlphirinePortal.class, new RenderEntityAlphirinePortal());
         RenderingRegistry.registerEntityRenderingHandler(EntitySword.class, new EntityNullRender());
         RenderingRegistry.registerEntityRenderingHandler(EntitySeed.class, new EntityNullRender());
-        
+
         MinecraftForgeClient.registerItemRenderer(ItemListAB.itemAntigravityCharm, new RenderItemAntigravityCharm());
         MinecraftForgeClient.registerItemRenderer(ItemListAB.itemSphereNavigation, new RenderItemSphereNavigation());
     }
 
     public void postInit(FMLPostInitializationEvent event) {
         super.postInit(event);
-//        ItemStack crashGameForRender = null;
-//        System.out.println(crashGameForRender.stackSize);
+        // ItemStack crashGameForRender = null;
+        // System.out.println(crashGameForRender.stackSize);
     }
 }
