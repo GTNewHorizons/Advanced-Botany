@@ -1,20 +1,21 @@
 package ab.client.render.entity;
 
-import ab.common.entity.EntityAdvancedSpark;
-import ab.common.item.ItemAdvancedSpark;
-import ab.common.lib.register.ItemListAB;
 import net.minecraft.util.IIcon;
+
 import vazkii.botania.client.render.entity.RenderSparkBase;
 import vazkii.botania.common.item.ItemSparkUpgrade;
+import ab.common.entity.EntityAdvancedSpark;
+import ab.common.item.ItemAdvancedSpark;
 
 public class RenderEntityAdvancedSpark extends RenderSparkBase<EntityAdvancedSpark> {
-	
-	public IIcon getSpinningIcon(EntityAdvancedSpark entity) {
-		int upgrade = entity.getUpgrade() - 1;
-		return (upgrade >= 0 && upgrade < ItemSparkUpgrade.worldIcons.length) ? ItemSparkUpgrade.worldIcons[upgrade] : null;
-	}
-	
-	public IIcon getBaseIcon(EntityAdvancedSpark entity) {
-		return ItemAdvancedSpark.worldIcon;
-	}
+
+    public IIcon getSpinningIcon(EntityAdvancedSpark entity) {
+        int upgrade = entity.getUpgrade() - 1;
+        return (upgrade >= 0 && upgrade < ItemSparkUpgrade.worldIcons.length) ? ItemSparkUpgrade.worldIcons[upgrade]
+                : null;
+    }
+
+    public IIcon getBaseIcon(EntityAdvancedSpark entity) {
+        return ItemAdvancedSpark.worldIcon;
+    }
 }

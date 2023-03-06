@@ -6,10 +6,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
 public class EntityNullRender extends Render {
-	
-	public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {}
-		  
-	protected ResourceLocation getEntityTexture(Entity entity) {
-		return AbstractClientPlayer.locationStevePng;
-	}
+
+    public void doRender(Entity entity, double d, double d1, double d2, float f, float f1) {}
+
+    protected ResourceLocation getEntityTexture(Entity entity) {
+        return AbstractClientPlayer.locationStevePng;
+    }
 }
