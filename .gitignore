@@ -1,21 +1,32 @@
-# These are some examples of commonly ignored file patterns.
-# You should customize this list as applicable to your project.
-# Learn more about .gitignore:
-#     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
-
-# eclipse
-bin
-*.launch
+.gradle
 .settings
-.metadata
+/.idea/
+/.vscode/
+/run/
+/build/
+/eclipse/
 .classpath
 .project
-
-# gradle
-build
-.gradle
-
-# other
-eclipse
-run
+/bin/
+/config/
+/crash-reports/
+/logs/
+options.txt
+/saves/
+usernamecache.json
+banned-ips.json
+banned-players.json
+eula.txt
+ops.json
+server.properties
+servers.dat
+usercache.json
+whitelist.json
+/out/
+*.iml
+*.ipr
+*.iws
+src/main/resources/mixins.*([!.]).json
 *.bat
+*.DS_Store
+!gradlew.bat
