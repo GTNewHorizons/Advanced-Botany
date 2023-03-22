@@ -1,0 +1,452 @@
+itemGroup.tabForgottenRelics=Forgotten Relics
+
+### DEATH MESSAGES ###
+
+death.attack.trueDamage=%1$s was judjed to death by %2$s.
+death.attack.trueDamageUndef=%1$s was judged to death.
+death.attack.attackOblivion=%1$s's soul was consumed by Oblivion.
+death.attack.attackFate=%1$s has suffered the fateful paradox.
+death.attack.attackLightning=%2$s has destroyed %1$s using powerful lightning discharge.
+death.attack.attackDarkMatter=%1$s's soul drowned in the primordial darkness.
+
+### ITEM NAMES ###
+
+item.ItemFalseJustice.name=False Justice
+item.ItemDeificAmulet.name=Deific Amulet
+item.ItemParadox.name=The Paradox
+item.ItemOblivionAmulet.name=Amulet of The Oblivion
+item.ItemArcanum.name=Nebulous Core
+item.ItemDormantArcanum.name=Dormant Nebulous Core
+item.ItemFateTome.name=Tome of Broken Fates
+item.ItemDarkSunRing.name=Ring of The Seven Suns
+item.ItemChaosCore.name=Chaos Core
+item.ItemMiningCharm.name=Mining Charm
+item.ItemAdvancedMiningCharm.name=Ethereal Mining Charm
+item.ItemTelekinesisTome.name=Tome of Predestiny
+item.ItemAncientAegis.name=Ancient Aegis
+item.ItemMissileTome.name=Nuclear Fury
+item.ItemCrimsonSpell.name=Crimson Spell
+item.ItemObeliskDrainer.name=Devourer of The Void
+
+item.ItemSoulTome.name=Edict of a Thousand Damned Souls
+item.ItemShinyStone.name=Shiny Stone
+item.ItemLunarFlares.name=Tome of Lunar Flares
+item.ItemSuperpositionRing.name=Ring of Superposition
+item.ItemTeleportationTome.name=Tome of Discord
+item.ItemEldritchSpell.name=Eldritch Spell
+item.ItemDimensionalMirror.name=Dimensional Mirror
+item.ItemWeatherStone.name=Runic Stone
+item.ItemApotheosis.name=Apotheosis
+item.ItemChaosTome.name=Tome of Primal Chaos
+item.ItemXPTome.name=Tome of Ageless Wisdom
+item.ItemOmegaCore.name=The Omega Core
+item.ItemDevastationBlade.name=Eye of Devastation
+
+### TOOLTIP OPTIONS ###
+
+item.FRCode0.lore=§0
+item.FRCode1.lore=§1
+item.FRCode2.lore=§2
+item.FRCode3.lore=§3
+item.FRCode4.lore=§4
+item.FRCode5.lore=§5
+item.FRCode6.lore=§6
+item.FRCode7.lore=§7
+item.FRCode8.lore=§8
+item.FRCode9.lore=§9
+item.FRCode10.lore=§a
+item.FRCode11.lore=§b
+item.FRCode12.lore=§c
+item.FRCode13.lore=§d
+item.FRCode14.lore=§e
+item.FRCode15.lore=§r
+
+item.FREmpty.lore=§5
+
+item.FRAmulet.lore=§5Can be equipped as §6Amulet§5.
+item.FRRing.lore=§5Can be equipped as §6Ring§5.
+item.FRBelt.lore=§5Can be equipped as §6Belt§5.
+
+item.FRVisPerCast.lore=§6Vis per cast:
+item.FRVisPerSecond.lore=§6Vis per second:
+item.FRVisPerTick.lore=§6Vis per tick:
+
+item.FRAerCost.lore=§eAer§r x 
+item.FRIgnisCost.lore=§cIgnis§r x 
+item.FRAquaCost.lore=§3Aqua§r x 
+item.FRTerraCost.lore=§2Terra§r x 
+item.FROrdoCost.lore=§7Ordo§r x 
+item.FRPerditioCost.lore=§8Perditio§r x 
+
+item.FRShiftTooltip.lore=§5Hold §6Shift§5 to see details.
+item.FRViscostTooltip.lore=§5Hold §6Ctrl§5 to see Vis cost.
+
+item.ItemDarkSunRing1.lore=§5Completely negates any attacks that
+item.ItemDarkSunRing2_1.lore=§5exceed§6
+item.ItemDarkSunRing2_2.lore=§6 damage§5. Damage from fire
+item.ItemDarkSunRing3.lore=§5and lava is converted into healing.
+item.ItemDarkSunRing4_1.lore=§5Provides§6
+item.ItemDarkSunRing4_2.lore=§6% chance§5 of reflecting
+item.ItemDarkSunRing5.lore=§5attack back to it's source.
+item.ItemDarkSunRing6.lore=§5Regular attacks on you might become
+item.ItemDarkSunRing7.lore=§5stronger.
+item.ItemDarkSunRing8.lore=§5Wearing second Ring of The Seven Suns
+item.ItemDarkSunRing9.lore=§5won't have any effect.
+
+item.ItemFalseJustice1.lore=§5While possessing this relic, all damage
+item.ItemFalseJustice2.lore=§5you deal and all damage dealt to you
+item.ItemFalseJustice3.lore=§5is transformed into §6True Damage§5.
+
+item.ItemDeificAmulet1.lore=§5Immunity to most status effects.
+item.ItemDeificAmulet2.lore=§5Extinguishes you when on fire.
+item.ItemDeificAmulet3.lore=§5Prolonged invincibility frames.
+item.ItemDeificAmulet4.lore=§5Replenishes air underwater at the
+item.ItemDeificAmulet5.lore=§5cost of §eAer§5 and §3Aqua§5 §6Vis§5.
+
+item.ItemParadox1.lore=§5Deals random amount of damage within
+item.ItemParadox2.lore=§5specified range. For each hit, you also
+item.ItemParadox3.lore=§5receive damage, that equals to the
+item.ItemParadox4.lore=§5difference between dealt and maximal
+item.ItemParadox5.lore=§5damage.
+item.ItemParadoxDamage_1.lore=§6+1-
+item.ItemParadoxDamage_2.lore=§6 Attack Damage
+
+item.ItemOblivionAmulet1.lore=§5Absorbs any damage dealt to you.
+item.ItemOblivionAmulet2.lore=§5This damage can be released upon
+item.ItemOblivionAmulet3.lore=§5you at random.
+item.ItemOblivionAmulet4.lore=§5Your soul shall suffer!
+item.ItemOblivionAmulet5.lore=§5Consumes §cIgnis§5 and §8Perditio§5 §6Vis§5.
+item.ItemOblivionAmuletDamage.lore=§6Damage stored:
+
+item.ItemDormantArcanum1.lore=§5Temporarily inactive, all effects are disabled.
+item.ItemDormantArcanum2.lore=§5 §6Vis §5is yet required for re-awakening.
+
+item.ItemChaosCore1.lore=§5While possessing this relic, any incoming
+item.ItemChaosCore2.lore=§5damage is multiplied by a random value in
+item.ItemChaosCore3.lore=§5range between §60.0§5 and §62.0§5.
+item.ItemChaosCore4.lore=§5Provides §650% chance§5 to redirect any 
+item.ItemChaosCore5.lore=§5damage you deal or receive to a random
+item.ItemChaosCore6.lore=§5entity within 16 blocks radius.
+item.ItemChaosCore7.lore=§5May apply random status effects to you.
+
+item.ItemArcanum1.lore=§5Vis discount:
+item.ItemArcanum2.lore=§5Passively generates random §6Vis§5 on your
+item.ItemArcanum3.lore=§5wands. If you are attacked, there is a
+item.ItemArcanum4.lore=§5§640% chance§5 that attack will be dodged
+item.ItemArcanum5.lore=§5and you will be teleported to a random
+item.ItemArcanum6.lore=§5location nearby.
+item.ItemArcanum7.lore=§5May teleport you at random.
+item.ItemArcanum8.lore=§5May become inactive for a time, passively
+item.ItemArcanum9.lore=§5consuming §6Vis§5 for re-awakening.
+
+item.ItemFateTome1.lore=§5While possessing this relic, if you should take
+item.ItemFateTome2.lore=§5lethal damage, instead replenishes your health
+item.ItemFateTome3.lore=§5to maximum and applies protective buffs to you
+item.ItemFateTome4.lore=§5at the cost of §6Vis§5.
+item.ItemFateTome5.lore=§6This effect has 30-90 seconds cooldown.
+item.ItemFateTome6.lore=§5There is a chance that debuffs will be applied
+item.ItemFateTome7.lore=§5instead of buffs.
+item.ItemFateTome8.lore=§5Having more than one Tome of Broken Fates
+item.ItemFateTome9.lore=§5may lead to insanely disastrous consequences. 
+item.ItemFateTomeCooldown.lore=Cooldown:
+item.FRSeconds.lore=seconds
+
+item.ItemTelekinesisTome1.lore=§5Allows you to control entities telekinetically.
+item.ItemTelekinesisTome2.lore=§5Hold §6Right-Click§5 to take control over entity
+item.ItemTelekinesisTome3.lore=§5you are looking at.
+item.ItemTelekinesisTome4.lore=§5Hold §6Shift§5+§6Right-Click§5 to keep possessed
+item.ItemTelekinesisTome5.lore=§5entity at current distance, instead of getting
+item.ItemTelekinesisTome6.lore=§5it closer to you.
+item.ItemTelekinesisTome7.lore=§5If possessed entity is at 16 meters or closer
+item.ItemTelekinesisTome8.lore=§5to you, you can press §6Left-Click§5 to attack
+item.ItemTelekinesisTome9.lore=§5it with powerful lightning discharge.
+item.ItemTelekinesisTome10.lore=§5§6Shift§5+§6Left-Click§5 also throws it away from you.
+item.ItemTelekinesisTome11_1.lore=§6Lightning attack deals
+item.ItemTelekinesisTome11_2.lore=§6damage.
+
+item.ItemAncientAegis1_1.lore=§5Provides§6
+item.ItemAncientAegis1_2.lore=§6% Damage Reduction§5.
+item.ItemAncientAegis2.lore=§5Increased life regeneration.
+item.ItemAncientAegis3.lore=§5You are immune to knockback.
+item.ItemAncientAegis4.lore=§5If any player within 32 blocks takes
+item.ItemAncientAegis5.lore=§5damage, §640%§5 of it is redirected at you.
+
+item.ItemMissileTome1.lore=§5Unfolds an array of devastating magic
+item.ItemMissileTome2.lore=§5charges. They aim at random targets
+item.ItemMissileTome3.lore=§5within §632 blocks§5 radius.
+item.ItemMissileTome4.lore=§5If there's no targets within given radius,
+item.ItemMissileTome5.lore=§5they move chaotically through space.
+item.ItemMissileTome6.lore=§5Charges can pass through most blocks.
+
+item.ItemMissileTome7_1.lore=§5Each charge deals§6
+item.ItemMissileTome7_2.lore=§6damage§5.
+
+item.ItemMiningCharm1_1.lore=§5Provides§6
+item.ItemMiningCharm1_2.lore=§6%§5 increased mining speed.
+item.ItemMiningCharm2_1.lore=§5Block reach extended by§6
+item.ItemMiningCharm2_2.lore=§5.
+
+item.ItemAdvancedMiningCharm1_1.lore=§5Provides§6
+item.ItemAdvancedMiningCharm1_2.lore=§6%§5 increased mining speed.
+item.ItemAdvancedMiningCharm2_1.lore=§5Block reach extended by§6
+item.ItemAdvancedMiningCharm2_2.lore=§5.
+
+item.ItemCrimsonSpell1.lore=§5Invokes the §6Crimson Orb§5.
+item.ItemCrimsonSpell2.lore=§5Orbs try to aim on entity at your sight, or
+item.ItemCrimsonSpell3.lore=§5at random target nearby if none found.
+
+item.ItemCrimsonSpell4.lore=§5Crimson Orbs move slowly and could get
+item.ItemCrimsonSpell5.lore=§5destroyed by block collision, but
+item.ItemCrimsonSpell6_1.lore=§5deal§6
+item.ItemCrimsonSpell6_2.lore=§6damage§5.
+
+item.ItemObeliskDrainer1.lore=§5Can drain power from §6Eldritch Obelisk§5,
+item.ItemObeliskDrainer2.lore=§5if one is present within 16 blocks radius.
+item.ItemObeliskDrainer3.lore=§5Absorbed power regenerates your life, 
+item.ItemObeliskDrainer4.lore=§5refills hunger and charges §6Vis§5 into wands
+item.ItemObeliskDrainer5.lore=§5within your inventory.
+
+item.ItemEldritchSpell1.lore=§5Invokes the §6Dark Matter Orb§5.
+item.ItemEldritchSpell2.lore=§5Dark Matter Orbs rapidly move
+item.ItemEldritchSpell3.lore=§5in the initial direction.
+item.ItemEldritchSpell4.lore=§5On contact with living entity, they
+item.ItemEldritchSpell5_1.lore=§5deal§6
+item.ItemEldritchSpell5_2.lore=§6unblockable damage§5 and
+item.ItemEldritchSpell6.lore=§5weaken the target.
+item.ItemEldritchSpell7.lore=§6Has great power in the Outer Lands.
+
+item.ItemShinyStone1.lore=§5Greatly boosts life regen while standing still.
+item.ItemShinyStone2.lore=§5This affect accelerates as you stand.
+
+item.ItemSuperpositionRing1.lore=§5While worn, §612-74%§5 of received damage
+item.ItemSuperpositionRing2.lore=§5is split among all other wearers of this
+item.ItemSuperpositionRing3.lore=§5ring, wherever they are.
+item.ItemSuperpositionRing4.lore=§5May occasionaly swap you with other
+item.ItemSuperpositionRing5.lore=§5wearer of this ring.
+
+item.ItemTeleportationTome1.lore=§5Allows you to teleport at any block you are
+item.ItemTeleportationTome2.lore=§5looking at within §6128 blocks§5 radius. If you
+item.ItemTeleportationTome3.lore=§5are looking at entity, swaps your positions.
+item.ItemTeleportationTome4.lore=§5§6Shift§5+§6Right-Click§5 instead teleports you
+item.ItemTeleportationTome5.lore=§516 blocks ahead in the direction of your
+item.ItemTeleportationTome6.lore=§5sight, ignoring any obstacles.
+
+item.ItemLunarFlares1.lore=§5Rains down devastating §6Lunar Flares§5.
+item.ItemLunarFlares2.lore=§5Lunar Flares explode on contact with
+item.ItemLunarFlares3_1.lore=§5targeted block, dealing§6
+item.ItemLunarFlares3_2.lore=§6damage§5
+item.ItemLunarFlares35.lore=§5to all entities within impact zone.
+item.ItemLunarFlares4_1.lore=§5Direct hit deals§6
+item.ItemLunarFlares4_2.lore=§6damage§5.
+
+item.ItemSoulTome1.lore=§5Creates §6Soul-draining Aura§5 within 20 blocks
+item.ItemSoulTome2.lore=§5radius from you. Life forces of entities
+item.ItemSoulTome3.lore=§5within are drained and transferred to you.
+item.ItemSoulTome4.lore=§5The stronger they are, the more devastating
+item.ItemSoulTome5.lore=§5this effect would be.
+item.ItemSoulTome6.lore=§5Any living entities that try to get closer
+item.ItemSoulTome7.lore=§5than §64 blocks§5 to you would be thrown back
+item.ItemSoulTome8.lore=§5and receive colossal damage.
+item.ItemSoulTome9.lore=§6You are greatly slowed down while casting.
+
+item.ItemDimensionalMirror1.lore=§5Allows you to store your current location
+item.ItemDimensionalMirror2.lore=§5and dimension by pressing §6Shift§5+§6Right-Click§5.
+item.ItemDimensionalMirror3.lore=§5Gaze into the mirror to return there.
+item.MirrorLoc.lore=§dStored location:
+item.MirrorX.lore= §6X: §5
+item.MirrorY.lore= §6Y: §5
+item.MirrorZ.lore= §6Z: §5
+item.MirrorDimension.lore=§6Dimension: §5
+
+item.ItemWeatherStone1.lore=§5Allows you to dispel the rainfall, if it rains.
+item.ItemWeatherStone2_1.lore=§5This effect requires§6
+item.ItemWeatherStone2_2.lore=§5of §eAer§5, §2Terra§5
+item.ItemWeatherStone3.lore=§5and §3Aqua§5 §6Vis§5.
+
+item.ItemApotheosis1.lore=§5Brings down an array of §6Babylon Weapons§5.
+item.ItemApotheosis2.lore=§5They are launched into the direction of your
+item.ItemApotheosis3.lore=§5sight, after a slight delay.
+item.ItemApotheosis4_1.lore=§5Each weapon deals§6
+item.ItemApotheosis4_2.lore=§6damage§5 on direct hit, 
+item.ItemApotheosis5_1.lore=§5and explodes on contact, dealing§6
+item.ItemApotheosis5_2.lore=§6damage§5
+item.ItemApotheosis6.lore=§5to all entities within impact zone.
+
+item.ItemChaosTome1.lore=§5Unfolds §6Orbs of Primal Energy§5.
+item.ItemChaosTome2.lore=§5These orbs either behave chaotically, or
+item.ItemChaosTome3.lore=§5try to aim at random living beings nearby.
+item.ItemChaosTome4.lore=§6They might also aim at you.
+item.ItemChaosTome5_1.lore=§5Orbs deal§6
+item.ItemChaosTome5_2.lore=§6damage§5 on contact and
+item.ItemChaosTome6.lore=§5explode with somewhat random power.
+
+item.ItemXPTome1.lore=§5Can store limitless amount of experience.
+item.ItemXPTome2.lore=§5Press §6Shift§5+§6Right-Click§5 while holding it
+item.ItemXPTome3.lore=§5to toggle it active.
+item.ItemXPTome4.lore=§5Press §6Right-Click§5 to switch modes.
+item.ItemXPTome5.lore=§5In §6Absorption mode§5, it will consume all your
+item.ItemXPTome6.lore=§5experience, as long as it remains in inventory.
+item.ItemXPTome7.lore=§5In §6Extraction mode§5, this behavior is reversed,
+item.ItemXPTome8.lore=§5and the tome transfers all stored experience
+item.ItemXPTome9.lore=§5back to you.
+item.ItemXPTomeMode.lore=§dCurrent Mode:
+item.ItemXPTomeExp.lore=§dExperience Stored:
+item.ItemXPTomeUnits.lore=§6units, or
+item.ItemXPTomeLevels.lore=§6levels.
+item.ItemXPTomeAbsorption.lore=§6Absorption
+item.ItemXPTomeExtraction.lore=§6Extraction
+item.ItemXPTomeDeactivated.lore=§6Deactivated
+
+### RESEARCH CATEGORY ###
+
+tc.research_category.ForgottenRelics=Forgotten Relics
+
+fr.name.GenericTheory=Theory of Eternal Artifacts
+fr.tag.GenericTheory=...order emerges from the chaos, and inevitably returns to it.
+fr.text.GenericTheory.1=You have already spent significant amount of time on researches, that try to explain the very origin of reality you live in. This one is one of them.<BR/>After a while, you came across a lot of artifacts of all shapes and function. Some of them were obtained somewhere in the world... Some of them you've created by your own. At least, so you thought until now. There's probably something more that makes difference between mundane thing and true relic, something more than just... say, "powerfulness", or magic that lies in it's foundation.<BR/>Due to all their complexity and uniqueness, some things shouldn't be
+fr.text.GenericTheory.2=recreatable under any circumstances, but there's a lot of examples that directly disprove this assumption. Even the most unusual and powerful relics can exist in more than one example, and their copies is quite indistinguishable from original... If that "original" exists at all, and if it could be found among all copies, which is most of time only theoretically possible.<BR/>You now have incredibly fabulous, yet simple idea, that could explain this whole phenomenon - that there's no such things as "copy" of relic. All examples of it is true original, that is just capable to exist in limitless number of places at once. Even if you destroy all incarnations of it, erase knowledge about it from any piece of parchment in the whole world, it wouldn't then be lost
+fr.text.GenericTheory.3=forever - given the right conditions and components, it could be recreated once more...<BR/>Or, to say more technically correct, summoned. Therefore, they should remain embedded into the structure of reality itself, and it makes you questioning - if any mortal like you was ever able to create something truly unique, or we all are just recreating something that already existed before we were even born?<BR/>By now, though, you assume that an edge between mundane items and the relics exist, no matter how blurred it may seem. The first just don't possess any "specialty", and almost anyone with right knowledge is capable to forge a hundreds of iron swords, that would be quite similar in their appearance - but they
+fr.text.GenericTheory.4=wouldn't be the same, just made of same materials and forged into similar shape. Relics, though, have something more in them, that allows them to manifest in such unusual way. Something that could be described as... "Soul"? "Essence"? "Mind"? Whatever.<BR/>After thinking for a while, you found this theory incredibly fascinating. Not only it resolves all this riddle around the nature of some artifacts - if you would be able to understand it more deeply, you might be capable to get a lot profits of this knowledge. This research could be one of the hardest (and probably, the most dangerous) ones you ever faced, but potential reward is more than worthy of all the effort... So, what are you waiting for?
+fr.text.GenericTheory.5= 
+
+fr.name.SpellbookTheory=Basics of Spellbook Mastery
+fr.tag.SpellbookTheory=All new is well forgotten old
+fr.text.SpellbookTheory.1=Until now, wand focuses seemed a perfect and elegant solution to shape and unfold almost any kind of magic. Mayble, not in every single case, but most of the time they do their job, especially when talking about offensive magics.<BR/>But, of course, there is always "but". Being a relatively recent discovery, spellbooks are one of the most ancient means to channel magic forces, used in times far before thaumaturgy even came to existence. Of course, it's not nearly possible to make them as compact and handy as wand focuses, and to this very moment you hesitated if it is possible at all to adapt them to thaumaturgical means, but the
+fr.text.SpellbookTheory.2=researches on this topic has proven it's possible - in theory, at least.<BR/>Though they might feel quite clumsy, they definitely possess some upsides that wand focuses will never be able to offer. The first and the mort important - power. Spellbooks seem to be much more capable of holding and channeling colossal forces, that would tear apart any trivial wand focus, whatever it is made of. Well, greater power always means greater Vis costs, but didn't you faced countless situations where your ability to destroy enemy as quickly as possible were far more important than how much Vis it would cost?<BR/>Some spellbooks might also offer more than one function, while it is not very common among their direct counterpart.
+fr.text.SpellbookTheory.3=Another upside is that they could drain Vis from basically any source in your inventory - including scepters.<BR/>And after all, though it's not possible to upgrade them in Focal Manipulator (would be strange otherwise, isn't it), or enchant in any other way, most of the time their initial power and functionality is more than enough to fully cover all costs and efforts on their creation.<BR/>Though it all remains a pure theory for now, and is still rather questionable, nothing can stop your scientific interest to this theory, and so, one day it will definitely turn into practice.
+fr.text.SpellbookTheory.4= 
+
+fr.name.MiningCharm=Mining Charm
+fr.tag.MiningCharm=Everything genial is simple
+fr.text.MiningCharm.1=While being a rather simple invention, mining charm may be much more useful than the most unique and powerful accesories... In some situations, of course.<BR/>Effectively increasing your mining speed and block reach, it could be considered must-have item for long and arduos underground expeditions, that will definitely still happen in future...  If someday you wouldn't find inexhaustible source of minerals and metals in your backyard.<BR/>Well, you shouldn't exclude such a possibility, but it's not very likely to happen.
+
+fr.name.AdvancedMiningCharm=Ethereal Mining Charm
+fr.tag.AdvancedMiningCharm=Harder, better, faster... Whatever.
+fr.text.AdvancedMiningCharm.1=After playing around with regular mining charm, you were sure that there should be a way to infuse even more power into it, increasing it's efficiency much further.<BR/>Your assumptions are now confirmed; here is the direct upgrade of mining charm, that speeds up mining and extends block reach even further.<BR/>It is noticeable, that wearing two mining charms of the same type is not efficient in any way, but wearing one regular charm and one ethereal one is still somehow useful.
+
+fr.name.SuperpositionRing=Ring of Superposition
+fr.tag.SuperpositionRing=Practical application of quantuum theories
+fr.text.SuperpositionRing.1=One of the first results of your work over the Theory of Eternal Artifacts, Ring of Superposition perfectly demonstrates that your assumptions were not unfounded.<BR/>The main principle of it's work directly proves, that somehow, there can't be just two Rings of Superposition - as long as components and conditions are the same, you will always get the same ring, that just exists simultaneously in a lot of places. All it's wearers are tied up with each other, and while one suffers - all others will have to share this suffering.<BR/>To the practical side, it's unusual properties absolutely remain
+fr.text.SuperpositionRing.2=double-edged sword, and you are still not sure, whether it would be a good or bad idea to wear this relic. As many other, more familiar things, it might bring a great please to you... and a great suffering, either.
+
+fr.name.WeatherStone=Runic Stone
+fr.tag.WeatherStone=The most powerful umbrella ever
+fr.text.WeatherStone.1=Ancient text are full of mentions about mysterious objects, called Runic Stones. According to the legends, each of them was associated with certain elements, and could rule them in a truly colossal scale. Until recently, they remained only one of numerous myths that agitate your mind...<BR/>By this moment, however, you've discovered a way to recreate one of them. It seems that much more powerful magic than was ever available to you is laid in foundation of this stones.<BR/>This stone is capable to dispel rain or thunder in the world, at the cost of some §eAer§0, §2Terra§0 and §3Aqua§0 Vis.
+fr.text.WeatherStone.2=After this discovery, you are actively collecting data about other stones, hoping that one time you will be able to recreate them too - if the weakest of them is capable to globally rule the weather, it would be fair to assume, that functionality of others isn't less impressive.<BR/>Unfortunately, by now you weren't able to find something more, than blurred and mostly conflicting pieces of information about their origin and properties.
+
+fr.name.DarkSunRing=Ring of The Seven Suns
+fr.tag.DarkSunRing=Amazing mix of fire and darkness
+fr.text.DarkSunRing.1=First mentions about Ring of The Seven Suns is dated a few thousand years before your birth. In distinct from many other ancient relics, most of information about which was erased by merciless flow of time, you had almost full view of this artifact far before you were able to obtain it.<BR/>This ring is strongly connected with elements of either fire and darkness, drawing its strenght from both. It allows its wearer to withstand blows of devastating power, that could erase any living being, consume the uncontainable power of flames, and even turn the attacks of enemies against themselves.
+fr.text.DarkSunRing.2=Of course, it would be most useful for its owner in the battle. But you already have some thoughts on how to adapt it to completing more routine tasks, no matter how abusive it would be to such a powerful relic.
+
+fr.name.AncientAegis=Ancient Aegis
+fr.tag.AncientAegis=Rampart of the true guardian
+fr.text.AncientAegis.1=Information about this artifact originates from historical birth of Crimson Cult - in times when it was far from cult as you know it today. It is assumed, that it consisted of knight and magicians of the most noble blood, united with one goal - to explore darkest sides of magic, that remained forbidden before, to find the way of containing something that were hiding behind those sides.<BR/>The picture observable today allows to assume, that they didn't succeed too much in this undertaking, and minds of the cult were enslaved by the force they so wished to contain, making them a tool in its hands.<BR/>Details remain shrouded in mystery...
+fr.text.AncientAegis.2=But the time has come to drop purely historical research.<BR/>Ancient Aegis was bestowed to the most worthy knights of the Cult, who showed themselves in battle as the fierce defenders of their allies. It allowed them to easily take enemies' attacks on themselves, while simultaneously protecting from them those who fought nearby.<BR/>In modern realities, some properties of this relic remain questionable, and depending on situation, they could be both useful and vice versa... Let's just say, that it wouldn't be a good idea to take it to a duel with another thaumaturge.
+
+fr.name.ChaosCore=Chaos Core
+fr.tag.ChaosCore=Playing the lottery every fuckin' day
+fr.text.ChaosCore.1=There's an interesting propery, more or less appliable to almost all resources obtained from Alfheim - their ability to distort and even change the reality around them. You assume, that this may be due to their origin from a different world, which laws are somewhat different from laws of yours - this could also explain, why transition of living beings between this worlds is still impossible, despite numerous attempts and experiments of many experienced magicians.<BR/>Chaos Core is a prime example of amplification of this distorting properties, which allows them to manifest themselves on a macroscopic scale. Unfortunately, with such power
+fr.text.ChaosCore.2=and because of their chaotic nature, it's impossible to control this properties or direct them to an exceptionally useful course - therefore, any attempt at their practical application mostly remains a game of randomness, where everything depends only on the benevolence of fate.
+
+fr.name.TheParadox=The Paradox
+fr.tag.TheParadox=It's an antinomy one, I guess...
+fr.text.TheParadox.1=Not so long ago, your researches lead you to information about quite powerful relic, endowed with a power of Primordial Pearl - the Primordial Edge, or, as it is called far less often, Edge of Chaos. Numerous attempts to recreate it, however, have so far led you only to this, when you tried to use the Chaos Core in this process.<BR/>The Paradox could be considered the most literal embodiment of the expression "double-edged sword". Its attack may be no less deadly for you, than for your enemy - depending on how favorable fate will be to you.<BR/>Its usefulness in battle remains a big question... But, at least, it could
+fr.text.TheParadox.2=be considered quite curious phenomenon, worthy of place in some thaumaturgical museum.
+
+fr.name.ChaosTome=Tome of The Primal Chaos
+fr.tag.ChaosTome=Bravery and stupidity
+fr.text.ChaosTome.1=Have you ever wondered what would happen if you take a mad thing and add even more madness to it? Either way, you now have an answer. Primal Wand Focus seemed quite dangerous and unpredictable thing for the time you first discovered it, but it was a child's play compared to this relic.<BR/>Tome of Primal Chaos can create Orbs of Primal Energy in insane amounts, and at the same time, they possess much greater destructive power. Their behavior is even more unpredictable, than before - they could either move chaotically through space, or try to attack living beings nearby, including you. Upon impact, they deal a rather random amouth of damage, and explode
+fr.text.ChaosTome.2=with not less random power.<BR/>Summing up, it could be considered the worst weapon among all arsenal available to you. (Well, maybe wooden sword if far from being that powerful, but at least it doesn't tend to kill its wielder.)<BR/>Better to keep it away from too curious thaumaturges.
+
+fr.name.DimensionalMirror=Dimensional Mirror
+fr.tag.DimensionalMirror=Don't worry if your inners will become outards
+fr.text.DimensionalMirror.1=This discovery, rather elementary in appearance, was preceded by a long and meticulous search for elegant ways of traveling across long distanced and entire dimensions. From the moment of discovery of magic mirrors, you were sure that there should be a way to apply magic, laid in their foundation, to transfer a living beings - but before any living organisms arrived to the end point, at best, in parts ... If they arrived at all.<BR/>Only by combining magic of The End, resources of Alfheim and the power of Gaia, you finally achieved the desired success. Dimensional Mirror can memorize your current location and dimension, allowing to return to
+fr.text.DimensionalMirror.2=this place later by simply gazing into it.<BR/>The safety of such travels remains questionable for you. Although no trials have led to accidents - you are too concerned about the fact that you cannot fully understand the principle of its work, and therefore every interdimensional "journey" is invariably accompanied by anxiety and internal tension.
+
+fr.name.XPTome=Tome of Ageless Wisdom
+fr.tag.XPTome=It won't save you from sclerosis, unfortunately
+fr.text.XPTome.1="Expirience", which in your world most of the time means not an ephemeral indicator of how much you have seen in your life, has long been a disturbing riddle for you, not finding a final solution. Many consider it to be a peculiar kind of life force, in view of how killing living beings conveys their experience to the killer.<BR/>Although most of the time, experience is used in different techniques of enchantment, there are ways to convert it into pure energy - including in the form of Vis. Anyway, ways of effectively storing it remained an open question to this very moment, since, due to the extraordinary nature of the
+fr.text.XPTome.2=experience, it could not be simply poured into a jar and put on the shelf.<BR/>But now you possess, most likely, the most efficient way of accumulating and storing this ethereal matter. Tome of Ageless Wisdom is capable of absorping practically limitless amount of experience, and storing it for an unlimited amount of time, until it is claimed.<BR/>Side effects may include, but are not limited to: short-term memory loss, false memories, sudden loss of consciousness, unconscious actions, sleepwalking, a feeling of emptiness and an inexplicable addiction to pastry.
+
+fr.name.OblivionAmulet=Amulet of The Oblivion
+fr.tag.OblivionAmulet=The deceiver of deceivers
+fr.text.OblivionAmulet.1=Oblivion itself is quite curious phenomenon, that attracts mind of those who are not afraid to explore dark sides of magical arts. Some suggest that it is a dimension, but with extremely unusal properties; others - that this is some kind of titanic entity, existing beyoud our known space; third - that in some sense, both of this theories may be true.<BR/>We may never know for certain, but one thing remains beyoud doubt. Oblivion is not something static and silent. It is changeable and inconstant, and when someone calls to it - it responds... One way or another. It is unknown whether it has a mind and what are its desires, if
+fr.text.OblivionAmulet.2=it is even able to desire at all.<BR/>But this amulet - is one of the clearest examples of connection between Oblivion and our world. Some kind of magic contract, embodied in physical incarnation. It could protect its wearer from any hazards... But it comes at a price.<BR/>Even rejecting superstitious fears and approaching this question from an exceptionally practical side, you are still not sure how justified it is to conclude such a deals. Well, you can hope that consumption of your soul by Oblivion at the time of reckoning will be less unpleasant than being eaten alive, or death in agony from injuries incompatible with life, or... Generally, that it would be better than average death.
+fr.text.OblivionAmulet.3=Unfortunately, so far you were unable to find volunteers for the relevant tests.<LINE/>§oYou want to live forever           No death, no agony               This is beyond my power           Can’t fool the entropy             But I can make you stronger      Impossible to kill                 Immune to heat and hunger          A gesture of goodwill...§r
+
+fr.name.NebulousCore=Nebulous Core
+fr.tag.NebulousCore=The power of cosmos rests in your hands...
+fr.text.NebulousCore.1=The undoubted link of Primordial Pearl with primal magic energies has lead you to probably the most obvious way to use it - recreation of relic, that benefits on this link.<BR/>Nebulous Core uses oscillations of Primordial Pearl to extract Vis energy from surrounding aura, which is too weak and unstable to extract energy from it in the other ways. The resulting inflow of Vis is not very consistent or powerful, but as a rule, it is fully capable of reliably supplying your wands with enough energy to perform everyday tasks — especially given the significant Vis discount, allowing you to use this energy with much greater efficiency.
+fr.text.NebulousCore.2=Fulfilled with energies of The End, it also replicates one of the abilities of Endermans, with even greater efficiency - when someone or something tries to attack you, with great chance core teleports you right from impact, allowing to avoid taking damage.<BR/>The only significant downside of Nebulous Core can be considered its property of switching to inactive state from time to time, absorbing Vis for re-awakening. You assume, that it might happen because of imperfection in process of extracting Vis from aura, which instability causes negative energies to accumulate in the core - which are sooner or later released in the moment of overload.
+fr.text.NebulousCore.3=Sometimes, it could also teleport you to somewhere around without apparent reason. 
+
+fr.name.DeificAmulet=Deific Amulet
+fr.tag.DeificAmulet=Don't leave it close to open sources of holyfire
+fr.text.DeificAmulet.1=Its name had a reason to be chosen. According to legends, first Deific Amulet was brought to our world by one of the gods created it. Although you don't harbor great belief in existence of some gods, and especially in the fact that there were many of them... You have a reason to believe that there is a grain of truth in these legends.<BR/>Recreation of this relic wasn't as hard as you expected, taking all its useful properties into account. Just as the legends said, this amulet makes its wearer practically immune to diseases, and to some environmental hazards.<BR/>The only thing in it that confuses
+fr.text.DeificAmulet.2=you, is that it seems to negatively react to presence of other sacred relics, violently vibrating and sometimes warming to burning temperatures.<BR/>The nature of this reaction remains a mystery, and until it is unraveled, it is worth keeping this amulet away from such things.
+
+fr.name.ShinyStone=Shiny Stone
+fr.tag.ShinyStone=The heart of Broken Go... Golem.
+fr.text.ShinyStone.1=This stone is one of the strangest relics that you ever had to discover. It seems to be a part of some gigantic mechanism, and it wasn't easy to adapt it for wearing as an amulet - but having coped with this task, you were surprised to find that this has considerable practical meaning.<BR/>While wearing this stone, if you remain still, regeneration of your body significantly accelerates, healing even the worst wounds in seconds. This effect is accompanied by appearance of shiny clots of energy around you, rushing to your body, and it becomes stronger the longer you do not move - until a certain maximum is reached.
+fr.text.ShinyStone.2=Unfortunately, most battles demand you to constantly move, but are numerous exceptions, that make this relic useful enough.<BR/>And besides, it is not necessary to use it exclusively in battles...
+
+fr.name.FateTome=Tome of Broken Fates
+fr.tag.FateTome=I don't mean it's completely safe...
+fr.text.FateTome.1=Properties of Golden Laurel Crown showed themselves quite useful in practice, but its obvious downsides have made you searching better alternative. It's hard to judge, is it really better, but the alternative were definitely found.<BR/>This tome is not a regular spellbook, though it could be considered one by some key parameters. Its functional mostly ressembles propeties of Golden Laurel Crown, but there's a few important differences. For it to work, it's enough to carry it within your inventory, and in the moment of death prevention, besides full health restoration, it also applies few positive effects to owner... Well, most of the time.
+fr.text.FateTome.2=The price of this functionality is a substancial Vis costs and considerable cooldown. The last may vary, depending on how lucky you will be.<BR/>Exploring ancient writings about pre-incarnations of this relic, you stumbled upon countless warning stories, related to attempts of possessing more than one copy of this tome. You never managed to figure out what exactly this might lead to, but something tells you that trying to figure it out in practice would be a very, very bad idea.
+
+fr.name.DiscordTome=Tome of Discord
+fr.tag.DiscordTome=Make sure to have some plan against suffocation in a wall
+fr.text.DiscordTome.1=Unlike the apple of the same name, this tome wasn't a reason of discord among gods... Only among thaumaturges, many of whom for some reason consider spellbooks to be demoded, and not their trivial wand focuses.<BR>As one of the first spellbooks that you have discovered, it clearly demonstrates the huge potential of such books in general. With it, you can teleport to almost any point nearby, even through walls. Although it will take some practice to really master this artifact completely, it can be one of the most perfect ways of travelling in space among all that are available to you.
+fr.text.DiscordTome.2=Try not to teleport into the walls, when you will try to put this tome into practice - for all its stupidity, this mistake killed many of those who owned it in the old days.
+
+fr.name.TelekinesisTome=Tome of Predestiny
+fr.tag.TelekinesisTome=Make sure to have some plan against angry thaumaturges
+fr.text.TelekinesisTome.1=Rod of the Shaded Mesa was a curious invention from the world of Alfheim - and you, obviously, were not the first to whom hands it fell. But even more curious, is that not only you dreamed about increasing its power and functionality, and that this task was completed far before you - you only had to adapt the result for thaumaturgical realities.<BR/>Tome of Predestiny is very similar to the relic on which functionality it is based - it allows you to control living entities with a force strongly resembling a telekinetic influence.<BR/>But it has a number of important differences from rod - mostly, to the better side.
+fr.text.TelekinesisTome.2=Firstly, this tome is only capable to affect living beings, completely ignoring small objects like projectiles or items thrown into the world. Though this feature might make it less useful in household, its efficiency in battle, presumably, should only rise.<BR/>Secondly, its impact is way stronger. Not only it allows you to control entities more precisely, but also provides possibility to affect entities against which its predecessor was powerless - including other thaumaturges.<BR/>Last, but not least - the tome is capable to attack captured entities with a powerful lightning discharge. Combined with its ability to keep the target at safe distance, preventing it from getting closer to you, it
+fr.text.TelekinesisTome.3=makes this relic an effective weapon against strong, but single targets.<BR/>You are not sure whether it will be so good in practice, as in theory... But one thing is beyond doubt - it will be a hell of a lot of fun.
+
+fr.name.ObeliskDrainer=Devourer of The Void
+fr.tag.ObeliskDrainer=You just have to devour something
+fr.text.ObeliskDrainer.1=Observing the behavior of Eldritch Guardians, you noted a curious feature - they oftenly appear nearby Eldrich Obelisks. It doesn't seem to be just a coincidence - being near Obelisks, the Guardians become significantly stronger, drawing power from them. Studying this process was an incredibly difficult task, but as the practice shown, it was definitely worth it.<BR/>Devourer of The Void became a result of your attempts to replicate process, used by Eldrich Guardians. This relic is capable of draining power from Eldritch Obelisk, if you are close enough to one of them - not only healing and saturating you, but also transforming it into the
+fr.text.ObeliskDrainer.2=form of Vis to charge wands within your inventory.<BR/>Not that you would have no other way to charge the wands... But at least this relic is effective enough to compete with the energized nodes, although it will require your direct participation.
+
+fr.name.SoulTome=Edict of a Thousand Damned Souls
+fr.tag.SoulTome=...because we need more excessively long and exalted names
+fr.text.SoulTome.1=Edict of a Thousand Damned Souls is first mentioned in Neotheria writings, dating back several centuries. According to them, its first incarnation was created in the Nether, and therefore showed properties related to the properties of this dimension - namely, the ability to attract and absorb souls.<BR/>However, while the Nether only attracts souls, whose biological shell, acting as a link to the earthly world, was destroyed - the Edict, on the contrary, is able to absorb only the souls of creatures that are still alive, and who were unlucky enough to be nearby. Moreover, their life force passes directly to the owner of the Edict.
+fr.text.SoulTome.2=Since it is attacking not the physical shell, but the ethereal incarnation itself, conventional defenses against it are ineffective.<BR/>Most spellbooks are usually more suitable for offence - but this one could be considered an exception. Although it is difficult to draw a clear and unambiguous line, but still, its effectiveness is above all in positional defense, when you don't need to move around and pursue your target.
+
+fr.name.EldritchSpell=Eldritch Spell
+fr.tag.EldritchSpell=Eldritch Guardians won't be delighted
+fr.text.EldritchSpell.1=From the time you first encountered Eldritch Guardians, and experienced the affect of spheres of dark matter, with which they are able to attack their targets - you have been eager to find a way to recreate these spheres, turning their harmful effects against your enemies. Now that you have achieved considerable success in researching eldritch knowledge, this wish was finally granted.<BR/>Eldritch Spell is capable to create such spheres, at the cost of some §8Perditio§0 Vis. Just like ones summoned by Eldritch Guardians, not only they deal significant damage on impact, but also apply a number of negative effects on the affected target.
+fr.text.EldritchSpell.2=Regular armor cannot protect from damage dealt by them.<BR/>Like the Eldritch Guardian themselves, whose attack was “borrowed” by this spell, it has much greater power in the Outer Lands, what makes it an excellent weapon for long expeditions to this not very friendly dimension.
+
+fr.name.CrimsonSpell=Crimson Spell
+fr.tag.CrimsonSpell=Defeating the enemies with their own weapon
+fr.text.CrimsonSpell.1=Although the Crimson Cult never was a truly dangerous adversary for you, something in their means of offence still attracted your attention - namely, the orbs of hostile energy that magicians of the Cult can create. Being the most effective of their attacks, these orbs are able to aim at their targets and pursue it, until reaching a collision, during which a powerful energy discharge which causes the main damage is released.<BR/>Although these orbs move rather slowly and don't possess great maneuverability, which often cause them to collide with obstacles on the way to their target, they are exceptionally stable - which allows
+fr.text.CrimsonSpell.2=to infuse them with much more energy than other magic projectiles.<BR/>Taking the unusual magic used by the Cult as a basis, and modifying it in such a way that it could draw energy from your wands, you created this relic - the Crimson Spell. It is capable of creating orbs similar to those of the crimson magicians, but having a much greater destructive power. The drawbacks, however, have not gone anywhere - just like the original orbs, they don't possess high speed or maneuverability.<BR/>However, since vector of their movement directly depends on target's position and initial direction set by your sight, you could calculate the trajectory of their movement with millimeter accuracy...
+fr.text.CrimsonSpell.3=If, of course, you have a ruler, a goniometer, a little bit of time and agreement of your target to quietly stand in place while you perform calculations.
+
+fr.name.NuclearFury=Nuclear Fury
+fr.tag.NuclearFury=Not really nuclear, but still quite furious
+fr.text.NuclearFury.1=Although in fact, this relic is an ideological inheritor of Rod of the Unstable Reservoid, at first glance they have incredibly little in common. This is the direct (and quite successful) result of attempts to combine the convenient and controllable nature of this rod with the destructive power of Tome of Primal Chaos.<BR/>The very idea of such experiment seemed incredibly insane, but the power of Primordial Pearl allowed you to harness unstable energies, combining them accordingly to your design.<BR/>The resulting relic is capable to create huge amounts of charges, that
+fr.text.NuclearFury.2=resemble Orbs of Primal Energy - but unlike them, their behavior is way more controllable and predictable. These charges immediately aim at any living beings in large radius (excluding you, of course), dealing significant damage on contact. If there's no targets nearby, they just move chaotically through space, dissipating after some time.<BR/>It should be noted, that an important feature of these charges is their etheric nature - because of which, they are able to freely pass through most solid objects, like through an empty space.<BR/>However, this imposes certain restrictions, disallowing to infuse them with greater amounts of energy to increase damage dealt - 
+fr.text.NuclearFury.3=otherwise, they will simply lose their stability, and either dissipate or behave too unpredictable.
+
+fr.name.LunarFlares=Tome of Lunar Flares
+fr.tag.LunarFlares=Cloudy with a chance of "OH GODS WE ALL WILL DIE"
+fr.text.LunarFlares.1=You haven't heard a single legend about this relic, which, given its truly enormous power, seems incredibly strange. In this regard, you assume that perhaps you have managed to create something truly unique... Or, something originated from entirely different world.<BR/>Tome of Lunar Flares allows you to rain devastating lunar flares down on your enemies, sweeping away everything in your path.<BR/>Huge damage and wide area of impact makes it a perfect weapon for confronting numerically superior enemy forces, especially in open areas, with an average distance to the targets.
+fr.text.LunarFlares.2=Though this tome consumes a huge amount of Vis, it is quite reasonable price for an incredible destructive power.<BR/>It rightfully takes the place of one of the most powerful relics - not only among ones discovered by you, but among all that ever came to existence.
+
+fr.name.Apotheosis=The Apotheosis
+fr.tag.Apotheosis=Where is your god now?..
+fr.text.Apotheosis.1=Key of the King's Law rightfully takes the place of one of the most powerful relics in history. A lot of legends were made about it and its power ... What made your mind languish from anticipation and the desire to finally get this relic in your hands.<BR/>Needless to say, what a great disappointment you experienced after the first tests. With its many flaws, this key was not very convenient for use in most cases, and its destructive power is hardly close to what you've expected to see.<BR/>Apotheosis is the result of long and meticulous attempts to give a better life to this relic. This discovery 
+fr.text.Apotheosis.2=required a tremendous amount of time to be made - but this is justified by the fact that any mortal, including you, can only possess one incarnation of the Key of the King's Law... And therefore, you didn't have the right to make a mistake.<BR/>Now, however, it is safe to say that the result exceeded all expectations. Having absorbed the magic underlying the functioning of the Key, Apotheosis significantly alters and increases it. As a result, there is some functional differences from the original. Weapons summoned by Apotheosis possess much greater destructive power - but this power only affects living beings, ignoring inanimate objects. Besides this, Apotheosis continuously summons them while using, automatically launching in the direction of sight after a few 
+fr.text.Apotheosis.3=moments - unlike the Key of the King's Law, the use of which can be conditionally divided into summoning and launch phase.<BR/>As a result, Apotheosis is capable to bring down on your enemies a continious stream of projectiles, each of which has enough power to instantly destroy most potential targets. Without a doubt, this relic alone will be enough to destroy an entire army in a deal of few minutes.<BR/>Legends will be made about it's uncontainable power... And you will be the hero of the first of them.
+fr.text.Apotheosis.4= 
+
+fr.name.FalseJustice=False Justice
+fr.tag.FalseJustice=The Divine Comedy
+fr.text.FalseJustice.1=...you saw it in one of your long-forgotten dreams. Then you didn’t know that it was more than just a dream, but some of the details strongly crashed into the memory, as if knowing about their destiny.<BR/>You have seen gods were slain by the mortals, who were fortunate enough to possess it. This picture was both terrifying and exciting - you knew that this was a crime against the laws of reality, but the possibility of breaking them never before was so magnificent.<BR/>You observed as the weakest gained monstrous power, and the hunters were hunted. This relic changed the natural order of things in any world
+fr.text.FalseJustice.2=into which it fell, but sooner or later it became a nightmare for everyone without exception.<BR/>The idea of it's recreation was both insane and attractive... Eventually, it became insanely attractive. At some point you have discovered that you are no longer able to resist this attraction. It seemed that the mind left you, obeying the destiny defined long before you were born. It was like the symbols were born from under your feather without even your participation, when you were working on this research.<BR/>And you have succeeded. Now you know how to recreate it... There's only one, last step to take - to do it.

@@ -1,0 +1,31 @@
+{
+  "sound.discharge": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "specific/discharge",
+        "stream": false
+      }
+    ]
+  },
+  
+  "sound.lunarFlare": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "specific/lunarFlare",
+        "stream": false
+      }
+    ]
+  },
+  
+  "sound.starfall": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "specific/starfall",
+        "stream": false
+      }
+    ]
+  }
+}
