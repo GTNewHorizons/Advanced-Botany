@@ -39,7 +39,6 @@ import ab.common.block.tile.TileLebethronCore;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.ItemCraftingPattern;
 import cpw.mods.fml.common.registry.GameRegistry;
-// import mcp.mobius.waila.addons.enderio.EnderIOModule;
 import gregtech.api.enums.ToolDictNames;
 
 public class RecipeListAB {
@@ -640,7 +639,6 @@ public class RecipeListAB {
                 new ItemStack(ItemListAB.itemNebulaHelmReveal),
                 new Object[] { new ItemStack(ItemListAB.itemNebulaHelm), new ItemStack(ConfigItems.itemGoggles) });
 
-
         if (ConfigABHandler.hasAutoThaum) {
             List<IRecipe> recipes = new ArrayList<IRecipe>();
             for (int i = 1; i < 10; i++) {
@@ -679,22 +677,22 @@ public class RecipeListAB {
                             BotaniaAPI.internalHandler.craftingRecipePage(".craft0", getLastRecipe()),
                             BotaniaAPI.internalHandler.craftingRecipesPage(".craft1", recipes) });
 
-        // Mana flower recipe
-        GameRegistry.addShapedRecipe(
-                new ItemStack(ItemListAB.itemManaFlower),
-                new Object[] { " F ", "PMP", " R ", Character.valueOf('T'),
-                        new ItemStack(BlockListAB.blockABStorage, 1, 6), Character.valueOf('F'),
-                        new ItemStack(ItemListAB.itemABResource, 1, 4), Character.valueOf('P'),
-                        new ItemStack(ConfigItems.itemEldritchObject, 1, 3), Character.valueOf('M'),
-                        new ItemStack(ModItems.manaBottle), Character.valueOf('R'),
-                        new ItemStack(ModItems.rune, 1, 8) });
-        manaFlower = new BLexiconEntry("manaFlower", categoryForgotten);
-        manaFlower.setKnowledgeType(forgotten)
-                .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                new AlphirineCraftPage(manaFlower, manaFlowerRecipe.getOutput(), ".alphirineCraft"),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
-                .setIcon(new ItemStack(ItemListAB.itemManaFlower));
+            // Mana flower recipe
+            GameRegistry.addShapedRecipe(
+                    new ItemStack(ItemListAB.itemManaFlower),
+                    new Object[] { " F ", "PMP", " R ", Character.valueOf('T'),
+                            new ItemStack(BlockListAB.blockABStorage, 1, 6), Character.valueOf('F'),
+                            new ItemStack(ItemListAB.itemABResource, 1, 4), Character.valueOf('P'),
+                            new ItemStack(ConfigItems.itemEldritchObject, 1, 3), Character.valueOf('M'),
+                            new ItemStack(ModItems.manaBottle), Character.valueOf('R'),
+                            new ItemStack(ModItems.rune, 1, 8) });
+            manaFlower = new BLexiconEntry("manaFlower", categoryForgotten);
+            manaFlower.setKnowledgeType(forgotten)
+                    .setLexiconPages(
+                            new LexiconPage[] { new PageText("0"),
+                                    new AlphirineCraftPage(manaFlower, manaFlowerRecipe.getOutput(), ".alphirineCraft"),
+                                    BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+                    .setIcon(new ItemStack(ItemListAB.itemManaFlower));
         }
 
         // Pure Gladiolus recipe
