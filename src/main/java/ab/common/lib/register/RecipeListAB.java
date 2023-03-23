@@ -142,7 +142,7 @@ public class RecipeListAB {
                 new ItemStack(ItemListAB.itemABResource, 1, 0),
                 new ItemStack(ModItems.manaResource, 1, 14),
                 new ItemStack(ModBlocks.storage, 1, 0),
-                new ItemStack(ModItems.storage, 1, 1),
+                new ItemStack(ModBlocks.storage, 1, 1),
                 2500000,
                 0x25d6b7);
         terrasteelRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
@@ -163,14 +163,14 @@ public class RecipeListAB {
                 new ItemStack(ItemListAB.itemABResource, 1, 5),
                 new ItemStack(ModItems.rainbowRod),
                 new ItemStack(ModBlocks.storage, 1, 4),
-                new ItemStack(ItemListAB.blockABStorage, 1, 0),
+                new ItemStack(BlockListAB.blockABStorage, 1, 0),
                 25000000,
                 0x8d16e0);
         terrasteelBlockRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
-                new ItemStack(ModItems.storage, 1, 1),
+                new ItemStack(ModBlocks.storage, 1, 1),
                 new ItemStack(ModItems.rune, 1, 8),
-                new ItemStack(ModItems.storage, 1, 0),
-                new ItemStack(ModItems.storage, 1, 3),
+                new ItemStack(ModBlocks.storage, 1, 0),
+                new ItemStack(ModBlocks.storage, 1, 3),
                 4500000,
                 0x29de21);
 
@@ -371,9 +371,9 @@ public class RecipeListAB {
         GameRegistry.addShapedRecipe(
                 new ItemStack(ItemListAB.itemManaFlower),
                 new Object[] { " F ", "PMP", " R ", Character.valueOf('T'),
-                        new ItemStack(ItemListAB.blockABStorage, 1, 6), Character.valueOf('F'),
+                        new ItemStack(BlockListAB.blockABStorage, 1, 6), Character.valueOf('F'),
                         new ItemStack(ItemListAB.itemABResource, 1, 4), Character.valueOf('P'),
-                        new ItemStack(thaumcraft.ItemEldritchObject, 1, 3), Character.valueOf('M'),
+                        new ItemStack(ConfigItems.itemEldritchObject, 1, 3), Character.valueOf('M'),
                         new ItemStack(ModItems.manaBottle), Character.valueOf('R'),
                         new ItemStack(ModItems.rune, 1, 8) });
         manaFlower = new BLexiconEntry("manaFlower", categoryForgotten);
@@ -478,7 +478,7 @@ public class RecipeListAB {
                 new Object[] { "RNR", "NHN", " E ", Character.valueOf('N'),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), Character.valueOf('R'),
                         new ItemStack(ModItems.manaResource, 1, 7), Character.valueOf('H'),
-                        new ItemStack(ModItems.elementiumlHelm), Character.valueOf('E'),
+                        new ItemStack(ModItems.elementiumHelm), Character.valueOf('E'),
                         new ItemStack(ModItems.manaResource, 1, 8) });
         IRecipe nHelm = getLastRecipe();
         GameRegistry.addShapedRecipe(
@@ -682,7 +682,7 @@ public class RecipeListAB {
                             new ItemStack(ConfigItems.itemResource, 1, 14), Character.valueOf('T'),
                             new ItemStack(ConfigItems.itemResource, 1, 7), Character.valueOf('C'),
                             new ItemStack(ModBlocks.openCrate, 1, 1), Character.valueOf('G'),
-                            new ItemStack(ToolDictNames.craftingToolScrewdriver) });
+                            (ToolDictNames.craftingToolScrewdriver.name()) });
             addShapelessOreDictRecipe(
                     new ItemStack(ItemListAB.itemCraftingPattern, 48),
                     new Object[] { new ItemStack(Blocks.crafting_table), new ItemStack(ModBlocks.livingrock),
