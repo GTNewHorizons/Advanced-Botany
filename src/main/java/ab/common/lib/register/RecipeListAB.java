@@ -12,10 +12,10 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import thaumcraft.*;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import vazkii.*;
-import thaumcraft.*;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.KnowledgeType;
 import vazkii.botania.api.lexicon.LexiconCategory;
@@ -660,7 +660,7 @@ public class RecipeListAB {
             }
 
             // Thaumic crafty crate recipe
-        IRecipe crate = GameRegistry.addShapedRecipe(
+            IRecipe crate = GameRegistry.addShapedRecipe(
                     new ItemStack(BlockListAB.blockMagicCraftCrate),
                     new Object[] { "TST", "WCW", "WGW", Character.valueOf('W'),
                             new ItemStack(ConfigBlocks.blockMagicalLog), Character.valueOf('S'),
@@ -668,7 +668,7 @@ public class RecipeListAB {
                             new ItemStack(ConfigItems.itemResource, 1, 7), Character.valueOf('C'),
                             new ItemStack(ModBlocks.openCrate, 1, 1), Character.valueOf('G'),
                             (ToolDictNames.craftingToolScrewdriver.name()) });
-                            
+
             addShapelessOreDictRecipe(
                     new ItemStack(ItemListAB.itemCraftingPattern, 48),
                     new Object[] { new ItemStack(Blocks.crafting_table), new ItemStack(ModBlocks.livingrock),
