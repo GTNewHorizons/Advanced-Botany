@@ -14,4 +14,18 @@
   "screenshots": [],
   "dependencies": [Botania]
 }
+{
+  "modid": "ForgottenRelics",
+  "name": "Forgotten Relics",
+  "description": "...or Grand Theft Texture VII. You face an addon to Thaumcraft 4 and Botania, that adds tools and accesories, generally oriented on expansion of mid- and end-game content, offering you weapons of unmatched power. It all mostly goes to Thaumcraft side, but some relics are supposed to be a logical inheritors of Botania's things. There's also a variety of stuff inspired by and based on Terraria and Terraria's mods, especially Calamity and Thorium.",
+  "version": "1.1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Integral"],
+  "credits": "The Dreamfinity project.",
+  "logoFile": "Omega_Core.png",
+  "screenshots": [],
+  "dependencies": []
+}
 ]
