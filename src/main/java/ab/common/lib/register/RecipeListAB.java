@@ -683,12 +683,13 @@ public class RecipeListAB {
             // Mana flower recipe
             GameRegistry.addShapedRecipe(
                     new ItemStack(ItemListAB.itemManaFlower),
-                    new Object[] { " F ", "PMP", " R ", Character.valueOf('T'),
+                    new Object[] { "NFN", "PMP", "NRN", Character.valueOf('T'),
                             new ItemStack(BlockListAB.blockABStorage, 1, 6), Character.valueOf('F'),
                             new ItemStack(ItemListAB.itemABResource, 1, 4), Character.valueOf('P'),
                             new ItemStack(ConfigItems.itemEldritchObject, 1, 3), Character.valueOf('M'),
                             new ItemStack(ModItems.manaBottle), Character.valueOf('R'),
-                            new ItemStack(ModItems.rune, 1, 8) });
+                            new ItemStack(ModItems.rune, 1, 8), Character.valueOf('N'),
+                            new ItemStack(ItemListAB.itemABResource, 1, 1) });
             manaFlower = new BLexiconEntry("manaFlower", categoryForgotten);
             manaFlower.setKnowledgeType(forgotten)
                     .setLexiconPages(
