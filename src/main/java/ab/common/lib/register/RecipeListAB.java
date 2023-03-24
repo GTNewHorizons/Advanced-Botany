@@ -41,7 +41,6 @@ import ab.common.block.tile.TileLebethronCore;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.ItemCraftingPattern;
 import cpw.mods.fml.common.registry.GameRegistry;
-import gregtech.api.enums.ToolDictNames;
 
 public class RecipeListAB {
 
@@ -662,12 +661,13 @@ public class RecipeListAB {
             // Thaumic crafty crate recipe
             IRecipe crate = GameRegistry.addShapedRecipe(
                     new ItemStack(BlockListAB.blockMagicCraftCrate),
-                    new Object[] { "TST", "WCW", "WGW", Character.valueOf('W'),
+                    new Object[] { "TST", "WCW", "W W", Character.valueOf('W'),
                             new ItemStack(ConfigBlocks.blockMagicalLog), Character.valueOf('S'),
                             new ItemStack(ConfigItems.itemResource, 1, 14), Character.valueOf('T'),
                             new ItemStack(ConfigItems.itemResource, 1, 7), Character.valueOf('C'),
-                            new ItemStack(ModBlocks.openCrate, 1, 1), Character.valueOf('G'),
-                            (ToolDictNames.craftingToolScrewdriver.name()) });
+                            new ItemStack(ModBlocks.openCrate, 1, 1)
+                    // ,Character.valueOf('G'), (ToolDictNames.craftingToolScrewdriver.name())
+                    });
 
             addShapelessOreDictRecipe(
                     new ItemStack(ItemListAB.itemCraftingPattern, 48),
