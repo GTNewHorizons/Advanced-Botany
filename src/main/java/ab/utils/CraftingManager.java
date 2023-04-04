@@ -1,4 +1,4 @@
-package ab.common.utils;
+package ab.utils;
 
 public class CraftingManager {
 

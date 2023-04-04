@@ -1,4 +1,4 @@
-package ab.common.utils;
+package ab.utils;
 
 import ab.common.lib.register.RecipeListAB;
 

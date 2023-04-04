@@ -3,7 +3,6 @@ package ab.common.lib.register;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.fuzzycraft.botanichorizons.util.OreDict;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -53,9 +52,10 @@ import ab.api.recipe.lexicon.AlphirineCraftPage;
 import ab.common.block.tile.TileLebethronCore;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.ItemCraftingPattern;
-import ab.common.utils.*;
-import ab.common.utils.LocalizationManager;
-import ab.common.utils.VersionInfo;
+import ab.utils.*;
+import ab.utils.LocalizationManager;
+import ab.utils.OreDict;
+import ab.utils.VersionInfo;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeListAB implements IModHelper {
