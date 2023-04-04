@@ -3,16 +3,28 @@ package ab.common.lib.register;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.fuzzycraft.botanichorizons.util.OreDict;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import thaumcraft.*;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.InfusionRecipe;
+import thaumcraft.api.research.*;
+import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchItem;
+import thaumcraft.api.research.ResearchPage;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import vazkii.*;
@@ -32,6 +44,7 @@ import vazkii.botania.common.lexicon.BLexiconEntry;
 import vazkii.botania.common.lexicon.RLexiconEntry;
 import vazkii.botania.common.lexicon.page.PageImage;
 import vazkii.botania.common.lexicon.page.PageText;
+import vazkii.botania.common.lib.LibOreDict;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAdvancedPlate;
 import ab.api.recipe.RecipeAncientAlphirine;
@@ -40,9 +53,14 @@ import ab.api.recipe.lexicon.AlphirineCraftPage;
 import ab.common.block.tile.TileLebethronCore;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.ItemCraftingPattern;
+import ab.common.utils.*;
+import ab.common.utils.LocalizationManager;
+import ab.common.utils.VersionInfo;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class RecipeListAB {
+public class RecipeListAB implements IModHelper {
+
+    @SuppressWarnings("unused")
 
     public static LexiconCategory categoryForgotten;
 
@@ -99,10 +117,33 @@ public class RecipeListAB {
     public static LexiconEntry azartFlower;
     public static LexiconEntry aquaSword;
 
+    public static ResearchPage TerraHoePages;
+
     public static KnowledgeType forgotten;
 
-    public static void init() {
+    public static final String Name = "Thaumcraft";
+
+    public void preInit() {}
+
+    public void postInit() {
+        setupItemAspects();
+        setupCrafting();
+        setupResearch();
+    }
+
+    public static InfusionRecipe TerraHoe;
+    public static InfusionRecipe AquaSword;
+    public static InfusionRecipe ManaCharger;
+    public static InfusionRecipe MithrillSword;
+    public static InfusionRecipe Forge;
+    public static InfusionRecipe Destroyer;
+
+    public static void setupCrafting() {
+
+        // public static void init() {
         relicInit();
+        // getBlocks();
+        // getItems();
 
         BotaniaAPI.addCategory(categoryForgotten = new BLexiconCategory("forgotten", 5));
         forgotten = BotaniaAPI.registerKnowledgeType("ab_forgotten", EnumChatFormatting.BLUE, false);
@@ -244,16 +285,18 @@ public class RecipeListAB {
                 new ItemStack(BlockListAB.blockLebethron, 1, 2),
                 new Object[] { new ItemStack(BlockListAB.blockLebethron, 1, 1), new ItemStack(Items.wheat_seeds) });
         IRecipe leb2 = getLastRecipe();
-        addShapelessOreDictRecipe(
-                new ItemStack(BlockListAB.blockLebethron, 1, 3),
-                new Object[] { new ItemStack(BlockListAB.blockLebethron), new ItemStack(Items.glowstone_dust) });
+        GameRegistry.addShapedRecipe(
+                new ItemStack(BlockListAB.blockLebethron, 4, 3),
+                new Object[] { "SLS", "LEL", "SLS", Character.valueOf('S'),
+                        OreDictionary.getOres("ingotSteeleaf").get(0), Character.valueOf('E'),
+                        new ItemStack(ModBlocks.pylon), Character.valueOf('L'),
+                        new ItemStack(BlockListAB.blockLebethron, 1, 0) });
         IRecipe leb3 = getLastRecipe();
         GameRegistry.addShapedRecipe(
                 new ItemStack(BlockListAB.blockLebethron, 1, 4),
-
                 // Natural core recipe
                 new Object[] { "4W5", "WPW", "6W7", Character.valueOf('P'), new ItemStack(ModBlocks.pylon, 1, 1),
-                        Character.valueOf('W'), new ItemStack(BlockListAB.blockLebethron), Character.valueOf('4'),
+                        Character.valueOf('W'), new ItemStack(BlockListAB.blockLebethron, 1, 3), Character.valueOf('4'),
                         new ItemStack(ModItems.rune, 1, 4), Character.valueOf('5'), new ItemStack(ModItems.rune, 1, 5),
                         Character.valueOf('6'), new ItemStack(ModItems.rune, 1, 6), Character.valueOf('7'),
                         new ItemStack(ModItems.rune, 1, 7) });
@@ -332,16 +375,9 @@ public class RecipeListAB {
                 .setIcon(new ItemStack(BlockListAB.blockManaCrystalCube));
 
         // Terrahoe recipe
-        GameRegistry.addShapedRecipe(
-                new ItemStack(ItemListAB.itemTerraHoe),
-                new Object[] { "TTL", "RW ", " W ", Character.valueOf('T'), new ItemStack(ModItems.manaResource, 1, 4),
-                        Character.valueOf('L'), new ItemStack(ModItems.manaResource, 1, 18), Character.valueOf('W'),
-                        new ItemStack(ModItems.manaResource, 1, 3), Character.valueOf('R'),
-                        new ItemStack(ModItems.rune, 1, 2) });
+
         terraHoe = new BLexiconEntry("terraHoe", BotaniaAPI.categoryTools);
-        terraHoe.setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+        terraHoe.setLexiconPages(new LexiconPage[] { new PageText("0"), })
                 .setIcon(new ItemStack(ItemListAB.itemTerraHoe));
 
         // Mithrill recipe
@@ -617,6 +653,138 @@ public class RecipeListAB {
                 new ItemStack(ItemListAB.itemABResource, 1, 5),
                 new Object[] { "III", "III", "III", Character.valueOf('I'),
                         new ItemStack(ItemListAB.itemABResource, 1, 6) });
+
+        TerraHoe = ThaumcraftApi.addInfusionCraftingRecipe(
+                "TerraHoe",
+                // GameRegistry.addShapedRecipe()
+                new ItemStack(ItemListAB.itemTerraHoe),
+                5,
+                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
+                        .add(Aspect.CROP, 16),
+                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
+                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3) });
+
+        AquaSword = ThaumcraftApi.addInfusionCraftingRecipe(
+                "AquaSword",
+                // GameRegistry.addShapedRecipe()
+                new ItemStack(ItemListAB.itemAquaSword),
+                5,
+                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
+                        .add(Aspect.CROP, 16),
+                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
+                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3) });
+
+        ManaCharger = ThaumcraftApi.addInfusionCraftingRecipe(
+                "ManaCharger",
+                // GameRegistry.addShapedRecipe()
+                new ItemStack(BlockListAB.blockManaCharger),
+                5,
+                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
+                        .add(Aspect.CROP, 16),
+                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
+                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3) });
+
+        MithrillSword = ThaumcraftApi.addInfusionCraftingRecipe(
+                "MithrillSword",
+                // GameRegistry.addShapedRecipe()
+                new ItemStack(ItemListAB.itemMithrillSword),
+                5,
+                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
+                        .add(Aspect.CROP, 16),
+                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
+                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3) });
+
+        Forge = ThaumcraftApi.addInfusionCraftingRecipe(
+                "Forge",
+                // GameRegistry.addShapedRecipe()
+                new ItemStack(BlockListAB.blockABPlate),
+                5,
+                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
+                        .add(Aspect.CROP, 16),
+                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
+                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3) });
+
+        Destroyer = ThaumcraftApi.addInfusionCraftingRecipe(
+                "Destroyer",
+                // GameRegistry.addShapedRecipe()
+                new ItemStack(ItemListAB.itemMihrillMultiTool),
+                5,
+                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
+                        .add(Aspect.CROP, 16),
+                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
+                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
+                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
+                        new ItemStack(ModItems.manaResource, 1, 3) });
     }
 
     // Aspecolus recipe
@@ -746,4 +914,129 @@ public class RecipeListAB {
     private static void addShapelessOreDictRecipe(ItemStack output, Object... recipe) {
         CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(output, recipe));
     }
+
+    public static void setupResearch() {
+        String category = "AB_botania";
+        ResearchCategories.registerCategory(
+                category,
+                new ResourceLocation(VersionInfo.ModID, "textures/gui/categories/forgotten.png"),
+                new ResourceLocation(VersionInfo.ModID, "textures/gui/categories/ABstars.png"));
+
+        ResearchItem TerraHoePage;
+        ResearchPage TerraHoePages;
+
+        ResearchItem AquaSwordPage;
+        ResearchPage AquaSwordPages;
+
+        ResearchItem ManaChargerPage;
+        ResearchPage ManaChargerPages;
+
+        ResearchItem MithrillSwordPage;
+        ResearchPage MithrillSwordPages;
+
+        ResearchItem ForgePage;
+        ResearchPage ForgePages;
+
+        ResearchItem DestroyerPage;
+        ResearchPage DestroyerPages;
+
+        TerraHoePage = new ResearchItem(
+                "TerraHoe",
+                category,
+                new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
+                        .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
+                0,
+                1,
+                0,
+                new ItemStack(ItemListAB.itemTerraHoe));
+
+        TerraHoePages = new ResearchPage("TerraHoePages");
+
+        AquaSwordPage = new ResearchItem(
+                "AquaSword",
+                category,
+                new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
+                        .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
+                0,
+                2,
+                0,
+                new ItemStack(ItemListAB.itemAquaSword));
+
+        AquaSwordPages = new ResearchPage("AquaSwordPages");
+
+        ManaChargerPage = new ResearchItem(
+                "ManaCharger",
+                category,
+                new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
+                        .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
+                0,
+                3,
+                0,
+                new ItemStack(BlockListAB.blockManaCharger));
+
+        ManaChargerPages = new ResearchPage("ManaChargerPages");
+
+        MithrillSwordPage = new ResearchItem(
+                "MithrillSword",
+                category,
+                new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
+                        .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
+                0,
+                4,
+                0,
+                new ItemStack(ItemListAB.itemMithrillSword));
+
+        MithrillSwordPages = new ResearchPage("MithrillSwordPages");
+
+        ForgePage = new ResearchItem(
+                "Forge",
+                category,
+                new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
+                        .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
+                0,
+                5,
+                0,
+                new ItemStack(BlockListAB.blockABPlate));
+
+        ForgePages = new ResearchPage("ForgePages");
+
+        DestroyerPage = new ResearchItem(
+                "Destroyer",
+                category,
+                new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
+                        .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
+                0,
+                6,
+                0,
+                new ItemStack(ItemListAB.itemMihrillMultiTool));
+
+        DestroyerPages = new ResearchPage("DestroyerPages");
+
+        TerraHoePage.setPages(TerraHoePages);
+        AquaSwordPage.setPages(AquaSwordPages);
+        ManaChargerPage.setPages(ManaChargerPages);
+        MithrillSwordPage.setPages(MithrillSwordPages);
+        ForgePage.setPages(ForgePages);
+        DestroyerPage.setPages(DestroyerPages);
+
+        TerraHoePage.setParents("TERRASTEEL");
+        AquaSwordPage.setParents("TERRASTEEL");
+        ManaChargerPage.setParents("TERRASTEEL");
+        MithrillSwordPage.setParents("AquaSword");
+        ForgePage.setParents("TERRASTEEL");
+        DestroyerPage.setParents("TERRASTEEL", "Forge");
+
+        ResearchCategories.addResearch(TerraHoePage);
+        ResearchCategories.addResearch(AquaSwordPage);
+        ResearchCategories.addResearch(ManaChargerPage);
+        ResearchCategories.addResearch(MithrillSwordPage);
+        ResearchCategories.addResearch(ForgePage);
+        ResearchCategories.addResearch(DestroyerPage);
+    }
+
+    public static ResearchPage getResearchPage(String ident) {
+        return new ResearchPage(LocalizationManager.getLocalizedString("tc.research_page." + ident));
+    }
+
+    public static void setupItemAspects() {}
 }
