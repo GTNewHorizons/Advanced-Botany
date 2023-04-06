@@ -947,21 +947,27 @@ public class RecipeListAB implements IModHelper {
 
         ResearchItem TerraHoePage;
         ResearchPage TerraHoePages;
+        ResearchPage infTerraHoePages;
 
         ResearchItem AquaSwordPage;
         ResearchPage AquaSwordPages;
+        ResearchPage infAquaSwordPages;
 
         ResearchItem ManaChargerPage;
         ResearchPage ManaChargerPages;
+        ResearchPage infManaChargerPages;
 
         ResearchItem MithrillSwordPage;
         ResearchPage MithrillSwordPages;
+        ResearchPage infMithrillSwordPages;
 
         ResearchItem ForgePage;
         ResearchPage ForgePages;
+        ResearchPage infForgePages;
 
         ResearchItem DestroyerPage;
         ResearchPage DestroyerPages;
+        ResearchPage infDestroyerPages;
 
         TerraHoePage = new ResearchItem(
                 "TerraHoe",
@@ -974,6 +980,7 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ItemListAB.itemTerraHoe));
 
         TerraHoePages = new ResearchPage("TerraHoePages");
+        infTerraHoePages = new ResearchPage(TerraHoe);
 
         AquaSwordPage = new ResearchItem(
                 "AquaSword",
@@ -986,6 +993,7 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ItemListAB.itemAquaSword));
 
         AquaSwordPages = new ResearchPage("AquaSwordPages");
+        infAquaSwordPages = new ResearchPage(AquaSword);
 
         ManaChargerPage = new ResearchItem(
                 "ManaCharger",
@@ -998,6 +1006,7 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(BlockListAB.blockManaCharger));
 
         ManaChargerPages = new ResearchPage("ManaChargerPages");
+        infManaChargerPages = new ResearchPage(ManaCharger);
 
         MithrillSwordPage = new ResearchItem(
                 "MithrillSword",
@@ -1010,6 +1019,7 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ItemListAB.itemMithrillSword));
 
         MithrillSwordPages = new ResearchPage("MithrillSwordPages");
+        infMithrillSwordPages = new ResearchPage(MithrillSword);
 
         ForgePage = new ResearchItem(
                 "Forge",
@@ -1022,6 +1032,7 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(BlockListAB.blockABPlate));
 
         ForgePages = new ResearchPage("ForgePages");
+        infForgePages = new ResearchPage(Forge);
 
         DestroyerPage = new ResearchItem(
                 "Destroyer",
@@ -1034,13 +1045,14 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ItemListAB.itemMihrillMultiTool));
 
         DestroyerPages = new ResearchPage("DestroyerPages");
+        infDestroyerPages = new ResearchPage(Destroyer);
 
-        TerraHoePage.setPages(TerraHoePages);
-        AquaSwordPage.setPages(AquaSwordPages);
-        ManaChargerPage.setPages(ManaChargerPages);
-        MithrillSwordPage.setPages(MithrillSwordPages);
-        ForgePage.setPages(ForgePages);
-        DestroyerPage.setPages(DestroyerPages);
+        TerraHoePage.setPages(TerraHoePages, infTerraHoePages);
+        AquaSwordPage.setPages(AquaSwordPages, infAquaSwordPages);
+        ManaChargerPage.setPages(ManaChargerPages, infManaChargerPages);
+        MithrillSwordPage.setPages(MithrillSwordPages, infMithrillSwordPages);
+        ForgePage.setPages(ForgePages, infForgePages);
+        DestroyerPage.setPages(DestroyerPages, infDestroyerPages);
 
         TerraHoePage.setParents("ELEMENTALHOE");
         AquaSwordPage.setParents("Forge");
