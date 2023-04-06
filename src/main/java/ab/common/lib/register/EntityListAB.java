@@ -7,7 +7,6 @@ import ab.common.entity.EntityManaVine;
 import ab.common.entity.EntityNebulaBlaze;
 import ab.common.entity.EntitySeed;
 import ab.common.entity.EntitySword;
-import ab.utils.*;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class EntityListAB {

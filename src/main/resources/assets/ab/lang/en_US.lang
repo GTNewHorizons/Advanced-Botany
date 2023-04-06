@@ -120,6 +120,19 @@ ab.sphereNavigation.founded=Found
 abmisc.fateBoard.info0=The opportunity to play on this board, he dreamed of 
 abmisc.fateBoard.info1=every Elf, hoping to get a valuable prize...
 
+//THAUMCRAFT
+
+tc.research_category.AdvancedBotany=Advanced Botany
+tc.research_category.AB_botania=Advanced Botany
+tc.research_name.TerraHoe=Terra Hoe
+tc.research_name.AquaSword=Blade of sea
+tc.research_name.ManaCharger=Mana Charger
+tc.research_name.MithrillSword=Blade of Space
+tc.research_name.Forge=Forge of Nidavellir
+tc.research_name.Destroyer=Material Destroyer
+
+
+
 //ACHIEVEMENT
 
 achievement.ab:fateBoard=Playing with fate

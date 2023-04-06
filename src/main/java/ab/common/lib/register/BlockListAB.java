@@ -30,7 +30,6 @@ import ab.common.block.tile.TileNidavellirForge;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.block.ItemBlockBase;
 import ab.common.item.block.ItemBlockBoard;
-import ab.utils.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockListAB {

@@ -16,7 +16,6 @@ import ab.common.item.relic.ItemHornPlenty;
 import ab.common.item.relic.ItemPocketWardrobe;
 import ab.common.item.relic.ItemSphereNavigation;
 import ab.common.item.relic.ItemTalismanHiddenRiches;
-import ab.utils.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemListAB {

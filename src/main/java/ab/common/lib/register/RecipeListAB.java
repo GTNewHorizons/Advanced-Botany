@@ -55,7 +55,6 @@ import ab.common.item.ItemCraftingPattern;
 import ab.utils.*;
 import ab.utils.LocalizationManager;
 import ab.utils.OreDict;
-import ab.utils.VersionInfo;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeListAB implements IModHelper {
@@ -919,8 +918,8 @@ public class RecipeListAB implements IModHelper {
         String category = "AB_botania";
         ResearchCategories.registerCategory(
                 category,
-                new ResourceLocation(VersionInfo.ModID, "textures/gui/categories/forgotten.png"),
-                new ResourceLocation(VersionInfo.ModID, "textures/gui/categories/ABstars.png"));
+                new ResourceLocation("botania", "textures/gui/categories/forgotten.png"),
+                new ResourceLocation("botania", "textures/gui/categories/ABstars.png"));
 
         ResearchItem TerraHoePage;
         ResearchPage TerraHoePages;
@@ -1019,12 +1018,12 @@ public class RecipeListAB implements IModHelper {
         ForgePage.setPages(ForgePages);
         DestroyerPage.setPages(DestroyerPages);
 
-        TerraHoePage.setParents("TERRASTEEL");
-        AquaSwordPage.setParents("TERRASTEEL");
-        ManaChargerPage.setParents("TERRASTEEL");
+        // TerraHoePage.setParents("TERRASTEEL");
+        // AquaSwordPage.setParents("TERRASTEEL");
+        // ManaChargerPage.setParents("TERRASTEEL");
         MithrillSwordPage.setParents("AquaSword");
-        ForgePage.setParents("TERRASTEEL");
-        DestroyerPage.setParents("TERRASTEEL", "Forge");
+        // ForgePage.setParents("TERRASTEEL");
+        DestroyerPage.setParents("Forge");
 
         ResearchCategories.addResearch(TerraHoePage);
         ResearchCategories.addResearch(AquaSwordPage);
