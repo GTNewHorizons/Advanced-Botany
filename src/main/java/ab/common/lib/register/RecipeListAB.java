@@ -75,6 +75,10 @@ public class RecipeListAB implements IModHelper {
     public static RecipeAdvancedPlate terrasteelBlockRecipe;
     public static RecipeAdvancedPlate mithrillRecipe;
     public static RecipeAdvancedPlate nebulaRecipe;
+    public static RecipeAdvancedPlate FlawlessManaDiamondRecipe;
+    public static RecipeAdvancedPlate ExquisiteManaDiamondRecipe;
+    public static RecipeAdvancedPlate FlawlessDragonstoneRecipe;
+    public static RecipeAdvancedPlate ExquisiteDragonstoneRecipe;
 
     public static RecipePetals alphirineRecipe;
     public static RecipePetals dictariusRecipe;
@@ -117,6 +121,11 @@ public class RecipeListAB implements IModHelper {
     public static LexiconEntry aquaSword;
 
     public static ResearchPage TerraHoePages;
+    public static ResearchPage DestroyerPages;
+    public static ResearchPage MithrillSwordPages;
+    public static ResearchPage AquaSwordPages;
+    public static ResearchPage ForgePages;
+    public static ResearchPage ManaChargerPages;
 
     public static KnowledgeType forgotten;
 
@@ -213,7 +222,34 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModBlocks.storage, 1, 3),
                 4500000,
                 0x29de21);
-
+        FlawlessManaDiamondRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
+                OreDictionary.getOres("gemFlawlessManaDiamond").get(0),
+                new ItemStack(ModItems.manaResource, 1, 2),
+                new ItemStack(ModItems.manaResource, 1, 2),
+                new ItemStack(ModItems.manaResource, 1, 2),
+                250000,
+                0x1dab92);
+        ExquisiteManaDiamondRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
+                OreDictionary.getOres("gemExquisiteManaDiamond").get(0),
+                OreDictionary.getOres("gemFlawlessManaDiamond").get(0),
+                OreDictionary.getOres("gemFlawlessManaDiamond").get(0),
+                new ItemStack(ModItems.manaResource, 1, 2),
+                250000,
+                0x1dab92);
+        FlawlessDragonstoneRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
+                OreDictionary.getOres("gemFlawlessBotaniaDragonstone").get(0),
+                new ItemStack(ModItems.manaResource, 1, 9),
+                new ItemStack(ModItems.manaResource, 1, 9),
+                new ItemStack(ModItems.manaResource, 1, 9),
+                300000,
+                0xd6259d);
+        ExquisiteDragonstoneRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
+                OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
+                OreDictionary.getOres("gemFlawlessBotaniaDragonstone").get(0),
+                OreDictionary.getOres("gemFlawlessBotaniaDragonstone").get(0),
+                new ItemStack(ModItems.manaResource, 1, 9),
+                300000,
+                0xd6259d);
         ///////////////////////////////////////////////////////////////////////////////////////// Shaped Recipes
 
         // Ancient alphirine recipe
@@ -239,26 +275,37 @@ public class RecipeListAB implements IModHelper {
                 .setIcon(ItemBlockSpecialFlower.ofType("ancientAlphirine"));
 
         // Forge of Nidavellir recipe
-        GameRegistry.addShapedRecipe(
-                new ItemStack(BlockListAB.blockABPlate),
-                new Object[] { "MPM", " F ", "BRB", Character.valueOf('F'), new ItemStack(Blocks.anvil),
-                        Character.valueOf('M'), new ItemStack(ModBlocks.storage), Character.valueOf('P'),
-                        new ItemStack(ModBlocks.terraPlate), Character.valueOf('B'),
-                        new ItemStack(ItemListAB.itemABResource, 1, 3), Character.valueOf('R'),
-                        new ItemStack(ModItems.rune, 1, 3) });
+
         advandedAgglomerationPlate = new BLexiconEntry("advancedPlate", categoryForgotten);
-        advandedAgglomerationPlate.setPriority().setKnowledgeType(forgotten)
-                .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()),
-                                new AdvancedPlateCraftPage(
-                                        advandedAgglomerationPlate,
-                                        terrasteelRecipe.getOutput(),
-                                        ".abCraft0"),
-                                new AdvancedPlateCraftPage(
-                                        advandedAgglomerationPlate,
-                                        manaStarRecipe.getOutput(),
-                                        ".abCraft1") })
+        advandedAgglomerationPlate.setPriority().setKnowledgeType(forgotten).setLexiconPages(
+                new LexiconPage[] { new PageText("0"),
+                        new AdvancedPlateCraftPage(
+                                advandedAgglomerationPlate,
+                                terrasteelRecipe.getOutput(),
+                                ".abCraft0"),
+                        new AdvancedPlateCraftPage(advandedAgglomerationPlate, manaStarRecipe.getOutput(), ".abCraft0"),
+                        new AdvancedPlateCraftPage(
+                                advandedAgglomerationPlate,
+                                terrasteelBlockRecipe.getOutput(),
+                                ".abCraft0"),
+                        new AdvancedPlateCraftPage(advandedAgglomerationPlate, mithrillRecipe.getOutput(), ".abCraft0"),
+                        new AdvancedPlateCraftPage(advandedAgglomerationPlate, nebulaRecipe.getOutput(), ".abCraft0"),
+                        new AdvancedPlateCraftPage(
+                                advandedAgglomerationPlate,
+                                FlawlessManaDiamondRecipe.getOutput(),
+                                ".abCraft0"),
+                        new AdvancedPlateCraftPage(
+                                advandedAgglomerationPlate,
+                                FlawlessDragonstoneRecipe.getOutput(),
+                                ".abCraft0"),
+                        new AdvancedPlateCraftPage(
+                                advandedAgglomerationPlate,
+                                ExquisiteManaDiamondRecipe.getOutput(),
+                                ".abCraft0"),
+                        new AdvancedPlateCraftPage(
+                                advandedAgglomerationPlate,
+                                ExquisiteDragonstoneRecipe.getOutput(),
+                                ".abCraft1") })
                 .setIcon(new ItemStack(BlockListAB.blockABPlate));
 
         // Natural mana spreader recipe
@@ -314,16 +361,13 @@ public class RecipeListAB implements IModHelper {
                 .setIcon(new ItemStack(BlockListAB.blockLebethron));
 
         // AB Mithrill recipe
-        GameRegistry.addShapedRecipe(
-                new ItemStack(ItemListAB.itemMihrillMultiTool),
-                new Object[] { " MB", " FM", "F  ", Character.valueOf('F'), new ItemStack(ModItems.manaResource, 1, 3),
-                        Character.valueOf('B'), new ItemStack(ModBlocks.livingwood), Character.valueOf('M'),
-                        new ItemStack(ItemListAB.itemABResource) });
+
         mithrill = new BLexiconEntry("mithrill", categoryForgotten);
-        mithrill.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        new AdvancedPlateCraftPage(mithrill, mithrillRecipe.getOutput(), ".abCraft"), new PageText("1"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+        mithrill.setKnowledgeType(forgotten)
+                .setLexiconPages(
+                        new LexiconPage[] { new PageText("0"),
+                                new AdvancedPlateCraftPage(mithrill, mithrillRecipe.getOutput(), ".abCraft"),
+                                new PageText("1"), })
                 .setIcon(new ItemStack(ItemListAB.itemMihrillMultiTool));
 
         // Advanced mana containers recipe
@@ -403,18 +447,10 @@ public class RecipeListAB implements IModHelper {
         AdvancedBotanyAPI.registerFarmlandSeed(Blocks.nether_wart, 3);
 
         // Blade of space recipe
-        GameRegistry.addShapedRecipe(
-                new ItemStack(ItemListAB.itemMithrillSword),
-                new Object[] { "  M", "SM ", "WS ", Character.valueOf('S'),
-                        new ItemStack(ItemListAB.itemABResource, 1, 6), Character.valueOf('T'),
-                        new ItemStack(ModItems.terraSword), Character.valueOf('M'),
-                        new ItemStack(ItemListAB.itemABResource), Character.valueOf('W'),
-                        new ItemStack(ModItems.manaResource, 1, 3) });
+
         mithrillSword = new BLexiconEntry("mithrillSword", categoryForgotten);
         mithrillSword.setKnowledgeType(forgotten)
-                .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"), new PageText("1"),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+                .setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1"), })
                 .setIcon(new ItemStack(ItemListAB.itemMithrillSword));
 
         // Dictarius recipe
@@ -476,17 +512,9 @@ public class RecipeListAB implements IModHelper {
 
         // Mana charger recipe
         if (ConfigABHandler.hasManaCharger) {
-            GameRegistry.addShapedRecipe(
-                    new ItemStack(BlockListAB.blockManaCharger),
-                    new Object[] { "NLN", "MPM", " R ", Character.valueOf('N'),
-                            new ItemStack(ItemListAB.itemABResource, 1, 1), Character.valueOf('L'),
-                            new ItemStack(ModBlocks.livingrock), Character.valueOf('M'),
-                            new ItemStack(ModBlocks.bellows), Character.valueOf('P'), new ItemStack(ModBlocks.pylon),
-                            Character.valueOf('R'), new ItemStack(ModItems.rune, 1, 8) });
+
             manaCharger = new BLexiconEntry("manaCharger", categoryForgotten);
-            manaCharger.setKnowledgeType(forgotten).setLexiconPages(
-                    new LexiconPage[] { new PageText("0"),
-                            BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) });
+            manaCharger.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), });
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////// Nebula set recipes
@@ -621,16 +649,9 @@ public class RecipeListAB implements IModHelper {
                         BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", azartFlowerRecipe) });
 
         // Aqua sword recipe
-        GameRegistry.addShapedRecipe(
-                new ItemStack(ItemListAB.itemAquaSword),
-                new Object[] { "  N", "RM ", "WR ", Character.valueOf('N'),
-                        new ItemStack(ItemListAB.itemABResource, 1, 1), Character.valueOf('M'),
-                        new ItemStack(ItemListAB.itemABResource), Character.valueOf('R'), new ItemStack(ModItems.rune),
-                        Character.valueOf('W'), new ItemStack(ModItems.manaResource, 1, 13) });
+
         aquaSword = new BLexiconEntry("aquaSword", categoryForgotten);
-        aquaSword.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) });
+        aquaSword.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), });
 
         ///////////////////////////////////////////////////////////////////////////////////////// Thaumcraft recipes
 
@@ -655,12 +676,12 @@ public class RecipeListAB implements IModHelper {
 
         TerraHoe = ThaumcraftApi.addInfusionCraftingRecipe(
                 "TerraHoe",
-                // GameRegistry.addShapedRecipe()
+
                 new ItemStack(ItemListAB.itemTerraHoe),
                 5,
                 new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
                         .add(Aspect.CROP, 16),
-                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
+                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:ItemHoeElemental")),
                 new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
                         new ItemStack(ModItems.manaResource, 1, 3),
                         OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
@@ -677,113 +698,116 @@ public class RecipeListAB implements IModHelper {
 
         AquaSword = ThaumcraftApi.addInfusionCraftingRecipe(
                 "AquaSword",
-                // GameRegistry.addShapedRecipe()
+
                 new ItemStack(ItemListAB.itemAquaSword),
-                5,
-                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
-                        .add(Aspect.CROP, 16),
-                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
-                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3) });
+                8,
+                new AspectList().add(Aspect.WEAPON, 64).add(Aspect.EARTH, 64).add(Aspect.WATER, 64)
+                        .add(Aspect.MAGIC, 32).add(Aspect.SLIME, 32).add(Aspect.BEAST, 16),
+                new ItemStack(ModItems.starSword),
+                new ItemStack[] { new ItemStack(ModItems.waterRod), new ItemStack(ItemListAB.itemABResource, 1, 0),
+                        new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ModItems.rune, 1, 0),
+                        new ItemStack(ItemListAB.itemABResource, 1, 6), new ItemStack(ModItems.rune, 1, 3),
+                        new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ModItems.rune, 1, 3),
+                        new ItemStack(ItemListAB.itemABResource, 1, 6), new ItemStack(ModItems.rune, 1, 0),
+                        new ItemStack(ItemListAB.itemABResource, 1, 2),
+                        new ItemStack(ItemListAB.itemABResource, 1, 0) });
 
         ManaCharger = ThaumcraftApi.addInfusionCraftingRecipe(
                 "ManaCharger",
-                // GameRegistry.addShapedRecipe()
+
                 new ItemStack(BlockListAB.blockManaCharger),
-                5,
-                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
-                        .add(Aspect.CROP, 16),
-                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
-                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3) });
+                6,
+                new AspectList().add(Aspect.AIR, 64).add(Aspect.EARTH, 64).add(Aspect.FLIGHT, 64).add(Aspect.WATER, 32)
+                        .add(Aspect.EXCHANGE, 32).add(Aspect.SENSES, 16),
+                new ItemStack(ModBlocks.pylon, 1, 0),
+                new ItemStack[] { new ItemStack(ModFluffBlocks.livingrockSlab), new ItemStack(ModItems.manaTablet),
+                        new ItemStack(ModItems.rune, 1, 4), new ItemStack(ModItems.rune, 1, 8),
+                        new ItemStack(ModBlocks.bellows), new ItemStack(ModFluffBlocks.livingrockSlab),
+                        new ItemStack(ModItems.manaTablet), new ItemStack(ModItems.rune, 1, 7),
+                        new ItemStack(ModItems.rune, 1, 8), new ItemStack(ModBlocks.bellows),
+                        new ItemStack(ModFluffBlocks.livingrockSlab), new ItemStack(ModItems.manaTablet),
+                        new ItemStack(ModItems.rune, 1, 6), new ItemStack(ModItems.rune, 1, 8),
+                        new ItemStack(ModBlocks.bellows), new ItemStack(ModFluffBlocks.livingrockSlab),
+                        new ItemStack(ModItems.manaTablet), new ItemStack(ModItems.rune, 1, 5),
+                        new ItemStack(ModItems.rune, 1, 8), new ItemStack(ModBlocks.bellows) });
 
         MithrillSword = ThaumcraftApi.addInfusionCraftingRecipe(
                 "MithrillSword",
-                // GameRegistry.addShapedRecipe()
+
                 new ItemStack(ItemListAB.itemMithrillSword),
-                5,
-                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
-                        .add(Aspect.CROP, 16),
-                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
-                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3) });
+                10,
+                new AspectList().add(Aspect.WEAPON, 64).add(Aspect.EARTH, 64).add(Aspect.MOTION, 64)
+                        .add(Aspect.MAGIC, 32).add(Aspect.ELDRITCH, 32).add(Aspect.BEAST, 16).add(Aspect.HUNGER, 16),
+                new ItemStack(ItemListAB.itemAquaSword),
+                new ItemStack[] { new ItemStack(ModItems.rainbowRod), new ItemStack(ItemListAB.itemABResource, 1, 0),
+                        new ItemStack(
+                                (Item) Item.itemRegistry.getObject("dreamcraft:item.MysteriousCrystalGemFlawless")),
+                        new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ItemListAB.itemNebulaRod),
+                        new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack(ModBlocks.livingwood, 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HandMirror")),
+                        new ItemStack(ModBlocks.livingwood, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ItemListAB.itemNebulaRod),
+                        new ItemStack(ItemListAB.itemABResource, 1, 0),
+                        OreDictionary.getOres("gemFlawlessAmethyst").get(0),
+                        new ItemStack(ItemListAB.itemABResource, 1, 0) });
 
         Forge = ThaumcraftApi.addInfusionCraftingRecipe(
                 "Forge",
-                // GameRegistry.addShapedRecipe()
+
                 new ItemStack(BlockListAB.blockABPlate),
-                5,
-                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
-                        .add(Aspect.CROP, 16),
-                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
-                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3) });
+                8,
+                new AspectList().add(Aspect.AIR, 80).add(Aspect.EARTH, 60).add(Aspect.ORDER, 40).add(Aspect.MAGIC, 32)
+                        .add(Aspect.CRAFT, 32).add(Aspect.CRYSTAL, 20).add(Aspect.METAL, 20),
+                new ItemStack((Item) Item.itemRegistry.getObject("thaumicbases:voidAnvil")),
+                new ItemStack[] { new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 2),
+                        new ItemStack(ModBlocks.storage, 1, 1),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.DiamondCoreChip")),
+                        new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 3),
+                        new ItemStack(ModBlocks.storage, 1, 0),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.EssentiaCircuit")),
+                        new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 2),
+                        new ItemStack(ModBlocks.storage, 1, 1),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.DiamondCoreChip")),
+                        new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 3),
+                        new ItemStack(ModBlocks.storage, 1, 0),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.EssentiaCircuit")), });
 
         Destroyer = ThaumcraftApi.addInfusionCraftingRecipe(
                 "Destroyer",
-                // GameRegistry.addShapedRecipe()
+
                 new ItemStack(ItemListAB.itemMihrillMultiTool),
-                5,
-                new AspectList().add(Aspect.EARTH, 32).add(Aspect.MAGIC, 16).add(Aspect.HARVEST, 48)
-                        .add(Aspect.CROP, 16),
-                new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:HoeElemental")),
-                new ItemStack[] { OreDictionary.getOres("gemFlawlessGreenSapphire").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.fertilizer),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3), OreDictionary.getOres("gemFlawlessOlivine").get(0),
-                        new ItemStack(ModItems.manaResource, 1, 3),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:blockCrystal"), 1, 3),
-                        new ItemStack(ModItems.fertilizer), new ItemStack(ModItems.rune, 1, 2),
-                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL),
-                        new ItemStack(ModItems.manaResource, 1, 3) });
+                12,
+                new AspectList().add(Aspect.EARTH, 128).add(Aspect.MAGIC, 64).add(Aspect.TOOL, 64).add(Aspect.MINE, 64)
+                        .add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.TREE, 32),
+                new ItemStack(ItemListAB.itemABResource, 1, 2),
+                new ItemStack[] { new ItemStack(ModItems.terraAxe), new ItemStack(BlockListAB.blockABStorage, 1, 0),
+                        OreDictionary.getOres("gemExquisiteManaDiamond").get(0),
+                        new ItemStack(BlockListAB.blockABStorage, 1, 0), new ItemStack(ModItems.terraPick, 1, 0), // nbt(2147483646),
+                        new ItemStack(ModBlocks.livingwood, 1, 5), OreDictionary.getOres("gemFlawlessAmber").get(0),
+                        new ItemStack(BlockListAB.blockLebethron, 1, 4), new ItemStack(ModItems.temperanceStone, 1, 0),
+                        new ItemStack(BlockListAB.blockLebethron, 1, 4),
+                        OreDictionary.getOres("gemFlawlessAmber").get(0), new ItemStack(ModBlocks.livingwood, 1, 5),
+                        new ItemStack(ItemListAB.itemTerraHoe), new ItemStack(BlockListAB.blockABStorage, 1, 0),
+                        OreDictionary.getOres("gemExquisiteManaDiamond").get(0),
+                        new ItemStack(BlockListAB.blockABStorage, 1, 0) });
+
+        /*
+         * ItemStack terraShatter = new ItemStack(ModItems.terraPick, 1, 0);
+         * terraShatter.stackTagCompound.setInteger("mana", Integer.MAX_VALUE - 1); Destroyer =
+         * ThaumcraftApi.addInfusionCraftingRecipe( "Destroyer", new ItemStack(ItemListAB.itemMihrillMultiTool), 12, new
+         * AspectList().add(Aspect.EARTH, 128).add(Aspect.MAGIC, 64).add(Aspect.TOOL, 64).add(Aspect.MINE, 64)
+         * .add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.TREE, 32), new ItemStack(ItemListAB.itemABResource,
+         * 1, 2), new ItemStack[] { new ItemStack(ModItems.terraAxe), new ItemStack(BlockListAB.blockABStorage, 1, 0),
+         * OreDictionary.getOres("gemExquisiteManaDiamond").get(0), new ItemStack(BlockListAB.blockABStorage, 1, 0),
+         * terraShatter, new ItemStack(ModBlocks.livingwood, 1, 5), OreDictionary.getOres("gemFlawlessAmber").get(0),
+         * new ItemStack(BlockListAB.blockLebethron, 1, 4), new ItemStack(ModItems.temperanceStone, 1, 0), new
+         * ItemStack(BlockListAB.blockLebethron, 1, 4), OreDictionary.getOres("gemFlawlessAmber").get(0), new
+         * ItemStack(ModBlocks.livingwood, 1, 5), new ItemStack(ItemListAB.itemTerraHoe), new
+         * ItemStack(BlockListAB.blockABStorage, 1, 0), OreDictionary.getOres("gemExquisiteManaDiamond").get(0), new
+         * ItemStack(BlockListAB.blockABStorage, 1, 0) });
+         */
+
     }
 
     // Aspecolus recipe
@@ -945,7 +969,7 @@ public class RecipeListAB implements IModHelper {
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
                         .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
                 0,
-                1,
+                2,
                 0,
                 new ItemStack(ItemListAB.itemTerraHoe));
 
@@ -956,7 +980,7 @@ public class RecipeListAB implements IModHelper {
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
                         .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
-                0,
+                2,
                 2,
                 0,
                 new ItemStack(ItemListAB.itemAquaSword));
@@ -968,8 +992,8 @@ public class RecipeListAB implements IModHelper {
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
                         .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
-                0,
-                3,
+                4,
+                6,
                 0,
                 new ItemStack(BlockListAB.blockManaCharger));
 
@@ -980,8 +1004,8 @@ public class RecipeListAB implements IModHelper {
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
                         .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
+                2,
                 0,
-                4,
                 0,
                 new ItemStack(ItemListAB.itemMithrillSword));
 
@@ -992,7 +1016,7 @@ public class RecipeListAB implements IModHelper {
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
                         .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
-                0,
+                4,
                 5,
                 0,
                 new ItemStack(BlockListAB.blockABPlate));
@@ -1005,7 +1029,7 @@ public class RecipeListAB implements IModHelper {
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
                         .add(Aspect.CROP, 4).add(Aspect.HARVEST, 2),
                 0,
-                6,
+                0,
                 0,
                 new ItemStack(ItemListAB.itemMihrillMultiTool));
 
@@ -1018,12 +1042,12 @@ public class RecipeListAB implements IModHelper {
         ForgePage.setPages(ForgePages);
         DestroyerPage.setPages(DestroyerPages);
 
-        // TerraHoePage.setParents("TERRASTEEL");
-        // AquaSwordPage.setParents("TERRASTEEL");
-        // ManaChargerPage.setParents("TERRASTEEL");
-        MithrillSwordPage.setParents("AquaSword");
-        // ForgePage.setParents("TERRASTEEL");
-        DestroyerPage.setParents("Forge");
+        TerraHoePage.setParents("ELEMENTALHOE");
+        AquaSwordPage.setParents("Forge");
+        ManaChargerPage.setParents("MIRROR");
+        MithrillSwordPage.setParents("AquaSword", "Forge");
+        ForgePage.setParents("ManaCharger");
+        DestroyerPage.setParents("TerraHoe", "Forge");
 
         ResearchCategories.addResearch(TerraHoePage);
         ResearchCategories.addResearch(AquaSwordPage);
