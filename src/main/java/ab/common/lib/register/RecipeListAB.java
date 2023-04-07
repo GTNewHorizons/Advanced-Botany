@@ -133,6 +133,8 @@ public class RecipeListAB implements IModHelper {
 
     public void preInit() {}
 
+    public void init() {}
+
     public void postInit() {
         setupItemAspects();
         setupCrafting();
@@ -148,10 +150,7 @@ public class RecipeListAB implements IModHelper {
 
     public static void setupCrafting() {
 
-        // public static void init() {
         relicInit();
-        // getBlocks();
-        // getItems();
 
         BotaniaAPI.addCategory(categoryForgotten = new BLexiconCategory("forgotten", 5));
         forgotten = BotaniaAPI.registerKnowledgeType("ab_forgotten", EnumChatFormatting.BLUE, false);
@@ -791,22 +790,6 @@ public class RecipeListAB implements IModHelper {
                         new ItemStack(ItemListAB.itemTerraHoe), new ItemStack(BlockListAB.blockABStorage, 1, 0),
                         OreDictionary.getOres("gemExquisiteManaDiamond").get(0),
                         new ItemStack(BlockListAB.blockABStorage, 1, 0) });
-
-        /*
-         * ItemStack terraShatter = new ItemStack(ModItems.terraPick, 1, 0);
-         * terraShatter.stackTagCompound.setInteger("mana", Integer.MAX_VALUE - 1); Destroyer =
-         * ThaumcraftApi.addInfusionCraftingRecipe( "Destroyer", new ItemStack(ItemListAB.itemMihrillMultiTool), 12, new
-         * AspectList().add(Aspect.EARTH, 128).add(Aspect.MAGIC, 64).add(Aspect.TOOL, 64).add(Aspect.MINE, 64)
-         * .add(Aspect.CROP, 32).add(Aspect.HARVEST, 32).add(Aspect.TREE, 32), new ItemStack(ItemListAB.itemABResource,
-         * 1, 2), new ItemStack[] { new ItemStack(ModItems.terraAxe), new ItemStack(BlockListAB.blockABStorage, 1, 0),
-         * OreDictionary.getOres("gemExquisiteManaDiamond").get(0), new ItemStack(BlockListAB.blockABStorage, 1, 0),
-         * terraShatter, new ItemStack(ModBlocks.livingwood, 1, 5), OreDictionary.getOres("gemFlawlessAmber").get(0),
-         * new ItemStack(BlockListAB.blockLebethron, 1, 4), new ItemStack(ModItems.temperanceStone, 1, 0), new
-         * ItemStack(BlockListAB.blockLebethron, 1, 4), OreDictionary.getOres("gemFlawlessAmber").get(0), new
-         * ItemStack(ModBlocks.livingwood, 1, 5), new ItemStack(ItemListAB.itemTerraHoe), new
-         * ItemStack(BlockListAB.blockABStorage, 1, 0), OreDictionary.getOres("gemExquisiteManaDiamond").get(0), new
-         * ItemStack(BlockListAB.blockABStorage, 1, 0) });
-         */
 
     }
 

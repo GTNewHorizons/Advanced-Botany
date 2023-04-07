@@ -33,7 +33,6 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(AdvancedBotany.instance, new GuiHandler());
-        // RecipeListAB.init();
         NetworkHandler.registerPackets();
         ModHelperManager.init();
     }
