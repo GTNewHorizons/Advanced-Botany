@@ -287,7 +287,7 @@ public class RecipeListAB implements IModHelper {
                         new AdvancedPlateCraftPage(
                                 advandedAgglomerationPlate,
                                 terrasteelBlockRecipe.getOutput(),
-                                ".abCraft0"),
+                                ".abCraft1"),
                         new AdvancedPlateCraftPage(advandedAgglomerationPlate, mithrillRecipe.getOutput(), ".abCraft0"),
                         new AdvancedPlateCraftPage(advandedAgglomerationPlate, nebulaRecipe.getOutput(), ".abCraft0"),
                         new AdvancedPlateCraftPage(
@@ -305,7 +305,7 @@ public class RecipeListAB implements IModHelper {
                         new AdvancedPlateCraftPage(
                                 advandedAgglomerationPlate,
                                 ExquisiteDragonstoneRecipe.getOutput(),
-                                ".abCraft1") })
+                                ".abCraft0") })
                 .setIcon(new ItemStack(BlockListAB.blockABPlate));
 
         // Natural mana spreader recipe
