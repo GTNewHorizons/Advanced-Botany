@@ -13,12 +13,13 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
         modid = AdvancedBotany.modid,
         name = "Advanced Botany",
         version = AdvancedBotany.version,
-        dependencies = "required-after:Botania",
+        dependencies = AdvancedBotany.DEPENDENCIES,
         guiFactory = "ab.client.core.handler.GuiABFactory")
 public class AdvancedBotany {
 
     public static final String modid = "AdvancedBotany";
-    public static final String version = "1.3.1.5";
+    public static final String version = "GRADLETOKEN_VERSION";
+    public static final String DEPENDENCIES = "required-after:Botania";
 
     @Mod.Instance("AdvancedBotany")
     public static AdvancedBotany instance;
