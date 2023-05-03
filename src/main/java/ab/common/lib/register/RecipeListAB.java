@@ -1,8 +1,5 @@
 package ab.common.lib.register;
 
-import static gregtech.api.enums.Mods.ForbiddenMagic;
-import static gregtech.api.util.GT_ModHandler.getModItem;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +24,6 @@ import thaumcraft.api.research.*;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumcraft.api.wands.*;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import vazkii.*;
@@ -60,8 +56,10 @@ import ab.common.item.ItemCraftingPattern;
 import ab.utils.*;
 import ab.utils.LocalizationManager;
 import ab.utils.OreDict;
+import cpw.mods.fml.common.registry.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import fox.spiteful.*;
+import fox.spiteful.forbidden.*;
 import fox.spiteful.forbidden.items.baubles.*;
 import fox.spiteful.forbidden.items.scribes.*;
 import fox.spiteful.forbidden.items.tools.*;
@@ -774,16 +772,17 @@ public class RecipeListAB implements IModHelper {
                         .add(Aspect.METAL, 20).add(Aspect.SENSES, 20).add(Aspect.ELDRITCH, 20),
                 new ItemStack(ModBlocks.gaiaHead),
                 new ItemStack[] { new ItemStack(ModItems.elementiumHelm),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5),
                         OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 3),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2), new ItemStack(ModItems.terrasteelHelm),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2), new ItemStack(ItemListAB.itemABResource, 1, 3),
-                        new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
-                        new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
+                        new ItemStack(ModItems.terrasteelHelm),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
+                        new ItemStack(ItemListAB.itemABResource, 1, 3), new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack(ItemListAB.itemNebulaRing), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5), });
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5), });
 
         NebulaChest = ThaumcraftApi.addInfusionCraftingRecipe(
                 "NebulaChest",
@@ -794,18 +793,19 @@ public class RecipeListAB implements IModHelper {
                         .add(Aspect.METAL, 20).add(Aspect.SENSES, 20).add(Aspect.FLIGHT, 20),
                 new ItemStack(ModItems.flightTiara),
                 new ItemStack[] { new ItemStack(ModItems.elementiumChest),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5),
                         OreDictionary.getOres("plateDenseElvenElementium").get(0),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
                         new ItemStack(ItemListAB.itemABResource, 1, 5),
                         OreDictionary.getOres("plateDenseTerrasteel").get(0),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2), new ItemStack(ModItems.terrasteelChest),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
+                        new ItemStack(ModItems.terrasteelChest),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
                         OreDictionary.getOres("plateDenseTerrasteel").get(0),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
                         new ItemStack(ItemListAB.itemABResource, 1, 5),
                         OreDictionary.getOres("plateDenseElvenElementium").get(0),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5),
 
                 });
 
@@ -818,16 +818,17 @@ public class RecipeListAB implements IModHelper {
                         .add(Aspect.METAL, 20).add(Aspect.SENSES, 20).add(Aspect.BEAST, 20),
                 new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:ItemGirdleRunic")),
                 new ItemStack[] { new ItemStack(ModItems.elementiumLegs),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5),
                         OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ModBlocks.manaBeacon, 1, 5),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2), new ItemStack(ModItems.terrasteelLegs),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2), new ItemStack(ModBlocks.manaBeacon, 1, 5),
-                        new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
-                        new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
+                        new ItemStack(ModItems.terrasteelLegs),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
+                        new ItemStack(ModBlocks.manaBeacon, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack(ItemListAB.itemNebulaRing), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5),
 
                 });
 
@@ -840,14 +841,17 @@ public class RecipeListAB implements IModHelper {
                         .add(Aspect.METAL, 20).add(Aspect.SENSES, 20).add(Aspect.SLIME, 20),
                 new ItemStack(ModItems.speedUpBelt),
                 new ItemStack[] { new ItemStack(ModItems.elementiumBoots),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 2),
-                        new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
-                        new ItemStack(ItemListAB.itemABResource, 1, 3), new ItemStack(ModItems.manaResource, 1, 3),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2), new ItemStack(ModItems.terrasteelBoots),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 2), new ItemStack(ModItems.manaResource, 1, 3),
-                        new ItemStack(ItemListAB.itemABResource, 1, 3), new ItemStack(ItemListAB.itemNebulaRing),
-                        new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 2),
-                        getModItem(ForbiddenMagic.ID, "WandCaps", 1, 5),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5),
+                        new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack(ItemListAB.itemNebulaRing), new ItemStack(ItemListAB.itemABResource, 1, 3),
+                        new ItemStack(ModItems.manaResource, 1, 3),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
+                        new ItemStack(ModItems.terrasteelBoots),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 2),
+                        new ItemStack(ModItems.manaResource, 1, 3), new ItemStack(ItemListAB.itemABResource, 1, 3),
+                        new ItemStack(ItemListAB.itemNebulaRing), new ItemStack(ItemListAB.itemABResource, 1, 5),
+                        new ItemStack(ItemListAB.itemABResource, 1, 2),
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 5),
 
                 });
 
