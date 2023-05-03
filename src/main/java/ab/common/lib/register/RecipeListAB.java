@@ -480,8 +480,9 @@ public class RecipeListAB implements IModHelper {
         // Black hole box recipe
         GameRegistry.addShapedRecipe(
                 new ItemStack(ItemListAB.itemBlackHalo),
-                new Object[] { " E ", "DHD", " E ", Character.valueOf('E'), OreDict.ELEMENTIUM_PLATE,
-                        Character.valueOf('H'), new ItemStack(ModItems.autocraftingHalo), Character.valueOf('D'),
+                new Object[] { " E ", "DHD", " E ", Character.valueOf('E'),
+                        OreDict.preference("plateElvenElementium", OreDict.ELEMENTIUM_PLATE), Character.valueOf('H'),
+                        new ItemStack(ModItems.autocraftingHalo), Character.valueOf('D'),
                         new ItemStack(ModItems.blackHoleTalisman) });
         blackHalo = new BLexiconEntry("blackHalo", BotaniaAPI.categoryTools);
         blackHalo.setKnowledgeType(BotaniaAPI.elvenKnowledge).setLexiconPages(
@@ -491,8 +492,9 @@ public class RecipeListAB implements IModHelper {
         // Sphere of Attraction recipe
         GameRegistry.addShapedRecipe(
                 new ItemStack(ItemListAB.itemAntigravityCharm),
-                new Object[] { " G ", "GDG", "ERE", Character.valueOf('E'), OreDict.ELEMENTIUM_PLATE,
-                        Character.valueOf('G'), new ItemStack(ModBlocks.elfGlass), Character.valueOf('D'),
+                new Object[] { " G ", "GDG", "ERE", Character.valueOf('E'),
+                        OreDict.preference("plateElvenElementium", OreDict.ELEMENTIUM_PLATE), Character.valueOf('G'),
+                        new ItemStack(ModBlocks.elfGlass), Character.valueOf('D'),
                         new ItemStack(ModBlocks.floatingFlower, 1, 32767), Character.valueOf('R'),
                         new ItemStack(ModItems.rune, 1, 3) });
         antigravityCharm = new BLexiconEntry("antigravityCharm", BotaniaAPI.categoryTools);
