@@ -552,7 +552,7 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(BlockListAB.blockBoardFate),
                 new Object[] { "   ", "QDQ", "MPM", Character.valueOf('Q'), new ItemStack(ModFluffBlocks.manaQuartz),
                         Character.valueOf('D'), new ItemStack(ModItems.manaResource, 1, 2), Character.valueOf('M'),
-                        OreDict.MANA_STEEL_PLATE, Character.valueOf('P'),
+                        OreDict.preference("plateTerrasteel", LibOreDict.TERRA_STEEL), Character.valueOf('P'),
                         new ItemStack(ModItems.manaResource, 1, 23) });
         gameBoard = new BLexiconEntry("gameBoard", BotaniaAPI.categoryMisc);
         gameBoard.setLexiconPages(
