@@ -8,6 +8,5 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:CodeChickenCore:1.1.11:dev")
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.3.45-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:CraftTweaker:3.2.11:dev")
-    compileOnly("com.github.GTNewHorizons:ForbiddenMagic:0.6.6-GTNH:dev")
 
 }
