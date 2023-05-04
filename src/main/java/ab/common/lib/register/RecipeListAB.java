@@ -128,6 +128,7 @@ public class RecipeListAB implements IModHelper {
     public static ResearchPage AquaSwordPages;
     public static ResearchPage ForgePages;
     public static ResearchPage ManaChargerPages;
+    public static ResearchPage NebulaPages;
 
     public static KnowledgeType forgotten;
 
@@ -149,6 +150,7 @@ public class RecipeListAB implements IModHelper {
     public static InfusionRecipe MithrillSword;
     public static InfusionRecipe Forge;
     public static InfusionRecipe Destroyer;
+    public static InfusionRecipe Nebula;
     public static InfusionRecipe NebulaHelm;
     public static InfusionRecipe NebulaChest;
     public static InfusionRecipe NebulaLegs;
@@ -760,13 +762,13 @@ public class RecipeListAB implements IModHelper {
                         new ItemStack(BlockListAB.blockABStorage, 1, 0) });
 
         NebulaHelm = ThaumcraftApi.addInfusionCraftingRecipe(
-                "NebulaHelm",
+                "Nebula",
 
                 new ItemStack(ItemListAB.itemNebulaHelm),
                 12,
                 new AspectList().add(Aspect.EARTH, 128).add(Aspect.MAGIC, 64).add(Aspect.CRYSTAL, 20)
                         .add(Aspect.METAL, 20).add(Aspect.SENSES, 20).add(Aspect.ELDRITCH, 20),
-                new ItemStack(ModBlocks.gaiaHead),
+                new ItemStack(ModItems.gaiaHead),
                 new ItemStack[] { new ItemStack(ModItems.elementiumHelm), new ItemStack(ModItems.laputaShard, 1, 15),
                         OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
                         new ItemStack(ItemListAB.itemABResource, 1, 5), new ItemStack(ItemListAB.itemNebulaRing),
@@ -780,7 +782,7 @@ public class RecipeListAB implements IModHelper {
                         new ItemStack(ModItems.laputaShard, 1, 15), });
 
         NebulaChest = ThaumcraftApi.addInfusionCraftingRecipe(
-                "NebulaChest",
+                "Nebula",
 
                 new ItemStack(ItemListAB.itemNebulaChest),
                 12,
@@ -801,7 +803,7 @@ public class RecipeListAB implements IModHelper {
                 });
 
         NebulaLegs = ThaumcraftApi.addInfusionCraftingRecipe(
-                "NebulaLegs",
+                "Nebula",
 
                 new ItemStack(ItemListAB.itemNebulaLegs),
                 12,
@@ -823,7 +825,7 @@ public class RecipeListAB implements IModHelper {
                 });
 
         NebulaBoots = ThaumcraftApi.addInfusionCraftingRecipe(
-                "NebulaBoots",
+                "Nebula",
 
                 new ItemStack(ItemListAB.itemNebulaBoots),
                 12,
@@ -833,11 +835,11 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack[] { new ItemStack(ModItems.elementiumBoots), new ItemStack(ModItems.laputaShard, 1, 15),
                         new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         new ItemStack(ItemListAB.itemNebulaRing), new ItemStack(ItemListAB.itemABResource, 1, 3),
-                        new ItemStack(ModItems.manaResource, 1, 3),
+                        new ItemStack(ModBlocks.starfield),
                         new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:ItemAmuletRunic"), 1, 1),
                         new ItemStack(ModItems.terrasteelBoots),
                         new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:ItemAmuletRunic"), 1, 1),
-                        new ItemStack(ModItems.manaResource, 1, 3), new ItemStack(ItemListAB.itemABResource, 1, 3),
+                        new ItemStack(ModBlocks.starfield), new ItemStack(ItemListAB.itemABResource, 1, 3),
                         new ItemStack(ItemListAB.itemNebulaRing), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ModItems.laputaShard, 1, 15),
 
