@@ -5,7 +5,7 @@ dependencies {
     api('com.github.GTNewHorizons:Baubles:1.0.1.16:dev')
     compileOnly("com.github.GTNewHorizons:CodeChickenLib:1.1.8:dev")
     compileOnly("com.github.GTNewHorizons:CodeChickenCore:1.1.11:dev")
-    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.3.45-GTNH:dev")
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.3.46-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:CraftTweaker:3.2.11:dev")
 
 }
