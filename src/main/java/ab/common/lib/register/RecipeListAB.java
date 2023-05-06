@@ -906,8 +906,7 @@ public class RecipeListAB implements IModHelper {
             // Mana flower recipe
             GameRegistry.addShapedRecipe(
                     new ItemStack(ItemListAB.itemManaFlower),
-                    new Object[] { "NFN", "PMP", "NRN", Character.valueOf('T'),
-                            new ItemStack(BlockListAB.blockABStorage, 1, 6), Character.valueOf('F'),
+                    new Object[] { "NFN", "PMP", "NRN", Character.valueOf('F'),
                             new ItemStack(ItemListAB.itemABResource, 1, 4), Character.valueOf('P'),
                             new ItemStack(ConfigItems.itemEldritchObject, 1, 3), Character.valueOf('M'),
                             new ItemStack(ModItems.manaBottle), Character.valueOf('R'),
