@@ -312,14 +312,20 @@ public class RecipeListAB implements IModHelper {
 
         // Natural mana spreader recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockABSpreader),
-                "WMW", "PSP", "WMW",
-                'W', new ItemStack(BlockListAB.blockLebethron, 1, 4),
-                'M', new ItemStack(ItemListAB.itemABResource, 1, 2),
-                'P', new ItemStack(ModBlocks.pylon),
-                'S', new ItemStack(ModBlocks.spreader, 1, 3)
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockABSpreader),
+                        "WMW",
+                        "PSP",
+                        "WMW",
+                        'W',
+                        new ItemStack(BlockListAB.blockLebethron, 1, 4),
+                        'M',
+                        new ItemStack(ItemListAB.itemABResource, 1, 2),
+                        'P',
+                        new ItemStack(ModBlocks.pylon),
+                        'S',
+                        new ItemStack(ModBlocks.spreader, 1, 3)));
 
         lebethronSpreader = new BLexiconEntry("lebethronSpreader", categoryForgotten);
         lebethronSpreader.setKnowledgeType(forgotten)
@@ -337,27 +343,40 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(BlockListAB.blockLebethron, 1, 2),
                 new Object[] { new ItemStack(BlockListAB.blockLebethron, 1, 1), new ItemStack(Items.wheat_seeds) });
         IRecipe leb2 = getLastRecipe();
-                        
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockLebethron, 4, 3),
-                "SLS", "LEL", "SLS",
-                'S', "ingotSteeleaf",
-                'L', new ItemStack(BlockListAB.blockLebethron, 1, 0),
-                'E', new ItemStack(ModBlocks.pylon)
-        ));
-        
+
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockLebethron, 4, 3),
+                        "SLS",
+                        "LEL",
+                        "SLS",
+                        'S',
+                        "ingotSteeleaf",
+                        'L',
+                        new ItemStack(BlockListAB.blockLebethron, 1, 0),
+                        'E',
+                        new ItemStack(ModBlocks.pylon)));
+
         IRecipe leb3 = getLastRecipe();
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockLebethron, 1, 4),
-                "4W5", "WPW", "6W7",
-                'W', new ItemStack(BlockListAB.blockLebethron, 1, 3),
-                'P', new ItemStack(ModBlocks.pylon, 1, 1),
-                '4', new ItemStack(ModItems.rune, 1, 4),
-                '5', new ItemStack(ModItems.rune, 1, 5),
-                '6', new ItemStack(ModItems.rune, 1, 6),
-                '7', new ItemStack(ModItems.rune, 1, 7)
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockLebethron, 1, 4),
+                        "4W5",
+                        "WPW",
+                        "6W7",
+                        'W',
+                        new ItemStack(BlockListAB.blockLebethron, 1, 3),
+                        'P',
+                        new ItemStack(ModBlocks.pylon, 1, 1),
+                        '4',
+                        new ItemStack(ModItems.rune, 1, 4),
+                        '5',
+                        new ItemStack(ModItems.rune, 1, 5),
+                        '6',
+                        new ItemStack(ModItems.rune, 1, 6),
+                        '7',
+                        new ItemStack(ModItems.rune, 1, 7)));
 
         IRecipe leb4 = getLastRecipe();
         lebethronWood = new BLexiconEntry("lebethronWood", categoryForgotten);
@@ -385,39 +404,61 @@ public class RecipeListAB implements IModHelper {
 
         // Advanced mana containers recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockManaContainer),
-                "MGM", "LPL", "M3M",
-                'M', new ItemStack(ItemListAB.itemABResource),
-                'G', new ItemStack(ModItems.rune, 1, 15),
-                'L', new ItemStack(ModBlocks.pool),
-                'P', new ItemStack(ModBlocks.pylon),
-                '3', new ItemStack(ModItems.rune, 1, 3)
-   
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockManaContainer),
+                        "MGM",
+                        "LPL",
+                        "M3M",
+                        'M',
+                        new ItemStack(ItemListAB.itemABResource),
+                        'G',
+                        new ItemStack(ModItems.rune, 1, 15),
+                        'L',
+                        new ItemStack(ModBlocks.pool),
+                        'P',
+                        new ItemStack(ModBlocks.pylon),
+                        '3',
+                        new ItemStack(ModItems.rune, 1, 3)
+
+                ));
 
         IRecipe cont1 = getLastRecipe();
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockManaContainer, 1, 1),
-                "MGM", "LPL", "M3M",
-                'M', new ItemStack(ItemListAB.itemABResource, 1, 1),
-                'G', new ItemStack(ModItems.rune, 1, 15),
-                'L', new ItemStack(ModBlocks.pool, 1, 2),
-                'P', new ItemStack(ModBlocks.pylon),
-                '3', new ItemStack(ModItems.rune, 1, 3)
-                ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockManaContainer, 1, 1),
+                        "MGM",
+                        "LPL",
+                        "M3M",
+                        'M',
+                        new ItemStack(ItemListAB.itemABResource, 1, 1),
+                        'G',
+                        new ItemStack(ModItems.rune, 1, 15),
+                        'L',
+                        new ItemStack(ModBlocks.pool, 1, 2),
+                        'P',
+                        new ItemStack(ModBlocks.pylon),
+                        '3',
+                        new ItemStack(ModItems.rune, 1, 3)));
         IRecipe cont2 = getLastRecipe();
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockManaContainer, 1, 2),
-                "MGM", "LPL", "M3M",
-                'M', new ItemStack(ItemListAB.itemABResource),
-                'G', new ItemStack(ModItems.rune, 1, 15),
-                'L', new ItemStack(ModBlocks.pool, 1, 3),
-                'P', new ItemStack(ModBlocks.pylon),
-                '3', new ItemStack(ModItems.rune, 1, 3)
-                ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockManaContainer, 1, 2),
+                        "MGM",
+                        "LPL",
+                        "M3M",
+                        'M',
+                        new ItemStack(ItemListAB.itemABResource),
+                        'G',
+                        new ItemStack(ModItems.rune, 1, 15),
+                        'L',
+                        new ItemStack(ModBlocks.pool, 1, 3),
+                        'P',
+                        new ItemStack(ModBlocks.pylon),
+                        '3',
+                        new ItemStack(ModItems.rune, 1, 3)));
 
         IRecipe cont3 = getLastRecipe();
         manaContainer = new BLexiconEntry("manaContainer", categoryForgotten);
@@ -430,17 +471,26 @@ public class RecipeListAB implements IModHelper {
 
         // Mana crystal cube recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockManaCrystalCube),
-                "TST", "GWG", "DMD",
-                'T', new ItemStack(ModItems.manaResource, 1, 18),
-                'S', new ItemStack(ModItems.spark),
-                'G', new ItemStack(ModBlocks.manaGlass),
-                'W', new ItemStack(ModItems.twigWand, 1, 32767),
-                'D', new ItemStack(ModBlocks.dreamwood),
-                'M', "blockManasteel"
-   
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockManaCrystalCube),
+                        "TST",
+                        "GWG",
+                        "DMD",
+                        'T',
+                        new ItemStack(ModItems.manaResource, 1, 18),
+                        'S',
+                        new ItemStack(ModItems.spark),
+                        'G',
+                        new ItemStack(ModBlocks.manaGlass),
+                        'W',
+                        new ItemStack(ModItems.twigWand, 1, 32767),
+                        'D',
+                        new ItemStack(ModBlocks.dreamwood),
+                        'M',
+                        "blockManasteel"
+
+                ));
 
         manaCrystalCube = new BLexiconEntry("manaCrystalCube", BotaniaAPI.categoryMana);
         manaCrystalCube.setKnowledgeType(BotaniaAPI.elvenKnowledge)
@@ -457,27 +507,39 @@ public class RecipeListAB implements IModHelper {
 
         // Mithrill ring recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemMithrillRing),
-                "LML", "MRM", "LML",
-                'L', new ItemStack(ItemListAB.itemABResource, 1, 1),
-                'M', new ItemStack(ItemListAB.itemABResource),
-                'R', new ItemStack(ModItems.manaRingGreater)
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemMithrillRing),
+                        "LML",
+                        "MRM",
+                        "LML",
+                        'L',
+                        new ItemStack(ItemListAB.itemABResource, 1, 1),
+                        'M',
+                        new ItemStack(ItemListAB.itemABResource),
+                        'R',
+                        new ItemStack(ModItems.manaRingGreater)
 
-        ));
+                ));
 
         IRecipe ring1 = getLastRecipe();
 
         // Nebula ring recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemNebulaRing),
-                "LML", "MRM", "LML",
-                'L', new ItemStack(ModItems.manaResource, 1, 5),
-                'M', new ItemStack(ItemListAB.itemABResource, 1, 6),
-                'R', new ItemStack(ItemListAB.itemMithrillRing)
-   
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemNebulaRing),
+                        "LML",
+                        "MRM",
+                        "LML",
+                        'L',
+                        new ItemStack(ModItems.manaResource, 1, 5),
+                        'M',
+                        new ItemStack(ItemListAB.itemABResource, 1, 6),
+                        'R',
+                        new ItemStack(ItemListAB.itemMithrillRing)
+
+                ));
 
         IRecipe ring2 = getLastRecipe();
         manaRings = new BLexiconEntry("manaRings", categoryForgotten);
@@ -516,14 +578,20 @@ public class RecipeListAB implements IModHelper {
 
         // Black hole box recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemBlackHalo),
-                " E ", "DHD", " E ",
-                'E', "plateElvenElementium",
-                'D', new ItemStack(ModItems.blackHoleTalisman),
-                'H', new ItemStack(ModItems.autocraftingHalo)
-   
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemBlackHalo),
+                        " E ",
+                        "DHD",
+                        " E ",
+                        'E',
+                        "plateElvenElementium",
+                        'D',
+                        new ItemStack(ModItems.blackHoleTalisman),
+                        'H',
+                        new ItemStack(ModItems.autocraftingHalo)
+
+                ));
 
         blackHalo = new BLexiconEntry("blackHalo", BotaniaAPI.categoryTools);
         blackHalo.setKnowledgeType(BotaniaAPI.elvenKnowledge).setLexiconPages(
@@ -532,15 +600,22 @@ public class RecipeListAB implements IModHelper {
 
         // Sphere of Attraction recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemAntigravityCharm),
-                " G ", "GDG", "ERE",
-                'G', new ItemStack(ModBlocks.elfGlass),
-                'D', new ItemStack(ModBlocks.floatingFlower, 1, 32767),
-                'E', "plateElvenElementium",
-                'R', new ItemStack(ModItems.rune, 1, 3) 
-   
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemAntigravityCharm),
+                        " G ",
+                        "GDG",
+                        "ERE",
+                        'G',
+                        new ItemStack(ModBlocks.elfGlass),
+                        'D',
+                        new ItemStack(ModBlocks.floatingFlower, 1, 32767),
+                        'E',
+                        "plateElvenElementium",
+                        'R',
+                        new ItemStack(ModItems.rune, 1, 3)
+
+                ));
 
         antigravityCharm = new BLexiconEntry("antigravityCharm", BotaniaAPI.categoryTools);
         antigravityCharm.setKnowledgeType(BotaniaAPI.elvenKnowledge)
@@ -551,14 +626,20 @@ public class RecipeListAB implements IModHelper {
 
         // Nebula blaze recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemNebulaBlaze),
-                " N ", "MMN", "AMN",
-                'N', new ItemStack(ItemListAB.itemABResource, 1, 6),
-                'M', "blockManasteel",
-                'A', new ItemStack(ItemListAB.itemABResource, 1, 3)
-   
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemNebulaBlaze),
+                        " N ",
+                        "MMN",
+                        "AMN",
+                        'N',
+                        new ItemStack(ItemListAB.itemABResource, 1, 6),
+                        'M',
+                        "blockManasteel",
+                        'A',
+                        new ItemStack(ItemListAB.itemABResource, 1, 3)
+
+                ));
 
         nebulaBlaze = new BLexiconEntry("nebulaBlaze", categoryForgotten);
         nebulaBlaze.setKnowledgeType(forgotten).setLexiconPages(
@@ -587,15 +668,22 @@ public class RecipeListAB implements IModHelper {
 
         // Rod of nebula recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemNebulaRod),
-                " WN", " RW", "E  ",
-                'W', new ItemStack(ModItems.manaResource, 1, 13),
-                'N', new ItemStack(ItemListAB.itemABResource, 1, 6),
-                'R', new ItemStack(ModItems.rune, 1, 8),
-                'E', "itemEnderCrystal"
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemNebulaRod),
+                        " WN",
+                        " RW",
+                        "E  ",
+                        'W',
+                        new ItemStack(ModItems.manaResource, 1, 13),
+                        'N',
+                        new ItemStack(ItemListAB.itemABResource, 1, 6),
+                        'R',
+                        new ItemStack(ModItems.rune, 1, 8),
+                        'E',
+                        "itemEnderCrystal"
 
-        ));
+                ));
 
         nebulaRod = new BLexiconEntry("nebulaRod", categoryForgotten);
         nebulaRod.setKnowledgeType(forgotten).setLexiconPages(
@@ -604,16 +692,24 @@ public class RecipeListAB implements IModHelper {
 
         // Playing board recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockBoardFate),
-                "G G", "QDQ", "MPM",
-                'G', "gearGtSmallInfusedGold",
-                'Q', new ItemStack(ModFluffBlocks.manaQuartz),
-                'D', new ItemStack(ModItems.manaResource, 1, 2),
-                'M', "plateTerrasteel",
-                'P', new ItemStack(ModItems.manaResource, 1, 23) 
-   
-        ));
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockBoardFate),
+                        "G G",
+                        "QDQ",
+                        "MPM",
+                        'G',
+                        "gearGtSmallInfusedGold",
+                        'Q',
+                        new ItemStack(ModFluffBlocks.manaQuartz),
+                        'D',
+                        new ItemStack(ModItems.manaResource, 1, 2),
+                        'M',
+                        "plateTerrasteel",
+                        'P',
+                        new ItemStack(ModItems.manaResource, 1, 23)
+
+                ));
 
         gameBoard = new BLexiconEntry("gameBoard", BotaniaAPI.categoryMisc);
         gameBoard.setLexiconPages(
@@ -651,14 +747,20 @@ public class RecipeListAB implements IModHelper {
 
         // Rod of sprawl recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemSprawlRod),
-                " SC", " WS", "W  ",
-                'S', new ItemStack(ModItems.grassSeeds, 1, 32767),
-                'C', new ItemStack(BlockListAB.blockLebethron, 1, 4),
-                'W', new ItemStack(ModItems.manaResource, 1, 3)
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemSprawlRod),
+                        " SC",
+                        " WS",
+                        "W  ",
+                        'S',
+                        new ItemStack(ModItems.grassSeeds, 1, 32767),
+                        'C',
+                        new ItemStack(BlockListAB.blockLebethron, 1, 4),
+                        'W',
+                        new ItemStack(ModItems.manaResource, 1, 3)
 
-        ));
+                ));
 
         sprawlRod = new BLexiconEntry("sprawlRod", categoryForgotten);
         sprawlRod.setKnowledgeType(forgotten).setLexiconPages(
@@ -952,15 +1054,22 @@ public class RecipeListAB implements IModHelper {
 
             // Thaumic crafty crate recipe
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(BlockListAB.blockMagicCraftCrate),
-                "TST", "WCW", "WEW",
-                'T', new ItemStack(ConfigItems.itemResource, 1, 7),
-                'S', new ItemStack(ConfigItems.itemResource, 1, 14),
-                'W', new ItemStack(ConfigBlocks.blockMagicalLog),
-                'C', new ItemStack(ModBlocks.openCrate, 1, 1),
-                'E', new ItemStack(ModBlocks.openCrate)
-        ));
+            GameRegistry.addRecipe(
+                    new ShapedOreRecipe(
+                            new ItemStack(BlockListAB.blockMagicCraftCrate),
+                            "TST",
+                            "WCW",
+                            "WEW",
+                            'T',
+                            new ItemStack(ConfigItems.itemResource, 1, 7),
+                            'S',
+                            new ItemStack(ConfigItems.itemResource, 1, 14),
+                            'W',
+                            new ItemStack(ConfigBlocks.blockMagicalLog),
+                            'C',
+                            new ItemStack(ModBlocks.openCrate, 1, 1),
+                            'E',
+                            new ItemStack(ModBlocks.openCrate)));
 
             addShapelessOreDictRecipe(
                     new ItemStack(ItemListAB.itemCraftingPattern, 48),
@@ -974,15 +1083,22 @@ public class RecipeListAB implements IModHelper {
 
             // Mana flower recipe
 
-                GameRegistry.addRecipe(new ShapedOreRecipe(
-                new ItemStack(ItemListAB.itemManaFlower),
-                "NFN", "PMP", "NRN",
-                'N', new ItemStack(ItemListAB.itemABResource, 1, 1),
-                'F', new ItemStack(ItemListAB.itemABResource, 1, 4),
-                'P', new ItemStack(ConfigItems.itemEldritchObject, 1, 3),
-                'M', new ItemStack(ModItems.manaBottle),
-                'R', new ItemStack(ModItems.rune, 1, 8)
-        ));
+            GameRegistry.addRecipe(
+                    new ShapedOreRecipe(
+                            new ItemStack(ItemListAB.itemManaFlower),
+                            "NFN",
+                            "PMP",
+                            "NRN",
+                            'N',
+                            new ItemStack(ItemListAB.itemABResource, 1, 1),
+                            'F',
+                            new ItemStack(ItemListAB.itemABResource, 1, 4),
+                            'P',
+                            new ItemStack(ConfigItems.itemEldritchObject, 1, 3),
+                            'M',
+                            new ItemStack(ModItems.manaBottle),
+                            'R',
+                            new ItemStack(ModItems.rune, 1, 8)));
 
             manaFlower = new BLexiconEntry("manaFlower", categoryForgotten);
             manaFlower.setKnowledgeType(forgotten)
