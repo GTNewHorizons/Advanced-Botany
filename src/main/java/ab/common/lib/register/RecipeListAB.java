@@ -1044,11 +1044,17 @@ public class RecipeListAB implements IModHelper {
                     for (int k = 0; k < patterns[j].length; k++) str1 += patterns[j][k] ? "T" : "H";
                     str.add(str1);
                 }
-                GameRegistry.addShapedRecipe(
-                        new ItemStack(ItemListAB.itemCraftingPattern, 1, i),
-                        new Object[] { str.get(0), str.get(1), str.get(2), Character.valueOf('T'),
-                                new ItemStack(ItemListAB.itemCraftingPattern), Character.valueOf('H'),
-                                new ItemStack(ConfigItems.itemNugget, 1, 6) });
+                GameRegistry.addRecipe(
+                        new ShapedOreRecipe(
+                                new ItemStack(ItemListAB.itemCraftingPattern, 1, i),
+                                str.get(0),
+                                str.get(1),
+                                str.get(2),
+                                'T',
+                                new ItemStack(ItemListAB.itemCraftingPattern),
+                                'H',
+                                new ItemStack(ConfigItems.itemNugget, 1, 6)));
+
                 recipes.add(getLastRecipe());
             }
 
