@@ -10,6 +10,7 @@ import ab.common.lib.register.EntityListAB;
 import ab.common.lib.register.FlowerRegister;
 import ab.common.lib.register.ItemListAB;
 import ab.common.minetweaker.MineTweakerConfig;
+import ab.nei.IMCForNEI;
 import ab.utils.CraftingManager;
 import ab.utils.ModHelperManager;
 import cpw.mods.fml.common.Loader;
@@ -34,6 +35,7 @@ public class CommonProxy {
     public void init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(AdvancedBotany.instance, new GuiHandler());
         NetworkHandler.registerPackets();
+        IMCForNEI.IMCSender();
         ModHelperManager.init();
     }
 
