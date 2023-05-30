@@ -132,6 +132,14 @@ tc.research_name.Forge=Forge of Nidavellir
 tc.research_name.Destroyer=Material Destroyer
 tc.research_name.Nebula=Nebula Fragments
 
+TerraHoePages=The standard way of harvesting is getting boring over time. Terrahoe, or rather its unique ability to transform the soil into a more fertile and automated soil, can help with this very problem.<BR>The harvest in the new soil gathers itself after a certain period of time!
+DestroyerPages=A harsh tool based on a global catastrophe in the past. <BR>He is perfectly capable of breaking any block almost instantly. His speed is so high that it was necessary to create a *Fuse* in him - that is, to turn him off/on.
+MithrillSwordPages=A melee weapon that uses mana to communicate with the cosmic forces, the more mana in the blade, the stronger the connection. <BR>The power of connection to cosmic forces is divided into Ranks, like Terra Shatterer. Each rank unlocks a new magical property for the Space Blade
+AquaSwordPages=A mystical melee weapon imbued with the powers of the seas!<BR>An attack with Blade of the Sea is resisted by a water splash, and pushes everyone around in the direction the player is looking<BR>The block, on the other hand, is resisted by a water shield, which prevents enemies from approaching to you.
+ForgePages=A really powerful Dwarf invention for fusing different materials into one whole, the main thing is to know the proportions!<BR>This forge was given to the Elves, that is, it came to our land at the time of "Destruction," but... Not for long - it was soon destroyed.
+ManaChargerPages=The mana charger is a device that allows you to charge up to 4 portable mana sources at once, as well as to discharge one of them. <BR>To start the charger, you must bind a mana source to it, such as a Mana Pool or Mana Container
+NebulaPages=A nebula fragment is a material filled with part of the power of space. It allows you to create instruments and weapons that are unearthly in power.
+
 
 
 
