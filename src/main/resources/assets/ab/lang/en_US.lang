@@ -12,7 +12,7 @@ ab.flower.aspecolus.name=Aspecolus
 ab.flower.pureGladiolus.name=Pure Gladiolus
 ab.flower.ardentAzarcissus.name=Ardent Azarcissus
 tile.advancedSpreader.name=Natural Mana Spreader
-tile.ABPlate.name=Forge of Nidavellir
+tile.ABPlate.name=Forge of Niðavellir
 tile.lebethronWood.0.name=Lebethron Wood
 tile.lebethronWood.1.name=Lebethron Wood Planks
 tile.lebethronWood.2.name=Mossy Lebethron Wood Planks
@@ -22,7 +22,7 @@ tile.ABManaCrystalCube.name=Mana Crystal Cube
 tile.ABManaContainer.0.name=Mana Container
 tile.ABManaContainer.1.name=Diluted Mana Container
 tile.ABManaContainer.2.name=Fabulous Mana Container
-tile.abStorage.0.name=Block of Mithrill
+tile.abStorage.0.name=Block of Mithril
 tile.ABManaCharger.name=Mana Charger
 tile.botania:flower.ancientAlphirine.name=Ancient Alphirine
 tile.botania:flower.aspecolus.name=Aspecolus
@@ -33,23 +33,23 @@ tile.terraFarmland.name=Fertile soil
 tile.engineerHopper.name=Engineer Hopper
 tile.BlockFreyrLiana.name=Fertile Liana
 tile.BlockLuminousFreyrLiana.name=Glowing Fertile Liana
-tile.botania:magicThaumCrafter.name=Thaumim Crafty Crate
-tile.boardFate.0.name=Playing Board
-tile.boardFate.1.name=Fate Playing Board
+tile.botania:magicThaumCrafter.name=Thaumium Crafting Crate
+tile.boardFate.0.name=Dice Board
+tile.boardFate.1.name=Dice Board of Fate
 
 //Item
 
-item.resourceAB_0.name=Mithrill
-item.resourceAB_1.name=Mithrill Nugget
-item.resourceAB_2.name=Mana Nether Star
-item.resourceAB_3.name=Air of Forgotten Lands
+item.resourceAB_0.name=Mithril
+item.resourceAB_1.name=Mithril Nugget
+item.resourceAB_2.name=Mana Infused Nether Star
+item.resourceAB_3.name=Breath of The Forgotten Lands
 item.resourceAB_4.name=Nature's gift
 item.resourceAB_5.name=Nebula Fragment
-item.resourceAB_6.name=Piece of Nebula 
-item.mithrillMultiTool.name=Material Destroyer
-item.spaceBlade.name=Blade of Space
+item.resourceAB_6.name=Sliver of Nebula 
+item.mithrillMultiTool.name=Freagarach
+item.spaceBlade.name=Claíomh Solais
 item.advancedSpark.name=Superconductive spark
-item.mithrillManaRing.name=Mithrill Mana Ring
+item.mithrillManaRing.name=Mithril Mana Ring
 item.nebulaManaRing.name=Nebula Mana Ring
 item.terraHoe.name=Terrahoe
 item.manaFlower.name=Mana Flower
@@ -63,22 +63,22 @@ item.botania:nebulaLegs.name=Nebula Leggings
 item.botania:nebulaBoots.name=Nebula Boots
 item.freyrSlingshot.name=Freyr Slingshot
 item.nebulaRod.name=Rod of Nebula
-item.ab.pattern0.name=Thaumim - Crafting Placeholder
-item.ab.pattern1.name=Thaumim - Crafting Pattern #1 
-item.ab.pattern2.name=Thaumim - Crafting Pattern #2
-item.ab.pattern3.name=Thaumim - Crafting Pattern #3
-item.ab.pattern4.name=Thaumim - Crafting Pattern #4
-item.ab.pattern5.name=Thaumim - Crafting Pattern #5
-item.ab.pattern6.name=Thaumim - Crafting Pattern #6
-item.ab.pattern7.name=Thaumim - Crafting Pattern #7
-item.ab.pattern8.name=Thaumim - Crafting Pattern #8
-item.ab.pattern9.name=Thaumim - Crafting Pattern #9
+item.ab.pattern0.name=Thaumaturgic Crafting Placeholder
+item.ab.pattern1.name=Thaumaturgic Crafting Pattern #1 
+item.ab.pattern2.name=Thaumaturgic Crafting Pattern #2
+item.ab.pattern3.name=Thaumaturgic Crafting Pattern #3
+item.ab.pattern4.name=Thaumaturgic Crafting Pattern #4
+item.ab.pattern5.name=Thaumaturgic Crafting Pattern #5
+item.ab.pattern6.name=Thaumaturgic Crafting Pattern #6
+item.ab.pattern7.name=Thaumaturgic Crafting Pattern #7
+item.ab.pattern8.name=Thaumaturgic Crafting Pattern #8
+item.ab.pattern9.name=Thaumaturgic Crafting Pattern #9
 item.sprawlRod.name=Rod of Sprawl
 item.autoPocketWardrobe.name=Nimble Cube
 item.talismanHiddenRiches.name=Key to Hidden Wealth
 item.hornPlenty.name=Horn of Plenty
 item.sphereNavigation.name=Sphere of Navigation
-item.itemAquaSword.name=Blade of Sea
+item.itemAquaSword.name=Forseti Colada
 
 //FLOWER LORE
 
@@ -122,14 +122,14 @@ abmisc.fateBoard.info1=every Elf, hoping to get a valuable prize...
 
 //THAUMCRAFT
 
-tc.research_category.AdvancedBotany=Advanced Botany
-tc.research_category.AB_botania=Advanced Botany
+tc.research_category.AdvancedBotany=Druidic Thaumaturgy
+tc.research_category.AB_botania=Druidic Thaumaturgy
 tc.research_name.TerraHoe=Terra Hoe
-tc.research_name.AquaSword=Blade of sea
+tc.research_name.AquaSword=Forseti Colada
 tc.research_name.ManaCharger=Mana Charger
-tc.research_name.MithrillSword=Blade of Space
-tc.research_name.Forge=Forge of Nidavellir
-tc.research_name.Destroyer=Material Destroyer
+tc.research_name.MithrillSword=The Sword of Light
+tc.research_name.Forge=Forge of Niðavellir
+tc.research_name.Destroyer=Freagarach
 tc.research_name.Nebula=Nebula Fragments
 
 TerraHoePages=The standard way of harvesting is getting boring over time. Terrahoe, or rather its unique ability to transform the soil into a more fertile and automated soil, can help with this very problem.<BR>The harvest in the new soil gathers itself after a certain period of time!
@@ -140,6 +140,8 @@ ForgePages=A really powerful Dwarf invention for fusing different materials into
 ManaChargerPages=The mana charger is a device that allows you to charge up to 4 portable mana sources at once, as well as to discharge one of them. <BR>To start the charger, you must bind a mana source to it, such as a Mana Pool or Mana Container
 NebulaPages=A nebula fragment is a material filled with part of the power of space. It allows you to create instruments and weapons that are unearthly in power.
 
+
+tc.research_text.ManaCharger=Communing with Nature
 
 
 
@@ -183,13 +185,13 @@ botania.page.ancientAlphirine2=Opening of the portal by the Ancient Alphirine
 botania.page.ancientAlphirine.petalCraft=The wisest flower, by the way
 botania.page.ancientAlphirine.alphirineCraft=DO NOT BREATHE IN!
 
-botania.entry.advancedPlate=Forge of Nidavellir
-botania.tagline.advancedPlate=Created from the drawings of dwarves from Nidavellir
-botania.page.advancedPlate0=Forge of Nidavellir - a really powerful Dwarf invention for fusing different materials into one whole, the main thing is to know the proportions!<br>This forge was given to the Elves, that is, it came to our land at the time of "Destruction," but... Not for long - it was soon destroyed.
+botania.entry.advancedPlate=Forge of Niðavellir
+botania.tagline.advancedPlate=Created from the drawings of dwarves from Niðavellir
+botania.page.advancedPlate0=Forge of Niðavellir - A truly powerful Dwarven invention for fusing different materials into a molecular union. <br>This forge was given to the Elves, that is, it came to our land at the time of "Destruction," but... Not for long - not in the face of cataclysm.
 botania.page.advancedPlate.craft=The Engineering Revolution
-botania.page.advancedPlate.structure=Forge of Nidavellir
-botania.page.advancedPlate.abCraft0=Creating everyone's favorite terrastal
-botania.page.advancedPlate.abCraft1=Burn My Star...
+botania.page.advancedPlate.structure=Forge of Niðavellir
+botania.page.advancedPlate.abCraft0=Creating everyone's favorite terrasteel
+botania.page.advancedPlate.abCraft1=Kagrenac would approve
 
 botania.entry.lebethronWood=Lebethron Wood
 botania.tagline.lebethronWood=The best creation of the Elves!
@@ -204,12 +206,12 @@ botania.tagline.lebethronSpreader=Deliver a ton of mana? No problem!
 botania.page.lebethronSpreader0=A natural mana dispenser designed for true mana control specialists! Thanks to it, you can deliver a huge amount of mana in an insanely short amount of time, which allows you to fully unleash the effectiveness of flowers.<br>Also... HE IS LIGHTING!!!
 botania.page.lebethronSpreader.craft=You can't have too much mana
 
-botania.entry.mithrill=Mithrill
+botania.entry.mithrill=Mithril
 botania.tagline.mithrill=Mighty and indestructible metal!
-botania.page.mithrill0=Mithrill - stands out for its strength among other metals, or rather its lack of it, as it can not get any damage. <br>Such unique properties are the result of a successful proportion of Gaia Spirit and Terrasteel, with the addition of Manasteel, to balance the energy within the alloy.
+botania.page.mithrill0=Mithril - stands out for its strength among other metals, or rather its lack of it, as it can not get any damage. <br>Such unique properties are the result of a successful proportion of Gaia Spirit and Terrasteel, with the addition of Manasteel, to balance the energy within the alloy.
 botania.page.mithrill.abCraft=Gaia Spirit Ingot [Remake]
-botania.page.mithrill1=The Material Destroyer - a harsh tool based on a global catastrophe in the past. <br>He is perfectly capable of breaking any block almost instantly. His speed is so high that it was necessary to create a *Fuse* in him - that is, to turn him off/on.
-botania.page.mithrill.craft=The hip never breaks :(
+botania.page.mithrill1=Freagarach - a harsh tool based on a global catastrophe in the past. <br>He is perfectly capable of breaking any block almost instantly. His speed is so high that it was necessary to create a *Fuse* in him - that is, to turn him off/on.
+botania.page.mithrill.craft=The hip never breaks
 
 botania.entry.manaContainer=Mana Container's
 botania.tagline.manaContainer=A mana depot for madmen
@@ -242,9 +244,9 @@ botania.page.manaFlower0=Nature's Gift - the name speaks for itself. It is usual
 botania.page.manaFlower.craft=Economy is the best friend
 botania.page.manaFlower.alphirineCraft=Beautiful flower
 
-botania.entry.mithrillSword=Blade of Space
+botania.entry.mithrillSword=Claíomh Solais
 botania.tagline.mithrillSword=Mobility in battle never hurts
-botania.page.mithrillSword0=Blade of Space - is a melee weapon that uses mana to communicate with the cosmic forces, the more mana in the blade, the stronger the connection. <br>The power of connection to cosmic forces is divided into Ranks, like Terra Shatterer. Each rank unlocks a new magical property for the Space Blade, more on the next page.
+botania.page.mithrillSword0=Claíomh Solais - is a melee weapon that uses mana to communicate with the cosmic forces, the more mana in the blade, the stronger the connection. <br>The power of connection to cosmic forces is divided into Ranks, like Terra Shatterer. Each rank unlocks a new magical property for the Blade of Light, more on the next page.
 botania.page.mithrillSword1=Description of the magical properties: <br>Starburst - a projectile filled with star power, released at the swing of the sword. <br>Spatial leap - a jerk in the direction of the player's gaze, performed by pressing the RCM<br>Note: The player cannot use a block, during blade reloads. 
 botania.page.mithrillSword.craft=It'll look great in your hand!
 
@@ -286,7 +288,7 @@ botania.page.manaCharger.craft=Quick Charge
 
 botania.entry.nebulaArmor=Nebula Armor
 botania.tagline.nebulaArmor=Unbreakable Nerd outfit
-botania.page.nebulaArmor0=Nebula Armor is a powerful nerf gear created with Nebula Fragments and Terrastal armor. <br>Each piece of equipment has its own unique properties, which depend on the amount of mana, the less mana, the weaker the protective properties of the armor.
+botania.page.nebulaArmor0=Nebula Armor is a powerful nerf gear created with Nebula Fragments and terrasteel armor. <br>Each piece of equipment has its own unique properties, which depend on the amount of mana, the less mana, the weaker the protective properties of the armor.
 botania.page.nebulaArmor1=Characteristics of each armor item: <br>Nebula Helmet - boosts health <br>Nebula Chestplate - allows the wearer to fly, and also has a throwback resistance <br>Nebula Leggings - increase jump height <br>Nebula Boots - accelerate the host
 botania.page.nebulaArmor.craft0=Face of Space
 botania.page.nebulaArmor.craft1=Shall we fly?
@@ -312,9 +314,9 @@ botania.tagline.nebulaRod=You're not afraid of portals, are you? Some people can
 botania.page.nebulaRod0=The Nebula Staff is a magical tool of personal use, revealing the core essence of Nebula Fragments - moving! <br>Use this rod when you need to leave an unpleasant place urgently, or simply for travelling.
 botania.page.nebulaRod.craft=Who's where, but me...
 
-botania.entry.thaumAutoCraft=Thaumim Crafty Crate
+botania.entry.thaumAutoCraft=Thaumium Crafting Crate
 botania.tagline.thaumAutoCraft=The magical techno-revolution
-botania.page.thaumAutoCraft0=Thaumim Crafty Crate - is the counterpart to the normal Assembly Box, which creates things from the Magic Workbench. <br>To make it work, it requires a Taumonomicon and a wand with Vis, also different creation grids for this box!
+botania.page.thaumAutoCraft0=Thaumium Crafting Crate - is the counterpart to the normal Assembly Box, which creates things from the Magic Workbench. <br>To make it work, it requires a Thaumonomicon and a wand with Vis, also different creation grids for this box!
 botania.page.thaumAutoCraft.craft=Auto-magic!?
 botania.page.thaumAutoCraft.craft0=Created Placeholder
 botania.page.thaumAutoCraft.craft1=Made by minecrafters!
@@ -322,16 +324,16 @@ botania.page.thaumAutoCraft.craft1=Made by minecrafters!
 botania.entry.gladious=Pure Gladiolus
 botania.tagline.gladious=Did someone die? Where did the pieces of the whiskers come from?
 botania.page.gladious0=Pure Gladiolus - The flower is designed to generate pieces - a vis for mana. It generates them randomly, due to its high sensitivity to primal aspects.
-botania.page.gladious.petalCraft=Alternative charging - vis?
+botania.page.gladious.petalCraft=Alternative charging vis?
 
-botania.entry.gameBoard=Playing Board
+botania.entry.gameBoard=Dice Board
 botania.tagline.gameBoard=A favourite pastime of many nerds when they are bored
-botania.page.gameBoard0=Playing Board - a fun activity for nerds to relax and take a break from the drudgery of everyday life.<br>The game board supports 2 game modes - Play with a Friend and Single. These can be switched by SHIFT + RBM - while waiting for the next game.
+botania.page.gameBoard0=Dice Board - a fun activity for nerds to relax and take a break from the drudgery of everyday life.<br>The game board supports 2 game modes - Play with a Friend and Single. These can be switched by SHIFT + RBM - while waiting for the next game.
 botania.page.gameBoard.craft=Shall we play for mana? How's that?
 
-botania.entry.fateBoard=Fate Playing Board
+botania.entry.fateBoard=Dice Board of Fate
 botania.tagline.fateBoard=1 cube - 6 relics, makes sense. 2 cubes...
-botania.page.fateBoard0=Fate Playing Board - a kind of fun, just like a normal Playing Board, but - the game requires a few Destiny Cubes.<br>As you know - by rolling the Fate Cube you can get a relic associated with that number.<br>Consequently, 2 cubes will yield up to 12 relics. [Currently up to 11, with 1 more in development]
+botania.page.fateBoard0=Dice Board of Fate - a kind of fun, just like a normal Playing Board, but - the game requires a few Destiny Cubes.<br>As you know - by rolling the Dice of Fate you can get a relic associated with that number.<br>Consequently, 2 cubes will yield up to 12 relics. [Currently up to 11, with 1 more in development]
 botania.page.fateBoard.alphirineCraft=Shall we play relics?
 
 botania.entry.richesKey=Key to Hidden Wealth
@@ -360,8 +362,8 @@ botania.entry.hornPlenty=Horn of Plenty
 botania.tagline.hornPlenty=Double booty - what could be better?
 botania.page.hornPlenty0=The Horn of Plenty is a relic of one of the Ases associated with hunting!<br>Use the horn to charge it, charging requires some mana. After filling with mystical powers, go hunting, each time the victim dies at your hand, there is a chance to get additional drop from this creature. 
 
-botania.entry.aquaSword=Blade of Sea
-botania.tagline.aquaSword=Get away from me! I'm wet...
-botania.page.aquaSword0=Blade of Sea - a mystical melee weapon imbued with the powers of the seas!<br>An attack with Blade of the Sea is resisted by a water splash, and pushes everyone around in the direction the player is looking<br>The block, on the other hand, is resisted by a water shield, which prevents enemies from approaching the player.
+botania.entry.aquaSword=Forseti Colada
+botania.tagline.aquaSword=Power like no other.
+botania.page.aquaSword0=Forseti Colada - a mystical melee weapon imbued with the powers of the seas!<br>An attack with Blade of the Sea is resisted by a water splash, and pushes everyone around in the direction the player is looking<br>The block, on the other hand, is resisted by a water shield, which prevents enemies from approaching the player.
 botania.page.aquaSword.craft=Meditation in total silence
 
