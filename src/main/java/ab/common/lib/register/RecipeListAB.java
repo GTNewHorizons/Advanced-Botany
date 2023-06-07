@@ -354,12 +354,12 @@ public class RecipeListAB implements IModHelper {
 
         manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
-                OreDictionary.getOres("blockThaumium").get(0),
+                new ItemStack((Item) Item.itemRegistry.getObject("gregtech:gt.blockmetal7"), 1, 4),
                 9 * 1500,
                 0x25d6b7));
         manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
-                OreDictionary.getOres("blockThaumium").get(1),
+                new ItemStack(ConfigBlocks.blockCosmeticSolid, 1, 4),
                 9 * 1500,
                 0x25d6b7));
 
