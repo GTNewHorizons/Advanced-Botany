@@ -101,7 +101,7 @@ public class RecipeListAB implements IModHelper {
     public static RecipeFountainMana manaweaveClothRecipe;
     public static RecipeFountainMana wandCoresRecipes;
     public static RecipeFountainMana wandCapRecipe;
-    public static RecipeFountainMana Bee1Recipe;
+    // public static RecipeFountainMana Bee1Recipe;
 
     public static RecipeFountainAlchemy leatherRecipe;
     public static RecipeFountainAlchemy woodRecipes;
@@ -130,7 +130,7 @@ public class RecipeListAB implements IModHelper {
     public static RecipeFountainAlchemy tallgrassRecipes;
     public static RecipeFountainAlchemy flowersRecipes;
     public static RecipeFountainAlchemy petiteRecipes;
-    public static RecipeFountainAlchemy Bee2Recipe;
+    // public static RecipeFountainAlchemy Bee2Recipe;
 
     public static RecipeFountainConjuration redstoneRecipe;
     public static RecipeFountainConjuration glowstoneRecipe;
@@ -463,7 +463,7 @@ public class RecipeListAB implements IModHelper {
                 0x25d6b7));
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
-                OreDictionary.getOres("gemDiamond").get(0),
+                OreDictionary.getOres("craftingIndustrialDiamond").get(0),
                 10000 * 2,
                 0x25d6b7));
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(

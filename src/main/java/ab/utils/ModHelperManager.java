@@ -13,7 +13,7 @@ public class ModHelperManager {
     }
 
     public static void init() {
-        // helper.init();
+        helper.init();
     }
 
     public static void postInit() {
