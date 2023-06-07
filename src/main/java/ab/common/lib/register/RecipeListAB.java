@@ -83,6 +83,7 @@ public class RecipeListAB implements IModHelper {
     public static RecipeAdvancedPlate FlawlessDragonstoneRecipe;
     public static RecipeAdvancedPlate ExquisiteDragonstoneRecipe;
     public static RecipeAdvancedPlate EnderAirRecipe;
+    public static RecipeAdvancedPlate GrassRecipe;
 
     public static RecipeFountainMana manasteelRecipes;
     public static RecipeFountainMana manaPowderRecipes;
@@ -335,6 +336,13 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModBlocks.endStoneBrick, 1, 2),
                 new ItemStack(ModItems.manaBottle),
                 new ItemStack((Item) Item.itemRegistry.getObject("ThaumicTinkerer:fireAir")),
+                500,
+                0x29de20);
+        GrassRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
+                new ItemStack(Blocks.tallgrass, 8, 1),
+                new ItemStack(Items.wheat),
+                new ItemStack(Items.wheat_seeds),
+                new ItemStack(ModItems.fertilizer),
                 500,
                 0x29de20);
         ////////////////////////////////////////////////////////////////////////////////////////
@@ -811,7 +819,7 @@ public class RecipeListAB implements IModHelper {
 
         stoneRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
                 new ItemStack(ModFluffBlocks.stone),
-                OreDictionary.getOres("stone").get(0),
+                new ItemStack(Blocks.stone),
                 200,
                 0x25d6b7));
         for (int i = 0; i < 4; i++) {
@@ -1003,8 +1011,8 @@ public class RecipeListAB implements IModHelper {
                 4500,
                 0x25d6b7);
         gravelRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
-                new ItemStack(Block.getBlockFromName("gravel"), 2),
-                new ItemStack(Block.getBlockFromName("gravel")),
+                new ItemStack(Blocks.gravel, 2, 0),
+                new ItemStack(Blocks.gravel),
                 720,
                 0x25d6b7);
 
