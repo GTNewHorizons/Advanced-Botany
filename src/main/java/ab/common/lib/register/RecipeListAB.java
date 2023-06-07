@@ -1,8 +1,12 @@
 package ab.common.lib.register;
 
+import static net.fuzzycraft.botanichorizons.util.Constants.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import net.fuzzycraft.botanichorizons.util.OreDict;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -44,6 +48,9 @@ import vazkii.botania.common.lib.LibOreDict;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAdvancedPlate;
 import ab.api.recipe.RecipeAncientAlphirine;
+import ab.api.recipe.RecipeFountainAlchemy;
+import ab.api.recipe.RecipeFountainConjuration;
+import ab.api.recipe.RecipeFountainMana;
 import ab.api.recipe.lexicon.AdvancedPlateCraftPage;
 import ab.api.recipe.lexicon.AlphirineCraftPage;
 import ab.common.block.tile.TileLebethronCore;
@@ -51,7 +58,6 @@ import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.ItemCraftingPattern;
 import ab.utils.IModHelper;
 import ab.utils.LocalizationManager;
-import ab.utils.OreDict;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeListAB implements IModHelper {
@@ -76,14 +82,78 @@ public class RecipeListAB implements IModHelper {
     public static RecipeAdvancedPlate ExquisiteManaDiamondRecipe;
     public static RecipeAdvancedPlate FlawlessDragonstoneRecipe;
     public static RecipeAdvancedPlate ExquisiteDragonstoneRecipe;
+    public static RecipeAdvancedPlate EnderAirRecipe;
+
+    public static RecipeFountainMana manasteelRecipes;
+    public static RecipeFountainMana manaPowderRecipes;
+    public static RecipeFountainMana manaDiamondRecipes;
+    public static RecipeFountainMana grassSeedsRecipe;
+    public static RecipeFountainMana podzolSeedsRecipe;
+    public static RecipeFountainMana mycelSeedsRecipes;
+    public static RecipeFountainMana manaQuartzRecipe;
+    public static RecipeFountainMana managlassRecipe;
+    public static RecipeFountainMana manaStringRecipe;
+    public static RecipeFountainMana manaBottleRecipe;
+    public static RecipeFountainMana manaPearlRecipe;
+    public static RecipeFountainMana pistonRelayRecipe;
+    public static RecipeFountainMana manaCookieRecipe;
+    public static RecipeFountainMana tinyPotatoRecipe;
+    public static RecipeFountainMana manaweaveClothRecipe;
+    public static RecipeFountainMana wandCoresRecipes;
+    public static RecipeFountainMana wandCapRecipe;
+    public static RecipeFountainMana Bee1Recipe;
+
+    public static RecipeFountainAlchemy leatherRecipe;
+    public static RecipeFountainAlchemy woodRecipes;
+    public static RecipeFountainAlchemy saplingRecipes;
+    public static RecipeFountainAlchemy glowstoneDustRecipe;
+    public static RecipeFountainAlchemy quartzRecipes;
+    public static RecipeFountainAlchemy chiseledBrickRecipe;
+    public static RecipeFountainAlchemy iceRecipe;
+    public static RecipeFountainAlchemy swampFolliageRecipes;
+    public static RecipeFountainAlchemy fishRecipes;
+    public static RecipeFountainAlchemy cropRecipes;
+    public static RecipeFountainAlchemy potatoRecipe;
+    public static RecipeFountainAlchemy netherWartRecipe;
+    public static RecipeFountainAlchemy gunpowderAndFlintRecipes;
+    public static RecipeFountainAlchemy nameTagRecipe;
+    public static RecipeFountainAlchemy stringRecipes;
+    public static RecipeFountainAlchemy slimeballCactusRecipes;
+    public static RecipeFountainAlchemy enderPearlRecipe;
+    public static RecipeFountainAlchemy redstoneToGlowstoneRecipes;
+    public static RecipeFountainAlchemy sandRecipe;
+    public static RecipeFountainAlchemy redSandRecipe;
+    public static RecipeFountainAlchemy clayBreakdownRecipes;
+    public static RecipeFountainAlchemy coarseDirtRecipe;
+    public static RecipeFountainAlchemy prismarineRecipe;
+    public static RecipeFountainAlchemy stoneRecipes;
+    public static RecipeFountainAlchemy tallgrassRecipes;
+    public static RecipeFountainAlchemy flowersRecipes;
+    public static RecipeFountainAlchemy petiteRecipes;
+    public static RecipeFountainAlchemy Bee2Recipe;
+
+    public static RecipeFountainConjuration redstoneRecipe;
+    public static RecipeFountainConjuration glowstoneRecipe;
+    public static RecipeFountainConjuration quartzRecipe;
+    public static RecipeFountainConjuration coalRecipe;
+    public static RecipeFountainConjuration snowballRecipe;
+    public static RecipeFountainConjuration netherrackRecipe;
+    public static RecipeFountainConjuration soulSandRecipe;
+    public static RecipeFountainConjuration gravelRecipe;
+    public static RecipeFountainConjuration leavesRecipes;
+    public static RecipeFountainConjuration grassRecipe;
 
     public static RecipePetals alphirineRecipe;
+    public static RecipePetals PrimalRecipe;
     public static RecipePetals dictariusRecipe;
     public static RecipePetals aspecolusRecipe;
     public static RecipePetals pureGladRecipe;
     public static RecipePetals azartFlowerRecipe;
 
     public static LexiconEntry advandedAgglomerationPlate;
+    public static LexiconEntry FountainMana;
+    public static LexiconEntry FountainAlchemy;
+    public static LexiconEntry FountainConjuration;
     public static LexiconEntry ancientAlphirine;
     public static LexiconEntry lebethronWood;
     public static LexiconEntry lebethronSpreader;
@@ -124,6 +194,10 @@ public class RecipeListAB implements IModHelper {
     public static ResearchPage ForgePages;
     public static ResearchPage ManaChargerPages;
     public static ResearchPage NebulaPages;
+    public static ResearchPage FountainManaPages;
+    public static ResearchPage FountainManaPages2;
+    public static ResearchPage FountainAlchemyPages;
+    public static ResearchPage FountainConjurationPages;
 
     public static KnowledgeType forgotten;
 
@@ -150,6 +224,9 @@ public class RecipeListAB implements IModHelper {
     public static InfusionRecipe NebulaChest;
     public static InfusionRecipe NebulaLegs;
     public static InfusionRecipe NebulaBoots;
+    public static InfusionRecipe FountainManaB;
+    public static InfusionRecipe FountainAlchemyB;
+    public static InfusionRecipe FountainConjurationB;
 
     public static void setupCrafting() {
 
@@ -187,6 +264,7 @@ public class RecipeListAB implements IModHelper {
                 60);
 
         ///////////////////////////////////////////////////////////////////////////////////////// Forge of Nidavellir
+        ///////////////////////////////////////////////////////////////////////////////////////// and fountains
         ///////////////////////////////////////////////////////////////////////////////////////// Recipes
 
         mithrillRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
@@ -252,16 +330,774 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModItems.manaResource, 1, 9),
                 300000,
                 0xd6259d);
-        ///////////////////////////////////////////////////////////////////////////////////////// Shaped Recipes
+        EnderAirRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
+                new ItemStack(ModItems.manaResource, 16, 15),
+                new ItemStack(ModBlocks.endStoneBrick, 1, 2),
+                new ItemStack(ModItems.manaBottle),
+                new ItemStack((Item) Item.itemRegistry.getObject("ThaumicTinkerer:fireAir")),
+                500,
+                0x29de20);
+        ////////////////////////////////////////////////////////////////////////////////////////
 
+        // Stone age -- diluted pool, max 10K
+
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
+                OreDictionary.getOres("ingotSteel").get(0),
+                3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
+                OreDictionary.getOres("ingotSteel").get(1),
+                3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
+                OreDictionary.getOres("ingotSteel").get(2),
+                3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
+                OreDictionary.getOres("ingotSteel").get(3),
+                3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
+                OreDictionary.getOres("ingotThaumium").get(0),
+                1500,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
+                OreDictionary.getOres("ingotThaumium").get(1),
+                1500,
+                0x25d6b7));
+
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
+                OreDictionary.getOres("blockSteel").get(0),
+                9 * 3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
+                OreDictionary.getOres("blockSteel").get(1),
+                9 * 3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
+                OreDictionary.getOres("blockSteel").get(2),
+                9 * 3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
+                OreDictionary.getOres("blockSteel").get(3),
+                9 * 3000,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
+                OreDictionary.getOres("blockThaumium").get(0),
+                9 * 1500,
+                0x25d6b7));
+        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
+                OreDictionary.getOres("blockThaumium").get(1),
+                9 * 1500,
+                0x25d6b7));
+
+        manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                new ItemStack(Items.gunpowder),
+                1000,
+                0x25d6b7));
+        manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                new ItemStack(Items.redstone),
+                1000,
+                0x25d6b7));
+        manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                new ItemStack(Items.glowstone_dust),
+                750,
+                0x25d6b7));
+        manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                new ItemStack(Items.sugar),
+                2000,
+                0x25d6b7));
+        manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                OreDictionary.getOres("dustThaumium").get(0),
+                250,
+                0x25d6b7));
+        manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                OreDictionary.getOres("dustVinteum").get(0),
+                150,
+                0x25d6b7));
+        manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                OreDictionary.getOres("dustDraconium").get(0),
+                50,
+                0x25d6b7));
+        for (int i = 0; i < 16; i++) manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANAPOWDER),
+                new ItemStack(ModItems.dye, 1, i),
+                1500,
+                0x25d6b7));
+
+        // only the exquisite diamond is good enough for a diluted pool
+
+        manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
+                new ItemStack((Item) Item.itemRegistry.getObject("miscutils:IndustrialDiamondExquisite")),
+                10000 * 1,
+                0x25d6b7));
+        manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
+                OreDictionary.getOres("gemExquisiteDiamond").get(0),
+                10000 * 1,
+                0x25d6b7));
+        manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
+                OreDictionary.getOres("gemFlawlessDiamond").get(0),
+                10000 * 2,
+                0x25d6b7));
+        manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
+                OreDictionary.getOres("gemDiamond").get(0),
+                10000 * 2,
+                0x25d6b7));
+        manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
+                new ItemStack(Items.diamond),
+                10000 * 4,
+                0x25d6b7));
+        manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.storage, 1, STORAGE_META_DIAMONDBLOCK),
+                new ItemStack(Blocks.diamond_block),
+                10000 * 4 * 9,
+                0x25d6b7));
+
+        grassSeedsRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.grassSeeds, 1, SEEDS_META_GRASS),
+                new ItemStack(Blocks.tallgrass, 1, 1),
+                2500,
+                0x25d6b7);
+        podzolSeedsRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.grassSeeds, 1, SEEDS_META_PODZOL),
+                new ItemStack(Blocks.deadbush),
+                2500,
+                0x25d6b7);
+        mycelSeedsRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.grassSeeds, 1, SEEDS_META_MYCELIUM),
+                new ItemStack(ModBlocks.mushroom, 1, Short.MAX_VALUE),
+                6500,
+                0x25d6b7));
+
+        mycelSeedsRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.grassSeeds, 1, SEEDS_META_MYCELIUM),
+                new ItemStack(Blocks.red_mushroom),
+                6500,
+                0x25d6b7));
+        mycelSeedsRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.grassSeeds, 1, SEEDS_META_MYCELIUM),
+                new ItemStack(Blocks.brown_mushroom),
+                6500,
+                0x25d6b7));
+        mycelSeedsRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.grassSeeds, 1, SEEDS_META_MYCELIUM),
+                new ItemStack((Item) Item.itemRegistry.getObject("BiomesOPlenty:mushrooms"), 1, Short.MAX_VALUE),
+                6500,
+                0x25d6b7));
+        mycelSeedsRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.grassSeeds, 1, SEEDS_META_MYCELIUM),
+                new ItemStack((Item) Item.itemRegistry.getObject("harvestcraft:whitemushroomItem")),
+                6500,
+                0x25d6b7));
+
+        manaQuartzRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.quartz, 1, QUARTZ_META_MANA),
+                new ItemStack(Items.quartz),
+                1000,
+                0x25d6b7);
+
+        managlassRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.manaGlass),
+                new ItemStack((Item) Item.itemRegistry.getObject("minecraft:stained_glass"), 1, Short.MAX_VALUE),
+                250,
+                0x25d6b7);
+        managlassRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.manaGlass),
+                new ItemStack(Blocks.glass),
+                250,
+                0x25d6b7);
+        manaStringRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, 16),
+                new ItemStack(Items.string),
+                5000,
+                0x25d6b7);
+
+        manaBottleRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaBottle),
+                new ItemStack(Items.glass_bottle),
+                10000,
+                0x25d6b7);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // MV -- regular pool, max 1M
+        manaPearlRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_PEARL),
+                new ItemStack(Items.ender_pearl),
+                10000 * 3 / 2,
+                0x25d6b7);
+
+        pistonRelayRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.pistonRelay),
+                new ItemStack(Blocks.piston),
+                15000,
+                0x25d6b7);
+        manaCookieRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaCookie),
+                new ItemStack(Items.cookie),
+                20000,
+                0x25d6b7);
+
+        tinyPotatoRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModBlocks.tinyPotato),
+                new ItemStack(Items.potato),
+                31337,
+                0x25d6b7);
+
+        // Manaweave Cloth Recipe
+        manaweaveClothRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_CLOTH),
+                OreDictionary.getOres("materialCloth").get(0),
+                15000,
+                0x25d6b7);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        wandCapRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 3),
+                new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 4),
+                200,
+                0x25d6b7);
+
+        wandCoresRecipes = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCores"), 1, 11),
+                new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCores"), 1, 12),
+                2000,
+                0x25d6b7);
+
+        wandCoresRecipes = AdvancedBotanyAPI.registerFountainManaRecipe(
+                new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCores"), 1, 7),
+                new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCores"), 1, 8),
+                2000,
+                0x25d6b7);
+                
+        // Bee1Recipe = AdvancedBotanyAPI.registerFountainManaRecipe(
+        // new ItemStack((Item) Item.itemRegistry.getObject("magicbees.speciesBotBotanic")),
+        // new ItemStack((Item) Item.itemRegistry.getObject("magicbees.speciesBotRooted")),
+        // 450000,
+        // 0x25d6b7);
+        // Alchemy crafting
+        // Bee2Recipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+        // new ItemStack((Item) Item.itemRegistry.getObject("magicbees.speciesBotVazbee")),
+        // new ItemStack((Item) Item.itemRegistry.getObject("magicbees.speciesBotFloral")),
+        // 450000,
+        // 0x25d6b7);
+
+        leatherRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.leather),
+                new ItemStack(Items.rotten_flesh),
+                600,
+                0x25d6b7);
+
+        woodRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.log, 1, 0),
+                new ItemStack(Blocks.log2, 1, 1),
+                40,
+                0x25d6b7));
+        woodRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.log, 1, 1),
+                new ItemStack(Blocks.log, 1, 0),
+                40,
+                0x25d6b7));
+        woodRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.log, 1, 2),
+                new ItemStack(Blocks.log, 1, 1),
+                40,
+                0x25d6b7));
+        woodRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.log, 1, 3),
+                new ItemStack(Blocks.log, 1, 2),
+                40,
+                0x25d6b7));
+        woodRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.log2, 1, 0),
+                new ItemStack(Blocks.log, 1, 3),
+                40,
+                0x25d6b7));
+        woodRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.log2, 1, 1),
+                new ItemStack(Blocks.log2, 1, 0),
+                40,
+                0x25d6b7));
+
+        for (int i = 0; i < 6; i++) {
+            saplingRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                    new ItemStack(Blocks.sapling, 1, i == 5 ? 0 : i + 1),
+                    new ItemStack(Blocks.sapling, 1, i),
+                    120,
+                    0x25d6b7));
+        }
+
+        glowstoneDustRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.glowstone_dust, 4),
+                new ItemStack(Blocks.glowstone),
+                25,
+                0x25d6b7);
+
+        quartzRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.quartz, 4),
+                new ItemStack(Blocks.quartz_block, 1, Short.MAX_VALUE),
+                25,
+                0x25d6b7));
+        quartzRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModItems.quartz, 4, 0),
+                new ItemStack(ModFluffBlocks.darkQuartz, 1, Short.MAX_VALUE),
+                25,
+                0x25d6b7));
+        quartzRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModItems.quartz, 4, 1),
+                new ItemStack(ModFluffBlocks.manaQuartz, 1, Short.MAX_VALUE),
+                25,
+                0x25d6b7));
+        quartzRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModItems.quartz, 4, 2),
+                new ItemStack(ModFluffBlocks.blazeQuartz, 1, Short.MAX_VALUE),
+                25,
+                0x25d6b7));
+        quartzRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModItems.quartz, 4, 3),
+                new ItemStack(ModFluffBlocks.lavenderQuartz, 1, Short.MAX_VALUE),
+                25,
+                0x25d6b7));
+        quartzRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModItems.quartz, 4, 4),
+                new ItemStack(ModFluffBlocks.redQuartz, 1, Short.MAX_VALUE),
+                25,
+                0x25d6b7));
+        quartzRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModItems.quartz, 4, 5),
+                new ItemStack(ModFluffBlocks.elfQuartz, 1, Short.MAX_VALUE),
+                25,
+                0x25d6b7));
+
+        chiseledBrickRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.stonebrick, 1, 3),
+                new ItemStack(Blocks.stonebrick),
+                150,
+                0x25d6b7);
+        iceRecipe = AdvancedBotanyAPI
+                .registerFountainAlchemyRecipe(new ItemStack(Blocks.ice), new ItemStack(Blocks.snow), 2250, 0x25d6b7);
+
+        swampFolliageRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.waterlily),
+                new ItemStack(Blocks.vine),
+                320,
+                0x25d6b7));
+        swampFolliageRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.vine),
+                new ItemStack(Blocks.waterlily),
+                320,
+                0x25d6b7));
+
+        for (int i = 0; i < 4; i++) {
+            fishRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                    new ItemStack(Items.fish, 1, i == 3 ? 0 : i + 1),
+                    new ItemStack(Items.fish, 1, i),
+                    200,
+                    0x25d6b7));
+        }
+
+        cropRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.wheat_seeds),
+                new ItemStack(Items.dye, 1, 3),
+                6000,
+                0x25d6b7));
+        cropRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.potato),
+                new ItemStack(Items.wheat),
+                6000,
+                0x25d6b7));
+        cropRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.carrot),
+                new ItemStack(Items.potato),
+                6000,
+                0x25d6b7));
+        cropRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.melon_seeds),
+                new ItemStack(Items.carrot),
+                6000,
+                0x25d6b7));
+        cropRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.pumpkin_seeds),
+                new ItemStack(Items.melon_seeds),
+                6000,
+                0x25d6b7));
+        cropRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.dye, 1, 3),
+                new ItemStack(Items.pumpkin_seeds),
+                6000,
+                0x25d6b7));
+
+        potatoRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.potato),
+                new ItemStack(Items.poisonous_potato),
+                1200,
+                0x25d6b7);
+        netherWartRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.nether_wart),
+                new ItemStack(Items.blaze_rod),
+                4000,
+                0x25d6b7);
+
+        gunpowderAndFlintRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.flint),
+                new ItemStack(Items.gunpowder),
+                200,
+                0x25d6b7));
+        gunpowderAndFlintRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.gunpowder),
+                new ItemStack(Items.flint),
+                4000,
+                0x25d6b7));
+
+        nameTagRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.name_tag),
+                new ItemStack(Items.writable_book),
+                16000,
+                0x25d6b7);
+
+        for (int i = 0; i < 16; i++) {
+            stringRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                    new ItemStack(Items.string, 3),
+                    new ItemStack(Blocks.wool, 1, i),
+                    100,
+                    0x25d6b7));
+        }
+
+        slimeballCactusRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.slime_ball),
+                new ItemStack(Blocks.cactus),
+                1200,
+                0x25d6b7));
+        slimeballCactusRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.cactus),
+                new ItemStack(Items.slime_ball),
+                1200,
+                0x25d6b7));
+
+        enderPearlRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.ender_pearl),
+                new ItemStack(Items.ghast_tear),
+                28000,
+                0x25d6b7);
+
+        redstoneToGlowstoneRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.redstone),
+                new ItemStack(Items.glowstone_dust),
+                300,
+                0x25d6b7));
+        redstoneToGlowstoneRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.glowstone_dust),
+                new ItemStack(Items.redstone),
+                300,
+                0x25d6b7));
+
+        sandRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Block.getBlockFromName("sand")),
+                new ItemStack(Blocks.cobblestone),
+                50,
+                0x25d6b7);
+        redSandRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Block.getBlockFromName("sand"), 1, 1),
+                new ItemStack(Blocks.hardened_clay),
+                50,
+                0x25d6b7);
+
+        clayBreakdownRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.clay_ball, 4),
+                new ItemStack(Blocks.clay),
+                25,
+                0x25d6b7));
+        clayBreakdownRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Items.brick, 4),
+                new ItemStack(Blocks.brick_block),
+                25,
+                0x25d6b7));
+
+        coarseDirtRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.dirt, 1, 1),
+                new ItemStack(Blocks.dirt),
+                120,
+                0x25d6b7);
+
+        prismarineRecipe = AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_PRISMARINE),
+                new ItemStack(Items.quartz),
+                200,
+                0x25d6b7);
+
+        stoneRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ModFluffBlocks.stone),
+                OreDictionary.getOres("stone").get(0),
+                200,
+                0x25d6b7));
+        for (int i = 0; i < 4; i++) {
+            stoneRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                    new ItemStack(ModFluffBlocks.stone, 1, i),
+                    new ItemStack(ModFluffBlocks.stone, 1, i == 0 ? 3 : i - 1),
+                    200,
+                    0x25d6b7));
+        }
+
+        tallgrassRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.deadbush),
+                new ItemStack(Blocks.tallgrass, 1, 2),
+                500,
+                0x25d6b7));
+        tallgrassRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.tallgrass, 1, 1),
+                new ItemStack(Blocks.deadbush),
+                500,
+                0x25d6b7));
+        tallgrassRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.tallgrass, 1, 2),
+                new ItemStack(Blocks.tallgrass, 1, 1),
+                500,
+                0x25d6b7));
+
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower),
+                new ItemStack(Blocks.yellow_flower),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 1),
+                new ItemStack(Blocks.red_flower),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 2),
+                new ItemStack(Blocks.red_flower, 1, 1),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 3),
+                new ItemStack(Blocks.red_flower, 1, 2),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 4),
+                new ItemStack(Blocks.red_flower, 1, 3),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 5),
+                new ItemStack(Blocks.red_flower, 1, 4),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 6),
+                new ItemStack(Blocks.red_flower, 1, 5),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 7),
+                new ItemStack(Blocks.red_flower, 1, 6),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.red_flower, 1, 8),
+                new ItemStack(Blocks.red_flower, 1, 7),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.double_plant),
+                new ItemStack(Blocks.red_flower, 1, 8),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.double_plant, 1, 1),
+                new ItemStack(Blocks.double_plant),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.double_plant, 1, 4),
+                new ItemStack(Blocks.double_plant, 1, 1),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.double_plant, 1, 5),
+                new ItemStack(Blocks.double_plant, 1, 4),
+                400,
+                0x25d6b7));
+        flowersRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(Blocks.yellow_flower),
+                new ItemStack(Blocks.double_plant, 1, 5),
+                400,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("solegnoliaChibi"),
+                ItemBlockSpecialFlower.ofType("solegnolia"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("bubbellChibi"),
+                ItemBlockSpecialFlower.ofType("bubbell"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("marimorphosisChibi"),
+                ItemBlockSpecialFlower.ofType("marimorphosis"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("rannuncarpusChibi"),
+                ItemBlockSpecialFlower.ofType("rannuncarpus"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("clayconiaChibi"),
+                ItemBlockSpecialFlower.ofType("clayconia"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("agricarnationChibi"),
+                ItemBlockSpecialFlower.ofType("agricarnation"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("hopperhockChibi"),
+                ItemBlockSpecialFlower.ofType("hopperhock"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("nightshadeDecor"),
+                ItemBlockSpecialFlower.ofType("nightshade"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("bellethornChibi"),
+                ItemBlockSpecialFlower.ofType("bellethorn"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("daybloomDecor"),
+                ItemBlockSpecialFlower.ofType("daybloom"),
+                30,
+                0x25d6b7));
+        petiteRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                ItemBlockSpecialFlower.ofType("hydroangeasDecor"),
+                ItemBlockSpecialFlower.ofType("hydroangeas"),
+                30,
+                0x25d6b7));
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Conjuration catalyst
+
+        redstoneRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Items.redstone, 2),
+                new ItemStack(Items.redstone),
+                5000,
+                0x25d6b7);
+        glowstoneRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Items.glowstone_dust, 2),
+                new ItemStack(Items.glowstone_dust),
+                5000,
+                0x25d6b7);
+        quartzRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Items.quartz, 2),
+                new ItemStack(Items.quartz),
+                7500,
+                0x25d6b7);
+        coalRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Items.coal, 2),
+                new ItemStack(Items.coal),
+                7500,
+                0x25d6b7);
+        snowballRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Items.snowball, 2),
+                new ItemStack(Items.snowball),
+                200,
+                0x25d6b7);
+        netherrackRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Blocks.netherrack, 2),
+                new ItemStack(Blocks.netherrack),
+                200,
+                0x25d6b7);
+        soulSandRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Blocks.soul_sand, 2),
+                new ItemStack(Blocks.soul_sand),
+                4500,
+                0x25d6b7);
+        gravelRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Block.getBlockFromName("gravel"), 2),
+                new ItemStack(Block.getBlockFromName("gravel")),
+                720,
+                0x25d6b7);
+
+        for (int i = 0; i < 4; i++) leavesRecipes = (AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Blocks.leaves, 2, i),
+                new ItemStack(Blocks.leaves, 1, i),
+                2000,
+                0x25d6b7));
+        for (int i = 0; i < 2; i++) leavesRecipes = (AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Blocks.leaves2, 2, i),
+                new ItemStack(Blocks.leaves2, 1, i),
+                2000,
+                0x25d6b7));
+
+        grassRecipe = AdvancedBotanyAPI.registerFountainConjurationRecipe(
+                new ItemStack(Blocks.tallgrass, 2, 1),
+                new ItemStack(Blocks.tallgrass, 1, 1),
+                2000,
+                0x25d6b7);
+
+        ///////////////////////////////////////////////////////////////////////////////////////// Shaped Recipes
+        PrimalRecipe = BotaniaAPI.registerPetalRecipe(
+                ItemBlockSpecialFlower.ofType("daybloomPrime"),
+                ItemBlockSpecialFlower.ofType("daybloomDecor"),
+                new ItemStack(ModItems.overgrowthSeed),
+                new ItemStack(ItemListAB.itemManaFlower),
+                new ItemStack(ModItems.petal, 1, 1),
+                new ItemStack(ModItems.petal, 1, 4),
+                new ItemStack(ModItems.petal, 1, 3));
+
+        PrimalRecipe = BotaniaAPI.registerPetalRecipe(
+                ItemBlockSpecialFlower.ofType("nightshadePrime"),
+                ItemBlockSpecialFlower.ofType("nightshadeDecor"),
+                new ItemStack(ModItems.overgrowthSeed),
+                new ItemStack(ItemListAB.itemManaFlower),
+                new ItemStack(ModItems.petal, 1, 10),
+                new ItemStack(ModItems.petal, 1, 7),
+                new ItemStack(ModItems.petal, 1, 15)
+
+        );
         // Ancient alphirine recipe
         ancientAlphirine = new BLexiconEntry("ancientAlphirine", categoryForgotten);
         alphirineRecipe = BotaniaAPI.registerPetalRecipe(
                 ItemBlockSpecialFlower.ofType("ancientAlphirine"),
-                new ItemStack(ModItems.manaResource, 1, 5),
-                new ItemStack(ModItems.manaResource, 1, 5),
-                new ItemStack(ModItems.manaResource, 1, 5),
-                new ItemStack(ModItems.manaResource, 1, 5),
+                new ItemStack(ModBlocks.storage, 1, 1),
+                new ItemStack(ModItems.quartz, 1, 2),
+                new ItemStack(ModItems.quartz, 1, 0),
+                new ItemStack(ModItems.quartz, 1, 3),
+                new ItemStack(ModItems.quartz, 1, 1),
+                new ItemStack(ModItems.quartz, 1, 4),
+                new ItemStack(ModItems.quartz, 1, 6),
+                new ItemStack(ModItems.quartz, 1, 5),
+                new ItemStack(ModBlocks.storage, 1, 1),
                 new ItemStack(ModItems.rune, 1, 8),
                 new ItemStack(ModItems.rune, 1, 4),
                 new ItemStack(ModItems.rune, 1, 5),
@@ -403,6 +1239,23 @@ public class RecipeListAB implements IModHelper {
                 .setIcon(new ItemStack(ItemListAB.itemMihrillMultiTool));
 
         // Advanced mana containers recipe
+
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockManaContainer, 1, 1),
+                        "M5M",
+                        "LPL",
+                        "MAM",
+                        'M',
+                        new ItemStack((Item) Item.itemRegistry.getObject("ForbiddenMagic:WandCaps"), 1, 3),
+                        '5',
+                        new ItemStack(ModItems.rune, 1, 15),
+                        'L',
+                        new ItemStack(ModBlocks.pool, 1, 2),
+                        'P',
+                        new ItemStack(ModBlocks.pylon),
+                        'A',
+                        new ItemStack(ItemListAB.itemAntigravityCharm)));
 
         GameRegistry.addRecipe(
                 new ShapedOreRecipe(
@@ -745,6 +1598,65 @@ public class RecipeListAB implements IModHelper {
         hornPlenty = new RLexiconEntry("hornPlenty", BotaniaAPI.categoryAlfhomancy, AchievementRegister.hornPlenty);
         hornPlenty.setLexiconPages(new LexiconPage[] { new PageText("0") });
 
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemAdvancedSpark),
+                        "PDP",
+                        "PSP",
+                        "PLP",
+                        'D',
+                        new ItemStack(ModItems.sparkUpgrade, 1, 1),
+                        'S',
+                        new ItemStack(ModItems.spark),
+                        'L',
+                        new ItemStack(BlockListAB.blockLebethron, 1, 3),
+                        'P',
+                        "plateTerrasteel"));
+
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(BlockListAB.blockEngineerHopper),
+                        "DEO",
+                        "SRS",
+                        "BHB",
+                        'E',
+                        "pipeLargeElectrum",
+                        'D',
+                        new ItemStack(Blocks.dispenser),
+                        'O',
+                        new ItemStack(Blocks.dropper),
+                        'S',
+                        "springRoseGold",
+                        'R',
+                        new ItemStack(ModItems.rainbowRod),
+                        'B',
+                        new ItemStack(ModBlocks.bifrostPerm),
+                        'H',
+                        new ItemStack(Blocks.hopper)
+
+                ));
+
+        GameRegistry.addRecipe(
+                new ShapedOreRecipe(
+                        new ItemStack(ItemListAB.itemABResource, 1, 3),
+                        "BLB",
+                        "EAN",
+                        "BMB",
+                        'B',
+                        new ItemStack(ModBlocks.bifrostPerm),
+                        'L',
+                        new ItemStack(BlockListAB.blockLebethron, 1, 3),
+                        'E',
+                        new ItemStack(Blocks.end_stone),
+                        'N',
+                        new ItemStack(Blocks.netherrack),
+                        'A',
+                        new ItemStack(ModItems.manaResource, 1, 15),
+                        'M',
+                        new ItemStack(ModBlocks.storage, 1, 2)
+
+                ));
+
         // Rod of sprawl recipe
 
         GameRegistry.addRecipe(
@@ -874,8 +1786,7 @@ public class RecipeListAB implements IModHelper {
                         .add(Aspect.MAGIC, 32).add(Aspect.ELDRITCH, 32).add(Aspect.BEAST, 16).add(Aspect.HUNGER, 16),
                 new ItemStack(ItemListAB.itemAquaSword),
                 new ItemStack[] { new ItemStack(ModItems.rainbowRod), new ItemStack(ItemListAB.itemABResource, 1, 0),
-                        new ItemStack(
-                                (Item) Item.itemRegistry.getObject("dreamcraft:item.MysteriousCrystalGemFlawless")),
+                        OreDictionary.getOres("gemExquisiteManaDiamond").get(0),
                         new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ItemListAB.itemNebulaRod),
                         new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         new ItemStack(ModBlocks.livingwood, 1, 5),
@@ -883,7 +1794,7 @@ public class RecipeListAB implements IModHelper {
                         new ItemStack(ModBlocks.livingwood, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ItemListAB.itemNebulaRod),
                         new ItemStack(ItemListAB.itemABResource, 1, 0),
-                        OreDictionary.getOres("gemFlawlessAmethyst").get(0),
+                        OreDictionary.getOres("gemExquisiteAmethyst").get(0),
                         new ItemStack(ItemListAB.itemABResource, 1, 0) });
 
         Forge = ThaumcraftApi.addInfusionCraftingRecipe(
@@ -1008,6 +1919,58 @@ public class RecipeListAB implements IModHelper {
                         new ItemStack(ModBlocks.starfield), new ItemStack(ItemListAB.itemABResource, 1, 3),
                         new ItemStack(ItemListAB.itemNebulaRing), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         new ItemStack(ItemListAB.itemABResource, 1, 2), new ItemStack(ModItems.laputaShard, 1, 15),
+
+                });
+
+        FountainManaB = ThaumcraftApi.addInfusionCraftingRecipe(
+                "FountainMana",
+
+                new ItemStack(BlockListAB.blockABFountain),
+                12,
+                new AspectList().add(Aspect.MAGIC, 180).add(Aspect.WATER, 100).add(Aspect.EARTH, 100)
+                        .add(Aspect.CRYSTAL, 80).add(Aspect.ORDER, 40).add(Aspect.EXCHANGE, 20),
+                new ItemStack(ModBlocks.pool),
+                new ItemStack[] { new ItemStack(BlockListAB.blockManaCharger), new ItemStack(ModBlocks.pylon),
+                        new ItemStack(ModItems.lens, 1, 2), new ItemStack(ModBlocks.pool, 1, 2),
+                        new ItemStack(ModBlocks.pump), new ItemStack(ModBlocks.pool, 1, 2),
+                        new ItemStack(ModItems.lens, 1, 4), new ItemStack(ModItems.rune, 1, 8),
+                        new ItemStack(BlockListAB.blockABPlate), new ItemStack(ModItems.rune, 1, 8),
+                        new ItemStack(ModItems.lens, 1, 3), new ItemStack(ModBlocks.pool, 1, 2),
+                        new ItemStack(ModBlocks.pump), new ItemStack(ModBlocks.pool, 1, 2),
+                        new ItemStack(ModItems.lens, 1, 1), new ItemStack(ModBlocks.pylon),
+
+                });
+
+        FountainAlchemyB = ThaumcraftApi.addInfusionCraftingRecipe(
+                "FountainAlchemy",
+
+                new ItemStack(BlockListAB.blockABAlchemy),
+                12,
+                new AspectList().add(Aspect.MAGIC, 180).add(Aspect.WATER, 100).add(Aspect.EARTH, 100)
+                        .add(Aspect.VOID, 80).add(Aspect.ORDER, 40).add(Aspect.EXCHANGE, 20),
+                new ItemStack(BlockListAB.blockABFountain),
+                new ItemStack[] { new ItemStack(ModBlocks.alchemyCatalyst), new ItemStack(ModBlocks.livingwood, 1, 5),
+                        new ItemStack(ModBlocks.livingwood, 1, 5),
+                        OreDictionary.getOres("gemExquisiteManaDiamond").get(0), new ItemStack(ModBlocks.brewery),
+                        OreDictionary.getOres("gemExquisiteManaDiamond").get(0),
+                        new ItemStack(ModBlocks.livingwood, 1, 5), new ItemStack(ModBlocks.livingwood, 1, 5),
+
+                });
+
+        FountainConjurationB = ThaumcraftApi.addInfusionCraftingRecipe(
+                "FountainConjuration",
+
+                new ItemStack(BlockListAB.blockABConjuration),
+                12,
+                new AspectList().add(Aspect.MAGIC, 380).add(Aspect.FIRE, 200).add(Aspect.EARTH, 127)
+                        .add(Aspect.CRYSTAL, 80).add(Aspect.ORDER, 40).add(Aspect.EXCHANGE, 200),
+                new ItemStack(BlockListAB.blockABAlchemy),
+                new ItemStack[] { new ItemStack(ModBlocks.conjurationCatalyst),
+                        new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ModBlocks.dreamwood, 1, 5),
+                        OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
+                        new ItemStack(ModBlocks.pylon, 1, 1),
+                        OreDictionary.getOres("gemExquisiteBotaniaDragonstone").get(0),
+                        new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ModBlocks.dreamwood, 1, 5),
 
                 });
 
@@ -1201,6 +2164,19 @@ public class RecipeListAB implements IModHelper {
         ResearchPage infNebulaLegs;
         ResearchPage infNebulaBoots;
 
+        ResearchItem FountainManaPage;
+        ResearchPage FountainManaPages;
+        ResearchPage FountainManaPages2;
+        ResearchPage infFountainManaPages;
+
+        ResearchItem FountainAlchemyPage;
+        ResearchPage FountainAlchemyPages;
+        ResearchPage infFountainAlchemyPages;
+
+        ResearchItem FountainConjurationPage;
+        ResearchPage FountainConjurationPages;
+        ResearchPage infFountainConjurationPages;
+
         TerraHoePage = new ResearchItem(
                 "TerraHoe",
                 category,
@@ -1295,6 +2271,46 @@ public class RecipeListAB implements IModHelper {
         infNebulaLegs = new ResearchPage(NebulaLegs);
         infNebulaBoots = new ResearchPage(NebulaBoots);
 
+        FountainManaPage = new ResearchItem(
+                "FountainMana",
+                category,
+                new AspectList().add(Aspect.MAGIC, 18).add(Aspect.WATER, 10).add(Aspect.EARTH, 10)
+                        .add(Aspect.CRYSTAL, 8).add(Aspect.ORDER, 4).add(Aspect.EXCHANGE, 2),
+                8,
+                9,
+                0,
+                new ItemStack(BlockListAB.blockABFountain));
+
+        FountainManaPages = new ResearchPage("FountainManaPages");
+        FountainManaPages2 = new ResearchPage("FountainManaPages2");
+        infFountainManaPages = new ResearchPage(FountainManaB);
+
+        FountainAlchemyPage = new ResearchItem(
+                "FountainAlchemy",
+                category,
+                new AspectList().add(Aspect.MAGIC, 18).add(Aspect.WATER, 10).add(Aspect.EARTH, 10).add(Aspect.VOID, 8)
+                        .add(Aspect.ORDER, 4).add(Aspect.EXCHANGE, 2),
+                8,
+                10,
+                0,
+                new ItemStack(BlockListAB.blockABAlchemy));
+
+        FountainAlchemyPages = new ResearchPage("FountainAlchemyPages");
+        infFountainAlchemyPages = new ResearchPage(FountainAlchemyB);
+
+        FountainConjurationPage = new ResearchItem(
+                "FountainConjuration",
+                category,
+                new AspectList().add(Aspect.MAGIC, 18).add(Aspect.FIRE, 10).add(Aspect.EARTH, 10).add(Aspect.CRYSTAL, 8)
+                        .add(Aspect.ORDER, 4).add(Aspect.EXCHANGE, 2),
+                8,
+                11,
+                0,
+                new ItemStack(BlockListAB.blockABConjuration));
+
+        FountainConjurationPages = new ResearchPage("FountainConjurationPages");
+        infFountainConjurationPages = new ResearchPage(FountainConjurationB);
+
         TerraHoePage.setPages(TerraHoePages, infTerraHoePages);
         AquaSwordPage.setPages(AquaSwordPages, infAquaSwordPages);
         ManaChargerPage.setPages(ManaChargerPages, infManaChargerPages);
@@ -1302,6 +2318,9 @@ public class RecipeListAB implements IModHelper {
         ForgePage.setPages(ForgePages, infForgePages);
         DestroyerPage.setPages(DestroyerPages, infDestroyerPages);
         NebulaPage.setPages(NebulaPages, infNebulaHelm, infNebulaChest, infNebulaLegs, infNebulaBoots);
+        FountainManaPage.setPages(FountainManaPages, FountainManaPages2, infFountainManaPages);
+        FountainAlchemyPage.setPages(FountainAlchemyPages, infFountainAlchemyPages);
+        FountainConjurationPage.setPages(FountainConjurationPages, infFountainConjurationPages);
 
         TerraHoePage.setParents("ELEMENTALHOE");
         AquaSwordPage.setParents("Nebula");
@@ -1310,8 +2329,12 @@ public class RecipeListAB implements IModHelper {
         ForgePage.setParents("ManaCharger");
         DestroyerPage.setParents("TerraHoe", "Nebula");
         NebulaPage.setParents("Forge");
+        FountainManaPage.setParents("Nebula");
+        FountainAlchemyPage.setParents("FountainMana");
+        FountainConjurationPage.setParents("FountainAlchemy");
 
         ThaumcraftApi.addWarpToResearch("Nebula", 8);
+        ThaumcraftApi.addWarpToResearch("FountainMana", 8);
 
         ResearchCategories.addResearch(TerraHoePage);
         ResearchCategories.addResearch(AquaSwordPage);
@@ -1320,6 +2343,9 @@ public class RecipeListAB implements IModHelper {
         ResearchCategories.addResearch(ForgePage);
         ResearchCategories.addResearch(DestroyerPage);
         ResearchCategories.addResearch(NebulaPage);
+        ResearchCategories.addResearch(FountainManaPage);
+        ResearchCategories.addResearch(FountainAlchemyPage);
+        ResearchCategories.addResearch(FountainConjurationPage);
     }
 
     public static ResearchPage getResearchPage(String ident) {

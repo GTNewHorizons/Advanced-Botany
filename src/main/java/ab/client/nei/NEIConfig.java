@@ -24,6 +24,12 @@ public class NEIConfig implements IConfigureNEI {
         API.registerUsageHandler((IUsageHandler) new RecipeHandlerAlphirine());
         API.registerRecipeHandler((ICraftingHandler) new RecipeHandlerAdvancedPlate());
         API.registerUsageHandler((IUsageHandler) new RecipeHandlerAdvancedPlate());
+        API.registerRecipeHandler((ICraftingHandler) new RecipeHandlerFountainMana());
+        API.registerUsageHandler((IUsageHandler) new RecipeHandlerFountainMana());
+        API.registerRecipeHandler((ICraftingHandler) new RecipeHandlerFountainAlchemy());
+        API.registerUsageHandler((IUsageHandler) new RecipeHandlerFountainAlchemy());
+        API.registerRecipeHandler((ICraftingHandler) new RecipeHandlerFountainConjuration());
+        API.registerUsageHandler((IUsageHandler) new RecipeHandlerFountainConjuration());
         API.hideItem(new ItemStack(BlockListAB.blockAntigravitation));
     }
 }

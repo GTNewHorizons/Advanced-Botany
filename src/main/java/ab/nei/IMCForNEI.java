@@ -13,6 +13,15 @@ public class IMCForNEI {
         sendHandler("ab.client.nei.RecipeHandlerAdvancedPlate", "AdvancedBotany:blockABPlate");
         sendCatalyst("ab.client.nei.RecipeHandlerAdvancedPlate", "AdvancedBotany:blockABPlate");
 
+        sendHandler("ab.client.nei.RecipeHandlerFountainMana", "AdvancedBotany:blockABFountain");
+        sendCatalyst("ab.client.nei.RecipeHandlerFountainMana", "AdvancedBotany:blockABFountain");
+
+        sendHandler("ab.client.nei.RecipeHandlerFountainAlchemy", "AdvancedBotany:blockABAlchemy");
+        sendCatalyst("ab.client.nei.RecipeHandlerFountainAlchemy", "AdvancedBotany:blockABAlchemy");
+
+        sendHandler("ab.client.nei.RecipeHandlerFountainConjuration", "AdvancedBotany:blockABConjuration");
+        sendCatalyst("ab.client.nei.RecipeHandlerFountainConjuration", "AdvancedBotany:blockABConjuration");
+
     }
 
     private static void sendHandler(String aName, String aBlock) {

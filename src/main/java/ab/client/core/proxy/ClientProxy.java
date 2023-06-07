@@ -41,6 +41,10 @@ public class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.register(new BoundRenderHandler());
 
         ClientRegistry.bindTileEntitySpecialRenderer(TileNidavellirForge.class, new RenderTileNidavellirForge());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileFountainMana.class, new RenderTileFountainMana());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileFountainAlchemy.class, new RenderTileFountainAlchemy());
+        ClientRegistry
+                .bindTileEntitySpecialRenderer(TileFountainConjuration.class, new RenderTileFountainConjuration());
         ClientRegistry.bindTileEntitySpecialRenderer(TileABSpreader.class, new RenderTileABSpreader());
         ClientRegistry.bindTileEntitySpecialRenderer(TileManaContainer.class, new RenderTileManaContainer());
         ClientRegistry.bindTileEntitySpecialRenderer(TileManaCrystalCube.class, new RenderTileManaCrystalCube());
@@ -58,6 +62,9 @@ public class ClientProxy extends CommonProxy {
         BlockListAB.blockManaChargerRI = RenderingRegistry.getNextAvailableRenderId();
         BlockListAB.blockEngineerHopperRI = RenderingRegistry.getNextAvailableRenderId();
         BlockListAB.blockABPlateRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockABFountainRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockABAlchemyRI = RenderingRegistry.getNextAvailableRenderId();
+        BlockListAB.blockABConjurationRI = RenderingRegistry.getNextAvailableRenderId();
 
         RenderingRegistry.registerBlockHandler(new RenderBlockABSpreader());
         RenderingRegistry.registerBlockHandler(new RenderBlockManaContainer());
@@ -65,6 +72,9 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerBlockHandler(new RenderBlockManaCharger());
         RenderingRegistry.registerBlockHandler(new RenderBlockEngineerHopper());
         RenderingRegistry.registerBlockHandler(new RenderBlockNidavellirForge());
+        RenderingRegistry.registerBlockHandler(new RenderBlockFountainMana());
+        RenderingRegistry.registerBlockHandler(new RenderBlockFountainAlchemy());
+        RenderingRegistry.registerBlockHandler(new RenderBlockFountainConjuration());
 
         RenderingRegistry.registerEntityRenderingHandler(EntityAdvancedSpark.class, new RenderEntityAdvancedSpark());
         RenderingRegistry.registerEntityRenderingHandler(EntityNebulaBlaze.class, new EntityNullRender());
