@@ -291,7 +291,7 @@ public class RecipeListAB implements IModHelper {
                 0x6bc9ec);
         nebulaRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
                 new ItemStack(ItemListAB.itemABResource, 1, 5),
-                new ItemStack(ModItems.rainbowRod),
+                new ItemStack(ModBlocks.shimmerwoodPlanks),
                 OreDictionary.getOres("blockBotaniaDragonstone").get(0),
                 new ItemStack(BlockListAB.blockABStorage, 1, 0),
                 25000000,
