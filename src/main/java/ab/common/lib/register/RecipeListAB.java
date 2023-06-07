@@ -531,7 +531,7 @@ public class RecipeListAB implements IModHelper {
         // Manaweave Cloth Recipe
         manaweaveClothRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_CLOTH),
-                OreDictionary.getOres("materialCloth").get(0),
+                new ItemStack((Item) Item.itemRegistry.getObject("harvestcraft:wovencottonItem")),
                 15000,
                 0x25d6b7);
 
