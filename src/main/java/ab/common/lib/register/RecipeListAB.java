@@ -343,26 +343,6 @@ public class RecipeListAB implements IModHelper {
 
         manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
-                OreDictionary.getOres("ingotSteel").get(0),
-                3000,
-                0x25d6b7));
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
-                OreDictionary.getOres("ingotSteel").get(1),
-                3000,
-                0x25d6b7));
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
-                OreDictionary.getOres("ingotSteel").get(2),
-                3000,
-                0x25d6b7));
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
-                OreDictionary.getOres("ingotSteel").get(3),
-                3000,
-                0x25d6b7));
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_MANASTEEL),
                 OreDictionary.getOres("ingotThaumium").get(0),
                 1500,
                 0x25d6b7));
@@ -372,26 +352,6 @@ public class RecipeListAB implements IModHelper {
                 1500,
                 0x25d6b7));
 
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
-                OreDictionary.getOres("blockSteel").get(0),
-                9 * 3000,
-                0x25d6b7));
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
-                OreDictionary.getOres("blockSteel").get(1),
-                9 * 3000,
-                0x25d6b7));
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
-                OreDictionary.getOres("blockSteel").get(2),
-                9 * 3000,
-                0x25d6b7));
-        manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
-                new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
-                OreDictionary.getOres("blockSteel").get(3),
-                9 * 3000,
-                0x25d6b7));
         manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
                 OreDictionary.getOres("blockThaumium").get(0),
