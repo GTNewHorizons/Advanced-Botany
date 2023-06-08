@@ -84,6 +84,7 @@ public class RecipeListAB implements IModHelper {
     public static RecipeAdvancedPlate ExquisiteDragonstoneRecipe;
     public static RecipeAdvancedPlate EnderAirRecipe;
     public static RecipeAdvancedPlate GrassRecipe;
+    public static RecipeAdvancedPlate LebWoodRecipe;
 
     public static RecipeFountainMana manasteelRecipes;
     public static RecipeFountainMana manaPowderRecipes;
@@ -292,7 +293,7 @@ public class RecipeListAB implements IModHelper {
                 0x6bc9ec);
         nebulaRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
                 new ItemStack(ItemListAB.itemABResource, 1, 5),
-                new ItemStack(ModBlocks.shimmerwoodPlanks),
+                new ItemStack(BlockListAB.blockLebethron, 1, 4),
                 OreDictionary.getOres("blockBotaniaDragonstone").get(0),
                 new ItemStack(BlockListAB.blockABStorage, 1, 0),
                 25000000,
@@ -346,6 +347,13 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModItems.fertilizer),
                 500,
                 0x29de20);
+        LebWoodRecipe = AdvancedBotanyAPI.registerAdvancedPlateRecipe(
+                new ItemStack(BlockListAB.blockLebethron),
+                new ItemStack(ModBlocks.shimmerrock),
+                new ItemStack(ModItems.keepIvy),
+                new ItemStack(ModBlocks.shimmerwoodPlanks),
+                30000,
+                0x29de20);
         ////////////////////////////////////////////////////////////////////////////////////////
 
         // Stone age -- diluted pool, max 10K
@@ -364,12 +372,12 @@ public class RecipeListAB implements IModHelper {
         manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
                 new ItemStack((Item) Item.itemRegistry.getObject("gregtech:gt.blockmetal7"), 1, 4),
-                9 * 1500,
+                11500,
                 0x25d6b7));
         manasteelRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModBlocks.storage, 1, STORAGE_META_MANASTEELBLOCK),
                 new ItemStack(ConfigBlocks.blockCosmeticSolid, 1, 4),
-                9 * 1500,
+                11500,
                 0x25d6b7));
 
         manaPowderRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
@@ -418,32 +426,32 @@ public class RecipeListAB implements IModHelper {
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
                 new ItemStack((Item) Item.itemRegistry.getObject("miscutils:IndustrialDiamondExquisite")),
-                10000 * 1,
+                10000,
                 0x25d6b7));
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
                 OreDictionary.getOres("gemExquisiteDiamond").get(0),
-                10000 * 1,
+                10000,
                 0x25d6b7));
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
                 OreDictionary.getOres("gemFlawlessDiamond").get(0),
-                10000 * 2,
+                20000,
                 0x25d6b7));
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
                 OreDictionary.getOres("craftingIndustrialDiamond").get(0),
-                10000 * 2,
+                20000,
                 0x25d6b7));
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_DIAMOND),
                 new ItemStack(Items.diamond),
-                10000 * 4,
+                40000,
                 0x25d6b7));
         manaDiamondRecipes = (AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModBlocks.storage, 1, STORAGE_META_DIAMONDBLOCK),
                 new ItemStack(Blocks.diamond_block),
-                10000 * 4 * 9,
+                360000,
                 0x25d6b7));
 
         grassSeedsRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
@@ -517,7 +525,7 @@ public class RecipeListAB implements IModHelper {
         manaPearlRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
                 new ItemStack(ModItems.manaResource, 1, MANARESOURCE_META_PEARL),
                 new ItemStack(Items.ender_pearl),
-                10000 * 3 / 2,
+                15000,
                 0x25d6b7);
 
         pistonRelayRecipe = AdvancedBotanyAPI.registerFountainManaRecipe(
@@ -1617,7 +1625,7 @@ public class RecipeListAB implements IModHelper {
 
         GameRegistry.addRecipe(
                 new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemABResource, 1, 3),
+                        new ItemStack(ItemListAB.itemABResource, 8, 3),
                         "BLB",
                         "EAN",
                         "BMB",
