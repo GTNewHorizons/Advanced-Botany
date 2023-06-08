@@ -131,6 +131,7 @@ public class RecipeListAB implements IModHelper {
     public static RecipeFountainAlchemy tallgrassRecipes;
     public static RecipeFountainAlchemy flowersRecipes;
     public static RecipeFountainAlchemy petiteRecipes;
+    public static RecipeFountainAlchemy conversionRecipes;
     // public static RecipeFountainAlchemy Bee2Recipe;
 
     public static RecipeFountainConjuration redstoneRecipe;
@@ -972,6 +973,16 @@ public class RecipeListAB implements IModHelper {
                 30,
                 0x25d6b7));
 
+        conversionRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                OreDictionary.getOres("ingotMithril").get(0),
+                new ItemStack(ItemListAB.itemABResource),
+                25000,
+                0x25d6b7));
+        conversionRecipes = (AdvancedBotanyAPI.registerFountainAlchemyRecipe(
+                new ItemStack(ItemListAB.itemABResource, 1, 1),
+                OreDictionary.getOres("ingotMithril").get(0),
+                25000,
+                0x25d6b7));
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Conjuration catalyst
 
@@ -1232,7 +1243,7 @@ public class RecipeListAB implements IModHelper {
                         "LPL",
                         "M3M",
                         'M',
-                        new ItemStack(ItemListAB.itemABResource),
+                        "plateMithril",
                         'G',
                         new ItemStack(ModItems.rune, 1, 15),
                         'L',
@@ -1271,7 +1282,7 @@ public class RecipeListAB implements IModHelper {
                         "LPL",
                         "M3M",
                         'M',
-                        new ItemStack(ItemListAB.itemABResource),
+                        "plateMithril",
                         'G',
                         new ItemStack(ModItems.rune, 1, 15),
                         'L',
@@ -1337,7 +1348,7 @@ public class RecipeListAB implements IModHelper {
                         'L',
                         new ItemStack(ItemListAB.itemABResource, 1, 1),
                         'M',
-                        new ItemStack(ItemListAB.itemABResource),
+                        "plateMithril",
                         'R',
                         new ItemStack(ModItems.manaRingGreater)
 
