@@ -23,7 +23,7 @@ import ab.common.block.tile.TileFountainConjuration;
 public class RenderTileFountainConjuration extends TileEntitySpecialRenderer {
 
     private List<EntityItem> entityList = null;
-    private static final ResourceLocation texture = new ResourceLocation("ab:textures/model/nidavellirForge.png");
+    private static final ResourceLocation texture = new ResourceLocation("ab:textures/model/FountainConjuration.png");
     private static final ModelFountainConjuration model = new ModelFountainConjuration();
 
     public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f) {

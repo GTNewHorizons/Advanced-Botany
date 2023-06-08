@@ -23,7 +23,7 @@ import ab.common.block.tile.TileFountainAlchemy;
 public class RenderTileFountainAlchemy extends TileEntitySpecialRenderer {
 
     private List<EntityItem> entityList = null;
-    private static final ResourceLocation texture = new ResourceLocation("ab:textures/model/nidavellirForge.png");
+    private static final ResourceLocation texture = new ResourceLocation("ab:textures/model/FountainAlchemy.png");
     private static final ModelFountainAlchemy model = new ModelFountainAlchemy();
 
     public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f) {
