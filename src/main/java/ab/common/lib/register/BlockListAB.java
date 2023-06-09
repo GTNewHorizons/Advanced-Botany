@@ -8,9 +8,6 @@ import ab.common.block.BlockABStorage;
 import ab.common.block.BlockAntigravitation;
 import ab.common.block.BlockBoardFate;
 import ab.common.block.BlockEngineerHopper;
-import ab.common.block.BlockFountainAlchemy;
-import ab.common.block.BlockFountainConjuration;
-import ab.common.block.BlockFountainMana;
 import ab.common.block.BlockFreyrLiana;
 import ab.common.block.BlockLebethronWood;
 import ab.common.block.BlockLuminousFreyrLiana;
@@ -23,9 +20,6 @@ import ab.common.block.BlockTerraFarmland;
 import ab.common.block.tile.TileABSpreader;
 import ab.common.block.tile.TileBoardFate;
 import ab.common.block.tile.TileEngineerHopper;
-import ab.common.block.tile.TileFountainAlchemy;
-import ab.common.block.tile.TileFountainConjuration;
-import ab.common.block.tile.TileFountainMana;
 import ab.common.block.tile.TileGameBoard;
 import ab.common.block.tile.TileLebethronCore;
 import ab.common.block.tile.TileMagicCraftCrate;
@@ -42,9 +36,7 @@ public class BlockListAB {
 
     public static Block blockABSpreader;
     public static Block blockABPlate;
-    public static Block blockABFountain;
-    public static Block blockABAlchemy;
-    public static Block blockABConjuration;
+
     public static Block blockLebethron;
     public static Block blockManaContainer;
     public static Block blockABStorage;
@@ -64,9 +56,6 @@ public class BlockListAB {
     public static int blockManaChargerRI;
     public static int blockEngineerHopperRI;
     public static int blockABPlateRI;
-    public static int blockABFountainRI;
-    public static int blockABAlchemyRI;
-    public static int blockABConjurationRI;
 
     public static void init() {
         initializeBlocks();
@@ -77,9 +66,7 @@ public class BlockListAB {
     private static void initializeBlocks() {
         BlockListAB.blockABSpreader = new BlockABSpreader();
         BlockListAB.blockABPlate = new BlockNidavellirForge();
-        BlockListAB.blockABFountain = new BlockFountainMana();
-        BlockListAB.blockABAlchemy = new BlockFountainAlchemy();
-        BlockListAB.blockABConjuration = new BlockFountainConjuration();
+
         BlockListAB.blockLebethron = new BlockLebethronWood();
         BlockListAB.blockManaContainer = new BlockManaContainer();
         BlockListAB.blockABStorage = new BlockABStorage();
@@ -98,9 +85,7 @@ public class BlockListAB {
     private static void registerBlocks() {
         GameRegistry.registerBlock(BlockListAB.blockABSpreader, "blockABSpreader");
         GameRegistry.registerBlock(BlockListAB.blockABPlate, "blockABPlate");
-        GameRegistry.registerBlock(BlockListAB.blockABFountain, "blockABFountain");
-        GameRegistry.registerBlock(BlockListAB.blockABAlchemy, "blockABAlchemy");
-        GameRegistry.registerBlock(BlockListAB.blockABConjuration, "blockABConjuration");
+
         GameRegistry.registerBlock(BlockListAB.blockManaContainer, ItemBlockBase.class, "blockManaContainer");
         GameRegistry.registerBlock(BlockListAB.blockLebethron, ItemBlockBase.class, "blockLebethron");
         GameRegistry.registerBlock(BlockListAB.blockABStorage, ItemBlockBase.class, "blockABStorage");
@@ -117,9 +102,7 @@ public class BlockListAB {
     private static void registerTileEntities() {
         GameRegistry.registerTileEntity(TileABSpreader.class, "tileABSpreader");
         GameRegistry.registerTileEntity(TileNidavellirForge.class, "tileAgglomerationPlate");
-        GameRegistry.registerTileEntity(TileFountainMana.class, "tileFountainMana");
-        GameRegistry.registerTileEntity(TileFountainAlchemy.class, "tileFountainAlchemy");
-        GameRegistry.registerTileEntity(TileFountainConjuration.class, "tileFountainConjuration");
+
         GameRegistry.registerTileEntity(TileLebethronCore.class, "tileLebethronCore");
         GameRegistry.registerTileEntity(TileManaContainer.class, "tileManaContainer");
         GameRegistry.registerTileEntity(TileManaCrystalCube.class, "tileManaCrystalCube");
@@ -138,8 +121,6 @@ public class BlockListAB {
         BlockListAB.blockManaChargerRI = -1;
         BlockListAB.blockEngineerHopperRI = -1;
         BlockListAB.blockABPlateRI = -1;
-        BlockListAB.blockABFountainRI = -1;
-        BlockListAB.blockABAlchemyRI = -1;
-        BlockListAB.blockABConjurationRI = -1;
+
     }
 }

@@ -13,9 +13,7 @@ ab.flower.pureGladiolus.name=Pure Gladiolus
 ab.flower.ardentAzarcissus.name=Ardent Azarcissus
 tile.advancedSpreader.name=Natural Mana Spreader
 tile.ABPlate.name=Forge of Nidavellir
-tile.ABFountain.name=Fountain of Mana
-tile.ABAlchemy.name=Fountain of Alchemy
-tile.ABConjuration.name=Fountain of Conjuration
+
 tile.lebethronWood.0.name=Lebethron Wood
 tile.lebethronWood.1.name=Lebethron Wood Planks
 tile.lebethronWood.2.name=Mossy Lebethron Wood Planks
@@ -97,9 +95,6 @@ ab.nebulaHelm.mask=A natural look is included
 botania.category.forgotten=Connecting with the past
 ab.nei.alphirine=Ancient Alphirine
 ab.nei.advancedPlate=Forge of Nidavellir
-ab.nei.FountainMana=Fountain of Mana
-ab.nei.FountainAlchemy=Fountain of Alchemy
-ab.nei.FountainConjuration=Fountain of Conjuration
 ab.manaCrystalCube.hud=Amount of mana in the network
 ab.manaCharger.wandHud=Mana Charger
 ab.manaContainer.0.hud=Mana Container
@@ -137,9 +132,9 @@ tc.research_name.MithrillSword=Blade of Space
 tc.research_name.Forge=Forge of Nidavellir
 tc.research_name.Destroyer=Material Destroyer
 tc.research_name.Nebula=Nebula Fragments
-tc.research_name.FountainMana= Fountain of Mana
-tc.research_name.FountainAlchemy= Fountain of Alchemy
-tc.research_name.FountainConjuration= Fountain of Conjuration
+
+
+
 
 TerraHoePages=The standard way of harvesting is getting boring over time. Terrahoe, or rather its unique ability to transform the soil into a more fertile and automated soil, can help with this very problem.<BR>The harvest in the new soil gathers itself after a certain period of time!
 DestroyerPages=A harsh tool based on a global catastrophe in the past. <BR>He is perfectly capable of breaking any block almost instantly. His speed is so high that it was necessary to create a *Fuse* in him - that is, to turn him off/on.
@@ -148,10 +143,6 @@ AquaSwordPages=A mystical melee weapon imbued with the powers of the seas!<BR>An
 ForgePages=A really powerful Dwarf invention for fusing different materials into one whole, the main thing is to know the proportions!<BR>This forge was given to the Elves, that is, it came to our land at the time of "Destruction," but... Not for long - it was soon destroyed.
 ManaChargerPages=The mana charger is a device that allows you to charge up to 4 portable mana sources at once, as well as to discharge one of them. <BR>To start the charger, you must bind a mana source to it, such as a Mana Pool or Mana Container
 NebulaPages=A nebula fragment is a material filled with part of the power of space. It allows you to create instruments and weapons that are unearthly in power.
-FountainManaPages=You know, you always felt throwing things directly into the pool felt sort of... primitive?<BR><BR>You always felt like surely there had to be a better way to automate these resources, despite the reassurances of the elder druids.<BR><BR>You remembered your studies into thaumaturgy, those mechanic crucibles of essentia and fire, the knowledge of the thaumaturgists, and attempted to apply those brutal mechanisms to your mana pool... to no avail...
-FountainManaPages2=But within your failures, you realized something, some miniscule cosmic truth to the matter: of course it wouldn't work. They're missing that intrinsic core component to the ways of the wild.<BR><BR>They have no connections to the natural magicks! Their forges sow no seeds in the ground! Their crucibles fail to nurture the very earth in which they walk! In their hubris they forgot to just take a moment, relax, calm down, and embrace those very magicks that bear them life!<BR><BR>You can't force that! You have to carefully coax it out! Nurture it! Tend to it's delicate seedlings and gently watch it blossom!
-FountainAlchemyPages=The catalysts whisper to you, alchemy needs easier refinement, and you may have stumbled upon the perfect solution.
-FountainConjurationPages=And if we take all this to an extreme and try to duplicate? We no longer have to waste our precious mana on infinite powders...
 
 //ACHIEVEMENT
 

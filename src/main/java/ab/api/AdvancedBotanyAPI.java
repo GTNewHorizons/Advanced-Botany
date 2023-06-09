@@ -14,17 +14,12 @@ import net.minecraftforge.common.util.EnumHelper;
 
 import ab.api.recipe.RecipeAdvancedPlate;
 import ab.api.recipe.RecipeAncientAlphirine;
-import ab.api.recipe.RecipeFountainAlchemy;
-import ab.api.recipe.RecipeFountainConjuration;
-import ab.api.recipe.RecipeFountainMana;
 import ab.common.core.handler.ConfigABHandler;
 
 public class AdvancedBotanyAPI {
 
     public static List<RecipeAdvancedPlate> advancedPlateRecipes = new ArrayList<RecipeAdvancedPlate>();
-    public static List<RecipeFountainMana> FountainManaRecipes = new ArrayList<RecipeFountainMana>();
-    public static List<RecipeFountainAlchemy> FountainAlchemyRecipes = new ArrayList<RecipeFountainAlchemy>();
-    public static List<RecipeFountainConjuration> FountainConjurationRecipes = new ArrayList<RecipeFountainConjuration>();
+
     public static List<RecipeAncientAlphirine> alphirineRecipes = new ArrayList<RecipeAncientAlphirine>();
     public static List<TerraFarmlandList> farmlandList = new ArrayList<TerraFarmlandList>();
     public static List<Achievement> achievements = new ArrayList<Achievement>();
@@ -50,27 +45,6 @@ public class AdvancedBotanyAPI {
             ItemStack input3, int mana, int color) {
         RecipeAdvancedPlate recipe = new RecipeAdvancedPlate(output, mana, color, input1, input2, input3);
         advancedPlateRecipes.add(recipe);
-        return recipe;
-    }
-
-    public static RecipeFountainMana registerFountainManaRecipe(ItemStack output, ItemStack inputs, int mana,
-            int color) {
-        RecipeFountainMana recipe = new RecipeFountainMana(output, mana, color, inputs);
-        FountainManaRecipes.add(recipe);
-        return recipe;
-    }
-
-    public static RecipeFountainConjuration registerFountainConjurationRecipe(ItemStack output, ItemStack inputs,
-            int mana, int color) {
-        RecipeFountainConjuration recipe = new RecipeFountainConjuration(output, mana, color, inputs);
-        FountainConjurationRecipes.add(recipe);
-        return recipe;
-    }
-
-    public static RecipeFountainAlchemy registerFountainAlchemyRecipe(ItemStack output, ItemStack inputs, int mana,
-            int color) {
-        RecipeFountainAlchemy recipe = new RecipeFountainAlchemy(output, mana, color, inputs);
-        FountainAlchemyRecipes.add(recipe);
         return recipe;
     }
 
