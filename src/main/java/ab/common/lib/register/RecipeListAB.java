@@ -40,7 +40,6 @@ import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.KnowledgeType;
 import vazkii.botania.api.lexicon.LexiconCategory;
 import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.api.lexicon.LexiconPage;
 import vazkii.botania.api.recipe.RecipePetals;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.block.ModBlocks;
@@ -269,127 +268,121 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModItems.rune, 1, 7),
                 new ItemStack(ModItems.petal, 1, 1),
                 new ItemStack(ModItems.petal, 1, 4));
-        ancientAlphirine.setPriority().setKnowledgeType(BotaniaAPI.elvenKnowledge).setLexiconPages(
-                new LexiconPage[] { new PageText("0"), new PageText("1"),
+        ancientAlphirine.setPriority().setKnowledgeType(BotaniaAPI.elvenKnowledge)
+                .setLexiconPages(
+                        new PageText("0"),
+                        new PageText("1"),
                         new PageImage("2", "ab:textures/misc/ancientAlphirine.png"),
                         BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", alphirineRecipe),
-                        new AlphirineCraftPage(ancientAlphirine, forgottenLandRecipe.getOutput(), ".alphirineCraft") })
+                        new AlphirineCraftPage(ancientAlphirine, forgottenLandRecipe.getOutput(), ".alphirineCraft"))
                 .setIcon(ItemBlockSpecialFlower.ofType("ancientAlphirine"));
 
         // Forge of Nidavellir recipe
 
         advandedAgglomerationPlate = new BLexiconEntry("advancedPlate", categoryForgotten);
         advandedAgglomerationPlate.setPriority().setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        new AdvancedPlateCraftPage(
-                                advandedAgglomerationPlate,
-                                terrasteelRecipe.getOutput(),
-                                ".abCraft0"),
-                        new AdvancedPlateCraftPage(advandedAgglomerationPlate, manaStarRecipe.getOutput(), ".abCraft0"),
-                        new AdvancedPlateCraftPage(
-                                advandedAgglomerationPlate,
-                                terrasteelBlockRecipe.getOutput(),
-                                ".abCraft1"),
-                        new AdvancedPlateCraftPage(advandedAgglomerationPlate, mithrillRecipe.getOutput(), ".abCraft0"),
-                        new AdvancedPlateCraftPage(advandedAgglomerationPlate, nebulaRecipe.getOutput(), ".abCraft0"),
-                        new AdvancedPlateCraftPage(
-                                advandedAgglomerationPlate,
-                                FlawlessManaDiamondRecipe.getOutput(),
-                                ".abCraft0"),
-                        new AdvancedPlateCraftPage(
-                                advandedAgglomerationPlate,
-                                FlawlessDragonstoneRecipe.getOutput(),
-                                ".abCraft0"),
-                        new AdvancedPlateCraftPage(
-                                advandedAgglomerationPlate,
-                                ExquisiteManaDiamondRecipe.getOutput(),
-                                ".abCraft0"),
-                        new AdvancedPlateCraftPage(
-                                advandedAgglomerationPlate,
-                                ExquisiteDragonstoneRecipe.getOutput(),
-                                ".abCraft0") })
+                new PageText("0"),
+                new AdvancedPlateCraftPage(advandedAgglomerationPlate, terrasteelRecipe.getOutput(), ".abCraft0"),
+                new AdvancedPlateCraftPage(advandedAgglomerationPlate, manaStarRecipe.getOutput(), ".abCraft0"),
+                new AdvancedPlateCraftPage(advandedAgglomerationPlate, terrasteelBlockRecipe.getOutput(), ".abCraft1"),
+                new AdvancedPlateCraftPage(advandedAgglomerationPlate, mithrillRecipe.getOutput(), ".abCraft0"),
+                new AdvancedPlateCraftPage(advandedAgglomerationPlate, nebulaRecipe.getOutput(), ".abCraft0"),
+                new AdvancedPlateCraftPage(
+                        advandedAgglomerationPlate,
+                        FlawlessManaDiamondRecipe.getOutput(),
+                        ".abCraft0"),
+                new AdvancedPlateCraftPage(
+                        advandedAgglomerationPlate,
+                        FlawlessDragonstoneRecipe.getOutput(),
+                        ".abCraft0"),
+                new AdvancedPlateCraftPage(
+                        advandedAgglomerationPlate,
+                        ExquisiteManaDiamondRecipe.getOutput(),
+                        ".abCraft0"),
+                new AdvancedPlateCraftPage(
+                        advandedAgglomerationPlate,
+                        ExquisiteDragonstoneRecipe.getOutput(),
+                        ".abCraft0"))
                 .setIcon(new ItemStack(BlockListAB.blockABPlate));
 
         // Natural mana spreader recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockABSpreader),
-                        "WMW",
-                        "PSP",
-                        "WMW",
-                        'W',
-                        new ItemStack(BlockListAB.blockLebethron, 1, 4),
-                        'M',
-                        new ItemStack(ItemListAB.itemABResource, 1, 2),
-                        'P',
-                        new ItemStack(ModBlocks.pylon),
-                        'S',
-                        new ItemStack(ModBlocks.spreader, 1, 3)));
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockABSpreader),
+                "WMW",
+                "PSP",
+                "WMW",
+                'W',
+                new ItemStack(BlockListAB.blockLebethron, 1, 4),
+                'M',
+                new ItemStack(ItemListAB.itemABResource, 1, 2),
+                'P',
+                new ItemStack(ModBlocks.pylon),
+                'S',
+                new ItemStack(ModBlocks.spreader, 1, 3));
 
         lebethronSpreader = new BLexiconEntry("lebethronSpreader", categoryForgotten);
         lebethronSpreader.setKnowledgeType(forgotten)
                 .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+                        new PageText("0"),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()))
                 .setIcon(new ItemStack(BlockListAB.blockABSpreader));
 
         // Lebethorn block variants recipes
         addShapelessOreDictRecipe(
                 new ItemStack(BlockListAB.blockLebethron, 4, 1),
-                new Object[] { new ItemStack(BlockListAB.blockLebethron) });
+                new ItemStack(BlockListAB.blockLebethron));
         IRecipe leb1 = getLastRecipe();
         addShapelessOreDictRecipe(
                 new ItemStack(BlockListAB.blockLebethron, 1, 2),
-                new Object[] { new ItemStack(BlockListAB.blockLebethron, 1, 1), new ItemStack(Items.wheat_seeds) });
+                new ItemStack(BlockListAB.blockLebethron, 1, 1),
+                new ItemStack(Items.wheat_seeds));
         IRecipe leb2 = getLastRecipe();
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockLebethron, 4, 3),
-                        "SLS",
-                        "LEL",
-                        "SLS",
-                        'S',
-                        "ingotSteeleaf",
-                        'L',
-                        new ItemStack(BlockListAB.blockLebethron, 1, 0),
-                        'E',
-                        new ItemStack(ModBlocks.pylon)));
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockLebethron, 4, 3),
+                "SLS",
+                "LEL",
+                "SLS",
+                'S',
+                "ingotSteeleaf",
+                'L',
+                new ItemStack(BlockListAB.blockLebethron, 1, 0),
+                'E',
+                new ItemStack(ModBlocks.pylon));
 
         IRecipe leb3 = getLastRecipe();
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockLebethron, 1, 4),
-                        "4W5",
-                        "WPW",
-                        "6W7",
-                        'W',
-                        new ItemStack(BlockListAB.blockLebethron, 1, 3),
-                        'P',
-                        new ItemStack(ModBlocks.pylon, 1, 1),
-                        '4',
-                        new ItemStack(ModItems.rune, 1, 4),
-                        '5',
-                        new ItemStack(ModItems.rune, 1, 5),
-                        '6',
-                        new ItemStack(ModItems.rune, 1, 6),
-                        '7',
-                        new ItemStack(ModItems.rune, 1, 7)));
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockLebethron, 1, 4),
+                "4W5",
+                "WPW",
+                "6W7",
+                'W',
+                new ItemStack(BlockListAB.blockLebethron, 1, 3),
+                'P',
+                new ItemStack(ModBlocks.pylon, 1, 1),
+                '4',
+                new ItemStack(ModItems.rune, 1, 4),
+                '5',
+                new ItemStack(ModItems.rune, 1, 5),
+                '6',
+                new ItemStack(ModItems.rune, 1, 6),
+                '7',
+                new ItemStack(ModItems.rune, 1, 7));
 
         IRecipe leb4 = getLastRecipe();
         lebethronWood = new BLexiconEntry("lebethronWood", categoryForgotten);
         lebethronWood.setKnowledgeType(forgotten)
                 .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                new AlphirineCraftPage(lebethronWood, lebethroneRecipe.getOutput(), ".alphirineCraft"),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb1),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb2),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb3),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb4), new PageText("1"),
-                                BotaniaAPI.internalHandler
-                                        .multiblockPage(".structure", TileLebethronCore.makeMultiblockSet()) })
+                        new PageText("0"),
+                        new AlphirineCraftPage(lebethronWood, lebethroneRecipe.getOutput(), ".alphirineCraft"),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb1),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb2),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb3),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft0", leb4),
+                        new PageText("1"),
+                        BotaniaAPI.internalHandler.multiblockPage(".structure", TileLebethronCore.makeMultiblockSet()))
                 .setIcon(new ItemStack(BlockListAB.blockLebethron));
 
         // AB Mithrill recipe
@@ -397,163 +390,160 @@ public class RecipeListAB implements IModHelper {
         mithrill = new BLexiconEntry("mithrill", categoryForgotten);
         mithrill.setKnowledgeType(forgotten)
                 .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                new AdvancedPlateCraftPage(mithrill, mithrillRecipe.getOutput(), ".abCraft"),
-                                new PageText("1"), })
+                        new PageText("0"),
+                        new AdvancedPlateCraftPage(mithrill, mithrillRecipe.getOutput(), ".abCraft"),
+                        new PageText("1"))
                 .setIcon(new ItemStack(ItemListAB.itemMihrillMultiTool));
 
         // Advanced mana containers recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockManaContainer),
-                        "MGM",
-                        "LPL",
-                        "M3M",
-                        'M',
-                        new ItemStack(ItemListAB.itemABResource),
-                        'G',
-                        new ItemStack(ModItems.rune, 1, 15),
-                        'L',
-                        new ItemStack(ModBlocks.pool),
-                        'P',
-                        new ItemStack(ModBlocks.pylon),
-                        '3',
-                        new ItemStack(ModItems.rune, 1, 3)
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockManaContainer),
+                "MGM",
+                "LPL",
+                "M3M",
+                'M',
+                new ItemStack(ItemListAB.itemABResource),
+                'G',
+                new ItemStack(ModItems.rune, 1, 15),
+                'L',
+                new ItemStack(ModBlocks.pool),
+                'P',
+                new ItemStack(ModBlocks.pylon),
+                '3',
+                new ItemStack(ModItems.rune, 1, 3)
 
-                ));
+        );
 
         IRecipe cont1 = getLastRecipe();
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockManaContainer, 1, 1),
-                        "MGM",
-                        "LPL",
-                        "M3M",
-                        'M',
-                        new ItemStack(ItemListAB.itemABResource, 1, 1),
-                        'G',
-                        new ItemStack(ModItems.rune, 1, 15),
-                        'L',
-                        new ItemStack(ModBlocks.pool, 1, 2),
-                        'P',
-                        new ItemStack(ModBlocks.pylon),
-                        '3',
-                        new ItemStack(ModItems.rune, 1, 3)));
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockManaContainer, 1, 1),
+                "MGM",
+                "LPL",
+                "M3M",
+                'M',
+                new ItemStack(ItemListAB.itemABResource, 1, 1),
+                'G',
+                new ItemStack(ModItems.rune, 1, 15),
+                'L',
+                new ItemStack(ModBlocks.pool, 1, 2),
+                'P',
+                new ItemStack(ModBlocks.pylon),
+                '3',
+                new ItemStack(ModItems.rune, 1, 3));
         IRecipe cont2 = getLastRecipe();
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockManaContainer, 1, 2),
-                        "MGM",
-                        "LPL",
-                        "M3M",
-                        'M',
-                        new ItemStack(ItemListAB.itemABResource),
-                        'G',
-                        new ItemStack(ModItems.rune, 1, 15),
-                        'L',
-                        new ItemStack(ModBlocks.pool, 1, 3),
-                        'P',
-                        new ItemStack(ModBlocks.pylon),
-                        '3',
-                        new ItemStack(ModItems.rune, 1, 3)));
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockManaContainer, 1, 2),
+                "MGM",
+                "LPL",
+                "M3M",
+                'M',
+                new ItemStack(ItemListAB.itemABResource),
+                'G',
+                new ItemStack(ModItems.rune, 1, 15),
+                'L',
+                new ItemStack(ModBlocks.pool, 1, 3),
+                'P',
+                new ItemStack(ModBlocks.pylon),
+                '3',
+                new ItemStack(ModItems.rune, 1, 3));
 
         IRecipe cont3 = getLastRecipe();
         manaContainer = new BLexiconEntry("manaContainer", categoryForgotten);
-        manaContainer.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.craftingRecipePage(".craft0", cont1),
+        manaContainer.setKnowledgeType(forgotten)
+                .setLexiconPages(
+                        new PageText("0"),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft0", cont1),
                         BotaniaAPI.internalHandler.craftingRecipePage(".craft1", cont2),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft2", cont3), new PageText("1"),
-                        new AlphirineCraftPage(manaContainer, advancedSparkRecipe.getOutput(), ".alphirineCraft") })
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft2", cont3),
+                        new PageText("1"),
+                        new AlphirineCraftPage(manaContainer, advancedSparkRecipe.getOutput(), ".alphirineCraft"))
                 .setIcon(new ItemStack(BlockListAB.blockManaContainer));
 
         // Mana crystal cube recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockManaCrystalCube),
-                        "TST",
-                        "GWG",
-                        "DMD",
-                        'T',
-                        new ItemStack(ModItems.manaResource, 1, 18),
-                        'S',
-                        new ItemStack(ModItems.spark),
-                        'G',
-                        new ItemStack(ModBlocks.manaGlass),
-                        'W',
-                        new ItemStack(ModItems.twigWand, 1, 32767),
-                        'D',
-                        new ItemStack(ModBlocks.dreamwood),
-                        'M',
-                        "blockManasteel"
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockManaCrystalCube),
+                "TST",
+                "GWG",
+                "DMD",
+                'T',
+                new ItemStack(ModItems.manaResource, 1, 18),
+                'S',
+                new ItemStack(ModItems.spark),
+                'G',
+                new ItemStack(ModBlocks.manaGlass),
+                'W',
+                new ItemStack(ModItems.twigWand, 1, 32767),
+                'D',
+                new ItemStack(ModBlocks.dreamwood),
+                'M',
+                "blockManasteel"
 
-                ));
+        );
 
         manaCrystalCube = new BLexiconEntry("manaCrystalCube", BotaniaAPI.categoryMana);
         manaCrystalCube.setKnowledgeType(BotaniaAPI.elvenKnowledge)
                 .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+                        new PageText("0"),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()))
                 .setIcon(new ItemStack(BlockListAB.blockManaCrystalCube));
 
         // Terrahoe recipe
 
         terraHoe = new BLexiconEntry("terraHoe", BotaniaAPI.categoryTools);
-        terraHoe.setLexiconPages(new LexiconPage[] { new PageText("0"), })
-                .setIcon(new ItemStack(ItemListAB.itemTerraHoe));
+        terraHoe.setLexiconPages(new PageText("0")).setIcon(new ItemStack(ItemListAB.itemTerraHoe));
 
         // Mithrill ring recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemMithrillRing),
-                        "LML",
-                        "MRM",
-                        "LML",
-                        'L',
-                        new ItemStack(ItemListAB.itemABResource, 1, 1),
-                        'M',
-                        new ItemStack(ItemListAB.itemABResource),
-                        'R',
-                        new ItemStack(ModItems.manaRingGreater)
+        addOreDictRecipe(
+                new ItemStack(ItemListAB.itemMithrillRing),
+                "LML",
+                "MRM",
+                "LML",
+                'L',
+                new ItemStack(ItemListAB.itemABResource, 1, 1),
+                'M',
+                new ItemStack(ItemListAB.itemABResource),
+                'R',
+                new ItemStack(ModItems.manaRingGreater)
 
-                ));
+        );
 
         IRecipe ring1 = getLastRecipe();
 
         // Nebula ring recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemNebulaRing),
-                        "LML",
-                        "MRM",
-                        "LML",
-                        'L',
-                        new ItemStack(ModItems.manaResource, 1, 5),
-                        'M',
-                        new ItemStack(ItemListAB.itemABResource, 1, 6),
-                        'R',
-                        new ItemStack(ItemListAB.itemMithrillRing)
+        addOreDictRecipe(
+                new ItemStack(ItemListAB.itemNebulaRing),
+                "LML",
+                "MRM",
+                "LML",
+                'L',
+                new ItemStack(ModItems.manaResource, 1, 5),
+                'M',
+                new ItemStack(ItemListAB.itemABResource, 1, 6),
+                'R',
+                new ItemStack(ItemListAB.itemMithrillRing)
 
-                ));
+        );
 
         IRecipe ring2 = getLastRecipe();
         manaRings = new BLexiconEntry("manaRings", categoryForgotten);
-        manaRings.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"), BotaniaAPI.internalHandler.craftingRecipePage(".craft0", ring1),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft1", ring2) })
+        manaRings.setKnowledgeType(forgotten)
+                .setLexiconPages(
+                        new PageText("0"),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft0", ring1),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft1", ring2))
                 .setIcon(new ItemStack(ItemListAB.itemMithrillRing));
         AdvancedBotanyAPI.registerFarmlandSeed(Blocks.nether_wart, 3);
 
         // Blade of space recipe
 
         mithrillSword = new BLexiconEntry("mithrillSword", categoryForgotten);
-        mithrillSword.setKnowledgeType(forgotten)
-                .setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1"), })
+        mithrillSword.setKnowledgeType(forgotten).setLexiconPages(new PageText("0"), new PageText("1"))
                 .setIcon(new ItemStack(ItemListAB.itemMithrillSword));
 
         // Dictarius recipe
@@ -568,204 +558,201 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModItems.petal, 1, 1));
         dictarius = new BLexiconEntry("dictarius", BotaniaAPI.categoryGenerationFlowers);
         dictarius.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"), new PageText("1"),
-                        BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", dictariusRecipe) });
+                new PageText("0"),
+                new PageText("1"),
+                BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", dictariusRecipe));
 
         nebula = new BLexiconEntry("nebula", categoryForgotten);
         nebula.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        new AdvancedPlateCraftPage(nebula, nebulaRecipe.getOutput(), ".abCraft") });
+                new PageText("0"),
+                new AdvancedPlateCraftPage(nebula, nebulaRecipe.getOutput(), ".abCraft"));
 
         // Black hole box recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemBlackHalo),
-                        " E ",
-                        "DHD",
-                        " E ",
-                        'E',
-                        "plateElvenElementium",
-                        'D',
-                        new ItemStack(ModItems.blackHoleTalisman),
-                        'H',
-                        new ItemStack(ModItems.autocraftingHalo)
+        addOreDictRecipe(
+                new ItemStack(ItemListAB.itemBlackHalo),
+                " E ",
+                "DHD",
+                " E ",
+                'E',
+                "plateElvenElementium",
+                'D',
+                new ItemStack(ModItems.blackHoleTalisman),
+                'H',
+                new ItemStack(ModItems.autocraftingHalo)
 
-                ));
+        );
 
         blackHalo = new BLexiconEntry("blackHalo", BotaniaAPI.categoryTools);
         blackHalo.setKnowledgeType(BotaniaAPI.elvenKnowledge).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) });
+                new PageText("0"),
+                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()));
 
         // Sphere of Attraction recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemAntigravityCharm),
-                        " G ",
-                        "GDG",
-                        "ERE",
-                        'G',
-                        new ItemStack(ModBlocks.elfGlass),
-                        'D',
-                        new ItemStack(ModBlocks.floatingFlower, 1, 32767),
-                        'E',
-                        "plateElvenElementium",
-                        'R',
-                        new ItemStack(ModItems.rune, 1, 3)
+        addOreDictRecipe(
+                new ItemStack(ItemListAB.itemAntigravityCharm),
+                " G ",
+                "GDG",
+                "ERE",
+                'G',
+                new ItemStack(ModBlocks.elfGlass),
+                'D',
+                new ItemStack(ModBlocks.floatingFlower, 1, 32767),
+                'E',
+                "plateElvenElementium",
+                'R',
+                new ItemStack(ModItems.rune, 1, 3)
 
-                ));
+        );
 
         antigravityCharm = new BLexiconEntry("antigravityCharm", BotaniaAPI.categoryTools);
         antigravityCharm.setKnowledgeType(BotaniaAPI.elvenKnowledge)
                 .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+                        new PageText("0"),
+                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()))
                 .setIcon(new ItemStack(ItemListAB.itemAntigravityCharm));
 
         // Nebula blaze recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemNebulaBlaze),
-                        " N ",
-                        "MMN",
-                        "AMN",
-                        'N',
-                        new ItemStack(ItemListAB.itemABResource, 1, 6),
-                        'M',
-                        "blockManasteel",
-                        'A',
-                        new ItemStack(ItemListAB.itemABResource, 1, 3)
+        addOreDictRecipe(
+                new ItemStack(ItemListAB.itemNebulaBlaze),
+                " N ",
+                "MMN",
+                "AMN",
+                'N',
+                new ItemStack(ItemListAB.itemABResource, 1, 6),
+                'M',
+                "blockManasteel",
+                'A',
+                new ItemStack(ItemListAB.itemABResource, 1, 3)
 
-                ));
+        );
 
         nebulaBlaze = new BLexiconEntry("nebulaBlaze", categoryForgotten);
         nebulaBlaze.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) });
+                new PageText("0"),
+                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()));
 
         // Mana charger recipe
         if (ConfigABHandler.hasManaCharger) {
 
             manaCharger = new BLexiconEntry("manaCharger", categoryForgotten);
-            manaCharger.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), });
+            manaCharger.setKnowledgeType(forgotten).setLexiconPages(new PageText("0"));
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////// Nebula set recipes
 
         nebulaArmor = new BLexiconEntry("nebulaArmor", categoryForgotten);
-        nebulaArmor.setKnowledgeType(forgotten)
-                .setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1"), });
+        nebulaArmor.setKnowledgeType(forgotten).setLexiconPages(new PageText("0"), new PageText("1"));
 
         // Enginerr hopper recipe
         engineerHopper = new BLexiconEntry("engineerHopper", categoryForgotten);
         engineerHopper.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"), new PageImage("1", "ab:textures/misc/engineerHopper.png"),
-                        new PageText("2"), new PageText("3"), new PageText("4"),
-                        new AlphirineCraftPage(engineerHopper, hopperRecipe.getOutput(), ".alphirineCraft") });
+                new PageText("0"),
+                new PageImage("1", "ab:textures/misc/engineerHopper.png"),
+                new PageText("2"),
+                new PageText("3"),
+                new PageText("4"),
+                new AlphirineCraftPage(engineerHopper, hopperRecipe.getOutput(), ".alphirineCraft"));
 
         // Rod of nebula recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemNebulaRod),
-                        " WN",
-                        " RW",
-                        "E  ",
-                        'W',
-                        new ItemStack(ModItems.manaResource, 1, 13),
-                        'N',
-                        new ItemStack(ItemListAB.itemABResource, 1, 6),
-                        'R',
-                        new ItemStack(ModItems.rune, 1, 8),
-                        'E',
-                        "itemEnderCrystal"
+        addOreDictRecipe(
+                new ItemStack(ItemListAB.itemNebulaRod),
+                " WN",
+                " RW",
+                "E  ",
+                'W',
+                new ItemStack(ModItems.manaResource, 1, 13),
+                'N',
+                new ItemStack(ItemListAB.itemABResource, 1, 6),
+                'R',
+                new ItemStack(ModItems.rune, 1, 8),
+                'E',
+                "itemEnderCrystal"
 
-                ));
+        );
 
         nebulaRod = new BLexiconEntry("nebulaRod", categoryForgotten);
         nebulaRod.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) });
+                new PageText("0"),
+                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()));
 
         // Playing board recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(BlockListAB.blockBoardFate),
-                        "G G",
-                        "QDQ",
-                        "MPM",
-                        'G',
-                        "gearGtSmallInfusedGold",
-                        'Q',
-                        new ItemStack(ModFluffBlocks.manaQuartz),
-                        'D',
-                        new ItemStack(ModItems.manaResource, 1, 2),
-                        'M',
-                        "plateTerrasteel",
-                        'P',
-                        new ItemStack(ModItems.manaResource, 1, 23)
+        addOreDictRecipe(
+                new ItemStack(BlockListAB.blockBoardFate),
+                "G G",
+                "QDQ",
+                "MPM",
+                'G',
+                "gearGtSmallInfusedGold",
+                'Q',
+                new ItemStack(ModFluffBlocks.manaQuartz),
+                'D',
+                new ItemStack(ModItems.manaResource, 1, 2),
+                'M',
+                "plateTerrasteel",
+                'P',
+                new ItemStack(ModItems.manaResource, 1, 23)
 
-                ));
+        );
 
         gameBoard = new BLexiconEntry("gameBoard", BotaniaAPI.categoryMisc);
         gameBoard.setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) });
+                new PageText("0"),
+                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()));
 
         fateBoard = new BLexiconEntry("fateBoard", categoryForgotten);
         fateBoard.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        new AlphirineCraftPage(fateBoard, fateBoardRecipe.getOutput(), ".alphirineCraft") });
+                new PageText("0"),
+                new AlphirineCraftPage(fateBoard, fateBoardRecipe.getOutput(), ".alphirineCraft"));
 
         freyrSlingshot = new RLexiconEntry(
                 "freyrSlingshot",
                 BotaniaAPI.categoryAlfhomancy,
                 AchievementRegister.relicSlingshot);
-        freyrSlingshot.setLexiconPages(new LexiconPage[] { new PageText("0"), new PageText("1") });
+        freyrSlingshot.setLexiconPages(new PageText("0"), new PageText("1"));
 
         richesKey = new RLexiconEntry("richesKey", BotaniaAPI.categoryAlfhomancy, AchievementRegister.relicItemChest);
-        richesKey.setLexiconPages(new LexiconPage[] { new PageText("0") });
+        richesKey.setLexiconPages(new PageText("0"));
 
         cubeWardrobe = new RLexiconEntry(
                 "cubeWardrobe",
                 BotaniaAPI.categoryAlfhomancy,
                 AchievementRegister.relicPocketArmor);
-        cubeWardrobe.setLexiconPages(new LexiconPage[] { new PageText("0") });
+        cubeWardrobe.setLexiconPages(new PageText("0"));
 
         sphereNavigation = new RLexiconEntry(
                 "sphereNavigation",
                 BotaniaAPI.categoryAlfhomancy,
                 AchievementRegister.sphereNavigation);
-        sphereNavigation.setLexiconPages(new LexiconPage[] { new PageText("0") });
+        sphereNavigation.setLexiconPages(new PageText("0"));
 
         hornPlenty = new RLexiconEntry("hornPlenty", BotaniaAPI.categoryAlfhomancy, AchievementRegister.hornPlenty);
-        hornPlenty.setLexiconPages(new LexiconPage[] { new PageText("0") });
+        hornPlenty.setLexiconPages(new PageText("0"));
 
         // Rod of sprawl recipe
 
-        GameRegistry.addRecipe(
-                new ShapedOreRecipe(
-                        new ItemStack(ItemListAB.itemSprawlRod),
-                        " SC",
-                        " WS",
-                        "W  ",
-                        'S',
-                        new ItemStack(ModItems.grassSeeds, 1, 32767),
-                        'C',
-                        new ItemStack(BlockListAB.blockLebethron, 1, 4),
-                        'W',
-                        new ItemStack(ModItems.manaResource, 1, 3)
+        addOreDictRecipe(
+                new ItemStack(ItemListAB.itemSprawlRod),
+                " SC",
+                " WS",
+                "W  ",
+                'S',
+                new ItemStack(ModItems.grassSeeds, 1, 32767),
+                'C',
+                new ItemStack(BlockListAB.blockLebethron, 1, 4),
+                'W',
+                new ItemStack(ModItems.manaResource, 1, 3)
 
-                ));
+        );
 
         sprawlRod = new BLexiconEntry("sprawlRod", categoryForgotten);
         sprawlRod.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) });
+                new PageText("0"),
+                BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()));
 
         // Ardent azarcissus recipe
         azartFlowerRecipe = BotaniaAPI.registerPetalRecipe(
@@ -779,13 +766,13 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModItems.manaResource, 1, 5));
         azartFlower = new BLexiconEntry("azartFlower", BotaniaAPI.categoryGenerationFlowers);
         azartFlower.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", azartFlowerRecipe) });
+                new PageText("0"),
+                BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", azartFlowerRecipe));
 
         // Aqua sword recipe
 
         aquaSword = new BLexiconEntry("aquaSword", categoryForgotten);
-        aquaSword.setKnowledgeType(forgotten).setLexiconPages(new LexiconPage[] { new PageText("0"), });
+        aquaSword.setKnowledgeType(forgotten).setLexiconPages(new PageText("0"));
 
         ///////////////////////////////////////////////////////////////////////////////////////// Thaumcraft recipes
 
@@ -793,20 +780,27 @@ public class RecipeListAB implements IModHelper {
 
         addShapelessOreDictRecipe(
                 new ItemStack(ItemListAB.itemABResource, 9, 1),
-                new Object[] { new ItemStack(ItemListAB.itemABResource) });
+                new ItemStack(ItemListAB.itemABResource));
         addShapelessOreDictRecipe(
                 new ItemStack(ItemListAB.itemABResource, 9, 0),
-                new Object[] { new ItemStack(BlockListAB.blockABStorage) });
+                new ItemStack(BlockListAB.blockABStorage));
         addShapelessOreDictRecipe(
                 new ItemStack(ItemListAB.itemABResource, 9, 6),
-                new Object[] { new ItemStack(ItemListAB.itemABResource, 1, 5) });
+                new ItemStack(ItemListAB.itemABResource, 1, 5));
         GameRegistry.addShapedRecipe(
                 new ItemStack(BlockListAB.blockABStorage),
-                new Object[] { "III", "III", "III", Character.valueOf('I'), new ItemStack(ItemListAB.itemABResource) });
+                "III",
+                "III",
+                "III",
+                'I',
+                new ItemStack(ItemListAB.itemABResource));
         GameRegistry.addShapedRecipe(
                 new ItemStack(ItemListAB.itemABResource, 1, 5),
-                new Object[] { "III", "III", "III", Character.valueOf('I'),
-                        new ItemStack(ItemListAB.itemABResource, 1, 6) });
+                "III",
+                "III",
+                "III",
+                'I',
+                new ItemStack(ItemListAB.itemABResource, 1, 6));
 
         TerraHoe = ThaumcraftApi.addInfusionCraftingRecipe(
                 "TerraHoe",
@@ -1027,91 +1021,90 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModItems.petal, 1, 13));
         aspecolus.setKnowledgeType(forgotten)
                 .setLexiconPages(
-                        new LexiconPage[] { new PageText("0"),
-                                BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", aspecolusRecipe) })
+                        new PageText("0"),
+                        BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", aspecolusRecipe))
                 .setIcon(ItemBlockSpecialFlower.ofType("aspecolus"));
         addShapelessOreDictRecipe(
                 new ItemStack(ItemListAB.itemNebulaHelmReveal),
-                new Object[] { new ItemStack(ItemListAB.itemNebulaHelm), new ItemStack(ConfigItems.itemGoggles) });
+                new ItemStack(ItemListAB.itemNebulaHelm),
+                new ItemStack(ConfigItems.itemGoggles));
 
         if (ConfigABHandler.hasAutoThaum) {
-            List<IRecipe> recipes = new ArrayList<IRecipe>();
+            List<IRecipe> recipes = new ArrayList<>();
             for (int i = 1; i < 10; i++) {
                 boolean[][] patterns = ItemCraftingPattern.getPattern(i);
-                List<String> str = new ArrayList<String>();
+                List<String> str = new ArrayList<>();
                 for (int j = 0; j < patterns.length; j++) {
-                    String str1 = "";
-                    for (int k = 0; k < patterns[j].length; k++) str1 += patterns[j][k] ? "T" : "H";
-                    str.add(str1);
+                    StringBuilder stringBuilder = new StringBuilder();
+                    for (int k = 0; k < patterns[j].length; k++) stringBuilder.append(patterns[j][k] ? "T" : "H");
+                    str.add(stringBuilder.toString());
                 }
-                GameRegistry.addRecipe(
-                        new ShapedOreRecipe(
-                                new ItemStack(ItemListAB.itemCraftingPattern, 1, i),
-                                str.get(0),
-                                str.get(1),
-                                str.get(2),
-                                'T',
-                                new ItemStack(ItemListAB.itemCraftingPattern),
-                                'H',
-                                new ItemStack(ConfigItems.itemNugget, 1, 6)));
+                addOreDictRecipe(
+                        new ItemStack(ItemListAB.itemCraftingPattern, 1, i),
+                        str.get(0),
+                        str.get(1),
+                        str.get(2),
+                        'T',
+                        new ItemStack(ItemListAB.itemCraftingPattern),
+                        'H',
+                        new ItemStack(ConfigItems.itemNugget, 1, 6));
 
                 recipes.add(getLastRecipe());
             }
 
             // Thaumic crafty crate recipe
 
-            GameRegistry.addRecipe(
-                    new ShapedOreRecipe(
-                            new ItemStack(BlockListAB.blockMagicCraftCrate),
-                            "TST",
-                            "WCW",
-                            "WEW",
-                            'T',
-                            new ItemStack(ConfigItems.itemResource, 1, 7),
-                            'S',
-                            new ItemStack(ConfigItems.itemResource, 1, 14),
-                            'W',
-                            new ItemStack(ConfigBlocks.blockMagicalLog),
-                            'C',
-                            new ItemStack(ModBlocks.openCrate, 1, 1),
-                            'E',
-                            new ItemStack(ModBlocks.openCrate)));
+            addOreDictRecipe(
+                    new ItemStack(BlockListAB.blockMagicCraftCrate),
+                    "TST",
+                    "WCW",
+                    "WEW",
+                    'T',
+                    new ItemStack(ConfigItems.itemResource, 1, 7),
+                    'S',
+                    new ItemStack(ConfigItems.itemResource, 1, 14),
+                    'W',
+                    new ItemStack(ConfigBlocks.blockMagicalLog),
+                    'C',
+                    new ItemStack(ModBlocks.openCrate, 1, 1),
+                    'E',
+                    new ItemStack(ModBlocks.openCrate));
 
             addShapelessOreDictRecipe(
                     new ItemStack(ItemListAB.itemCraftingPattern, 48),
-                    new Object[] { new ItemStack(Blocks.crafting_table), new ItemStack(ModBlocks.livingrock),
-                            new ItemStack(ConfigItems.itemResource, 1, 14) });
+                    new ItemStack(Blocks.crafting_table),
+                    new ItemStack(ModBlocks.livingrock),
+                    new ItemStack(ConfigItems.itemResource, 1, 14));
             thaumAutoCraft = new BLexiconEntry("thaumAutoCraft", BotaniaAPI.categoryDevices);
             thaumAutoCraft.setKnowledgeType(BotaniaAPI.elvenKnowledge).setLexiconPages(
-                    new LexiconPage[] { new PageText("0"),
-                            BotaniaAPI.internalHandler.craftingRecipePage(".craft0", getLastRecipe()),
-                            BotaniaAPI.internalHandler.craftingRecipesPage(".craft1", recipes) });
+                    new PageText("0"),
+                    BotaniaAPI.internalHandler.craftingRecipePage(".craft0", getLastRecipe()),
+                    BotaniaAPI.internalHandler.craftingRecipesPage(".craft1", recipes));
 
             // Mana flower recipe
 
-            GameRegistry.addRecipe(
-                    new ShapedOreRecipe(
-                            new ItemStack(ItemListAB.itemManaFlower),
-                            "NFN",
-                            "PMP",
-                            "NRN",
-                            'N',
-                            new ItemStack(ItemListAB.itemABResource, 1, 1),
-                            'F',
-                            new ItemStack(ItemListAB.itemABResource, 1, 4),
-                            'P',
-                            new ItemStack(ConfigItems.itemEldritchObject, 1, 3),
-                            'M',
-                            new ItemStack(ModItems.manaBottle),
-                            'R',
-                            new ItemStack(ModItems.rune, 1, 8)));
+            addOreDictRecipe(
+                    new ItemStack(ItemListAB.itemManaFlower),
+                    "NFN",
+                    "PMP",
+                    "NRN",
+                    'N',
+                    new ItemStack(ItemListAB.itemABResource, 1, 1),
+                    'F',
+                    new ItemStack(ItemListAB.itemABResource, 1, 4),
+                    'P',
+                    new ItemStack(ConfigItems.itemEldritchObject, 1, 3),
+                    'M',
+                    new ItemStack(ModItems.manaBottle),
+                    'R',
+                    new ItemStack(ModItems.rune, 1, 8));
 
             manaFlower = new BLexiconEntry("manaFlower", categoryForgotten);
             manaFlower.setKnowledgeType(forgotten)
                     .setLexiconPages(
-                            new LexiconPage[] { new PageText("0"),
-                                    new AlphirineCraftPage(manaFlower, manaFlowerRecipe.getOutput(), ".alphirineCraft"),
-                                    BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()) })
+                            new PageText("0"),
+                            new AlphirineCraftPage(manaFlower, manaFlowerRecipe.getOutput(), ".alphirineCraft"),
+                            BotaniaAPI.internalHandler.craftingRecipePage(".craft", getLastRecipe()))
                     .setIcon(new ItemStack(ItemListAB.itemManaFlower));
         }
 
@@ -1128,8 +1121,8 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ModItems.petal, 1, 11));
         gladious = new BLexiconEntry("gladious", BotaniaAPI.categoryFunctionalFlowers);
         gladious.setKnowledgeType(forgotten).setLexiconPages(
-                new LexiconPage[] { new PageText("0"),
-                        BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", pureGladRecipe) });
+                new PageText("0"),
+                BotaniaAPI.internalHandler.petalRecipePage(".petalCraft", pureGladRecipe));
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////// Itemlist
@@ -1156,11 +1149,11 @@ public class RecipeListAB implements IModHelper {
     }
 
     private static void addOreDictRecipe(ItemStack output, Object... recipe) {
-        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(output, recipe));
+        GameRegistry.addRecipe(new ShapedOreRecipe(output, recipe));
     }
 
     private static void addShapelessOreDictRecipe(ItemStack output, Object... recipe) {
-        CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(output, recipe));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(output, recipe));
     }
 
     public static void setupResearch() {
