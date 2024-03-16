@@ -1163,38 +1163,7 @@ public class RecipeListAB implements IModHelper {
                 new ResourceLocation("botania", "textures/gui/categories/forgotten.png"),
                 new ResourceLocation("botania", "textures/gui/categories/ABstars.png"));
 
-        ResearchItem TerraHoePage;
-        ResearchPage TerraHoePages;
-        ResearchPage infTerraHoePages;
-
-        ResearchItem AquaSwordPage;
-        ResearchPage AquaSwordPages;
-        ResearchPage infAquaSwordPages;
-
-        ResearchItem ManaChargerPage;
-        ResearchPage ManaChargerPages;
-        ResearchPage infManaChargerPages;
-
-        ResearchItem MithrillSwordPage;
-        ResearchPage MithrillSwordPages;
-        ResearchPage infMithrillSwordPages;
-
-        ResearchItem ForgePage;
-        ResearchPage ForgePages;
-        ResearchPage infForgePages;
-
-        ResearchItem DestroyerPage;
-        ResearchPage DestroyerPages;
-        ResearchPage infDestroyerPages;
-
-        ResearchItem NebulaPage;
-        ResearchPage NebulaPages;
-        ResearchPage infNebulaHelm;
-        ResearchPage infNebulaChest;
-        ResearchPage infNebulaLegs;
-        ResearchPage infNebulaBoots;
-
-        TerraHoePage = new ResearchItem(
+        ResearchItem terraHoePage = new ResearchItem(
                 "TerraHoe",
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
@@ -1203,11 +1172,10 @@ public class RecipeListAB implements IModHelper {
                 2,
                 0,
                 new ItemStack(ItemListAB.itemTerraHoe));
-
+        ResearchPage infTerraHoePages = new ResearchPage(TerraHoe);
         TerraHoePages = new ResearchPage("TerraHoePages");
-        infTerraHoePages = new ResearchPage(TerraHoe);
 
-        AquaSwordPage = new ResearchItem(
+        ResearchItem aquaSwordPage = new ResearchItem(
                 "AquaSword",
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
@@ -1216,11 +1184,10 @@ public class RecipeListAB implements IModHelper {
                 2,
                 0,
                 new ItemStack(ItemListAB.itemAquaSword));
-
+        ResearchPage infAquaSwordPages = new ResearchPage(AquaSword);
         AquaSwordPages = new ResearchPage("AquaSwordPages");
-        infAquaSwordPages = new ResearchPage(AquaSword);
 
-        ManaChargerPage = new ResearchItem(
+        ResearchItem manaChargerPage = new ResearchItem(
                 "ManaCharger",
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
@@ -1229,11 +1196,10 @@ public class RecipeListAB implements IModHelper {
                 6,
                 0,
                 new ItemStack(BlockListAB.blockManaCharger));
-
+        ResearchPage infManaChargerPages = new ResearchPage(ManaCharger);
         ManaChargerPages = new ResearchPage("ManaChargerPages");
-        infManaChargerPages = new ResearchPage(ManaCharger);
 
-        MithrillSwordPage = new ResearchItem(
+        ResearchItem mithrillSwordPage = new ResearchItem(
                 "MithrillSword",
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
@@ -1242,11 +1208,10 @@ public class RecipeListAB implements IModHelper {
                 0,
                 0,
                 new ItemStack(ItemListAB.itemMithrillSword));
-
+        ResearchPage infMithrillSwordPages = new ResearchPage(MithrillSword);
         MithrillSwordPages = new ResearchPage("MithrillSwordPages");
-        infMithrillSwordPages = new ResearchPage(MithrillSword);
 
-        ForgePage = new ResearchItem(
+        ResearchItem forgePage = new ResearchItem(
                 "Forge",
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
@@ -1255,11 +1220,10 @@ public class RecipeListAB implements IModHelper {
                 5,
                 0,
                 new ItemStack(BlockListAB.blockABPlate));
-
+        ResearchPage infForgePages = new ResearchPage(Forge);
         ForgePages = new ResearchPage("ForgePages");
-        infForgePages = new ResearchPage(Forge);
 
-        DestroyerPage = new ResearchItem(
+        ResearchItem destroyerPage = new ResearchItem(
                 "Destroyer",
                 category,
                 new AspectList().add(Aspect.MAGIC, 4).add(Aspect.LIFE, 1).add(Aspect.TOOL, 1).add(Aspect.EARTH, 8)
@@ -1268,11 +1232,10 @@ public class RecipeListAB implements IModHelper {
                 0,
                 0,
                 new ItemStack(ItemListAB.itemMihrillMultiTool));
-
+        ResearchPage infDestroyerPages = new ResearchPage(Destroyer);
         DestroyerPages = new ResearchPage("DestroyerPages");
-        infDestroyerPages = new ResearchPage(Destroyer);
 
-        NebulaPage = new ResearchItem(
+        ResearchItem nebulaPage = new ResearchItem(
                 "Nebula",
                 category,
                 new AspectList().add(Aspect.MAGIC, 18).add(Aspect.ELDRITCH, 10).add(Aspect.EARTH, 10)
@@ -1281,38 +1244,37 @@ public class RecipeListAB implements IModHelper {
                 8,
                 0,
                 new ItemStack(ItemListAB.itemABResource, 1, 5));
-
+        ResearchPage infNebulaHelm = new ResearchPage(NebulaHelm);
+        ResearchPage infNebulaChest = new ResearchPage(NebulaChest);
+        ResearchPage infNebulaLegs = new ResearchPage(NebulaLegs);
+        ResearchPage infNebulaBoots = new ResearchPage(NebulaBoots);
         NebulaPages = new ResearchPage("NebulaPages");
-        infNebulaHelm = new ResearchPage(NebulaHelm);
-        infNebulaChest = new ResearchPage(NebulaChest);
-        infNebulaLegs = new ResearchPage(NebulaLegs);
-        infNebulaBoots = new ResearchPage(NebulaBoots);
 
-        TerraHoePage.setPages(TerraHoePages, infTerraHoePages);
-        AquaSwordPage.setPages(AquaSwordPages, infAquaSwordPages);
-        ManaChargerPage.setPages(ManaChargerPages, infManaChargerPages);
-        MithrillSwordPage.setPages(MithrillSwordPages, infMithrillSwordPages);
-        ForgePage.setPages(ForgePages, infForgePages);
-        DestroyerPage.setPages(DestroyerPages, infDestroyerPages);
-        NebulaPage.setPages(NebulaPages, infNebulaHelm, infNebulaChest, infNebulaLegs, infNebulaBoots);
+        terraHoePage.setPages(TerraHoePages, infTerraHoePages);
+        aquaSwordPage.setPages(AquaSwordPages, infAquaSwordPages);
+        manaChargerPage.setPages(ManaChargerPages, infManaChargerPages);
+        mithrillSwordPage.setPages(MithrillSwordPages, infMithrillSwordPages);
+        forgePage.setPages(ForgePages, infForgePages);
+        destroyerPage.setPages(DestroyerPages, infDestroyerPages);
+        nebulaPage.setPages(NebulaPages, infNebulaHelm, infNebulaChest, infNebulaLegs, infNebulaBoots);
 
-        TerraHoePage.setParents("ELEMENTALHOE");
-        AquaSwordPage.setParents("Nebula");
-        ManaChargerPage.setParents("MIRROR");
-        MithrillSwordPage.setParents("AquaSword");
-        ForgePage.setParents("ManaCharger");
-        DestroyerPage.setParents("TerraHoe", "Nebula");
-        NebulaPage.setParents("Forge");
+        terraHoePage.setParents("ELEMENTALHOE");
+        aquaSwordPage.setParents("Nebula");
+        manaChargerPage.setParents("MIRROR");
+        mithrillSwordPage.setParents("AquaSword");
+        forgePage.setParents("ManaCharger");
+        destroyerPage.setParents("TerraHoe", "Nebula");
+        nebulaPage.setParents("Forge");
 
         ThaumcraftApi.addWarpToResearch("Nebula", 8);
 
-        ResearchCategories.addResearch(TerraHoePage);
-        ResearchCategories.addResearch(AquaSwordPage);
-        ResearchCategories.addResearch(ManaChargerPage);
-        ResearchCategories.addResearch(MithrillSwordPage);
-        ResearchCategories.addResearch(ForgePage);
-        ResearchCategories.addResearch(DestroyerPage);
-        ResearchCategories.addResearch(NebulaPage);
+        ResearchCategories.addResearch(terraHoePage);
+        ResearchCategories.addResearch(aquaSwordPage);
+        ResearchCategories.addResearch(manaChargerPage);
+        ResearchCategories.addResearch(mithrillSwordPage);
+        ResearchCategories.addResearch(forgePage);
+        ResearchCategories.addResearch(destroyerPage);
+        ResearchCategories.addResearch(nebulaPage);
     }
 
     public static ResearchPage getResearchPage(String ident) {
