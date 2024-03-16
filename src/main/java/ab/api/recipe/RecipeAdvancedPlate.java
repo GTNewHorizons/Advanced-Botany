@@ -1,33 +1,26 @@
 package ab.api.recipe;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
-public class RecipeAdvancedPlate {
+import vazkii.botania.api.recipe.RecipePetals;
 
-    private ItemStack output;
-    private int color;
-    private List<ItemStack> inputs;
-    private int mana;
+public class RecipeAdvancedPlate extends RecipePetals {
 
-    public RecipeAdvancedPlate(ItemStack output, int mana, int color, ItemStack... inputs) {
-        this.output = output;
+    private final int color;
+    private final int mana;
+
+    public static RecipeAdvancedPlate fromOreDictOutput(String output, int mana, int color, Object... inputs) {
+        List<ItemStack> ores = OreDictionary.getOres(output);
+        return !ores.isEmpty() ? new RecipeAdvancedPlate(ores.get(0), mana, color, inputs) : null;
+    }
+
+    public RecipeAdvancedPlate(ItemStack output, int mana, int color, Object... inputs) {
+        super(output, inputs);
         this.mana = mana;
         this.color = color;
-        List<ItemStack> inputsToSet = new ArrayList();
-        for (ItemStack obj : inputs) inputsToSet.add(obj);
-        this.inputs = inputsToSet;
-    }
-
-    public List<ItemStack> getInputs() {
-        return new ArrayList(this.inputs);
-    }
-
-    public ItemStack getOutput() {
-        return this.output;
     }
 
     public int getManaUsage() {
@@ -36,32 +29,5 @@ public class RecipeAdvancedPlate {
 
     public int getColor() {
         return this.color;
-    }
-
-    public boolean matches(IInventory inv) {
-        List<ItemStack> inputsMissing = new ArrayList(this.inputs);
-        for (int i = 1; i < inv.getSizeInventory(); i++) {
-            ItemStack stack = inv.getStackInSlot(i);
-            if (stack == null) break;
-            int stackIndex = -1;
-            for (int j = 0; j < inputsMissing.size(); j++) {
-                ItemStack input = inputsMissing.get(j);
-                if (input instanceof ItemStack && simpleAreStacksEqual(input.copy(), stack)) {
-                    stackIndex = j;
-                    break;
-                }
-            }
-            if (stackIndex != -1) {
-                inputsMissing.remove(stackIndex);
-            } else {
-                return false;
-            }
-        }
-        return inputsMissing.isEmpty();
-    }
-
-    boolean simpleAreStacksEqual(ItemStack input, ItemStack stack) {
-        if (input.getItemDamage() == 32767) input.setItemDamage(stack.getItemDamage());
-        return (input.getItem() == stack.getItem() && input.getItemDamage() == stack.getItemDamage());
     }
 }
