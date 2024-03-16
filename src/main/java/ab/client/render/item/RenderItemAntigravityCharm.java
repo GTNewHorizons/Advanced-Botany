@@ -10,8 +10,8 @@ import net.minecraftforge.client.IItemRenderer;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.common.core.helper.ItemNBTHelper;
 import ab.common.item.ItemAntigravityCharm;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
 
 public class RenderItemAntigravityCharm implements IItemRenderer {
 

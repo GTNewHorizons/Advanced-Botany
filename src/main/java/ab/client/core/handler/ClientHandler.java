@@ -18,13 +18,13 @@ import net.minecraft.util.StatCollector;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.ClientTickHandler;
-import vazkii.botania.common.lib.LibObfuscation;
 import ab.api.IRankItem;
 import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.relauncher.ReflectionHelper;
+import vazkii.botania.client.core.handler.ClientTickHandler;
+import vazkii.botania.common.lib.LibObfuscation;
 
 public class ClientHandler {
 

@@ -9,8 +9,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-import vazkii.botania.common.Botania;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import vazkii.botania.common.Botania;
 
 public class ItemNebulaBoots extends ItemNebulaArmor {
 

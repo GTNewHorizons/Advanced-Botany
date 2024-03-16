@@ -14,12 +14,6 @@ import net.minecraft.stats.StatBase;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.item.ICosmeticAttachable;
-import vazkii.botania.api.item.IPhantomInkable;
-import vazkii.botania.client.core.helper.RenderHelper;
-import vazkii.botania.common.achievement.ModAchievements;
-import vazkii.botania.common.core.helper.ItemNBTHelper;
-import vazkii.botania.common.entity.EntityDoppleganger;
 import ab.AdvancedBotany;
 import baubles.api.BaubleType;
 import baubles.api.IBauble;
@@ -27,6 +21,12 @@ import baubles.common.container.InventoryBaubles;
 import baubles.common.lib.PlayerHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.item.ICosmeticAttachable;
+import vazkii.botania.api.item.IPhantomInkable;
+import vazkii.botania.client.core.helper.RenderHelper;
+import vazkii.botania.common.achievement.ModAchievements;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
+import vazkii.botania.common.entity.EntityDoppleganger;
 
 public abstract class ItemBauble extends Item implements IBauble, ICosmeticAttachable, IPhantomInkable {
 

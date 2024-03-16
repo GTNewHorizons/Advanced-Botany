@@ -19,13 +19,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import vazkii.botania.api.lexicon.ILexiconable;
-import vazkii.botania.api.lexicon.LexiconEntry;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.TerraFarmlandList;
 import ab.common.lib.register.RecipeListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
 
 public class BlockTerraFarmland extends Block implements ILexiconable {
 

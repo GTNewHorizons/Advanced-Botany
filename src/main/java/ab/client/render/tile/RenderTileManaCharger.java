@@ -19,9 +19,9 @@ import net.minecraftforge.client.ForgeHooksClient;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.ClientTickHandler;
 import ab.client.model.ModelManaCharger;
 import ab.common.block.tile.TileManaCharger;
+import vazkii.botania.client.core.handler.ClientTickHandler;
 
 public class RenderTileManaCharger extends TileEntitySpecialRenderer {
 

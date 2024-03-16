@@ -18,12 +18,12 @@ import ab.common.core.handler.ConfigABHandler;
 
 public class AdvancedBotanyAPI {
 
-    public static List<RecipeAdvancedPlate> advancedPlateRecipes = new ArrayList<RecipeAdvancedPlate>();
-    public static List<RecipeAncientAlphirine> alphirineRecipes = new ArrayList<RecipeAncientAlphirine>();
-    public static List<TerraFarmlandList> farmlandList = new ArrayList<TerraFarmlandList>();
-    public static List<Achievement> achievements = new ArrayList<Achievement>();
-    public static List<ItemStack> relicList = new ArrayList<ItemStack>();
-    public static List<ItemStack> diceList = new ArrayList<ItemStack>();
+    public static List<RecipeAdvancedPlate> advancedPlateRecipes = new ArrayList<>();
+    public static List<RecipeAncientAlphirine> alphirineRecipes = new ArrayList<>();
+    public static List<TerraFarmlandList> farmlandList = new ArrayList<>();
+    public static List<Achievement> achievements = new ArrayList<>();
+    public static List<ItemStack> relicList = new ArrayList<>();
+    public static List<ItemStack> diceList = new ArrayList<>();
 
     public static Item.ToolMaterial mithrilToolMaterial = EnumHelper.addToolMaterial("MITHRIL", 7, -1, 8.0F, 4.0F, 24);
     public static ItemArmor.ArmorMaterial nebulaArmorMaterial = EnumHelper.addArmorMaterial(
@@ -44,6 +44,22 @@ public class AdvancedBotanyAPI {
             ItemStack input3, int mana, int color) {
         RecipeAdvancedPlate recipe = new RecipeAdvancedPlate(output, mana, color, input1, input2, input3);
         advancedPlateRecipes.add(recipe);
+        return recipe;
+    }
+
+    public static RecipeAdvancedPlate registerAdvancedPlateRecipe(ItemStack output, int mana, int color,
+            Object... inputs) {
+        RecipeAdvancedPlate recipe = new RecipeAdvancedPlate(output, mana, color, inputs);
+        advancedPlateRecipes.add(recipe);
+        return recipe;
+    }
+
+    public static RecipeAdvancedPlate registerAdvancedPlateRecipe(String output, int mana, int color,
+            Object... inputs) {
+        RecipeAdvancedPlate recipe = RecipeAdvancedPlate.fromOreDictOutput(output, mana, color, inputs);
+        if (recipe != null) {
+            advancedPlateRecipes.add(recipe);
+        }
         return recipe;
     }
 

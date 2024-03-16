@@ -17,15 +17,15 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-import vazkii.botania.common.Botania;
-import vazkii.botania.common.core.handler.ConfigHandler;
-import vazkii.botania.common.lib.LibObfuscation;
 import ab.client.core.ClientHelper;
 import ab.common.core.CommonHelper;
 import ab.common.lib.register.BlockListAB;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.common.Botania;
+import vazkii.botania.common.core.handler.ConfigHandler;
+import vazkii.botania.common.lib.LibObfuscation;
 
 public class EntityManaVine extends EntityThrowable {
 

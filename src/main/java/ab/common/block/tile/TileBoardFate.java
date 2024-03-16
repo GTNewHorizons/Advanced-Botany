@@ -13,11 +13,11 @@ import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.Vec3;
 
+import ab.api.AdvancedBotanyAPI;
+import ab.common.core.handler.ConfigABHandler;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.api.item.IRelic;
 import vazkii.botania.common.item.relic.ItemRelic;
-import ab.api.AdvancedBotanyAPI;
-import ab.common.core.handler.ConfigABHandler;
 
 public class TileBoardFate extends TileInventory {
 

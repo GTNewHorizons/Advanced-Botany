@@ -5,9 +5,9 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+import ab.common.entity.EntityManaVine;
 import vazkii.botania.api.mana.IManaUsingItem;
 import vazkii.botania.api.mana.ManaItemHandler;
-import ab.common.entity.EntityManaVine;
 
 public class ItemFreyrSlingshot extends ItemModRelic implements IManaUsingItem {
 

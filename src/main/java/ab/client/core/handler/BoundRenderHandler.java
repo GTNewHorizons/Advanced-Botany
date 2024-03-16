@@ -18,11 +18,11 @@ import net.minecraftforge.client.event.RenderWorldLastEvent;
 
 import org.lwjgl.opengl.GL11;
 
+import ab.api.IBoundRender;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import vazkii.botania.api.wand.ICoordBoundItem;
 import vazkii.botania.api.wand.IWireframeAABBProvider;
 import vazkii.botania.client.core.handler.ClientTickHandler;
-import ab.api.IBoundRender;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class BoundRenderHandler {
 

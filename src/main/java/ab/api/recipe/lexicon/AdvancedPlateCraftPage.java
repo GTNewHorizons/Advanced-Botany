@@ -10,21 +10,22 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.api.internal.IGuiLexiconEntry;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.api.lexicon.LexiconRecipeMappings;
-import vazkii.botania.client.core.handler.ClientTickHandler;
-import vazkii.botania.common.core.handler.ConfigHandler;
-import vazkii.botania.common.lexicon.page.PageRecipe;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAdvancedPlate;
 import ab.client.core.ClientHelper;
 import ab.common.lib.register.BlockListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.internal.IGuiLexiconEntry;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.lexicon.LexiconRecipeMappings;
+import vazkii.botania.client.core.handler.ClientTickHandler;
+import vazkii.botania.common.core.handler.ConfigHandler;
+import vazkii.botania.common.lexicon.page.PageRecipe;
 
 public class AdvancedPlateCraftPage extends PageRecipe {
 
@@ -68,14 +69,24 @@ public class AdvancedPlateCraftPage extends PageRecipe {
         TextureManager render = (Minecraft.getMinecraft()).renderEngine;
         renderItemAtGridPos(gui, 3, 0, recipe.getOutput(), false);
         renderItemAtGridPos(gui, 2, 1, new ItemStack(BlockListAB.blockABPlate), false);
-        List<ItemStack> inputs = recipe.getInputs();
+        List<Object> inputs = recipe.getInputs();
         int degreePerInput = (int) (360.0F / inputs.size());
         float currentDegree = ConfigHandler.lexiconRotatingItems ? (GuiScreen.isShiftKeyDown() ? this.ticksElapsed
                 : (this.ticksElapsed + ClientTickHandler.partialTicks)) : 0.0F;
-        for (ItemStack obj : inputs) {
-            ItemStack copy = obj.copy();
-            if (copy.getItemDamage() == 32767) copy.setItemDamage(0);
-            renderItemAtAngle(gui, currentDegree, copy);
+        for (Object obj : inputs) {
+            ItemStack copy = null;
+            if (obj instanceof String oreName) {
+                List<ItemStack> ores = OreDictionary.getOres(oreName);
+                if (!ores.isEmpty()) {
+                    copy = ores.get(0).copy();
+                }
+            } else if (obj instanceof ItemStack itemStack) {
+                copy = itemStack.copy();
+            }
+            if (copy != null) {
+                if (copy.getItemDamage() == OreDictionary.WILDCARD_VALUE) copy.setItemDamage(0);
+                renderItemAtAngle(gui, currentDegree, copy);
+            }
             currentDegree += degreePerInput;
         }
         renderManaBar(gui, mx, my);
@@ -116,7 +127,7 @@ public class AdvancedPlateCraftPage extends PageRecipe {
     }
 
     public List<ItemStack> getDisplayedRecipes() {
-        ArrayList<ItemStack> list = new ArrayList<ItemStack>();
+        ArrayList<ItemStack> list = new ArrayList<>();
         list.add(recipe.getOutput());
         return list;
     }

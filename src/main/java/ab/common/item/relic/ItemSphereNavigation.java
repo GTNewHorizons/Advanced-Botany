@@ -16,14 +16,14 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.mana.ManaItemHandler;
-import vazkii.botania.common.Botania;
-import vazkii.botania.common.core.helper.ItemNBTHelper;
 import ab.client.core.handler.ItemsRemainingRender;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.core.handler.NetworkHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.mana.ManaItemHandler;
+import vazkii.botania.common.Botania;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
 
 public class ItemSphereNavigation extends ItemModRelic {
 

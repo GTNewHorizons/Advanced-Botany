@@ -11,6 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 
+import ab.api.AdvancedBotanyAPI;
+import ab.api.recipe.RecipeAdvancedPlate;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.api.mana.IManaPool;
 import vazkii.botania.api.mana.spark.ISparkAttachable;
@@ -18,8 +20,6 @@ import vazkii.botania.api.mana.spark.ISparkEntity;
 import vazkii.botania.api.mana.spark.SparkHelper;
 import vazkii.botania.client.core.handler.ClientTickHandler;
 import vazkii.botania.common.Botania;
-import ab.api.AdvancedBotanyAPI;
-import ab.api.recipe.RecipeAdvancedPlate;
 
 public class TileNidavellirForge extends TileInventory implements ISparkAttachable, ISidedInventory {
 

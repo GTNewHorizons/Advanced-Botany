@@ -8,10 +8,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 
-import vazkii.botania.common.item.relic.ItemRelic;
 import ab.AdvancedBotany;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.common.item.relic.ItemRelic;
 
 public class ItemModRelic extends ItemRelic {
 

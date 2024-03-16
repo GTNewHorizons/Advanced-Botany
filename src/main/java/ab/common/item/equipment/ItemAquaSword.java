@@ -13,11 +13,11 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 
-import vazkii.botania.api.mana.ManaItemHandler;
-import vazkii.botania.common.Botania;
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
+import vazkii.botania.api.mana.ManaItemHandler;
+import vazkii.botania.common.Botania;
 
 public class ItemAquaSword extends ItemSword {
 

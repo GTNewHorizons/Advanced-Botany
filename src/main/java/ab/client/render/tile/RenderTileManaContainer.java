@@ -12,12 +12,12 @@ import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.ClientTickHandler;
-import vazkii.botania.client.core.helper.ShaderHelper;
-import vazkii.botania.common.block.mana.BlockPool;
 import ab.client.core.ClientHelper;
 import ab.client.model.ModelManaContainer;
 import ab.common.block.tile.TileManaContainer;
+import vazkii.botania.client.core.handler.ClientTickHandler;
+import vazkii.botania.client.core.helper.ShaderHelper;
+import vazkii.botania.common.block.mana.BlockPool;
 
 public class RenderTileManaContainer extends TileEntitySpecialRenderer {
 

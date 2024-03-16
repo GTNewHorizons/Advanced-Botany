@@ -20,16 +20,16 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import ab.AdvancedBotany;
+import ab.common.block.tile.TileABSpreader;
+import ab.common.lib.register.BlockListAB;
+import ab.common.lib.register.RecipeListAB;
 import vazkii.botania.api.lexicon.ILexiconable;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.wand.IWandHUD;
 import vazkii.botania.api.wand.IWandable;
 import vazkii.botania.api.wand.IWireframeAABBProvider;
 import vazkii.botania.common.item.ModItems;
-import ab.AdvancedBotany;
-import ab.common.block.tile.TileABSpreader;
-import ab.common.lib.register.BlockListAB;
-import ab.common.lib.register.RecipeListAB;
 
 public class BlockABSpreader extends BlockContainer
         implements IWandable, IWandHUD, IWireframeAABBProvider, ILexiconable {

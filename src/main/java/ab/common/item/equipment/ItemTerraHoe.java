@@ -11,15 +11,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
+import ab.AdvancedBotany;
+import ab.common.lib.register.BlockListAB;
+import cpw.mods.fml.common.eventhandler.Event.Result;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.mana.IManaUsingItem;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.block.ModBlocks;
 import vazkii.botania.common.item.ModItems;
-import ab.AdvancedBotany;
-import ab.common.lib.register.BlockListAB;
-import cpw.mods.fml.common.eventhandler.Event.Result;
 
 public class ItemTerraHoe extends ItemHoe implements IManaUsingItem {
 

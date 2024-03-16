@@ -9,13 +9,13 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 
-import vazkii.botania.common.item.equipment.armor.manasteel.ItemManasteelArmor;
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.client.model.armor.ModelArmorWildHunt;
 import ab.common.lib.register.ItemListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.common.item.equipment.armor.manasteel.ItemManasteelArmor;
 
 public class ItemWildHuntArmor extends ItemManasteelArmor {
 

@@ -6,11 +6,11 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.mana.IManaUsingItem;
-import vazkii.botania.api.mana.ManaItemHandler;
 import ab.api.AdvancedBotanyAPI;
 import ab.common.entity.EntityNebulaBlaze;
 import ab.common.item.ItemMod;
+import vazkii.botania.api.mana.IManaUsingItem;
+import vazkii.botania.api.mana.ManaItemHandler;
 
 public class ItemNebulaBlaze extends ItemMod implements IManaUsingItem {
 

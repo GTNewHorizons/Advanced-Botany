@@ -15,9 +15,9 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
 
+import ab.api.IRenderHud;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.common.block.tile.TileMod;
-import ab.api.IRenderHud;
 
 public class TileGameBoard extends TileMod implements IRenderHud {
 

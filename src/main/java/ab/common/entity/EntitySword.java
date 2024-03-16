@@ -13,9 +13,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import vazkii.botania.common.Botania;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.common.Botania;
 
 public class EntitySword extends EntityThrowable {
 

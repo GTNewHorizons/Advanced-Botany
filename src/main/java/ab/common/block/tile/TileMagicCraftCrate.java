@@ -14,6 +14,7 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 
+import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.items.relics.ItemThaumonomicon;
 import thaumcraft.common.items.wands.ItemWandCasting;
@@ -21,7 +22,6 @@ import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 import thaumcraft.common.tiles.TileMagicWorkbench;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.common.item.ModItems;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 
 public class TileMagicCraftCrate extends TileMagicWorkbench implements ISidedInventory, IInventory {
 

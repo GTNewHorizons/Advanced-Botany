@@ -18,10 +18,10 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.ClientTickHandler;
 import ab.common.block.BlockMagicCraftCrate;
 import ab.common.block.tile.TileMagicCraftCrate;
 import ab.common.lib.register.BlockListAB;
+import vazkii.botania.client.core.handler.ClientTickHandler;
 
 public class RenderTileMagicCraftingCrate extends TileEntitySpecialRenderer {
 

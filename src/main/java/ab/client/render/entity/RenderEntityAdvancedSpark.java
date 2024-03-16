@@ -2,10 +2,10 @@ package ab.client.render.entity;
 
 import net.minecraft.util.IIcon;
 
-import vazkii.botania.client.render.entity.RenderSparkBase;
-import vazkii.botania.common.item.ItemSparkUpgrade;
 import ab.common.entity.EntityAdvancedSpark;
 import ab.common.item.ItemAdvancedSpark;
+import vazkii.botania.client.render.entity.RenderSparkBase;
+import vazkii.botania.common.item.ItemSparkUpgrade;
 
 public class RenderEntityAdvancedSpark extends RenderSparkBase<EntityAdvancedSpark> {
 

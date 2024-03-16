@@ -12,14 +12,14 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.lexicon.ILexiconable;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.common.block.ModBlocks;
-import vazkii.botania.common.item.ItemTwigWand;
 import ab.AdvancedBotany;
 import ab.common.block.tile.TileManaCrystalCube;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.RecipeListAB;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.common.block.ModBlocks;
+import vazkii.botania.common.item.ItemTwigWand;
 
 public class BlockManaCrystalCube extends BlockContainer implements ILexiconable {
 

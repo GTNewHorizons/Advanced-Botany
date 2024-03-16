@@ -7,10 +7,10 @@ import net.minecraft.item.ItemStack;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.LightningHandler;
-import vazkii.botania.common.core.helper.Vector3;
 import ab.client.render.tile.RenderTileManaCharger;
 import ab.common.block.tile.TileManaCharger;
+import vazkii.botania.client.core.handler.LightningHandler;
+import vazkii.botania.common.core.helper.Vector3;
 
 public class ModelManaCharger extends ModelBase {
 

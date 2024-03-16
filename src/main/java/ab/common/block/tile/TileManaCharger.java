@@ -15,15 +15,15 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
+import ab.api.IRenderHud;
+import ab.client.core.ClientHelper;
+import ab.common.core.handler.ConfigABHandler;
 import vazkii.botania.api.internal.VanillaPacketDispatcher;
 import vazkii.botania.api.mana.IManaItem;
 import vazkii.botania.api.mana.IManaReceiver;
 import vazkii.botania.api.mana.spark.ISparkAttachable;
 import vazkii.botania.api.wand.IWandBindable;
 import vazkii.botania.common.block.ModBlocks;
-import ab.api.IRenderHud;
-import ab.client.core.ClientHelper;
-import ab.common.core.handler.ConfigABHandler;
 
 public class TileManaCharger extends TileInventory implements ISidedInventory, IRenderHud, IWandBindable {
 

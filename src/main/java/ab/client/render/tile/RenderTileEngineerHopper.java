@@ -9,8 +9,8 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.ClientTickHandler;
 import ab.client.model.ModelEngineerHopper;
+import vazkii.botania.client.core.handler.ClientTickHandler;
 
 public class RenderTileEngineerHopper extends TileEntitySpecialRenderer {
 

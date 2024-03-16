@@ -8,10 +8,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+import baubles.api.BaubleType;
 import vazkii.botania.api.mana.IManaItem;
 import vazkii.botania.api.mana.IManaTooltipDisplay;
 import vazkii.botania.common.core.helper.ItemNBTHelper;
-import baubles.api.BaubleType;
 
 public class ItemMithrillRing extends ItemBauble implements IManaItem, IManaTooltipDisplay {
 

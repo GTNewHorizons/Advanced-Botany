@@ -17,11 +17,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
 
-import vazkii.botania.common.Botania;
-import vazkii.botania.common.item.ItemGrassSeeds;
 import ab.common.item.equipment.ItemSprawlRod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.common.Botania;
+import vazkii.botania.common.item.ItemGrassSeeds;
 
 public class EntitySeed extends EntityThrowable {
 
