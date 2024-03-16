@@ -29,20 +29,19 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.mana.IManaUsingItem;
-import vazkii.botania.api.mana.ManaItemHandler;
-import vazkii.botania.common.Botania;
-import vazkii.botania.common.core.helper.ItemNBTHelper;
+import com.google.common.collect.Multimap;
+
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.IRankItem;
 import ab.common.core.handler.*;
 import ab.common.entity.EntitySword;
-
-import com.google.common.collect.Multimap;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.mana.IManaUsingItem;
+import vazkii.botania.api.mana.ManaItemHandler;
+import vazkii.botania.common.Botania;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
 
 public class ItemSpaceBlade extends ItemSword implements IRankItem, IManaUsingItem {
 

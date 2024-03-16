@@ -12,12 +12,12 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import ab.common.block.tile.TileABSpreader;
 import vazkii.botania.api.mana.ILens;
 import vazkii.botania.client.core.handler.ClientTickHandler;
 import vazkii.botania.client.core.proxy.ClientProxy;
 import vazkii.botania.client.model.ModelSpreader;
 import vazkii.botania.client.render.item.RenderLens;
-import ab.common.block.tile.TileABSpreader;
 
 public class RenderTileABSpreader extends TileEntitySpecialRenderer {
 

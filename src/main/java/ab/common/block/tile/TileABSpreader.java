@@ -11,13 +11,13 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
+import ab.common.core.handler.ConfigABHandler;
 import vazkii.botania.api.mana.BurstProperties;
 import vazkii.botania.api.mana.ILensEffect;
 import vazkii.botania.api.mana.IManaReceiver;
 import vazkii.botania.client.core.handler.HUDHandler;
 import vazkii.botania.common.block.tile.mana.TileSpreader;
 import vazkii.botania.common.entity.EntityManaBurst;
-import ab.common.core.handler.ConfigABHandler;
 
 public class TileABSpreader extends TileSpreader {
 

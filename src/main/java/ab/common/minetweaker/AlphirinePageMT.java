@@ -2,19 +2,18 @@ package ab.common.minetweaker;
 
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
+
+import ab.api.recipe.lexicon.AlphirineCraftPage;
 import minetweaker.IUndoableAction;
 import minetweaker.MineTweakerAPI;
 import minetweaker.api.item.IItemStack;
 import minetweaker.api.minecraft.MineTweakerMC;
-
-import net.minecraft.item.ItemStack;
-
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.lexicon.LexiconPage;
-import ab.api.recipe.lexicon.AlphirineCraftPage;
 
 @ZenClass("mods.advBotany.AlphirinePage")
 public class AlphirinePageMT {

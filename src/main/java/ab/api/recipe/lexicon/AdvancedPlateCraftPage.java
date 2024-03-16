@@ -13,18 +13,18 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.api.internal.IGuiLexiconEntry;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.api.lexicon.LexiconRecipeMappings;
-import vazkii.botania.client.core.handler.ClientTickHandler;
-import vazkii.botania.common.core.handler.ConfigHandler;
-import vazkii.botania.common.lexicon.page.PageRecipe;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAdvancedPlate;
 import ab.client.core.ClientHelper;
 import ab.common.lib.register.BlockListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.internal.IGuiLexiconEntry;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.lexicon.LexiconRecipeMappings;
+import vazkii.botania.client.core.handler.ClientTickHandler;
+import vazkii.botania.common.core.handler.ConfigHandler;
+import vazkii.botania.common.lexicon.page.PageRecipe;
 
 public class AdvancedPlateCraftPage extends PageRecipe {
 

@@ -15,14 +15,14 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.lexicon.ILexiconable;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.common.block.ModBlocks;
 import ab.AdvancedBotany;
 import ab.common.block.tile.TileInventory;
 import ab.common.block.tile.TileNidavellirForge;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.RecipeListAB;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.common.block.ModBlocks;
 
 public class BlockNidavellirForge extends BlockContainer implements ILexiconable {
 

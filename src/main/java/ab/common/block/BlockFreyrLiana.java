@@ -13,11 +13,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import vazkii.botania.api.lexicon.ILexiconable;
-import vazkii.botania.api.lexicon.LexiconEntry;
 import ab.common.core.CommonHelper;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.RecipeListAB;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
 
 public class BlockFreyrLiana extends BlockBush implements ILexiconable {
 

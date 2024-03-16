@@ -22,6 +22,10 @@ import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
+import ab.AdvancedBotany;
+import ab.common.block.tile.TileMagicCraftCrate;
+import ab.common.item.ItemCraftingPattern;
+import ab.common.lib.register.RecipeListAB;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.client.lib.UtilsFX;
@@ -32,10 +36,6 @@ import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.wand.IWandHUD;
 import vazkii.botania.api.wand.IWandable;
 import vazkii.botania.common.block.BlockModContainer;
-import ab.AdvancedBotany;
-import ab.common.block.tile.TileMagicCraftCrate;
-import ab.common.item.ItemCraftingPattern;
-import ab.common.lib.register.RecipeListAB;
 
 public class BlockMagicCraftCrate extends BlockModContainer implements IWandable, IWandHUD, ILexiconable {
 

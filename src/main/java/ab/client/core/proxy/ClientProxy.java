@@ -3,7 +3,6 @@ package ab.client.core.proxy;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
-import vazkii.botania.common.Botania;
 import ab.client.core.handler.BoundRenderHandler;
 import ab.client.core.handler.ClientHandler;
 import ab.client.core.handler.HudRenderHandler;
@@ -25,6 +24,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import vazkii.botania.common.Botania;
 
 public class ClientProxy extends CommonProxy {
 

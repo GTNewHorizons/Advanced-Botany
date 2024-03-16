@@ -10,9 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.ClientTickHandler;
 import ab.client.model.ModelDiceFate;
 import ab.common.block.tile.TileGameBoard;
+import vazkii.botania.client.core.handler.ClientTickHandler;
 
 public class RenderTileGameBoard extends TileEntitySpecialRenderer {
 

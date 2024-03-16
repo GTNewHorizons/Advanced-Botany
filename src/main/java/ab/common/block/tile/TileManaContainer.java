@@ -15,13 +15,13 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.StatCollector;
 
+import ab.client.core.ClientHelper;
+import ab.common.core.handler.ConfigABHandler;
 import vazkii.botania.api.mana.IManaPool;
 import vazkii.botania.api.mana.spark.ISparkAttachable;
 import vazkii.botania.api.mana.spark.ISparkEntity;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.block.tile.TileMod;
-import ab.client.core.ClientHelper;
-import ab.common.core.handler.ConfigABHandler;
 
 public class TileManaContainer extends TileMod implements IManaPool, ISparkAttachable {
 

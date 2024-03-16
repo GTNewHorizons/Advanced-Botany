@@ -5,12 +5,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
+import ab.common.block.tile.TileGameBoard;
+import ab.common.lib.register.RecipeListAB;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileGenerating;
 import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
-import ab.common.block.tile.TileGameBoard;
-import ab.common.lib.register.RecipeListAB;
 
 public class SubTileArdentAzarcissus extends SubTileGenerating {
 

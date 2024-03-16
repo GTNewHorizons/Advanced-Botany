@@ -14,12 +14,12 @@ import net.minecraftforge.client.event.RenderPlayerEvent;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.api.item.IPhantomInkable;
-import vazkii.botania.client.core.handler.ClientTickHandler;
 import ab.client.core.ClientHelper;
 import ab.common.item.equipment.armor.ItemNebulaArmor;
 import ab.common.item.equipment.armor.ItemNebulaHelm;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import vazkii.botania.api.item.IPhantomInkable;
+import vazkii.botania.client.core.handler.ClientTickHandler;
 
 public class PlayerRendererHandler {
 

@@ -14,17 +14,17 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
+import ab.AdvancedBotany;
+import ab.common.block.tile.TileInventory;
+import ab.common.block.tile.TileManaCharger;
+import ab.common.lib.register.BlockListAB;
+import ab.common.lib.register.RecipeListAB;
 import vazkii.botania.api.lexicon.ILexiconable;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.mana.IManaItem;
 import vazkii.botania.api.wand.IWandHUD;
 import vazkii.botania.api.wand.IWandable;
 import vazkii.botania.common.block.ModBlocks;
-import ab.AdvancedBotany;
-import ab.common.block.tile.TileInventory;
-import ab.common.block.tile.TileManaCharger;
-import ab.common.lib.register.BlockListAB;
-import ab.common.lib.register.RecipeListAB;
 
 public class BlockManaCharger extends BlockContainer implements IWandHUD, IWandable, ILexiconable {
 

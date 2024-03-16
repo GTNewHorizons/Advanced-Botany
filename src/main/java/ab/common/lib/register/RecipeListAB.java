@@ -15,6 +15,18 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import ab.api.AdvancedBotanyAPI;
+import ab.api.recipe.RecipeAdvancedPlate;
+import ab.api.recipe.RecipeAncientAlphirine;
+import ab.api.recipe.lexicon.AdvancedPlateCraftPage;
+import ab.api.recipe.lexicon.AlphirineCraftPage;
+import ab.common.block.tile.TileLebethronCore;
+import ab.common.core.handler.ConfigABHandler;
+import ab.common.item.ItemCraftingPattern;
+import ab.utils.IModHelper;
+import ab.utils.LocalizationManager;
+import ab.utils.OreDict;
+import cpw.mods.fml.common.registry.GameRegistry;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -41,18 +53,6 @@ import vazkii.botania.common.lexicon.RLexiconEntry;
 import vazkii.botania.common.lexicon.page.PageImage;
 import vazkii.botania.common.lexicon.page.PageText;
 import vazkii.botania.common.lib.LibOreDict;
-import ab.api.AdvancedBotanyAPI;
-import ab.api.recipe.RecipeAdvancedPlate;
-import ab.api.recipe.RecipeAncientAlphirine;
-import ab.api.recipe.lexicon.AdvancedPlateCraftPage;
-import ab.api.recipe.lexicon.AlphirineCraftPage;
-import ab.common.block.tile.TileLebethronCore;
-import ab.common.core.handler.ConfigABHandler;
-import ab.common.item.ItemCraftingPattern;
-import ab.utils.IModHelper;
-import ab.utils.LocalizationManager;
-import ab.utils.OreDict;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeListAB implements IModHelper {
 

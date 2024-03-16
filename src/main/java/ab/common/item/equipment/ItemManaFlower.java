@@ -4,10 +4,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
-import vazkii.botania.api.mana.IManaGivingItem;
-import vazkii.botania.api.mana.ManaItemHandler;
 import ab.AdvancedBotany;
 import baubles.api.BaubleType;
+import vazkii.botania.api.mana.IManaGivingItem;
+import vazkii.botania.api.mana.ManaItemHandler;
 
 public class ItemManaFlower extends ItemBauble implements IManaGivingItem {
 

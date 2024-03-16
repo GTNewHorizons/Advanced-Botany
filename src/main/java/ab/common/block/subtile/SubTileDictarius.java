@@ -14,12 +14,12 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import ab.common.core.handler.ConfigABHandler;
+import ab.common.lib.register.RecipeListAB;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileGenerating;
 import vazkii.botania.common.block.tile.TileSpecialFlower;
-import ab.common.core.handler.ConfigABHandler;
-import ab.common.lib.register.RecipeListAB;
 
 public class SubTileDictarius extends SubTileGenerating {
 

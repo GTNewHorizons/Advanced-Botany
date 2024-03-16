@@ -9,6 +9,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
+import ab.common.lib.register.RecipeListAB;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.Thaumcraft;
@@ -17,7 +18,6 @@ import thaumcraft.common.lib.network.playerdata.PacketAspectPool;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileFunctional;
-import ab.common.lib.register.RecipeListAB;
 
 public class SubTileAspecolus extends SubTileFunctional {
 

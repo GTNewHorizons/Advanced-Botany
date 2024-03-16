@@ -10,7 +10,6 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAncientAlphirine;
 import ab.client.core.ClientHelper;
@@ -18,6 +17,7 @@ import codechicken.lib.gui.GuiDraw;
 import codechicken.nei.NEIServerUtils;
 import codechicken.nei.PositionedStack;
 import codechicken.nei.recipe.TemplateRecipeHandler;
+import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
 
 public class RecipeHandlerAlphirine extends TemplateRecipeHandler {
 

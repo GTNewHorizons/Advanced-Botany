@@ -18,15 +18,15 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.lexicon.ILexiconable;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.common.achievement.IPickupAchievement;
 import ab.AdvancedBotany;
 import ab.common.block.tile.TileBoardFate;
 import ab.common.block.tile.TileGameBoard;
 import ab.common.block.tile.TileInventory;
 import ab.common.lib.register.AchievementRegister;
 import ab.common.lib.register.RecipeListAB;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.common.achievement.IPickupAchievement;
 
 public class BlockBoardFate extends BlockContainer implements IPickupAchievement, ILexiconable {
 

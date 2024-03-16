@@ -15,17 +15,17 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ISpecialArmor;
 
-import vazkii.botania.api.mana.IManaItem;
-import vazkii.botania.api.mana.IManaTooltipDisplay;
-import vazkii.botania.api.mana.ManaItemHandler;
-import vazkii.botania.common.core.helper.ItemNBTHelper;
-import vazkii.botania.common.item.equipment.armor.manasteel.ItemManasteelArmor;
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import ab.client.model.armor.ModelArmorNebula;
 import ab.common.lib.register.ItemListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.mana.IManaItem;
+import vazkii.botania.api.mana.IManaTooltipDisplay;
+import vazkii.botania.api.mana.ManaItemHandler;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
+import vazkii.botania.common.item.equipment.armor.manasteel.ItemManasteelArmor;
 
 public class ItemNebulaArmor extends ItemManasteelArmor implements IManaItem, IManaTooltipDisplay {
 

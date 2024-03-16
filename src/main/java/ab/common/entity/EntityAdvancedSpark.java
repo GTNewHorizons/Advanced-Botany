@@ -19,6 +19,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+import ab.common.lib.register.ItemListAB;
+import baubles.common.lib.PlayerHandler;
 import vazkii.botania.api.mana.IManaItem;
 import vazkii.botania.api.mana.spark.ISparkAttachable;
 import vazkii.botania.api.mana.spark.ISparkEntity;
@@ -26,8 +28,6 @@ import vazkii.botania.api.mana.spark.SparkHelper;
 import vazkii.botania.common.Botania;
 import vazkii.botania.common.core.helper.Vector3;
 import vazkii.botania.common.item.ModItems;
-import ab.common.lib.register.ItemListAB;
-import baubles.common.lib.PlayerHandler;
 
 public class EntityAdvancedSpark extends Entity implements ISparkEntity {
 

@@ -2,7 +2,6 @@ package ab.common.lib.register;
 
 import net.minecraft.block.Block;
 
-import vazkii.botania.common.Botania;
 import ab.common.block.BlockABSpreader;
 import ab.common.block.BlockABStorage;
 import ab.common.block.BlockAntigravitation;
@@ -31,6 +30,7 @@ import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.block.ItemBlockBase;
 import ab.common.item.block.ItemBlockBoard;
 import cpw.mods.fml.common.registry.GameRegistry;
+import vazkii.botania.common.Botania;
 
 public class BlockListAB {
 

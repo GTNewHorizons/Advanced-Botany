@@ -2,7 +2,6 @@ package ab.common.lib.register;
 
 import net.minecraft.item.Item;
 
-import vazkii.botania.common.Botania;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.item.*;
 import ab.common.item.equipment.*;
@@ -17,6 +16,7 @@ import ab.common.item.relic.ItemPocketWardrobe;
 import ab.common.item.relic.ItemSphereNavigation;
 import ab.common.item.relic.ItemTalismanHiddenRiches;
 import cpw.mods.fml.common.registry.GameRegistry;
+import vazkii.botania.common.Botania;
 
 public class ItemListAB {
 

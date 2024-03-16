@@ -23,13 +23,13 @@ import net.minecraftforge.common.MinecraftForge;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.client.core.handler.ClientTickHandler;
-import vazkii.botania.common.core.helper.ItemNBTHelper;
 import ab.AdvancedBotany;
 import ab.client.core.ClientHelper;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.client.core.handler.ClientTickHandler;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
 
 public class ItemTalismanHiddenRiches extends ItemModRelic {
 

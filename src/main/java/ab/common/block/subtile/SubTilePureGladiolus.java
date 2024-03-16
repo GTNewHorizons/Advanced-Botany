@@ -8,13 +8,13 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
+import ab.common.lib.register.RecipeListAB;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.entities.EntityAspectOrb;
 import vazkii.botania.api.lexicon.LexiconEntry;
 import vazkii.botania.api.subtile.RadiusDescriptor;
 import vazkii.botania.api.subtile.SubTileFunctional;
 import vazkii.botania.common.block.ModBlocks;
-import ab.common.lib.register.RecipeListAB;
 
 public class SubTilePureGladiolus extends SubTileFunctional {
 
