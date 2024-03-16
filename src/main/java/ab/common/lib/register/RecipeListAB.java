@@ -11,6 +11,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -173,7 +174,7 @@ public class RecipeListAB implements IModHelper {
                 11);
         manaFlowerRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(
                 new ItemStack(ItemListAB.itemABResource, 1, 4),
-                new ItemStack(ModBlocks.flower, 1, 32767),
+                new ItemStack(ModBlocks.flower, 1, OreDictionary.WILDCARD_VALUE),
                 32);
         hopperRecipe = AdvancedBotanyAPI.registerAlphirineRecipe(
                 new ItemStack(BlockListAB.blockEngineerHopper),
@@ -475,7 +476,7 @@ public class RecipeListAB implements IModHelper {
                 'G',
                 new ItemStack(ModBlocks.manaGlass),
                 'W',
-                new ItemStack(ModItems.twigWand, 1, 32767),
+                new ItemStack(ModItems.twigWand, 1, OreDictionary.WILDCARD_VALUE),
                 'D',
                 new ItemStack(ModBlocks.dreamwood),
                 'M',
@@ -597,7 +598,7 @@ public class RecipeListAB implements IModHelper {
                 'G',
                 new ItemStack(ModBlocks.elfGlass),
                 'D',
-                new ItemStack(ModBlocks.floatingFlower, 1, 32767),
+                new ItemStack(ModBlocks.floatingFlower, 1, OreDictionary.WILDCARD_VALUE),
                 'E',
                 "plateElvenElementium",
                 'R',
@@ -740,7 +741,7 @@ public class RecipeListAB implements IModHelper {
                 " WS",
                 "W  ",
                 'S',
-                new ItemStack(ModItems.grassSeeds, 1, 32767),
+                new ItemStack(ModItems.grassSeeds, 1, OreDictionary.WILDCARD_VALUE),
                 'C',
                 new ItemStack(BlockListAB.blockLebethron, 1, 4),
                 'W',
