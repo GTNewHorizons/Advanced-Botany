@@ -19,9 +19,9 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.common.item.ModItems;
 import ab.api.IBoundRender;
 import ab.client.core.ClientHelper;
+import vazkii.botania.common.item.ModItems;
 
 public class TileEngineerHopper extends TileInventory implements IHopper, IBoundRender {
 

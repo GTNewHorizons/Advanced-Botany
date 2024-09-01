@@ -37,7 +37,7 @@ public class OreDict {
     public static final ItemStack preference(String... oredictKeys) {
         for (String key : oredictKeys) {
             List<ItemStack> ores = OreDictionary.getOres(key);
-            if (ores != null && ores.size() > 0) return ores.get(0);
+            if (ores != null && !ores.isEmpty()) return ores.get(0);
         }
         throw new IllegalArgumentException("Can't find any oreDictionary entry among " + Arrays.toString(oredictKeys));
     }

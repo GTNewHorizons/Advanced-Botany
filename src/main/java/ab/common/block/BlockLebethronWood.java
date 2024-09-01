@@ -18,14 +18,14 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.internal.VanillaPacketDispatcher;
-import vazkii.botania.api.lexicon.ILexiconable;
-import vazkii.botania.api.lexicon.LexiconEntry;
 import ab.AdvancedBotany;
 import ab.common.block.tile.TileLebethronCore;
 import ab.common.lib.register.RecipeListAB;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.internal.VanillaPacketDispatcher;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
 
 public class BlockLebethronWood extends Block implements ILexiconable, ITileEntityProvider {
 

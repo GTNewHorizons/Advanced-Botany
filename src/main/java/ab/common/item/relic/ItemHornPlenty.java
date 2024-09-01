@@ -11,8 +11,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
-import vazkii.botania.api.mana.ManaItemHandler;
-import vazkii.botania.common.core.helper.ItemNBTHelper;
 import ab.client.core.handler.PlayerItemUsingSound.ClientSoundHandler;
 import ab.common.core.handler.ConfigABHandler;
 import ab.common.core.handler.NetworkHandler;
@@ -20,6 +18,8 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.ReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.mana.ManaItemHandler;
+import vazkii.botania.common.core.helper.ItemNBTHelper;
 
 public class ItemHornPlenty extends ItemModRelic {
 

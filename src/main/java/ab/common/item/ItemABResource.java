@@ -16,11 +16,11 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.recipe.IFlowerComponent;
 import ab.AdvancedBotany;
 import ab.api.AdvancedBotanyAPI;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.recipe.IFlowerComponent;
 
 public class ItemABResource extends Item implements IFlowerComponent {
 

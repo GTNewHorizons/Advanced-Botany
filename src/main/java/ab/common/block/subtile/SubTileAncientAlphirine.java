@@ -8,14 +8,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.api.subtile.RadiusDescriptor;
-import vazkii.botania.api.subtile.SubTileFunctional;
-import vazkii.botania.common.item.ItemLexicon;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAncientAlphirine;
 import ab.common.entity.EntityAlphirinePortal;
 import ab.common.lib.register.RecipeListAB;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.subtile.RadiusDescriptor;
+import vazkii.botania.api.subtile.SubTileFunctional;
+import vazkii.botania.common.item.ItemLexicon;
 
 public class SubTileAncientAlphirine extends SubTileFunctional {
 

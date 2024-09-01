@@ -14,16 +14,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import vazkii.botania.api.lexicon.ILexiconable;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.api.wand.IWandHUD;
-import vazkii.botania.api.wand.IWandable;
-import vazkii.botania.common.block.ModBlocks;
 import ab.AdvancedBotany;
 import ab.common.block.tile.TileEngineerHopper;
 import ab.common.block.tile.TileInventory;
 import ab.common.lib.register.BlockListAB;
 import ab.common.lib.register.RecipeListAB;
+import vazkii.botania.api.lexicon.ILexiconable;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.wand.IWandHUD;
+import vazkii.botania.api.wand.IWandable;
+import vazkii.botania.common.block.ModBlocks;
 
 public class BlockEngineerHopper extends BlockContainer implements IWandable, IWandHUD, ILexiconable {
 

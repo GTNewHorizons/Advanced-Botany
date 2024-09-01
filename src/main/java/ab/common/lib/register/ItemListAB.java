@@ -2,10 +2,22 @@ package ab.common.lib.register;
 
 import net.minecraft.item.Item;
 
-import vazkii.botania.common.Botania;
 import ab.common.core.handler.ConfigABHandler;
-import ab.common.item.*;
-import ab.common.item.equipment.*;
+import ab.common.item.ItemABResource;
+import ab.common.item.ItemAdvancedSpark;
+import ab.common.item.ItemAntigravityCharm;
+import ab.common.item.ItemCraftingPattern;
+import ab.common.item.equipment.ItemAquaSword;
+import ab.common.item.equipment.ItemBlackHalo;
+import ab.common.item.equipment.ItemManaFlower;
+import ab.common.item.equipment.ItemMithrillMultiTool;
+import ab.common.item.equipment.ItemMithrillRing;
+import ab.common.item.equipment.ItemNebulaBlaze;
+import ab.common.item.equipment.ItemNebulaRing;
+import ab.common.item.equipment.ItemNebulaRod;
+import ab.common.item.equipment.ItemSpaceBlade;
+import ab.common.item.equipment.ItemSprawlRod;
+import ab.common.item.equipment.ItemTerraHoe;
 import ab.common.item.equipment.armor.ItemNebulaBoots;
 import ab.common.item.equipment.armor.ItemNebulaChest;
 import ab.common.item.equipment.armor.ItemNebulaHelm;
@@ -17,6 +29,7 @@ import ab.common.item.relic.ItemPocketWardrobe;
 import ab.common.item.relic.ItemSphereNavigation;
 import ab.common.item.relic.ItemTalismanHiddenRiches;
 import cpw.mods.fml.common.registry.GameRegistry;
+import vazkii.botania.common.Botania;
 
 public class ItemListAB {
 

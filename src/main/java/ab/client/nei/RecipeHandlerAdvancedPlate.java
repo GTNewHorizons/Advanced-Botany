@@ -6,6 +6,7 @@ import java.util.List;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.lwjgl.opengl.GL11;
 
@@ -22,7 +23,7 @@ public class RecipeHandlerAdvancedPlate extends TemplateRecipeHandler {
 
     public class CachedAdvancedPlateRecipe extends TemplateRecipeHandler.CachedRecipe {
 
-        public List<PositionedStack> inputs = new ArrayList<PositionedStack>();
+        public List<PositionedStack> inputs = new ArrayList<>();
         public PositionedStack output;
         public int manaUsage;
 
@@ -33,13 +34,17 @@ public class RecipeHandlerAdvancedPlate extends TemplateRecipeHandler {
             this.manaUsage = recipe.getManaUsage();
         }
 
-        public void setIngredients(List<ItemStack> inputs) {
+        public void setIngredients(List<Object> inputs) {
             float degreePerInput = 360.0F / inputs.size();
             float currentDegree = -90.0F;
-            for (Object o : inputs) {
+            for (Object obj : inputs) {
                 int posX = (int) Math.round(73.0D + Math.cos(currentDegree * Math.PI / 180.0D) * 32.0D);
                 int posY = (int) Math.round(55.0D + Math.sin(currentDegree * Math.PI / 180.0D) * 32.0D);
-                this.inputs.add(new PositionedStack(o, posX, posY));
+                if (obj instanceof String oreName) {
+                    this.inputs.add(new PositionedStack(OreDictionary.getOres(oreName), posX, posY));
+                } else if (obj instanceof ItemStack itemStack) {
+                    this.inputs.add(new PositionedStack(itemStack, posX, posY));
+                }
                 currentDegree += degreePerInput;
             }
         }
@@ -66,11 +71,8 @@ public class RecipeHandlerAdvancedPlate extends TemplateRecipeHandler {
     }
 
     public void loadTransferRects() {
-        this.transferRects.add(
-                new TemplateRecipeHandler.RecipeTransferRect(
-                        new Rectangle(72, 54, 18, 18),
-                        getRecipeID(),
-                        new Object[0]));
+        this.transferRects
+                .add(new TemplateRecipeHandler.RecipeTransferRect(new Rectangle(72, 54, 18, 18), getRecipeID()));
     }
 
     public int recipiesPerPage() {

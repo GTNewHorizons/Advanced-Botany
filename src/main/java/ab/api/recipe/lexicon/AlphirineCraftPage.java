@@ -14,16 +14,16 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import vazkii.botania.api.internal.IGuiLexiconEntry;
-import vazkii.botania.api.lexicon.LexiconEntry;
-import vazkii.botania.api.lexicon.LexiconRecipeMappings;
-import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
-import vazkii.botania.common.lexicon.page.PageRecipe;
 import ab.api.AdvancedBotanyAPI;
 import ab.api.recipe.RecipeAncientAlphirine;
 import ab.client.core.ClientHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import vazkii.botania.api.internal.IGuiLexiconEntry;
+import vazkii.botania.api.lexicon.LexiconEntry;
+import vazkii.botania.api.lexicon.LexiconRecipeMappings;
+import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
+import vazkii.botania.common.lexicon.page.PageRecipe;
 
 public class AlphirineCraftPage extends PageRecipe {
 

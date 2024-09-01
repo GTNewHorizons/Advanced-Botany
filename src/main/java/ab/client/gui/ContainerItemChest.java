@@ -6,8 +6,8 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-import vazkii.botania.client.gui.SlotLocked;
 import ab.common.item.relic.ItemTalismanHiddenRiches;
+import vazkii.botania.client.gui.SlotLocked;
 
 public class ContainerItemChest extends Container {
 
