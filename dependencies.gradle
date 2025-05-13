@@ -10,3 +10,14 @@ dependencies {
     compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.6.33-GTNH:dev")
     compileOnly("com.github.GTNewHorizons:CraftTweaker:3.4.0:dev")
 }
+
+// deps may transitively add Baubles, so we replace it
+project.getConfigurations()
+    .all(c -> {
+        final DependencySubstitutions ds = c.getResolutionStrategy()
+            .getDependencySubstitution();
+        ds.substitute(ds.module("com.github.GTNewHorizons:Baubles"))
+            .using(ds.module("com.github.GTNewHorizons:Baubles-Expanded:2.1.7-GTNH"))
+            .withClassifier("dev")
+            .because("Baubles-Expanded replaces Baubles");
+    });
