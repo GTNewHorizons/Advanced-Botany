@@ -822,7 +822,7 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack(ItemListAB.itemAquaSword),
                 new ItemStack[] { new ItemStack(ModItems.rainbowRod), new ItemStack(ItemListAB.itemABResource, 1, 0),
                         new ItemStack(
-                                (Item) Item.itemRegistry.getObject("dreamcraft:item.MysteriousCrystalGemFlawless")),
+                                (Item) Item.itemRegistry.getObject("dreamcraft:MysteriousCrystalGemFlawless")),
                         new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ItemListAB.itemNebulaRod),
                         new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         new ItemStack(ModBlocks.livingwood, 1, 5),
@@ -842,16 +842,16 @@ public class RecipeListAB implements IModHelper {
                 new ItemStack((Item) Item.itemRegistry.getObject("thaumicbases:voidAnvil")),
                 new ItemStack[] { new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 2),
                         OreDict.preference("blockTerrasteel"),
-                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.DiamondCoreChip")),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:DiamondCoreChip")),
                         new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 3),
                         OreDict.preference("blockManasteel"),
-                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.EssentiaCircuit")),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:EssentiaCircuit")),
                         new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 2),
                         OreDict.preference("blockTerrasteel"),
-                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.DiamondCoreChip")),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:DiamondCoreChip")),
                         new ItemStack(ModBlocks.terraPlate), new ItemStack(ModItems.rune, 1, 3),
                         OreDict.preference("blockManasteel"),
-                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:item.EssentiaCircuit")), });
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:EssentiaCircuit")), });
 
         Destroyer = ThaumcraftApi.addInfusionCraftingRecipe(
                 "Destroyer",
