@@ -821,8 +821,7 @@ public class RecipeListAB implements IModHelper {
                         .add(Aspect.MAGIC, 32).add(Aspect.ELDRITCH, 32).add(Aspect.BEAST, 16).add(Aspect.HUNGER, 16),
                 new ItemStack(ItemListAB.itemAquaSword),
                 new ItemStack[] { new ItemStack(ModItems.rainbowRod), new ItemStack(ItemListAB.itemABResource, 1, 0),
-                        new ItemStack(
-                                (Item) Item.itemRegistry.getObject("dreamcraft:MysteriousCrystalGemFlawless")),
+                        new ItemStack((Item) Item.itemRegistry.getObject("dreamcraft:MysteriousCrystalGemFlawless")),
                         new ItemStack(ItemListAB.itemABResource, 1, 0), new ItemStack(ItemListAB.itemNebulaRod),
                         new ItemStack(ModBlocks.dreamwood, 1, 5), new ItemStack(ItemListAB.itemABResource, 1, 5),
                         new ItemStack(ModBlocks.livingwood, 1, 5),
