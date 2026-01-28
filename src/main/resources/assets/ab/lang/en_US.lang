@@ -112,7 +112,7 @@ ab.gameBoard.misc.1=Game ends in a draw
 ab.gameBoard.misc.2=%s loses the game
 ab.gameBoard.misc.0.mult=%s wins the game
 ab.gameBoard.misc.1.mult=Game ends in a draw
-ab.gameBoard.misc.2.mult=%s wins the game
+ab.gameBoard.misc.2.mult=%s loses the game
 ab.gameBoard.misc.notPlayer=The game ends, the second player is missing
 ab.nebulaRod.notTeleporting=Portal could not find the right place to move
 ab.nebulaRod.notTeleportingEvent=Something prevents the portal from transporting you to your chosen location
@@ -125,7 +125,7 @@ abmisc.fateBoard.info1=every Elf, hoping to get a valuable prize...
 tc.research_category.AdvancedBotany=Advanced Botany
 tc.research_category.AB_botania=Advanced Botany
 tc.research_name.TerraHoe=Terra Hoe
-tc.research_name.AquaSword=Blade of sea
+tc.research_name.AquaSword=Blade of Sea
 tc.research_name.ManaCharger=Mana Charger
 tc.research_name.MithrillSword=Blade of Space
 tc.research_name.Forge=Forge of Nidavellir
@@ -188,7 +188,7 @@ botania.tagline.advancedPlate=Created from the drawings of dwarves from Nidavell
 botania.page.advancedPlate0=Forge of Nidavellir - a really powerful Dwarf invention for fusing different materials into one whole, the main thing is to know the proportions!<br>This forge was given to the Elves, that is, it came to our land at the time of "Destruction," but... Not for long - it was soon destroyed.
 botania.page.advancedPlate.craft=The Engineering Revolution
 botania.page.advancedPlate.structure=Forge of Nidavellir
-botania.page.advancedPlate.abCraft0=Creating everyone's favorite terrastal
+botania.page.advancedPlate.abCraft0=Creating everyone's favorite terrasteel
 botania.page.advancedPlate.abCraft1=Burn My Star...
 
 botania.entry.lebethronWood=Lebethron Wood
@@ -211,7 +211,7 @@ botania.page.mithrill.abCraft=Gaia Spirit Ingot [Remake]
 botania.page.mithrill1=The Material Destroyer - a harsh tool based on a global catastrophe in the past. <br>He is perfectly capable of breaking any block almost instantly. His speed is so high that it was necessary to create a *Fuse* in him - that is, to turn him off/on.
 botania.page.mithrill.craft=The hip never breaks :(
 
-botania.entry.manaContainer=Mana Container's
+botania.entry.manaContainer=Mana Container
 botania.tagline.manaContainer=A mana depot for madmen
 botania.page.manaContainer0=Mana Container - are levitating mana vessels, somewhat reminiscent of normal mana pools, but definitely not the capacity, which is exceeded several times over!<br>The only thing mana containers are worse than pools is the lack of charging Mana Tools and creating Mana items.
 botania.page.manaContainer.craft0=64 mana pools!
@@ -232,7 +232,7 @@ botania.page.terraHoe.craft=Auto Harvest
 
 botania.entry.manaRings=Mana Rings
 botania.tagline.manaRings=Take a lot of mana with you!
-botania.page.manaRings0=Mana rings are highly sought-after accessories for nerfs. And it is not always convenient to take several, but everything is limited by the properties of the material from which the ring was made. <br>Mithrill and Nebula Fragment, excellent analogues to the usual terrastal or manastal.
+botania.page.manaRings0=Mana rings are highly sought-after accessories for nerfs. And it is not always convenient to take several, but everything is limited by the properties of the material from which the ring was made. <br>Mithrill and Nebula Fragment, excellent analogues to the usual terrasteel or manasteel.
 botania.page.manaRings.craft0=8 mana pools!
 botania.page.manaRings.craft1=48 mana pools!
 
@@ -250,13 +250,13 @@ botania.page.mithrillSword.craft=It'll look great in your hand!
 
 botania.entry.dictarius=Dictarius
 botania.tagline.dictarius=Turns everything around in one word, be careful
-botania.page.dictarius0=Dictarius - the most open flower of all, which tries to express its opinion, but more often than not, it tries to force those around it to take some action. <br>Overall, if you don't listen to it, it's quite a great way to extract mana! The more listeners around him, the more mana.
+botania.page.dictarius0=Dictarius - the most open flower of all, which tries to express its opinion, but more often than not, it tries to force those around it to take some action. <br>Overall, if you don't listen to it, it's quite a great way to extract mana! The more listeners around it, the more mana.
 botania.page.dictarius1=Dictarius has one weakness - a large cluster of similar flowers, discussions with such talkative opponents gradually poison him - as a result Dictarius dies!
 botania.page.dictarius.petalCraft=Not the best conversationalist at night
 
 botania.entry.aspecolus=Aspecolus
 botania.tagline.aspecolus=Will gladly get inside your head
-botania.page.aspecolus0=Aspecolus is at first glance a standard flower. But as soon as you get close, you feel as if someone is digging into your head! It's not exactly pleasant... <br>But, the Taumoturges found something special about it, and now use the miraculous flower as a forced meditation.
+botania.page.aspecolus0=Aspecolus is at first glance a standard flower. But as soon as you get close, you feel as if someone is digging into your head! It's not exactly pleasant... <br>But, the Thaumaturges found something special about it, and now use the miraculous flower as a forced meditation.
 botania.page.aspecolus.petalCraft=Mini psychologist
 
 botania.entry.nebula=Nebula
@@ -276,7 +276,7 @@ botania.page.blackHalo.craft=A stonemason's dream
 
 botania.entry.antigravityCharm=Sphere of attraction
 botania.tagline.antigravityCharm=What is physics?
-botania.page.antigravityCharm0=The sphere of attraction is a mystical tool capable of stopping the movement of any falling blocks. <br>Now you can safely walk around without the fear that you will be crushed by sand, or anvil.
+botania.page.antigravityCharm0=The sphere of attraction is a mystical tool capable of stopping the movement of any falling blocks. <br>Now you can safely walk around without the fear that you will be crushed by sand or anvils.
 botania.page.antigravityCharm.craft=1 : 0 in favor of Minecrafters
 
 botania.entry.manaCharger=Mana Charger
@@ -286,7 +286,7 @@ botania.page.manaCharger.craft=Quick Charge
 
 botania.entry.nebulaArmor=Nebula Armor
 botania.tagline.nebulaArmor=Unbreakable Nerd outfit
-botania.page.nebulaArmor0=Nebula Armor is a powerful nerf gear created with Nebula Fragments and Terrastal armor. <br>Each piece of equipment has its own unique properties, which depend on the amount of mana, the less mana, the weaker the protective properties of the armor.
+botania.page.nebulaArmor0=Nebula Armor is a powerful nerf gear created with Nebula Fragments and Terrasteel armor. <br>Each piece of equipment has its own unique properties, which depend on the amount of mana, the less mana, the weaker the protective properties of the armor.
 botania.page.nebulaArmor1=Characteristics of each armor item: <br>Nebula Helmet - boosts health <br>Nebula Chestplate - allows the wearer to fly, and also has a throwback resistance <br>Nebula Leggings - increase jump height <br>Nebula Boots - accelerate the host
 botania.page.nebulaArmor.craft0=Face of Space
 botania.page.nebulaArmor.craft1=Shall we fly?
@@ -299,7 +299,7 @@ botania.page.freyrSlingshot0=Freyr Slingshot - one of Pantheon's mythical items.
 botania.page.freyrSlingshot1=In addition, when a Tree is hit by Natural Flash, it is enveloped in an instant by a previously unknown vines!<br>1) Fertile Liana - speeds up the growth of the seeds underneath<br>2) The Glowing Fertile Liana is the counterpart of the Fertile Liana, but is also capable of generating gold nuggets!
 
 botania.entry.engineerHopper=Engineer Hopper
-botania.tagline.engineerHopper=Hide not beautiful mechanisms deep underground! Make it beautiful!
+botania.tagline.engineerHopper=Don't hide beautiful mechanisms deep underground! Make it beautiful!
 botania.page.engineerHopper0=Engineer Hopper is a real boon for designers-engineers! Thanks to it - you can safely hide the mechanisms, from prying eyes, or just for aesthetic pleasure.<br>According to preliminary information from Alphirine - such funnels were used in many advanced worlds, such as Asgard and Nidavellir.
 botania.page.engineerHopper1=See the item descriptions on the following pages.
 botania.page.engineerHopper2=Point 1 - a place to specify the storage facility from which things will be taken for transportation. <br>Point 2 - A place to specify the vault where things will come in. <br>Point 3 - Wand of the Forest icon: shows where you can bind the vault.
@@ -353,7 +353,7 @@ botania.page.azartFlower0=Ardent Azarcissus - The flower is a gambler, one of th
 botania.page.azartFlower.petalCraft=Just give him the will, and he'll give you mana.
 
 botania.entry.sphereNavigation=Sphere of Navigation
-botania.tagline.sphereNavigation=It will show you and show you the way anywhere!	
+botania.tagline.sphereNavigation=It will show you the way anywhere!
 botania.page.sphereNavigation0=Sphere of Navigation is a relic with the unique property of finding the specified block, through blocks, and marking the location! <br>For such a pleasure it is required to pay mana, and not a small amount in the long run.
 
 botania.entry.hornPlenty=Horn of Plenty
